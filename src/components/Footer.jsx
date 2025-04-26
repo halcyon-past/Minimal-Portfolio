@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <p className="text-gray-700">
+            <p className="text-gray-700 cursor-default">
               © 2025 <span className="text-[var(--amethyst)] font-medium">Aritro Saha</span>. All rights reserved.
             </p>
             <a

@@ -3,7 +3,7 @@ import LazyImage from './common/LazyImage';
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="py-16 px-4 md:px-8 bg-white">
+    <section id="gallery" className="py-16 px-4 md:px-8 bg-white cursor-default">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-2xl md:text-3xl font-medium mb-8 text-center text-gray-900">
           My <span className="text-[var(--amethyst)] font-medium">Gallery</span>

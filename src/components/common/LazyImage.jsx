@@ -17,7 +17,7 @@ export default function LazyImage({ src, alt, className, aspectRatio, blockClass
   }, [src]);
 
   return (
-    <div className={`relative overflow-hidden ${aspectRatio || ''} ${blockClass || ''}`}>
+    <div className={`relative overflow-hidden ${aspectRatio || ''} ${blockClass || ''} w-full h-full flex items-center justify-center`}>
       {!loaded && !error && (
         <div className="absolute inset-0 bg-gray-100 animate-pulse"></div>
       )}
@@ -31,7 +31,7 @@ export default function LazyImage({ src, alt, className, aspectRatio, blockClass
           src={src}
           alt={alt}
           loading="lazy"
-          className={`${className || ''} transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+          className={`w-full h-full object-cover ${className || ''} transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
           onLoad={() => setLoaded(true)}
           onError={() => setError(true)}
         />

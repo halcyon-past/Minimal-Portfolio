@@ -15,11 +15,11 @@ export default function About() {
                 className="w-48 h-48 rounded-full border border-gray-200 object-cover"
               />
             </div>
-            <h2 className="text-2xl md:text-3xl font-medium mb-4 text-gray-900">
+            <h2 className="text-2xl md:text-3xl font-medium mb-4 text-gray-900 cursor-default">
               About <span className="text-[var(--amethyst)] font-medium">Me</span>
             </h2>
           </div>
-          <div className="md:w-1/2 text-gray-700">
+          <div className="md:w-1/2 text-gray-700 cursor-default">
             <p className="mb-4 text-lg">
               I'm a final-year <span className="font-medium text-[var(--amethyst)]">B.Tech student</span> and a passionate <span className="font-medium text-[var(--chrysler-blue)]">full stack developer</span> with a strong footing in <span className="font-medium text-[var(--amethyst)]">data science</span>. Currently interning at <span className="font-medium">Bajaj Finserv</span> as a <span className="font-medium text-[var(--tea-green)]">Data Science Intern</span>, I enjoy bridging the gap between backend logic and user-facing design while also exploring the power of data to drive smart decisions.
             </p>
