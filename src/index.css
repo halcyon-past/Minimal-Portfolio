@@ -16,3 +16,17 @@
 html{
   scroll-behavior: smooth;
 }
+
+.gears-container svg {
+  transition: transform 0.1s linear;
+  will-change: transform;
+  transform-origin: center;
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.1));
+}
+
+@media (max-width: 768px) {
+  .gears-container {
+    position: absolute;
+    z-index: 0;
+  }
+}

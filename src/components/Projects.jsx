@@ -1,8 +1,13 @@
+import Gears from './Gears';
+
 export default function Projects({ projects }) {
   return (
     <section id="projects" className="relative py-8 px-4 md:px-8 bg-white md:-mt-32 z-10">
-      <div className="container mx-auto">
-        <div className="flex flex-col items-end gap-16 md:w-3/5 ml-auto">
+      <div className="container mx-auto relative">
+        {/* Add the Gears component */}
+        <Gears />
+        
+        <div className="flex flex-col items-end gap-16 md:w-3/5 ml-auto relative z-10">
           {projects.map((project, index) => (
             <div key={index} className="w-full">
               {/* Project Image */}
@@ -35,3 +40,4 @@ export default function Projects({ projects }) {
     </section>
   );
 }
+
