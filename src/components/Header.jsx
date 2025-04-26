@@ -58,7 +58,7 @@ export default function Header() {
             Projects
           </button>
           <Link to="/about" className="hover:text-[var(--amethyst)] transition-colors duration-300">About</Link>
-          <Link to="/contact" className="hover:text-[var(--amethyst)] transition-colors duration-300">Contact</Link>
+          <Link to="/gallery" className="hover:text-[var(--amethyst)] transition-colors duration-300">Gallery</Link>
         </div>
         
         {/* Full screen mobile menu - fixed positioning to cover entire viewport */}
@@ -88,12 +88,12 @@ export default function Header() {
               </Link>
               
               <Link 
-                to="/contact" 
+                to="/gallery" 
                 onClick={() => setMenuOpen(false)}
                 className={`relative overflow-hidden group transition-transform duration-300 transform ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'}`}
                 style={{ transitionDelay: '350ms' }}
               >
-                <span className="block">Contact</span>
+                <span className="block">Gallery</span>
                 <span className="h-0.5 w-0 bg-[var(--amethyst)] absolute bottom-0 left-0 group-hover:w-full transition-all duration-300"></span>
               </Link>
             </div>

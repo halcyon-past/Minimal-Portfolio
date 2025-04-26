@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
 import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
+import GalleryPage from './pages/GalleryPage';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import { projects } from './data/data';
@@ -26,7 +26,7 @@ export default function Portfolio() {
               }
             />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
           </Routes>
         </div>
         <Footer />
