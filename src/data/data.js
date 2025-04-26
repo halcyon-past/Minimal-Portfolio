@@ -8,7 +8,7 @@ export const projects = [
     color: 'text-[var(--chrysler-blue)]',
   },
   {
-    title: 'Pawsitive',
+    title: 'PAWsitive',
     description: 'Web Development, Pet Healthcare Platform',
     image: '/assets/Pawsitive.png',
     alt: 'Pawsitive pet adoption app interface',
