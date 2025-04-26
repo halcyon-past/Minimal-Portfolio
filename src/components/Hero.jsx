@@ -16,7 +16,7 @@ export default function Hero() {
         const completeTimer = setTimeout(() => {
           setIntroState('complete');
           document.body.style.overflow = '';
-        }, 700);
+        }, 400);
         
         return () => clearTimeout(completeTimer);
       }, 1500);
