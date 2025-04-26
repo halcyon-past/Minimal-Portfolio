@@ -10,28 +10,40 @@ export default function Contact() {
           <span className="font-medium">creative ideas</span>, or{' '}
           <span className="font-medium">opportunities</span> to be part of your vision.
         </p>
-        <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8">
+        <div className="flex flex-wrap justify-center space-y-4 md:space-y-0 md:space-x-8">
           <a
             href="mailto:aritrosaha2025@gmail.com"
             className="text-center text-[var(--chrysler-blue)] hover:text-[var(--amethyst)] font-medium"
+            aria-label="Email"
           >
-            Email
+            <i className="fas fa-envelope text-xl"></i>
           </a>
           <a
             href="https://linkedin.com/in/aritro-saha"
             className="text-center text-[var(--amethyst)] hover:text-[var(--chrysler-blue)] font-medium"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn"
           >
-            LinkedIn
+            <i className="fab fa-linkedin text-xl"></i>
           </a>
           <a
             href="https://github.com/halcyon-past"
             className="text-center text-[var(--celadon)] hover:text-[var(--amethyst)] font-medium"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub"
           >
-            Github
+            <i className="fab fa-github text-xl"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/@veripyed"
+            className="text-center text-[var(--tea-green)] hover:text-[var(--amethyst)] font-medium"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+          >
+            <i className="fab fa-youtube text-xl"></i>
           </a>
         </div>
       </div>
