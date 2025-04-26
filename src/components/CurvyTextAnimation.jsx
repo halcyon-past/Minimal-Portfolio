@@ -10,7 +10,7 @@ export default function CurvyTextAnimation() {
       const animate = () => {
         position -= 0.1;
         if (position <= -100) {
-          position += 100;
+          position = 0;
         }
         if (curvedTextRef.current) {
           const textPath = curvedTextRef.current.querySelector('textPath');
@@ -41,7 +41,10 @@ export default function CurvyTextAnimation() {
             <tspan style={{ fill: 'var(--amethyst)' }} className="font-bold">explore my projects ↓ </tspan>
             <tspan style={{ fill: '#6b7280' }} className="font-bold">explore my projects ↓ </tspan>
             <tspan style={{ fill: '#9ca3af' }} className="font-bold">explore my projects ↓ </tspan>
-            {/* ...repeat as needed... */}
+            <tspan style={{ fill: 'var(--chrysler-blue)' }} className="font-bold">explore my projects ↓ </tspan>
+            <tspan style={{ fill: 'var(--amethyst)' }} className="font-bold">explore my projects ↓ </tspan>
+            <tspan style={{ fill: '#6b7280' }} className="font-bold">explore my projects ↓ </tspan>
+            <tspan style={{ fill: '#9ca3af' }} className="font-bold">explore my projects ↓ </tspan>
           </textPath>
         </text>
       </svg>
