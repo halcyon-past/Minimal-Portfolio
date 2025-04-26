@@ -1,6 +1,6 @@
 export default function Projects({ projects }) {
   return (
-    <section id="work" className="relative py-8 px-4 md:px-8 bg-white md:-mt-32 z-10">
+    <section id="projects" className="relative py-8 px-4 md:px-8 bg-white md:-mt-32 z-10">
       <div className="container mx-auto">
         <div className="flex flex-col items-end gap-6 md:w-3/4 ml-auto">
           {projects.map((project, index) => (
