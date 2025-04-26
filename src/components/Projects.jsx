@@ -24,7 +24,7 @@ export default function Projects({ projects }) {
                 <a href={project.link} className="inline-block" target="_blank" rel="noopener noreferrer">
                   <h2 className="text-2xl md:text-3xl font-medium flex items-center border-b border-black pb-1">
                     {String(index + 1).padStart(2, '0')}. {project.title}
-                    <span className="ml-2 transform rotate-45 text-xl">↗</span>
+                    <span className="ml-2 transform text-3xl">↗︎</span>
                   </h2>
                 </a>
               </div>
