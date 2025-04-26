@@ -12,12 +12,11 @@ export default function Gears() {
     
     const animate = () => {
       rotation += 0.3;
-      
-      // Apply different rotation speeds and directions to each gear
+
       gears.forEach((gear, index) => {
         if (gear) {
-          const direction = index % 2 === 0 ? 1 : -1; // Alternate directions
-          const speed = 0.8 + (index * 0.2); // Different speeds for each gear
+          const direction = index % 2 === 0 ? 1 : -1;
+          const speed = 0.8 + (index * 0.2);
           gear.style.transform = `rotate(${rotation * direction * speed}deg)`;
         }
       });
@@ -26,8 +25,7 @@ export default function Gears() {
     };
     
     animationId = requestAnimationFrame(animate);
-    
-    // Handle visibility on scroll for mobile
+ 
     const handleScroll = () => {
       if (window.innerWidth <= 768) {
         const projectsSection = document.getElementById('projects');
@@ -37,12 +35,12 @@ export default function Gears() {
           setIsVisible(isInView);
         }
       } else {
-        setIsVisible(true); // Always visible on desktop
+        setIsVisible(true);
       }
     };
     
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial visibility
+    handleScroll();
     
     return () => {
       cancelAnimationFrame(animationId);

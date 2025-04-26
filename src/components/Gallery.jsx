@@ -10,8 +10,6 @@ export default function Gallery() {
         <p className="text-lg text-center mb-8 text-gray-700">
           A glimpse into my world — where <span className="font-medium">creativity</span>, <span className="font-medium">moments</span>, and <span className="font-medium">memories</span> come to life through visual storytelling.
         </p>
-
-        {/* Grid container with better spread */}
         <div className="grid grid-cols-4 gap-3 md:gap-4">
           {galleryImages.map((image, index) => (
             <div 

@@ -7,7 +7,6 @@ export default function Header() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = 'hidden';
@@ -28,7 +27,7 @@ export default function Header() {
       if (projectsSection) {
         projectsSection.scrollIntoView({ behavior: 'smooth' });
       }
-    }, 100); // Delay to ensure navigation completes
+    }, 100);
     setMenuOpen(false);
   };
 

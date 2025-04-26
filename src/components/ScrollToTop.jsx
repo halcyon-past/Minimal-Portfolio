@@ -8,5 +8,5 @@ export default function ScrollToTop() {
     window.scrollTo(0, 0);
   }, [pathname]);
   
-  return null; // This component doesn't render anything
+  return null;
 }
