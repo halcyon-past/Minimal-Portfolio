@@ -11,7 +11,7 @@
   --celadon: #81eaa7;
   --tea-green: #28b33f;
   --honeydew: #f0fff1;
-  --font-weight-normal: 300; /* Lighter default font weight */
+  --font-weight-normal: 300;
   --font-weight-medium: 400;
   --font-weight-semibold: 500;
   --font-weight-bold: 600;
@@ -21,7 +21,6 @@ body {
   font-weight: var(--font-weight-normal);
 }
 
-/* Default text to be lighter */
 p, span, div {
   font-weight: var(--font-weight-normal);
 }
@@ -30,7 +29,6 @@ html{
   scroll-behavior: smooth;
 }
 
-/* Override default Tailwind font weights */
 .font-bold {
   font-weight: var(--font-weight-bold) !important;
 }
