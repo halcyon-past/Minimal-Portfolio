@@ -35,3 +35,39 @@ export const education = [
   { title: 'B.Tech in Electronics and Computer Engineering', institution: 'Vellore Institute of Technology, Chennai', year: '2025' },
   { title: 'High School', institution: 'Birla Bharati', year: '2021' },
 ];
+
+// Social media profiles for easy management
+export const socialMedia = [
+  {
+    platform: 'LinkedIn',
+    url: 'https://linkedin.com/in/aritro-saha',
+    icon: 'fab fa-linkedin',
+    color: 'text-[var(--amethyst)]',
+    hoverColor: 'hover:text-[var(--chrysler-blue)]',
+    ariaLabel: 'LinkedIn'
+  },
+  {
+    platform: 'Instagram',
+    url: 'https://instagram.com/halcyon-past',
+    icon: 'fab fa-instagram',
+    color: 'text-[var(--celadon)]',
+    hoverColor: 'hover:text-[var(--amethyst)]',
+    ariaLabel: 'Instagram'
+  },
+  {
+    platform: 'GitHub',
+    url: 'https://github.com/halcyon-past',
+    icon: 'fab fa-github',
+    color: 'text-[var(--chrysler-blue)]',
+    hoverColor: 'hover:text-[var(--amethyst)]',
+    ariaLabel: 'GitHub'
+  },
+  {
+    platform: 'YouTube',
+    url: 'https://www.youtube.com/@veripyed',
+    icon: 'fab fa-youtube',
+    color: 'text-[var(--tea-green)]',
+    hoverColor: 'hover:text-[var(--amethyst)]',
+    ariaLabel: 'YouTube'
+  }
+];
