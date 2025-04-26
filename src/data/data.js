@@ -11,7 +11,7 @@ export const projects = [
     title: 'PAWsitive',
     description: 'Centralized Platfrom for Pet Healthcare',
     image: '/assets/Pawsitive.png',
-    alt: 'Pawsitive pet adoption app interface',
+    alt: 'Pawsitive pet healthcare platform interface',
     link: 'https://github.com/halcyon-past/PAW-sitive',
     color: 'text-[var(--amethyst)]',
   },
@@ -36,7 +36,6 @@ export const education = [
   { title: 'High School', institution: 'Birla Bharati', year: '2021' },
 ];
 
-// Social media profiles for easy management
 export const socialMedia = [
   {
     platform: 'LinkedIn',
@@ -70,4 +69,55 @@ export const socialMedia = [
     hoverColor: 'hover:text-[var(--amethyst)]',
     ariaLabel: 'YouTube'
   }
+];
+
+export const galleryImages = [
+  { 
+    src: '/assets/gallery/image1.jpeg', 
+    alt: 'Gallery Image 1', 
+    span: 'col-span-2 row-span-1', 
+    aspectRatio: 'aspect-[3/2]' 
+  },
+  { 
+    src: '/assets/gallery/image7.jpeg', 
+    alt: 'Gallery Image 7', 
+    span: 'col-span-1 row-span-2', 
+    aspectRatio: 'aspect-[2/3]' 
+  },
+  { 
+    src: '/assets/gallery/image3.jpeg', 
+    alt: 'Gallery Image 3', 
+    span: 'col-span-1 row-span-1', 
+    aspectRatio: 'aspect-square' 
+  },
+  { 
+    src: '/assets/gallery/image5.jpeg', 
+    alt: 'Gallery Image 5', 
+    span: 'col-span-3 row-span-1', 
+    aspectRatio: 'aspect-[3/1]' 
+  },
+  { 
+    src: '/assets/gallery/image4.png', 
+    alt: 'Gallery Image 4', 
+    span: 'col-span-1 row-span-1', 
+    aspectRatio: 'aspect-square' 
+  },
+  { 
+    src: '/assets/gallery/image8.jpeg', 
+    alt: 'Gallery Image 8', 
+    span: 'col-span-2 row-span-1', 
+    aspectRatio: 'aspect-[3/2]' 
+  },
+  { 
+    src: '/assets/gallery/image2.jpeg', 
+    alt: 'Gallery Image 2', 
+    span: 'col-span-2 row-span-1', 
+    aspectRatio: 'aspect-[3/2]' 
+  },
+  { 
+    src: '/assets/gallery/image6.jpeg', 
+    alt: 'Gallery Image 6', 
+    span: 'col-span-2 row-span-1', 
+    aspectRatio: 'aspect-[3/2]' 
+  },
 ];

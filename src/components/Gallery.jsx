@@ -1,56 +1,6 @@
-export default function Gallery() {
-  // Reorganized gallery for better horizontal space utilization
-  const galleryImages = [
-    { 
-      src: '/assets/gallery/image1.jpeg', 
-      alt: 'Gallery Image 1', 
-      span: 'col-span-2 row-span-1', 
-      aspectRatio: 'aspect-[3/2]' 
-    },
-    { 
-      src: '/assets/gallery/image7.jpeg', 
-      alt: 'Gallery Image 7', 
-      span: 'col-span-1 row-span-2', 
-      aspectRatio: 'aspect-[2/3]' 
-    },
-    { 
-      src: '/assets/gallery/image3.jpeg', 
-      alt: 'Gallery Image 3', 
-      span: 'col-span-1 row-span-1', 
-      aspectRatio: 'aspect-square' 
-    },
-    { 
-      src: '/assets/gallery/image5.jpeg', 
-      alt: 'Gallery Image 5', 
-      span: 'col-span-3 row-span-1', 
-      aspectRatio: 'aspect-[3/1]' 
-    },
-    { 
-      src: '/assets/gallery/image4.png', 
-      alt: 'Gallery Image 4', 
-      span: 'col-span-1 row-span-1', 
-      aspectRatio: 'aspect-square' 
-    },
-    { 
-      src: '/assets/gallery/image8.jpeg', 
-      alt: 'Gallery Image 8', 
-      span: 'col-span-2 row-span-1', 
-      aspectRatio: 'aspect-[3/2]' 
-    },
-    { 
-      src: '/assets/gallery/image2.jpeg', 
-      alt: 'Gallery Image 2', 
-      span: 'col-span-2 row-span-1', 
-      aspectRatio: 'aspect-[3/2]' 
-    },
-    { 
-      src: '/assets/gallery/image6.jpeg', 
-      alt: 'Gallery Image 6', 
-      span: 'col-span-2 row-span-1', 
-      aspectRatio: 'aspect-[3/2]' 
-    },
-  ];
+import { galleryImages } from '../data/data';
 
+export default function Gallery() {
   return (
     <section id="gallery" className="py-16 px-4 md:px-8 bg-white">
       <div className="container mx-auto max-w-6xl">
