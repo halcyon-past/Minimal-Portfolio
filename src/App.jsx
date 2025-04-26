@@ -12,7 +12,7 @@ export default function Portfolio() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col bg-white text-gray-900 font-sans">
+      <div className="min-h-screen flex flex-col bg-white text-gray-900 font-family-poppins font-normal">
         <Header />
         <div className="flex-grow pt-16">
           <Routes>

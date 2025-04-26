@@ -22,7 +22,7 @@ export default function Projects({ projects }) {
               {/* Project Title with Index */}
               <div className="mb-3">
                 <a href={project.link} className="inline-block" target="_blank" rel="noopener noreferrer">
-                  <h2 className="text-2xl md:text-3xl font-bold flex items-center border-b border-black pb-1">
+                  <h2 className="text-2xl md:text-3xl font-medium flex items-center border-b border-black pb-1">
                     {String(index + 1).padStart(2, '0')}. {project.title}
                     <span className="ml-2 transform rotate-45 text-xl">↗</span>
                   </h2>
@@ -31,7 +31,7 @@ export default function Projects({ projects }) {
               
               {/* Project Description */}
               <p className="text-base text-gray-800">
-                <span className="font-bold">What is it? </span> — {project.description}
+                <span className="font-medium">What is it? </span> — {project.description}
               </p>
             </div>
           ))}

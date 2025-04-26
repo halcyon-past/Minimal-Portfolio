@@ -53,7 +53,7 @@ export default function Header() {
         </div>
         
         {/* Desktop menu */}
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden md:flex space-x-6 font-normal">
           <button onClick={handleProjectsClick} className="hover:text-[var(--amethyst)] transition-colors duration-300">
             Projects
           </button>

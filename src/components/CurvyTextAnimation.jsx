@@ -35,16 +35,16 @@ export default function CurvyTextAnimation() {
           d="M-400,150 C100,0 400,300 900,150 S1900,0 1400,150"
           fill="transparent"
         />
-        <text className="text-8xl md:text-6xl font-bold">
+        <text className="text-8xl md:text-6xl font-medium">
           <textPath xlinkHref="#curve" startOffset="0%">
-            <tspan style={{ fill: 'var(--chrysler-blue)' }} className="font-bold">explore my projects ↓ </tspan>
-            <tspan style={{ fill: 'var(--amethyst)' }} className="font-bold">explore my projects ↓ </tspan>
-            <tspan style={{ fill: '#6b7280' }} className="font-bold">explore my projects ↓ </tspan>
-            <tspan style={{ fill: '#9ca3af' }} className="font-bold">explore my projects ↓ </tspan>
-            <tspan style={{ fill: 'var(--chrysler-blue)' }} className="font-bold">explore my projects ↓ </tspan>
-            <tspan style={{ fill: 'var(--amethyst)' }} className="font-bold">explore my projects ↓ </tspan>
-            <tspan style={{ fill: '#6b7280' }} className="font-bold">explore my projects ↓ </tspan>
-            <tspan style={{ fill: '#9ca3af' }} className="font-bold">explore my projects ↓ </tspan>
+            <tspan style={{ fill: 'var(--chrysler-blue)' }} className="font-medium">explore my projects ↓ </tspan>
+            <tspan style={{ fill: 'var(--amethyst)' }} className="font-medium">explore my projects ↓ </tspan>
+            <tspan style={{ fill: '#6b7280' }} className="font-medium">explore my projects ↓ </tspan>
+            <tspan style={{ fill: '#9ca3af' }} className="font-medium">explore my projects ↓ </tspan>
+            <tspan style={{ fill: 'var(--chrysler-blue)' }} className="font-medium">explore my projects ↓ </tspan>
+            <tspan style={{ fill: 'var(--amethyst)' }} className="font-medium">explore my projects ↓ </tspan>
+            <tspan style={{ fill: '#6b7280' }} className="font-medium">explore my projects ↓ </tspan>
+            <tspan style={{ fill: '#9ca3af' }} className="font-medium">explore my projects ↓ </tspan>
           </textPath>
         </text>
       </svg>
