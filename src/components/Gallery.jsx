@@ -20,8 +20,8 @@ export default function Gallery() {
       aspectRatio: 'aspect-square' 
     },
     { 
-      src: '/assets/gallery/image2.jpeg', 
-      alt: 'Gallery Image 2', 
+      src: '/assets/gallery/image5.jpeg', 
+      alt: 'Gallery Image 5', 
       span: 'col-span-3 row-span-1', 
       aspectRatio: 'aspect-[3/1]' 
     },
@@ -38,8 +38,8 @@ export default function Gallery() {
       aspectRatio: 'aspect-[3/2]' 
     },
     { 
-      src: '/assets/gallery/image5.jpeg', 
-      alt: 'Gallery Image 5', 
+      src: '/assets/gallery/image2.jpeg', 
+      alt: 'Gallery Image 2', 
       span: 'col-span-2 row-span-1', 
       aspectRatio: 'aspect-[3/2]' 
     },
