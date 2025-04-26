@@ -1,5 +1,6 @@
 import profileImage from '../assets/profile.jpg';
 import { experience, education } from '../data/data';
+import LazyImage from './common/LazyImage';
 
 export default function About() {
   return (
@@ -8,7 +9,7 @@ export default function About() {
         <div className="flex flex-col items-center md:flex-row md:justify-center md:space-x-12">
           <div className="md:w-1/3 mb-8 md:mb-0 text-center">
             <div className="inline-block p-1 rounded-full bg-gradient-to-br from-[var(--chrysler-blue)] via-[var(--amethyst)] to-[var(--celadon)] mb-4">
-              <img
+              <LazyImage
                 src={profileImage}
                 alt="Aritro Saha profile picture"
                 className="w-48 h-48 rounded-full border border-gray-200 object-cover"

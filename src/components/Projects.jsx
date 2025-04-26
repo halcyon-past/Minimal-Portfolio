@@ -1,4 +1,5 @@
 import Gears from './Gears';
+import LazyImage from './common/LazyImage';
 
 export default function Projects({ projects }) {
   return (
@@ -9,10 +10,11 @@ export default function Projects({ projects }) {
           {projects.map((project, index) => (
             <div key={index} className="w-full">
               <div className="w-full mb-4">
-                <img 
+                <LazyImage 
                   src={project.image} 
                   alt={project.alt} 
-                  className="w-full h-auto rounded-lg" 
+                  className="w-full h-auto rounded-lg"
+                  blockClass="aspect-video" 
                 />
               </div>
               <div className="mb-3">

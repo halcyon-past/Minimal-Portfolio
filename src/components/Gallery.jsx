@@ -1,4 +1,5 @@
 import { galleryImages } from '../data/data';
+import LazyImage from './common/LazyImage';
 
 export default function Gallery() {
   return (
@@ -14,12 +15,13 @@ export default function Gallery() {
           {galleryImages.map((image, index) => (
             <div 
               key={index} 
-              className={`${image.span} relative overflow-hidden rounded-xl border border-gray-200 shadow-sm group transition-all duration-300 hover:shadow-md ${image.aspectRatio}`}
+              className={`${image.span} relative overflow-hidden rounded-xl border border-gray-200 shadow-sm group transition-all duration-300 hover:shadow-md`}
             >
-              <img 
+              <LazyImage 
                 src={image.src} 
                 alt={image.alt}
-                className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" 
+                aspectRatio={image.aspectRatio}
+                className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(131,103,199,0.3)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
