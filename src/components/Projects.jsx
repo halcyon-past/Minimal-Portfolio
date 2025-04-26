@@ -2,29 +2,32 @@ export default function Projects({ projects }) {
   return (
     <section id="projects" className="relative py-8 px-4 md:px-8 bg-white md:-mt-32 z-10">
       <div className="container mx-auto">
-        <div className="flex flex-col items-end gap-6 md:w-3/5 ml-auto">
+        <div className="flex flex-col items-end gap-16 md:w-3/5 ml-auto">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="w-full bg-white p-4 rounded-lg border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-gray-300"
-            >
-              <div className="relative h-80 md:h-96 mb-4">
+            <div key={index} className="w-full">
+              {/* Project Image */}
+              <div className="w-full mb-4">
                 <img 
                   src={project.image} 
                   alt={project.alt} 
-                  className="absolute inset-0 w-full h-full rounded-lg object-cover" 
+                  className="w-full h-auto rounded-lg" 
                 />
               </div>
-              <h3 className={`text-xl font-semibold mb-2 ${project.color}`}>{project.title}</h3>
-              <p className="text-gray-600 mb-4 font-medium">{project.description}</p>
-              <a
-                href={project.link}
-                className={`text-${project.color} hover:text-[var(--amethyst)] font-bold`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Project →
-              </a>
+              
+              {/* Project Title with Index */}
+              <div className="mb-3">
+                <a href={project.link} className="inline-block" target="_blank" rel="noopener noreferrer">
+                  <h2 className="text-2xl md:text-3xl font-bold flex items-center border-b border-black pb-1">
+                    {String(index + 1).padStart(2, '0')}. {project.title}
+                    <span className="ml-2 transform rotate-45 text-xl">↗</span>
+                  </h2>
+                </a>
+              </div>
+              
+              {/* Project Description */}
+              <p className="text-base text-gray-800">
+                <span className="font-bold">What is it? </span> — {project.description}
+              </p>
             </div>
           ))}
         </div>

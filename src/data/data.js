@@ -1,7 +1,7 @@
 export const projects = [
   {
     title: 'GlideConnect',
-    description: 'Computer Vision, Desktop GUI',
+    description: 'Virtual Mouse Control using Gesture Recignition and Voice Assistant',
     image: '/assets/GlideConnect.jpeg',
     alt: 'GlideConnect platform interface',
     link: 'https://github.com/halcyon-past/Glide-Connect',
@@ -9,7 +9,7 @@ export const projects = [
   },
   {
     title: 'PAWsitive',
-    description: 'Web Development, Pet Healthcare Platform',
+    description: 'Centralized Platfrom for Pet Healthcare',
     image: '/assets/Pawsitive.png',
     alt: 'Pawsitive pet adoption app interface',
     link: 'https://github.com/halcyon-past/PAW-sitive',
@@ -17,7 +17,7 @@ export const projects = [
   },
   {
     title: 'EduHelper',
-    description: 'Streamlit and ML Application, Learning Platform',
+    description: 'AI Assistant to Chat with PDFs',
     image: '/assets/Eduhelper.png',
     alt: 'EduHelper learning platform interface',
     link: 'https://github.com/halcyon-past/EDUHELPER',
