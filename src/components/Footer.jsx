@@ -11,7 +11,7 @@ export default function Footer() {
             </p>
             <a
               href="mailto:aritrosaha2025@gmail.com"
-              className="text-[var(--chrysler-blue)] hover:text-[var(--amethyst)] font-medium transition-colors duration-300 flex items-center mt-2"
+              className="text-[var(--chrysler-blue)] hover:text-[var(--amethyst)] font-medium transition-colors duration-300 flex items-center mt-2 justify-center"
               aria-label="Email"
             >
               <i className="fas fa-envelope mr-2"></i>
@@ -28,7 +28,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 aria-label={social.ariaLabel}
               >
-                <i className={`${social.icon} text-xl`}></i>
+                <i className={`${social.icon} text-2xl`}></i>
               </a>
             ))}
           </div>
