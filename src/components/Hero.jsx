@@ -46,7 +46,7 @@ export default function Hero() {
             }`}
             style={{ transformOrigin: 'center' }}
           >
-            Welcome to Minimalism.
+            Welcome!! Discover what's next...
           </span>
         </div>
       )}
