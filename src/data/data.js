@@ -26,8 +26,8 @@ export const projects = [
 ];
 
 export const experience = [
-  { title: 'Associate Software Developer, Bristol Myers Squibb', duration: 'Joining Soon' },
-  { title: 'Data Science Intern, Bajaj Finserv Health', duration: 'Feb 2025 - Present' },
+  { title: 'Associate Software Developer, Bristol Myers Squibb', duration: 'July 2025 - Present' },
+  { title: 'Data Science Intern, Bajaj Finserv Health', duration: 'Feb 2025 - June 2025' },
   { title: 'Full Stack Developer Intern, Wipro', duration: 'Oct 2023 - Dec 2023' },
 ];
 
