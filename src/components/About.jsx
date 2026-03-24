@@ -21,12 +21,8 @@ export default function About() {
           </div>
           <div className="md:w-1/2 text-gray-700 cursor-default">
             <p className="mb-4 text-lg">
-              I am an <span className="font-medium text-[var(--amethyst)]">Associate Software Developer</span> at 
-              <span className="font-medium">Bristol Myers Squibb</span>. As a passionate 
-              <span className="font-medium text-[var(--chrysler-blue)]">Data Science Engineer</span> with a strong 
-              footing in <span className="font-medium text-[var(--amethyst)]">Full Stack Development</span>, I enjoy 
-              bridging the gap between backend logic and user-facing design while leveraging data to 
-              drive smart, impactful decisions.
+              I am an <span className="font-medium text-[var(--amethyst)]">Associate Software Developer</span> at <span className="font-medium">Bristol Myers Squibb</span>. As a passionate <span className="font-medium text-[var(--chrysler-blue)]">Data Science Engineer</span> with a strong 
+              footing in <span className="font-medium text-[var(--amethyst)]">Full Stack Development</span>, I enjoy bridging the gap between backend logic and user-facing design while leveraging data to drive smart, impactful decisions.
             </p>
             <p className="mb-4 text-lg">
               I've had the privilege of winning <span className="font-medium text-[var(--chrysler-blue)]">Hack4Bengal 3.0</span>—Eastern India's largest hackathon—where I led the charge on building impactful tech under pressure. Whether it's crafting <span className="font-medium text-[var(--amethyst)]">scalable web apps</span> or building <span className="font-medium text-[var(--tea-green)]">predictive models</span>, I thrive at the intersection of code, creativity, and real-world problem solving.
