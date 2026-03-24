@@ -1,7 +1,7 @@
 export const projects = [
   {
     title: 'GlideConnect',
-    description: 'Virtual Mouse Control using Gesture Recignition and Voice Assistant',
+    description: 'Virtual Mouse Control using Gesture Recognition and Voice Assistant',
     image: '/assets/GlideConnect.png',
     alt: 'GlideConnect platform interface',
     link: 'https://github.com/halcyon-past/Glide-Connect',
