@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import CurvyTextAnimation from './CurvyTextAnimation';
 
+import { createPortal } from 'react-dom';
+
 const greetings = ["Hello", "Bonjour", "Ciao", "Namaste", "Nomoshkar", "Welcome"];
 
 export default function Hero() {
@@ -35,33 +37,36 @@ export default function Hero() {
   
   return (
     <>
-      {/* Intro Animation */}
-      <AnimatePresence>
-        {showIntro && (
-          <motion.div 
-            className="fixed inset-0 z-[100] bg-gray-900 flex items-center justify-center custom-intro-cursor"
-            initial={{ y: 0 }}
-            exit={{ y: "-100%" }}
-            transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
-          >
-            <AnimatePresence>
-              <motion.div
-                key={greetings[greetingIndex]}
-                className="absolute text-white font-medium text-4xl md:text-7xl flex items-center gap-3 md:gap-4"
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -40 }}
-                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <div className="flex items-center gap-3 md:gap-5">
-                  <span className="inline-block w-2.5 h-2.5 md:w-4 md:h-4 bg-[var(--amethyst)] rounded-full mt-1 md:mt-2"></span>
-                  {greetings[greetingIndex]}
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Intro Animation via Portal to escape stacking contexts */}
+      {typeof window !== 'undefined' && createPortal(
+        <AnimatePresence>
+          {showIntro && (
+            <motion.div 
+              className="fixed inset-0 z-[99999] bg-gray-900 flex items-center justify-center custom-intro-cursor"
+              initial={{ y: 0 }}
+              exit={{ y: "-100%" }}
+              transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
+            >
+              <AnimatePresence>
+                <motion.div
+                  key={greetings[greetingIndex]}
+                  className="absolute text-white font-medium text-4xl md:text-7xl flex items-center gap-3 md:gap-4"
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -40 }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <div className="flex items-center gap-3 md:gap-5">
+                    <span className="inline-block w-2.5 h-2.5 md:w-4 md:h-4 bg-[var(--amethyst)] rounded-full mt-1 md:mt-2"></span>
+                    {greetings[greetingIndex]}
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
       
       {/* Main Content */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-24 relative bg-white cursor-default">
