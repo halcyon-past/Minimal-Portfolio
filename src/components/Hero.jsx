@@ -2,19 +2,32 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import CurvyTextAnimation from './CurvyTextAnimation';
 
+const greetings = ["Hello", "Bonjour", "Ciao", "Namaste", "Nomoshkar", "Welcome"];
+
 export default function Hero() {
   const [showIntro, setShowIntro] = useState(true);
+  const [greetingIndex, setGreetingIndex] = useState(0);
   
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     
-    // Total animation time for intro is ~2.2s before unmounting
+    // Cycle through greetings smoothly
+    const interval = setInterval(() => {
+      setGreetingIndex((prev) => {
+        if (prev < greetings.length - 1) return prev + 1;
+        clearInterval(interval);
+        return prev;
+      });
+    }, 380); // 380ms per greeting
+
+    // Total animation time for intro before unmounting
     const completeTimer = setTimeout(() => {
       setShowIntro(false);
       document.body.style.overflow = '';
-    }, 2200);
+    }, 3000);
     
     return () => {
+      clearInterval(interval);
       clearTimeout(completeTimer);
       document.body.style.overflow = '';
     };
@@ -26,25 +39,26 @@ export default function Hero() {
       <AnimatePresence>
         {showIntro && (
           <motion.div 
-            className="fixed inset-0 z-[100] bg-white flex items-center justify-center"
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, ease: 'easeInOut' }}
+            className="fixed inset-0 z-[100] bg-gray-900 flex items-center justify-center custom-intro-cursor"
+            initial={{ y: 0 }}
+            exit={{ y: "-100%" }}
+            transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
           >
-            <motion.span 
-              className="text-[var(--amethyst)] font-light text-6xl md:text-8xl text-center"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.5, y: -50, opacity: 0 }}
-              transition={{ 
-                duration: 1.5, 
-                ease: "easeInOut",
-                exit: { duration: 0.4 } 
-              }}
-              style={{ transformOrigin: 'center' }}
-            >
-              Welcome!! Discover what's next...
-            </motion.span>
+            <AnimatePresence>
+              <motion.div
+                key={greetings[greetingIndex]}
+                className="absolute text-white font-medium text-4xl md:text-7xl flex items-center gap-3 md:gap-4"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -40 }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <div className="flex items-center gap-3 md:gap-5">
+                  <span className="inline-block w-2.5 h-2.5 md:w-4 md:h-4 bg-[var(--amethyst)] rounded-full mt-1 md:mt-2"></span>
+                  {greetings[greetingIndex]}
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </motion.div>
         )}
       </AnimatePresence>

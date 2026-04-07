@@ -27,6 +27,27 @@ p, span, div {
 
 html{
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--amethyst) transparent;
+}
+
+/* Custom Webkit Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--amethyst);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--chrysler-blue);
 }
 
 .font-bold {
