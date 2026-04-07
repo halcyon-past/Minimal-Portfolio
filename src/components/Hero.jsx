@@ -52,6 +52,27 @@ export default function Hero() {
       {/* Main Content */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-24 relative bg-white cursor-default">
         <div className="container mx-auto px-4 md:px-8 overflow-hidden">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: showIntro ? 20 : 0, opacity: showIntro ? 0 : 1 }}
+            transition={{ duration: 0.8, delay: showIntro ? 0 : 0.1, ease: "easeOut" }}
+            className="mb-6 inline-block"
+          >
+            <a 
+              href="https://siliconsync.aritro.cloud/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-1.5 text-sm md:text-sm font-medium text-[var(--chrysler-blue)] bg-[var(--honeydew)] hover:bg-[var(--amethyst)] hover:text-white border border-[var(--amethyst)]/20 rounded-full transition-all duration-300"
+            >
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--amethyst)] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[var(--chrysler-blue)]"></span>
+              </span>
+              Check out my daily AI news blog
+              <span>→</span>
+            </a>
+          </motion.div>
+
           <motion.h1 
             className="text-4xl md:text-6xl font-medium mb-8 text-gray-900"
             initial={{ y: 50, opacity: 0 }}
