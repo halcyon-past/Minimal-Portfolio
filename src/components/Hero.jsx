@@ -1,31 +1,21 @@
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import CurvyTextAnimation from './CurvyTextAnimation';
 
 export default function Hero() {
-  const [introState, setIntroState] = useState('initial');
+  const [showIntro, setShowIntro] = useState(true);
   
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     
-    const initialTimer = setTimeout(() => {
-      setIntroState('intro');
-      
-      const startTimer = setTimeout(() => {
-        setIntroState('transitioning');
-        
-        const completeTimer = setTimeout(() => {
-          setIntroState('complete');
-          document.body.style.overflow = '';
-        }, 400);
-        
-        return () => clearTimeout(completeTimer);
-      }, 1500);
-      
-      return () => clearTimeout(startTimer);
-    }, 100);
+    // Total animation time for intro is ~2.2s before unmounting
+    const completeTimer = setTimeout(() => {
+      setShowIntro(false);
+      document.body.style.overflow = '';
+    }, 2200);
     
     return () => {
-      clearTimeout(initialTimer);
+      clearTimeout(completeTimer);
       document.body.style.overflow = '';
     };
   }, []);
@@ -33,51 +23,61 @@ export default function Hero() {
   return (
     <>
       {/* Intro Animation */}
-      {introState !== 'complete' && (
-        <div 
-          className={`fixed inset-0 z-[100] bg-white flex items-center justify-center transition-all duration-500 ease-in-out ${
-            introState === 'transitioning' ? 'opacity-0 pointer-events-none' : 'opacity-100'
-          }`}
-        >
-          <span 
-            className={`text-[var(--amethyst)] font-light text-6xl md:text-8xl transition-all duration-600 transform text-center ${
-              introState === 'initial' ? 'scale-0 opacity-0' : 
-              introState === 'transitioning' ? 'scale-50 -translate-y-16 -translate-x-8' : 'scale-100 opacity-100'
-            }`}
-            style={{ transformOrigin: 'center' }}
+      <AnimatePresence>
+        {showIntro && (
+          <motion.div 
+            className="fixed inset-0 z-[100] bg-white flex items-center justify-center"
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
           >
-            Welcome!! Discover what's next...
-          </span>
-        </div>
-      )}
+            <motion.span 
+              className="text-[var(--amethyst)] font-light text-6xl md:text-8xl text-center"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.5, y: -50, opacity: 0 }}
+              transition={{ 
+                duration: 1.5, 
+                ease: "easeInOut",
+                exit: { duration: 0.4 } 
+              }}
+              style={{ transformOrigin: 'center' }}
+            >
+              Welcome!! Discover what's next...
+            </motion.span>
+          </motion.div>
+        )}
+      </AnimatePresence>
       
       {/* Main Content */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-24 relative bg-white cursor-default">
-        <div className="container mx-auto px-4 md:px-8">
-          <h1 
-            className={`text-4xl md:text-6xl font-medium mb-8 text-gray-900 transition-all duration-500 ${
-              introState === 'complete' ? 'opacity-100' : 'opacity-0'
-            }`}
+        <div className="container mx-auto px-4 md:px-8 overflow-hidden">
+          <motion.h1 
+            className="text-4xl md:text-6xl font-medium mb-8 text-gray-900"
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: showIntro ? 50 : 0, opacity: showIntro ? 0 : 1 }}
+            transition={{ duration: 0.8, delay: showIntro ? 0 : 0.2, ease: "easeOut" }}
           >
             Hi, I'm <span className="text-[var(--amethyst)] font-semibold">Aritro Saha</span>.
-          </h1>
+          </motion.h1>
           
-          <p 
-            className={`text-lg md:text-xl max-w-3xl text-gray-700 transition-opacity duration-500 delay-100 ${
-              introState === 'complete' ? 'opacity-100' : 'opacity-0'
-            }`}
+          <motion.p 
+            className="text-lg md:text-xl max-w-3xl text-gray-700"
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: showIntro ? 30 : 0, opacity: showIntro ? 0 : 1 }}
+            transition={{ duration: 0.8, delay: showIntro ? 0 : 0.4, ease: "easeOut" }}
           >
             A <span className="font-medium">versatile</span> <span className="font-medium">full-stack developer</span> and <span className="font-medium">data science engineer</span> focused on creating <span className="font-medium">unique</span> and <span className="bg-[var(--chrysler-blue)] text-[var(--honeydew)] font-medium px-1 rounded">user-centric products</span>, currently working at <span className="font-medium">Bristol Myers Squibb</span>.
-          </p>
+          </motion.p>
         </div>
         
-        <div 
-          className={`transition-opacity duration-500 delay-200 ${
-            introState === 'complete' ? 'opacity-100' : 'opacity-0'
-          }`}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: showIntro ? 0 : 1 }}
+          transition={{ duration: 1, delay: showIntro ? 0 : 0.8 }}
         >
           <CurvyTextAnimation />
-        </div>
+        </motion.div>
       </section>
     </>
   );

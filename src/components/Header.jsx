@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import logo from '/logo.png';
 
 export default function Header() {
@@ -32,10 +33,21 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 border-b border-gray-200/50 bg-white/75 backdrop-blur-md">
+    <motion.header 
+      className="fixed top-0 w-full z-50 border-b border-gray-200/50 bg-white/75 backdrop-blur-md"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <nav className="container mx-auto px-4 md:px-8 py-6 flex justify-between items-center">
         <Link to="/" className="flex items-center z-50 relative">
-          <img src={logo} alt="Aritro Saha Logo" className="md:h-14 h-10" />
+          <motion.img 
+            src={logo} 
+            alt="Aritro Saha Logo" 
+            className="md:h-14 h-10" 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          />
         </Link>
         
         {/* Hamburger button for mobile */}
@@ -52,53 +64,74 @@ export default function Header() {
         </div>
         
         {/* Desktop menu */}
-        <div className="hidden md:flex space-x-6 font-normal">
-          <button onClick={handleProjectsClick} className="hover:text-[var(--amethyst)] transition-colors duration-300">
+        <div className="hidden md:flex space-x-8 font-normal items-center">
+          <button onClick={handleProjectsClick} className="relative group text-gray-800 hover:text-[var(--amethyst)] transition-colors duration-300">
             Projects
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--amethyst)] transition-all duration-300 group-hover:w-full"></span>
           </button>
-          <Link to="/about" className="hover:text-[var(--amethyst)] transition-colors duration-300">About</Link>
-          <Link to="/gallery" className="hover:text-[var(--amethyst)] transition-colors duration-300">Gallery</Link>
+          <Link to="/about" className="relative group text-gray-800 hover:text-[var(--amethyst)] transition-colors duration-300">
+            About
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--amethyst)] transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+          <Link to="/gallery" className="relative group text-gray-800 hover:text-[var(--amethyst)] transition-colors duration-300">
+            Gallery
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--amethyst)] transition-all duration-300 group-hover:w-full"></span>
+          </Link>
         </div>
         
         {/* Full screen mobile menu - fixed positioning to cover entire viewport */}
-        <div 
-          className={`fixed top-0 left-0 w-full h-full bg-white z-40 transition-transform duration-500 ease-in-out transform ${menuOpen ? 'translate-y-0' : '-translate-y-full'} md:hidden`}
-          style={{height: '100vh'}}
-        >
-          <div className="flex flex-col justify-center items-center h-full">
-            <div className="flex flex-col space-y-8 text-2xl font-light">
-              <button 
-                onClick={handleProjectsClick} 
-                className={`relative overflow-hidden group transition-transform duration-300 transform ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'}`}
-                style={{ transitionDelay: '150ms' }}
-              >
-                <span className="block">Projects</span>
-                <span className="h-0.5 w-0 bg-[var(--amethyst)] absolute bottom-0 left-0 group-hover:w-full transition-all duration-300"></span>
-              </button>
-              
-              <Link 
-                to="/about" 
-                onClick={() => setMenuOpen(false)}
-                className={`relative overflow-hidden group transition-transform duration-300 transform ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'}`}
-                style={{ transitionDelay: '250ms' }}
-              >
-                <span className="block">About</span>
-                <span className="h-0.5 w-0 bg-[var(--amethyst)] absolute bottom-0 left-0 group-hover:w-full transition-all duration-300"></span>
-              </Link>
-              
-              <Link 
-                to="/gallery" 
-                onClick={() => setMenuOpen(false)}
-                className={`relative overflow-hidden group transition-transform duration-300 transform ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'}`}
-                style={{ transitionDelay: '350ms' }}
-              >
-                <span className="block">Gallery</span>
-                <span className="h-0.5 w-0 bg-[var(--amethyst)] absolute bottom-0 left-0 group-hover:w-full transition-all duration-300"></span>
-              </Link>
-            </div>
-          </div>
-        </div>
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div 
+              className="fixed top-0 left-0 w-full h-[100vh] bg-white z-40 flex flex-col justify-center items-center md:hidden"
+              initial={{ y: "-100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-100%" }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+            >
+              <div className="flex flex-col space-y-8 text-3xl font-light items-center">
+                <motion.button 
+                  onClick={handleProjectsClick} 
+                  className="relative group hover:text-[var(--amethyst)]"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <span className="block">Projects</span>
+                </motion.button>
+                
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <Link 
+                    to="/about" 
+                    onClick={() => setMenuOpen(false)}
+                    className="relative group hover:text-[var(--amethyst)]"
+                  >
+                    <span className="block">About</span>
+                  </Link>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <Link 
+                    to="/gallery" 
+                    onClick={() => setMenuOpen(false)}
+                    className="relative group hover:text-[var(--amethyst)]"
+                  >
+                    <span className="block">Gallery</span>
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
-    </header>
+    </motion.header>
   );
 }
