@@ -65,9 +65,9 @@ export default function Portfolio() {
         
         <div className="min-h-screen flex flex-col bg-white text-gray-900 font-family-poppins font-normal">
           <Header />
-          <div className="flex-grow pt-16">
+          <main className="flex-grow pt-16">
             <AnimatedRoutes />
-          </div>
+          </main>
           <Footer />
         </div>
       </Router>

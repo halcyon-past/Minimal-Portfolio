@@ -48,11 +48,11 @@ export default function Seo({ title, description, url, image = 'https://www.arit
       <meta property="og:image" content={image} />
 
       {/* Twitter */}
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={`https://www.aritro.cloud${url}`} />
-      <meta property="twitter:title" content={fullTitle} />
-      <meta property="twitter:description" content={finalDescription} />
-      <meta property="twitter:image" content={image} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content={`https://www.aritro.cloud${url}`} />
+      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:description" content={finalDescription} />
+      <meta name="twitter:image" content={image} />
 
       {/* Structured Data */}
       <script type="application/ld+json">
