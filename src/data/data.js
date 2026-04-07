@@ -6,6 +6,7 @@ export const projects = [
     alt: 'GlideConnect platform interface',
     link: 'https://github.com/halcyon-past/Glide-Connect',
     color: 'text-[var(--chrysler-blue)]',
+    HomepageVisibility: true,
   },
   {
     title: 'PAWsitive',
@@ -14,6 +15,7 @@ export const projects = [
     alt: 'Pawsitive pet healthcare platform interface',
     link: 'https://github.com/halcyon-past/PAW-sitive',
     color: 'text-[var(--amethyst)]',
+    HomepageVisibility: true,
   },
   {
     title: 'EduHelper',
@@ -22,6 +24,7 @@ export const projects = [
     alt: 'EduHelper learning platform interface',
     link: 'https://github.com/halcyon-past/EDUHELPER',
     color: 'text-[var(--celadon)]',
+    HomepageVisibility: true,
   },
 ];
 

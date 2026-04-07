@@ -27,7 +27,7 @@ function AnimatedRoutes() {
             <PageTransition>
               <Seo title="Home" url="/" />
               <Hero />
-              <Projects projects={projects} />
+              <Projects projects={projects.filter(project => project.HomepageVisibility !== false)} />
             </PageTransition>
           }
         />

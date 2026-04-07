@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Command } from 'cmdk';
 import { useNavigate } from 'react-router-dom';
-import { FileText, User, Image, Link as LinkIcon, Command as CommandIcon, Mail } from 'lucide-react';
+import { FileText, User, Image, Link as LinkIcon, Command as CommandIcon, Mail, Folder } from 'lucide-react';
+import { projects } from '../../data/data';
 import './CommandPalette.css';
 
 export default function CommandPalette() {
@@ -53,9 +54,29 @@ export default function CommandPalette() {
               <Command.Item onSelect={() => runCommand(() => navigate('/about'))}>
                 <User size={16} /> About Me
               </Command.Item>
+              <Command.Item onSelect={() => runCommand(() => {
+                if (window.location.pathname !== '/') {
+                  navigate('/');
+                  setTimeout(() => {
+                    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                } else {
+                  document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+                }
+              })}>
+                <Folder size={16} /> Projects
+              </Command.Item>
               <Command.Item onSelect={() => runCommand(() => navigate('/gallery'))}>
                 <Image size={16} /> Gallery
               </Command.Item>
+            </Command.Group>
+
+            <Command.Group heading="Projects" className="cmdk-group">
+              {projects.map((project, index) => (
+                <Command.Item key={index} onSelect={() => runCommand(() => window.open(project.link, '_blank'))}>
+                  <i className={`fab fa-github opacity-70 w-4 h-4 flex items-center justify-center ${project.color || ''}`}></i> {project.title}
+                </Command.Item>
+              ))}
             </Command.Group>
 
             <Command.Group heading="Documents" className="cmdk-group">
