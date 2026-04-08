@@ -8,6 +8,8 @@ import AboutPage from './pages/AboutPage';
 import GalleryPage from './pages/GalleryPage';
 import TypingTestPage from './pages/TypingTestPage';
 import GamesCatalogPage from './pages/GamesCatalogPage';
+import SnakeGamePage from './pages/SnakeGamePage';
+import DataPipelinePage from './pages/DataPipelinePage';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Seo from './components/common/Seo';
@@ -66,6 +68,24 @@ function AnimatedRoutes() {
             <PageTransition>
               <Seo title="Developer Speed Test" url="/play/typing-test" description="Test your coding typing speed with this minimalist terminal-style speed test game!" />
               <TypingTestPage />
+            </PageTransition>
+          } 
+        />
+        <Route 
+          path="/play/snake" 
+          element={
+            <PageTransition>
+              <Seo title="Minimalist Snake" url="/play/snake" description="Play the classic Snake game but you collect tech stacks instead of apples!" />
+              <SnakeGamePage />
+            </PageTransition>
+          } 
+        />
+        <Route 
+          path="/play/data-pipeline" 
+          element={
+            <PageTransition>
+              <Seo title="Data Pipeline Puzzle" url="/play/data-pipeline" description="Connect the nodes to build a data pipeline without crossing lines. A logic puzzle for data science engineers." />
+              <DataPipelinePage />
             </PageTransition>
           } 
         />
