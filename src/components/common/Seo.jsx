@@ -2,8 +2,9 @@ import { Helmet } from 'react-helmet-async';
 
 export default function Seo({ title, description, url, image = 'https://www.aritro.cloud/logo.png', type = 'website' }) {
   const fullTitle = `${title} | Aritro Saha`;
-  const defaultDescription = "Portfolio of Aritro Saha, a Software Developer specializing in full-stack development, data science, and AI. Discover my projects, experience, and skills.";
+  const defaultDescription = "Portfolio of Aritro Saha, a Software Developer specializing in full-stack web development, data science, and AI. Discover my interactive developer arcade, projects, experience, and skills.";
   const finalDescription = description || defaultDescription;
+  const keywords = "Aritro Saha, Software Developer, Portfolio, Full-Stack, React, Node.js, Python, Databricks, AI, Machine Learning, Developer Arcade, Snake Game, Data Pipeline Puzzle, Typing Test, Web Development, Data Science";
 
   // JSON-LD structured data for rich search results (Person and WebSite)
   const structuredData = {
@@ -38,6 +39,8 @@ export default function Seo({ title, description, url, image = 'https://www.arit
       <title>{fullTitle}</title>
       <meta name="title" content={fullTitle} />
       <meta name="description" content={finalDescription} />
+      <meta name="keywords" content={keywords} />
+      <meta name="author" content="Aritro Saha" />
       <link rel="canonical" href={`https://www.aritro.cloud${url}`} />
 
       {/* Open Graph / Facebook */}
