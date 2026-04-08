@@ -139,7 +139,7 @@ export const GAMES = [
     color: 'var(--chrysler-blue)'
   },
   {
-    id: 'coming-soon-1',
+    id: 'data-pipeline-puzzle',
     title: 'Data Pipeline Puzzle',
     description: 'Connect the nodes to build a data pipeline without crossing lines. A logic puzzle for data science engineers.',
     icon: <BrainCircuit className="w-8 h-8 md:w-10 md:h-10 text-[var(--celadon)]" />,
@@ -148,7 +148,7 @@ export const GAMES = [
     color: 'text-[var(--celadon)]'
   },
   {
-    id: 'coming-soon-2',
+    id: 'minimalist-snake',
     title: 'Minimalist Snake',
     description: 'The Python developer edition of the classic game. Collect tech stack icons on an infinite grid.',
     icon: <Gamepad2 className="w-8 h-8 md:w-10 md:h-10 text-[#ffbd2e]" />,

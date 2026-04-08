@@ -101,8 +101,9 @@ export default function DataPipelinePage() {
 
     const getConnections = (cell, isFixed) => {
         let ports = [...PIPE_TYPES[cell.type]];
-        // Rotate the ports array right by cell.rotations
-        for(let i=0; i<cell.rotations; i++) {
+        // Rotate the ports array right by cell.rotations % 4
+        const effectiveRotations = cell.rotations % 4;
+        for(let i=0; i<effectiveRotations; i++) {
             ports.unshift(ports.pop());
         }
         return ports;
@@ -144,7 +145,10 @@ export default function DataPipelinePage() {
     // Check win condition (End node receives flow)
     const endIdx = board.findIndex(cell => cell.type === 'E');
     if (isFlowing[endIdx] && status === 'playing') {
-      setStatus('solved');
+      setStatus('winning');
+      setTimeout(() => {
+        setStatus('solved');
+      }, 1000);
     }
 
   }, [board, status, currentLevel.size]);
@@ -155,7 +159,7 @@ export default function DataPipelinePage() {
 
     setBoard(prev => {
       const newBoard = [...prev];
-      newBoard[index] = { ...newBoard[index], rotations: (newBoard[index].rotations + 1) % 4 };
+      newBoard[index] = { ...newBoard[index], rotations: newBoard[index].rotations + 1 };
       return newBoard;
     });
     setMoves(m => m + 1);
@@ -204,6 +208,15 @@ export default function DataPipelinePage() {
               <button onClick={startGame} className="flex items-center gap-2 px-6 py-3 bg-[var(--celadon)] text-white font-bold rounded-full hover:shadow-lg hover:scale-105 transition-all">
                 <Play className="w-5 h-5" /> Start Level {levelIndex + 1}
               </button>
+            </div>
+          )}
+
+          {status === 'winning' && (
+            <div className="absolute inset-0 bg-white/70 backdrop-blur-sm z-10 flex flex-col items-center justify-center p-4 text-center rounded-lg">
+              <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", bounce: 0.5 }}>
+                <CheckCircle2 className="w-20 h-20 text-[var(--celadon)] mb-4 drop-shadow-md" />
+              </motion.div>
+              <h2 className="text-3xl font-bold text-gray-800 drop-shadow-sm">You Won!</h2>
             </div>
           )}
 
