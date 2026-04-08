@@ -6,11 +6,16 @@ import { createPortal } from 'react-dom';
 
 const greetings = ["Hello", "Bonjour", "Ciao", "Namaste", "Nomoshkar", "Welcome"];
 
+let hasPlayedIntro = false;
+
 export default function Hero() {
-  const [showIntro, setShowIntro] = useState(true);
+  const [showIntro, setShowIntro] = useState(!hasPlayedIntro);
   const [greetingIndex, setGreetingIndex] = useState(0);
   
   useEffect(() => {
+    if (!showIntro) return;
+
+    hasPlayedIntro = true;
     document.body.style.overflow = 'hidden';
     
     // Cycle through greetings smoothly
@@ -33,7 +38,7 @@ export default function Hero() {
       clearTimeout(completeTimer);
       document.body.style.overflow = '';
     };
-  }, []);
+  }, [showIntro]);
   
   return (
     <>
