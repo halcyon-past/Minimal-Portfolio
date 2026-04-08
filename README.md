@@ -1,12 +1,28 @@
-# React + Vite
+# Aritro Saha | Developer Portfolio & Arcade 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal slice of the internet! This isn't just a static resume—it's a fully interactive, mobile-first experience designed to showcase my path as a Software Developer, Data Scientist, and AI enthusiast.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **👾 Developer Arcade**: Take a break and play some natively built mini-games!
+  - **🐍 AI Snake**: A classic with a twist. Eat the `🤖` icon for bonus points! (Full mobile D-Pad support)
+  - **🧩 Data Pipeline**: A matrix-based puzzle game testing your logic to connect the nodes smoothly.
+  - **⌨️ Typing Test**: Test your coding speed with a minimalist interface.
+- **🔍 Global Command Palette**: Hit `Cmd+K` or `Ctrl+K` to instantly jump between pages, games, and sections like a true power user.
+- **⚡ Fluid Animations**: Smooth page transitions, custom curvy text reveals, and micro-interactions powered by Framer Motion.
+- **📱 Responsive & Accessible**: From a custom touch joystick for mobile games to seamlessly hidden semantic HTML for SEO crawlers.
+- **🎨 Minimalist Design**: A clean, distraction-free environment that lets the projects and content shine.
 
-## Expanding the ESLint configuration
+## 🔗 Connect with me
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+I'm always open to discussing new opportunities, collaborations, or just chatting about tech!
+
+- **LinkedIn**: [in/aritro-saha](https://linkedin.com/in/aritro-saha)
+- **GitHub**: [@halcyon-past](https://github.com/halcyon-past)
+- **LeetCode**: [AritroSaha](https://leetcode.com/u/AritroSaha/)
+- **YouTube**: [@veripyed](https://www.youtube.com/@veripyed)
+- **Email**: [aritrosaha2025@gmail.com](mailto:aritrosaha2025@gmail.com)
+
+---
+
+*Built with passion, React, Tailwind, and Vite.*
