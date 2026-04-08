@@ -62,6 +62,25 @@ function TiltCard({ project }) {
 }
 
 export default function Projects({ projects }) {
+  const handleShare = async (project) => {
+    const shareText = `\n\nHey 👋,\n\nCheck out ${project.title} 📍, built by Aritro Saha! 👨‍💻\n\n✨ This project is: ${project.description}`;
+    
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: `${project.title} by Aritro Saha`,
+          text: shareText,
+          url: project.link,
+        });
+      } catch (error) {
+        console.error('Error sharing project:', error);
+      }
+    } else {
+      navigator.clipboard.writeText(`${shareText}🔗 Link: ${project.link}`);
+      alert('Project details and link copied to clipboard!');
+    }
+  };
+
   return (
     <section id="projects" className="relative py-8 px-4 md:px-8 bg-white md:-mt-32 z-10">
       <div className="container mx-auto relative">
@@ -78,7 +97,7 @@ export default function Projects({ projects }) {
             >
               <TiltCard project={project} />
               
-              <div className="mb-3 mt-6">
+              <div className="mb-3 mt-6 flex justify-between items-center">
                 <a href={project.link} className="inline-block group" target="_blank" rel="noopener noreferrer">
                   <h2 className="text-2xl md:text-3xl font-medium flex items-center border-b border-black pb-1 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bottom-[-2px] after:left-0 after:bg-black after:origin-bottom-right after:transition-transform after:duration-300 group-hover:after:scale-x-100 group-hover:after:origin-bottom-left">
                     {String(index + 1).padStart(2, '0')}. {project.title}
@@ -92,6 +111,14 @@ export default function Projects({ projects }) {
                     </motion.span>
                   </h2>
                 </a>
+                <button 
+                  onClick={() => handleShare(project)}
+                  className="text-gray-500 hover:text-[var(--amethyst)] transition-colors duration-300"
+                  aria-label={`Share ${project.title}`}
+                  title={`Share ${project.title}`}
+                >
+                  <i className="fas fa-share-alt text-xl"></i>
+                </button>
               </div>
               <p className="text-base text-gray-800 leading-relaxed">
                 <span className="font-medium">What is it? </span> — {project.description}
