@@ -204,7 +204,7 @@ export default function SnakeGamePage() {
         <div className="flex justify-between items-center mb-6">
           <div>
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Python <span className="text-[#ffbd2e]">Snake</span></h1>
-            <p className="text-sm text-gray-500">Consume Tech and avoid hitting the walls!</p>
+            <p className="text-sm text-gray-500">Consume Tech and avoid hitting the walls! Robot gives bonus points</p>
           </div>
           <div className="text-right">
             <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">Score: <span className="text-lg text-[#ffbd2e]">{score}</span></div>
@@ -302,8 +302,10 @@ export default function SnakeGamePage() {
             <i className="fas fa-chevron-right text-xl"></i>
           </button>
 
-          {/* Center Joystick indent */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-gray-200/80 rounded-full shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] pointer-events-none"></div>
+          {/* Center Joystick indent / Score */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-gray-200/80 rounded-full shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] pointer-events-none flex items-center justify-center">
+            <span className="text-xl font-bold text-gray-700">{score}</span>
+          </div>
         </div>
       </motion.div>
     </div>
