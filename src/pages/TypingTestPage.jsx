@@ -143,6 +143,24 @@ export default function TypingTestPage() {
 
   const currentWordIndex = typedHistory.length;
 
+  const activeWordRef = useRef(null);
+  const containerTopRef = useRef(null);
+  const [lineOffset, setLineOffset] = useState(0);
+
+  useEffect(() => {
+    if (status === 'playing' && activeWordRef.current && containerTopRef.current) {
+      // Find the current line's top offset relative to the container
+      const top = activeWordRef.current.offsetTop;
+      
+      // If it's on the first line (top === 0 or close to 0) we don't want to move it to top right away if it's already there
+      // We'll just shift offset to top. Since we only want to "move up when ONE line typing is done", 
+      // keeping lineOffset to top means it perfectly aligns the current line at the top.
+      setLineOffset(Math.max(0, top));
+    } else if (status === 'waiting') {
+      setLineOffset(0);
+    }
+  }, [currentWordIndex, status]);
+
   return (
     <div 
       className="relative max-w-5xl mx-auto px-4 py-12 md:py-20 min-h-[85vh] flex flex-col justify-start md:justify-center items-center font-sans"
@@ -248,7 +266,7 @@ export default function TypingTestPage() {
               </motion.div>
             </AnimatePresence>
           ) : (
-            <div className="relative text-xl md:text-3xl leading-[1.8] min-h-[160px] md:min-h-[220px]">
+            <div className="relative text-xl md:text-3xl leading-[1.8] h-[160px] md:h-[220px] overflow-hidden rounded-lg">
               
               {status === 'waiting' && (
                 <div className="absolute inset-0 flex items-center justify-center z-10 backdrop-blur-[2px] bg-white/40 rounded-lg">
@@ -261,9 +279,12 @@ export default function TypingTestPage() {
                 </div>
               )}
               
-              <div className="flex flex-wrap gap-x-4 gap-y-3 opacity-90 blur-[0.3px]">
-                {words.slice(Math.max(0, currentWordIndex - 10), currentWordIndex + 25).map((word, wIdx) => {
-                  const actualIndex = Math.max(0, currentWordIndex - 10) + wIdx;
+              <div 
+                className="flex flex-wrap gap-x-4 gap-y-3 transition-transform duration-300 ease-out will-change-transform"
+                ref={containerTopRef}
+                style={{ transform: `translateY(-${lineOffset}px)` }}
+              >
+                {words.map((word, actualIndex) => {
                   const isCurrent = actualIndex === currentWordIndex;
                   const isPast = actualIndex < currentWordIndex;
                   
@@ -278,6 +299,7 @@ export default function TypingTestPage() {
                   return (
                     <div 
                       key={actualIndex} 
+                      ref={isCurrent ? activeWordRef : null}
                       className={`relative flex ${isCurrent ? 'bg-gray-100 rounded px-1 -mx-1' : ''}`} // highlight box for current word
                     >
                       {/* Base word */}
