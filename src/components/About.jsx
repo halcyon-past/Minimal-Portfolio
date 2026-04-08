@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import profileImage from '../assets/profile.jpg';
+import profileImage from '../assets/profile.png';
 import { experience, education } from '../data/data';
 import LazyImage from './common/LazyImage';
 
