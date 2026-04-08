@@ -77,6 +77,9 @@ export default function Header() {
             Gallery
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--amethyst)] transition-all duration-300 group-hover:w-full"></span>
           </Link>
+          <Link to="/play" className="relative group flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold rounded-md bg-[var(--amethyst)]/10 text-[var(--chrysler-blue)] hover:bg-[var(--amethyst)] hover:text-white transition-all duration-300 border border-[var(--amethyst)]/30 shadow-[0_0_10px_var(--amethyst)]/20">
+            <i className="fas fa-terminal"></i> Play
+          </Link>
         </div>
         
         {/* Full screen mobile menu - fixed positioning to cover entire viewport */}
@@ -125,6 +128,20 @@ export default function Header() {
                     className="relative group hover:text-[var(--amethyst)]"
                   >
                     <span className="block">Gallery</span>
+                  </Link>
+                </motion.div>
+
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  <Link 
+                    to="/play" 
+                    onClick={() => setMenuOpen(false)}
+                    className="relative group text-[var(--chrysler-blue)] font-medium flex items-center justify-center gap-2"
+                  >
+                    <i className="fas fa-terminal"></i> Play Game
                   </Link>
                 </motion.div>
               </div>

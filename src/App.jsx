@@ -6,6 +6,8 @@ import Hero from './components/Hero';
 import Projects from './components/Projects';
 import AboutPage from './pages/AboutPage';
 import GalleryPage from './pages/GalleryPage';
+import TypingTestPage from './pages/TypingTestPage';
+import GamesCatalogPage from './pages/GamesCatalogPage';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Seo from './components/common/Seo';
@@ -46,6 +48,24 @@ function AnimatedRoutes() {
             <PageTransition>
               <Seo title="Gallery" url="/gallery" description="Explore personal moments, events, and projects associated with Aritro Saha." />
               <GalleryPage />
+            </PageTransition>
+          } 
+        />
+        <Route 
+          path="/play" 
+          element={
+            <PageTransition>
+              <Seo title="The Arcade" url="/play" description="A collection of minimalist, developer-themed games built directly into my portfolio. Take a break and challenge yourself!" />
+              <GamesCatalogPage />
+            </PageTransition>
+          } 
+        />
+        <Route 
+          path="/play/typing-test" 
+          element={
+            <PageTransition>
+              <Seo title="Developer Speed Test" url="/play/typing-test" description="Test your coding typing speed with this minimalist terminal-style speed test game!" />
+              <TypingTestPage />
             </PageTransition>
           } 
         />
