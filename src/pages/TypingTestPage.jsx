@@ -129,7 +129,7 @@ export default function TypingTestPage() {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: `Developer Typing Test Score\n`,
+          title: `𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿 𝗧𝘆𝗽𝗶𝗻𝗴 𝗧𝗲𝘀𝘁 𝗦𝗰𝗼𝗿𝗲\n`,
           text: shareText,
         });
       } catch (error) {
