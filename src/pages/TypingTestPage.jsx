@@ -138,7 +138,7 @@ export default function TypingTestPage() {
   };
 
   const handleShare = async () => {
-    const shareText = `🚀 Just hit ${wpm} WPM with ${accuracy}% accuracy on the Developer Typing Test! ⌨️\n\nCan you code faster? 💻 \nTry to beat my score on Aritro's Portfolio:\nhttps://www.aritro.cloud/play/typing-test`;
+    const shareText = `🚀 Just hit ${wpm} WPM with ${accuracy}% accuracy on the Developer Typing Test! ⌨️\n\nCan you code faster? 💻 \nTry to beat my score on Aritro's Portfolio:\n${window.location.href}`;
     
     if (navigator.share) {
       try {
