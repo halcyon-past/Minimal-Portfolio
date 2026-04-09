@@ -82,11 +82,11 @@ export default function CommandPalette() {
               ))}
             </Command.Group>
 
-            <Command.Group heading="Documents" className="cmdk-group">
+            {/* <Command.Group heading="Documents" className="cmdk-group">
               <Command.Item onSelect={() => runCommand(() => window.open('/assets/resume/Aritro-Saha-Resume.pdf', '_blank'))}>
                 <FileText size={16} /> View Resume
               </Command.Item>
-            </Command.Group>
+            </Command.Group> */}
 
             <Command.Group heading="News" className="cmdk-group">
               <Command.Item onSelect={() => runCommand(() => window.open('https://siliconsync.aritro.cloud/', '_blank'))}>
