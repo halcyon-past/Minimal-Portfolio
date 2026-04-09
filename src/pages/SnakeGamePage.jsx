@@ -11,7 +11,7 @@ const AI_ICON = '🤖';
 const generateFood = (snake) => {
   let newFood;
   while (true) {
-    const isAi = Math.random() > 0.8; // 20% chance for AI icon
+    const isAi = Math.random() > 0.95; // 5% chance for AI icon
     newFood = {
       x: Math.floor(Math.random() * GRID_SIZE),
       y: Math.floor(Math.random() * GRID_SIZE),
