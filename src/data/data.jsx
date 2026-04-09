@@ -1,5 +1,5 @@
 import React from 'react';
-import { Keyboard, BrainCircuit, Gamepad2 } from 'lucide-react';
+import { Keyboard, BrainCircuit, Gamepad2, Grid3X3 } from 'lucide-react';
 
 export const projects = [
   {
@@ -155,5 +155,14 @@ export const GAMES = [
     path: '/play/snake',
     status: 'Available',
     color: 'text-[#ffbd2e]'
+  },
+  {
+    id: 'sudoku',
+    title: 'Sudoku',
+    description: 'Classic logic-based number placement puzzle.',
+    icon: <Grid3X3 className="w-8 h-8 md:w-10 md:h-10 text-[var(--amethyst)]" />,
+    path: '#',
+    status: 'Coming Soon',
+    color: 'text-[var(--amethyst)]'
   }
 ];

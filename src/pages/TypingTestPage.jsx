@@ -29,6 +29,7 @@ export default function TypingTestPage() {
   const [currentInputValue, setCurrentInputValue] = useState('');
   
   const [status, setStatus] = useState('waiting'); // waiting, playing, finished
+  const [hasStartedTyping, setHasStartedTyping] = useState(false);
   const [timeLeft, setTimeLeft] = useState(TIME_LIMIT);
   
   const [wpm, setWpm] = useState(0);
@@ -42,7 +43,7 @@ export default function TypingTestPage() {
 
   useEffect(() => {
     let interval;
-    if (status === 'playing' && timeLeft > 0) {
+    if (status === 'playing' && hasStartedTyping && timeLeft > 0) {
       interval = setInterval(() => {
         setTimeLeft((prev) => prev - 1);
       }, 1000);
@@ -50,10 +51,11 @@ export default function TypingTestPage() {
       endGame();
     }
     return () => clearInterval(interval);
-  }, [status, timeLeft]);
+  }, [status, hasStartedTyping, timeLeft]);
 
   const startGame = () => {
     setStatus('playing');
+    setHasStartedTyping(false);
     setTimeLeft(TIME_LIMIT);
     setTypedHistory([]);
     setCurrentInputValue('');
@@ -99,6 +101,10 @@ export default function TypingTestPage() {
   const handleInputChange = (e) => {
     if (status === 'finished' || status === 'waiting') return;
 
+    if (!hasStartedTyping) {
+      setHasStartedTyping(true);
+    }
+
     const value = e.target.value;
     
     // Check if user hit space
@@ -117,9 +123,17 @@ export default function TypingTestPage() {
   };
 
   // Prevent default scroll behavior for spacebar in some browsers
+  // Allow backspacing to previous words
   const handleKeyDown = (e) => {
     if (e.key === ' ' && currentInputValue === '') {
       e.preventDefault();
+    } else if (e.key === 'Backspace' && currentInputValue === '' && typedHistory.length > 0) {
+      e.preventDefault();
+      // Go back to the previous word
+      const newHistory = [...typedHistory];
+      const previousWord = newHistory.pop();
+      setTypedHistory(newHistory);
+      setCurrentInputValue(previousWord);
     }
   };
 
@@ -290,11 +304,6 @@ export default function TypingTestPage() {
                   
                   let wordColorClass = 'text-gray-400 font-medium';
                   const typedWord = isPast ? typedHistory[actualIndex] : isCurrent ? currentInputValue : '';
-                  
-                  // Past word coloring (Correct or Wrong word entirely)
-                  if (isPast) {
-                    wordColorClass = typedWord === word ? 'text-green-600' : 'text-red-500 underline decoration-red-500/50 decoration-2';
-                  }
 
                   return (
                     <div 
@@ -307,13 +316,17 @@ export default function TypingTestPage() {
                         {word.split('').map((char, cIdx) => {
                           let charClass = '';
                           
-                          if (isCurrent) {
+                          if (isCurrent || isPast) {
                             if (cIdx < typedWord.length) {
                               const isCorrect = typedWord[cIdx] === word[cIdx];
-                              charClass = isCorrect ? 'text-gray-900' : 'text-red-600 bg-red-100';
-                            } else if (cIdx === typedWord.length) {
+                              // Use text-gray-900 / text-green-600 for correct, red for incorrect
+                              charClass = isCorrect ? (isPast ? 'text-green-600' : 'text-gray-900') : 'text-red-500 bg-red-100/50';
+                            } else if (isCurrent && cIdx === typedWord.length) {
                               // Next character marker
                               charClass = 'text-gray-500 relative';
+                            } else if (isPast && cIdx >= typedWord.length) {
+                              // Missed letters in past words
+                              charClass = 'text-red-500 opacity-70';
                             } else {
                               charClass = 'text-gray-400';
                             }
@@ -328,11 +341,11 @@ export default function TypingTestPage() {
                             </span>
                           );
                         })}
-                        {/* Overflow cursor (typing more chars than the word has) */}
-                        {isCurrent && typedWord.length >= word.length && (
-                          <span className="text-red-600 bg-red-100 relative">
+                        {/* Overflowing characters (typing more chars than the word has) */}
+                        {(isCurrent || isPast) && typedWord.length >= word.length && (
+                          <span className="text-red-500 bg-red-100/50 relative">
                             {typedWord.slice(word.length)}
-                            <span className="absolute -bottom-1 left-0 w-full h-[3px] bg-red-600 animate-pulse"></span>
+                            {isCurrent && <span className="absolute -bottom-1 left-0 w-full h-[3px] bg-red-600 animate-pulse"></span>}
                           </span>
                         )}
                       </span>
