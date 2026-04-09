@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Command } from 'cmdk';
 import { useNavigate } from 'react-router-dom';
-import { FileText, User, Image, Link as LinkIcon, Command as CommandIcon, Mail, Folder } from 'lucide-react';
+import { FileText, User, Image, Link as LinkIcon, Command as CommandIcon, Mail, Folder, Gamepad2 } from 'lucide-react';
 import { projects } from '../../data/data';
 import './CommandPalette.css';
 
@@ -68,6 +68,9 @@ export default function CommandPalette() {
               </Command.Item>
               <Command.Item onSelect={() => runCommand(() => navigate('/gallery'))}>
                 <Image size={16} /> Gallery
+              </Command.Item>
+              <Command.Item onSelect={() => runCommand(() => navigate('/play'))}>
+                <Gamepad2 size={16} /> Arcade
               </Command.Item>
             </Command.Group>
 
