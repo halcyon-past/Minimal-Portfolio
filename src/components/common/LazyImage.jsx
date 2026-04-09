@@ -19,12 +19,12 @@ export default function LazyImage({ src, alt, className, aspectRatio, blockClass
   return (
     <div className={`relative overflow-hidden ${aspectRatio || ''} ${blockClass || ''} w-full h-full flex items-center justify-center`}>
       {!loaded && !error && (
-        <div className="absolute inset-0 bg-gray-100 animate-pulse"></div>
+        <div className="absolute inset-0 bg-gray-100 dark:bg-gray-800 dark:bg-gray-200 animate-pulse"></div>
       )}
       
       {error ? (
-        <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-          <span className="text-gray-500 text-sm">Failed to load image</span>
+        <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+          <span className="text-gray-500 dark:text-gray-400 dark:text-gray-500 text-sm">Failed to load image</span>
         </div>
       ) : (
         <img

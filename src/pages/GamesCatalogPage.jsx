@@ -14,10 +14,10 @@ export default function GamesCatalogPage() {
         className="max-w-6xl mx-auto"
       >
         <div className="mb-12 text-center md:text-left">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4 tracking-tight">
             The <span className="text-[var(--amethyst)]">Arcade</span>
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto md:mx-0">
+          <p className="text-lg text-gray-600 dark:text-gray-400 dark:text-gray-500 max-w-2xl mx-auto md:mx-0">
             A small collection of minimalist, developer-themed games built into the portfolio. Take a break and challenge yourself!
           </p>
         </div>
@@ -75,14 +75,14 @@ function GameCard({ game, isAvailable }) {
         <h3 className={`text-2xl font-bold mb-3 ${isAvailable ? 'text-gray-900 group-hover:text-[var(--amethyst)] transition-colors' : 'text-gray-500'}`}>
           {game.title}
         </h3>
-        <p className="text-gray-600 leading-relaxed mb-6">
+        <p className="text-gray-600 dark:text-gray-400 dark:text-gray-500 leading-relaxed mb-6">
           {game.description}
         </p>
       </div>
 
       {/* Bottom Area */}
       {isAvailable && (
-        <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between text-[var(--chrysler-blue)] font-medium">
+        <div className="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between text-[var(--chrysler-blue)] font-medium">
           <span className="flex items-center gap-2 group-hover:gap-3 transition-all">
             Play Game <MousePointerClick className="w-4 h-4" />
           </span>

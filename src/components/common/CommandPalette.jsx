@@ -30,12 +30,12 @@ export default function CommandPalette() {
   return (
     <>
       <div 
-        className="fixed bottom-4 left-4 z-50 bg-white shadow-lg border border-gray-100 rounded-full px-4 py-2 flex items-center gap-2 cursor-pointer hover:bg-gray-50 transition-colors text-sm font-medium text-gray-700"
+        className="fixed bottom-4 left-4 z-50 bg-white dark:bg-gray-950 shadow-lg border border-gray-100 dark:border-gray-800 rounded-full px-4 py-2 flex items-center gap-2 cursor-pointer hover:bg-gray-50 dark:bg-gray-900 dark:bg-gray-100 transition-colors text-sm font-medium text-gray-700 dark:text-gray-300"
         onClick={() => setOpen(true)}
       >
-        <CommandIcon size={16} className="text-gray-500" />
+        <CommandIcon size={16} className="text-gray-500 dark:text-gray-400 dark:text-gray-500" />
         <span>Menu</span>
-        <kbd className="hidden md:ml-1 md:inline-flex items-center gap-1 bg-gray-100 px-1.5 py-0.5 rounded text-xs text-gray-400 font-sans">
+        <kbd className="hidden md:ml-1 md:inline-flex items-center gap-1 bg-gray-100 dark:bg-gray-800 dark:bg-gray-200 px-1.5 py-0.5 rounded text-xs text-gray-400 dark:text-gray-500 font-sans">
           <span className="text-[10px]">⌘</span>K
         </kbd>
       </div>

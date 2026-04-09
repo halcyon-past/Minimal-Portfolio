@@ -2,11 +2,11 @@ import { socialMedia } from '../data/data';
 
 export default function Footer() {
   return (
-    <footer className="py-8 bg-white px-4 md:px-8 border-t border-gray-200">
+    <footer className="py-8 bg-white dark:bg-gray-950 px-4 md:px-8 border-t border-gray-200 dark:border-gray-800">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <p className="text-gray-700 cursor-default">
+            <p className="text-gray-700 dark:text-gray-300 cursor-default">
               © 2025 <span className="text-[var(--amethyst)] font-medium">Aritro Saha</span>. All rights reserved.
             </p>
             <a

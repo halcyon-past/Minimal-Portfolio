@@ -190,7 +190,7 @@ export default function TypingTestPage() {
         >
           <Link 
             to="/play"
-            className="text-gray-500 hover:text-[var(--amethyst)] flex items-center gap-2 transition-colors text-sm md:text-base font-medium bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200 hover:shadow-md hover:border-[var(--amethyst)]/30"
+            className="text-gray-500 dark:text-gray-400 dark:text-gray-500 hover:text-[var(--amethyst)] flex items-center gap-2 transition-colors text-sm md:text-base font-medium bg-white dark:bg-gray-950 px-4 py-2 rounded-full shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md hover:border-[var(--amethyst)]/30"
           >
             <i className="fas fa-arrow-left"></i> Back to Arcade
           </Link>
@@ -213,28 +213,28 @@ export default function TypingTestPage() {
       />
 
       <motion.div 
-        className="w-full bg-white rounded-xl shadow-xl border border-gray-200 relative overflow-hidden"
+        className="w-full bg-white dark:bg-gray-950 rounded-xl shadow-xl border border-gray-200 dark:border-gray-800 relative overflow-hidden"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
         {/* Terminal Header */}
-        <div className="bg-gray-50 px-4 py-3 flex items-center border-b border-gray-200 relative">
+        <div className="bg-gray-50 dark:bg-gray-900 dark:bg-gray-100 px-4 py-3 flex items-center border-b border-gray-200 dark:border-gray-800 relative">
           <div className="flex gap-2">
             <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
             <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
             <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
           </div>
           <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
-            <span className="text-xs text-gray-500 font-mono">bash - dev-speed-test</span>
+            <span className="text-xs text-gray-500 dark:text-gray-400 dark:text-gray-500 font-mono">bash - dev-speed-test</span>
           </div>
         </div>
 
-        <div className="p-6 md:p-10 text-gray-800 font-mono relative">
+        <div className="p-6 md:p-10 text-gray-800 dark:text-gray-200 font-mono relative">
           <div className="flex justify-between items-end mb-8">
             <div>
-              <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1"><span className="text-[var(--amethyst)]">~/</span> Developer Speed Test</h1>
-              <p className="text-gray-500 text-sm md:text-base">Type the keywords as fast as you can.</p>
+              <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-1"><span className="text-[var(--amethyst)]">~/</span> Developer Speed Test</h1>
+              <p className="text-gray-500 dark:text-gray-400 dark:text-gray-500 text-sm md:text-base">Type the keywords as fast as you can.</p>
             </div>
             <div className="text-right">
               <div className={`text-4xl md:text-5xl font-bold ${timeLeft <= 5 && status === 'playing' ? 'text-red-500 animate-pulse' : 'text-[var(--amethyst)]'}`}>
@@ -250,23 +250,23 @@ export default function TypingTestPage() {
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
               >
-                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-8">Simulation Complete</h2>
+                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-8">Simulation Complete</h2>
                 
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-6 md:gap-10 mb-12">
-                  <div className="bg-gray-50 px-10 py-6 rounded-xl flex flex-col min-w-[200px] border-t-2 border-[var(--chrysler-blue)] shadow-sm">
-                    <span className="text-gray-500 text-sm uppercase tracking-wider mb-2">Speed</span>
-                    <span className="text-5xl md:text-6xl font-bold text-gray-900">{wpm} <span className="text-2xl text-[var(--chrysler-blue)]">WPM</span></span>
+                  <div className="bg-gray-50 dark:bg-gray-900 dark:bg-gray-100 px-10 py-6 rounded-xl flex flex-col min-w-[200px] border-t-2 border-[var(--chrysler-blue)] shadow-sm">
+                    <span className="text-gray-500 dark:text-gray-400 dark:text-gray-500 text-sm uppercase tracking-wider mb-2">Speed</span>
+                    <span className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-gray-100">{wpm} <span className="text-2xl text-[var(--chrysler-blue)]">WPM</span></span>
                   </div>
-                  <div className="bg-gray-50 px-10 py-6 rounded-xl flex flex-col min-w-[200px] border-t-2 border-[#27c93f] shadow-sm">
-                    <span className="text-gray-500 text-sm uppercase tracking-wider mb-2">Precision</span>
-                    <span className="text-5xl md:text-6xl font-bold text-gray-900">{accuracy}<span className="text-3xl text-[#27c93f]">%</span></span>
+                  <div className="bg-gray-50 dark:bg-gray-900 dark:bg-gray-100 px-10 py-6 rounded-xl flex flex-col min-w-[200px] border-t-2 border-[#27c93f] shadow-sm">
+                    <span className="text-gray-500 dark:text-gray-400 dark:text-gray-500 text-sm uppercase tracking-wider mb-2">Precision</span>
+                    <span className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-gray-100">{accuracy}<span className="text-3xl text-[#27c93f]">%</span></span>
                   </div>
                 </div>
 
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
                   <button 
                     onClick={(e) => { e.stopPropagation(); startGame(); }}
-                    className="px-8 py-3.5 bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium rounded-lg transition-colors w-full sm:w-auto border border-gray-300"
+                    className="px-8 py-3.5 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 font-medium rounded-lg transition-colors w-full sm:w-auto border border-gray-300 dark:border-gray-700"
                   >
                     <i className="fas fa-redo mr-2 text-sm"></i> Try Again
                   </button>
@@ -283,10 +283,10 @@ export default function TypingTestPage() {
             <div className="relative text-xl md:text-3xl leading-[1.8] h-[160px] md:h-[220px] overflow-hidden rounded-lg">
               
               {status === 'waiting' && (
-                <div className="absolute inset-0 flex items-center justify-center z-10 backdrop-blur-[2px] bg-white/40 rounded-lg">
+                <div className="absolute inset-0 flex items-center justify-center z-10 backdrop-blur-[2px] bg-white/40 dark:bg-gray-950/40 rounded-lg">
                   <button 
                     onClick={(e) => { e.stopPropagation(); startGame(); }}
-                    className="text-[var(--amethyst)] px-6 py-3 border-2 border-[var(--amethyst)]/50 rounded-lg bg-white/90 font-medium animate-pulse shadow-lg flex items-center gap-3 hover:bg-[var(--amethyst)] hover:text-white transition-colors cursor-pointer"
+                    className="text-[var(--amethyst)] px-6 py-3 border-2 border-[var(--amethyst)]/50 rounded-lg bg-white/90 dark:bg-gray-950/90 font-medium animate-pulse shadow-lg flex items-center gap-3 hover:bg-[var(--amethyst)] hover:text-white transition-colors cursor-pointer"
                   >
                     <i className="fas fa-keyboard"></i> Start Typing
                   </button>

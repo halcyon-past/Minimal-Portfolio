@@ -74,7 +74,7 @@ export default function Hero() {
       )}
       
       {/* Main Content */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24 relative bg-white cursor-default">
+      <section className="pt-32 pb-16 md:pt-40 md:pb-24 relative bg-white dark:bg-gray-950 cursor-default">
         <div className="container mx-auto px-4 md:px-8 overflow-hidden">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -98,7 +98,7 @@ export default function Hero() {
           </motion.div>
 
           <motion.h1 
-            className="text-4xl md:text-6xl font-medium mb-8 text-gray-900"
+            className="text-4xl md:text-6xl font-medium mb-8 text-gray-900 dark:text-gray-100"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: showIntro ? 50 : 0, opacity: showIntro ? 0 : 1 }}
             transition={{ duration: 0.8, delay: showIntro ? 0 : 0.2, ease: "easeOut" }}
@@ -107,7 +107,7 @@ export default function Hero() {
           </motion.h1>
           
           <motion.p 
-            className="text-lg md:text-xl max-w-3xl text-gray-700"
+            className="text-lg md:text-xl max-w-3xl text-gray-700 dark:text-gray-300"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: showIntro ? 30 : 0, opacity: showIntro ? 0 : 1 }}
             transition={{ duration: 0.8, delay: showIntro ? 0 : 0.4, ease: "easeOut" }}

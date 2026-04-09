@@ -82,7 +82,7 @@ export default function Projects({ projects }) {
   };
 
   return (
-    <section id="projects" className="relative py-8 px-4 md:px-8 bg-white md:-mt-32 z-10">
+    <section id="projects" className="relative py-8 px-4 md:px-8 bg-white dark:bg-gray-950 md:-mt-32 z-10">
       <div className="container mx-auto relative">
         <Gears />  
         <div className="flex flex-col items-end gap-16 md:w-3/5 ml-auto relative z-10">
@@ -113,14 +113,14 @@ export default function Projects({ projects }) {
                 </a>
                 <button 
                   onClick={() => handleShare(project)}
-                  className="text-gray-500 hover:text-[var(--amethyst)] transition-colors duration-300"
+                  className="text-gray-500 dark:text-gray-400 dark:text-gray-500 hover:text-[var(--amethyst)] transition-colors duration-300"
                   aria-label={`Share ${project.title}`}
                   title={`Share ${project.title}`}
                 >
                   <i className="fas fa-share-alt text-xl"></i>
                 </button>
               </div>
-              <p className="text-base text-gray-800 leading-relaxed">
+              <p className="text-base text-gray-800 dark:text-gray-200 leading-relaxed">
                 <span className="font-medium">What is it? </span> — {project.description}
               </p>
             </motion.div>
