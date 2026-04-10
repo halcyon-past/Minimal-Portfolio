@@ -1,5 +1,0 @@
-@import "tailwindcss";
-html.dark {
-  --color-white: #0a0a0a;
-  --color-gray-900: #ffffff;
-}
