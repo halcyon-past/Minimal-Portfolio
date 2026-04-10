@@ -9,6 +9,7 @@ import GalleryPage from './pages/GalleryPage';
 import TypingTestPage from './pages/TypingTestPage';
 import GamesCatalogPage from './pages/GamesCatalogPage';
 import SnakeGamePage from './pages/SnakeGamePage';
+import SudokuGamePage from './pages/SudokuGamePage';
 import DataPipelinePage from './pages/DataPipelinePage';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -77,6 +78,15 @@ function AnimatedRoutes() {
             <PageTransition>
               <Seo title="Minimalist Snake" url="/play/snake" description="Play the classic Snake game but you collect tech stacks instead of apples!" />
               <SnakeGamePage />
+            </PageTransition>
+          } 
+        />
+        <Route 
+          path="/play/sudoku" 
+          element={
+            <PageTransition>
+              <Seo title="Sudoku" url="/play/sudoku" description="Play classic Sudoku right inside your browser!" />
+              <SudokuGamePage />
             </PageTransition>
           } 
         />

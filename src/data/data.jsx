@@ -161,8 +161,8 @@ export const GAMES = [
     title: 'Sudoku',
     description: 'Classic logic-based number placement puzzle.',
     icon: <Grid3X3 className="w-8 h-8 md:w-10 md:h-10 text-[var(--amethyst)]" />,
-    path: '#',
-    status: 'Coming Soon',
+    path: '/play/sudoku',
+    status: 'Available',
     color: 'text-[var(--amethyst)]'
   }
 ];
