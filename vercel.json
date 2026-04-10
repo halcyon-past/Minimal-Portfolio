@@ -1,4 +1,17 @@
 {
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "(?!www\\.)(?<subdomain>[^.]+)\\.aritro\\.cloud"
+        }
+      ],
+      "destination": "https://aritro.cloud/404",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ],
