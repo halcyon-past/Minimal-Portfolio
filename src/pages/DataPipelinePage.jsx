@@ -64,8 +64,16 @@ export default function DataPipelinePage() {
   const [status, setStatus] = useState('waiting'); // waiting, playing, solved, gameover
   const [flowBoard, setFlowBoard] = useState([]);
   const [moves, setMoves] = useState(0);
+  const [bestMoves, setBestMoves] = useState(() => {
+    return parseInt(localStorage.getItem(`pipelineBestMoves_${levelIndex}`) || '0', 10);
+  });
   
   const currentLevel = LEVELS[Math.min(levelIndex, LEVELS.length - 1)];
+
+  // Update bestMoves when level changes
+  useEffect(() => {
+    setBestMoves(parseInt(localStorage.getItem(`pipelineBestMoves_${levelIndex}`) || '0', 10));
+  }, [levelIndex]);
 
   const startGame = () => {
     setBoard(initBoard(levelIndex));
@@ -146,6 +154,13 @@ export default function DataPipelinePage() {
     const endIdx = board.findIndex(cell => cell.type === 'E');
     if (isFlowing[endIdx] && status === 'playing') {
       setStatus('winning');
+      
+      const currentBest = parseInt(localStorage.getItem(`pipelineBestMoves_${levelIndex}`) || '0', 10);
+      if (currentBest === 0 || moves < currentBest) {
+        localStorage.setItem(`pipelineBestMoves_${levelIndex}`, moves.toString());
+        setBestMoves(moves);
+      }
+
       setTimeout(() => {
         setStatus('solved');
       }, 1000);
@@ -198,6 +213,7 @@ export default function DataPipelinePage() {
           <div className="text-right">
             <div className="text-sm text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wider">Level: <span className="text-lg text-[var(--celadon)]">{levelIndex + 1} / {LEVELS.length}</span></div>
             <div className="text-xs text-gray-400 dark:text-gray-500">Moves: {moves}</div>
+            {bestMoves > 0 && <div className="text-xs text-[var(--celadon)] dark:text-[var(--celadon)]">Best: {bestMoves} moves</div>}
           </div>
         </div>
 

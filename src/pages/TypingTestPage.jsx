@@ -34,6 +34,9 @@ export default function TypingTestPage() {
   
   const [wpm, setWpm] = useState(0);
   const [accuracy, setAccuracy] = useState(100);
+  const [bestWpm, setBestWpm] = useState(() => {
+    return parseInt(localStorage.getItem('typingBestWpm') || '0', 10);
+  });
   
   const inputRef = useRef(null);
 
@@ -94,8 +97,16 @@ export default function TypingTestPage() {
     });
 
     const timeInMins = TIME_LIMIT / 60;
-    setWpm(Math.round((correctChars / 5) / timeInMins));
-    setAccuracy(totalCharsTyped > 0 ? Math.round((correctChars / totalCharsTyped) * 100) : 0);
+    const finalWpm = Math.round((correctChars / 5) / timeInMins);
+    const finalAcc = totalCharsTyped > 0 ? Math.round((correctChars / totalCharsTyped) * 100) : 0;
+    
+    setWpm(finalWpm);
+    setAccuracy(finalAcc);
+
+    if (finalWpm > bestWpm) {
+      setBestWpm(finalWpm);
+      localStorage.setItem('typingBestWpm', finalWpm.toString());
+    }
   };
 
   const handleInputChange = (e) => {
@@ -252,7 +263,7 @@ export default function TypingTestPage() {
               >
                 <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-8">Simulation Complete</h2>
                 
-                <div className="flex flex-col sm:flex-row justify-center items-center gap-6 md:gap-10 mb-12">
+                <div className="flex flex-col sm:flex-row justify-center items-center gap-6 md:gap-10 mb-12 flex-wrap">
                   <div className="bg-gray-50 dark:bg-gray-900 px-10 py-6 rounded-xl flex flex-col min-w-[200px] border-t-2 border-[var(--chrysler-blue)] shadow-sm">
                     <span className="text-gray-500 dark:text-gray-400 text-sm uppercase tracking-wider mb-2">Speed</span>
                     <span className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-gray-100">{wpm} <span className="text-2xl text-[var(--chrysler-blue)]">WPM</span></span>
@@ -260,6 +271,10 @@ export default function TypingTestPage() {
                   <div className="bg-gray-50 dark:bg-gray-900 px-10 py-6 rounded-xl flex flex-col min-w-[200px] border-t-2 border-[#27c93f] shadow-sm">
                     <span className="text-gray-500 dark:text-gray-400 text-sm uppercase tracking-wider mb-2">Precision</span>
                     <span className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-gray-100">{accuracy}<span className="text-3xl text-[#27c93f]">%</span></span>
+                  </div>
+                  <div className="bg-gray-50 dark:bg-gray-900 px-10 py-6 rounded-xl flex flex-col min-w-[200px] border-t-2 border-[#ffbd2e] shadow-sm">
+                    <span className="text-gray-500 dark:text-gray-400 text-sm uppercase tracking-wider mb-2 flex items-center justify-center gap-2"><i className="fas fa-trophy text-[#ffbd2e]"></i> Best</span>
+                    <span className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-gray-100">{Math.max(wpm, bestWpm)} <span className="text-2xl text-[#ffbd2e]">WPM</span></span>
                   </div>
                 </div>
 
