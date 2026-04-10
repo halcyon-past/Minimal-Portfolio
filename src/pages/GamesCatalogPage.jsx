@@ -17,7 +17,7 @@ export default function GamesCatalogPage() {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4 tracking-tight">
             The <span className="text-[var(--amethyst)]">Arcade</span>
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400 dark:text-gray-500 max-w-2xl mx-auto md:mx-0">
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto md:mx-0">
             A small collection of minimalist, developer-themed games built into the portfolio. Take a break and challenge yourself!
           </p>
         </div>
@@ -75,7 +75,7 @@ function GameCard({ game, isAvailable }) {
         <h3 className={`text-2xl font-bold mb-3 ${isAvailable ? 'text-gray-900 group-hover:text-[var(--amethyst)] transition-colors' : 'text-gray-500'}`}>
           {game.title}
         </h3>
-        <p className="text-gray-600 dark:text-gray-400 dark:text-gray-500 leading-relaxed mb-6">
+        <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
           {game.description}
         </p>
       </div>

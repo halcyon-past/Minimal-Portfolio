@@ -190,7 +190,7 @@ export default function SnakeGamePage() {
     <div className="relative max-w-2xl mx-auto px-4 py-8 md:py-12 min-h-[85vh] flex flex-col justify-start items-center font-sans">
       <div className="w-full flex justify-start mb-4 relative z-10">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
-          <Link to="/play" className="text-gray-500 dark:text-gray-400 dark:text-gray-500 hover:text-[#ffbd2e] flex items-center gap-2 transition-colors text-sm md:text-base font-medium bg-white dark:bg-gray-950 px-4 py-2 rounded-full shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md">
+          <Link to="/play" className="text-gray-500 dark:text-gray-400 hover:text-[#ffbd2e] flex items-center gap-2 transition-colors text-sm md:text-base font-medium bg-white dark:bg-gray-950 px-4 py-2 rounded-full shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md">
             <i className="fas fa-arrow-left"></i> Back to Arcade
           </Link>
         </motion.div>
@@ -204,16 +204,16 @@ export default function SnakeGamePage() {
         <div className="flex justify-between items-center mb-6">
           <div>
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">Python <span className="text-[#ffbd2e]">Snake</span></h1>
-            <p className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">Consume Tech and avoid hitting the walls! Robot gives bonus points</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400">Consume Tech and avoid hitting the walls! Robot gives bonus points</p>
           </div>
           <div className="text-right">
-            <div className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500 font-semibold uppercase tracking-wider">Score: <span className="text-lg text-[#ffbd2e]">{score}</span></div>
+            <div className="text-sm text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wider">Score: <span className="text-lg text-[#ffbd2e]">{score}</span></div>
             <div className="text-xs text-gray-400 dark:text-gray-500">Best: {highScore}</div>
           </div>
         </div>
 
         <div 
-          className="relative w-full max-w-[450px] mx-auto aspect-square bg-gray-50 dark:bg-gray-900 dark:bg-gray-100 border-2 border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden touch-none"
+          className="relative w-full max-w-[450px] mx-auto aspect-square bg-gray-50 dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden touch-none"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
@@ -223,7 +223,7 @@ export default function SnakeGamePage() {
               <button onClick={startGame} className="flex items-center gap-2 px-6 py-3 bg-[#ffbd2e] text-white font-bold rounded-full hover:shadow-lg hover:scale-105 transition-all">
                 <Play className="w-5 h-5" /> Start Game
               </button>
-              <p className="mt-4 text-xs text-gray-500 dark:text-gray-400 dark:text-gray-500">Swipe or use arrow keys</p>
+              <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">Swipe or use arrow keys</p>
             </div>
           )}
 
@@ -240,7 +240,7 @@ export default function SnakeGamePage() {
             <div className="absolute inset-0 bg-white/90 dark:bg-gray-950/90 backdrop-blur-sm z-10 flex flex-col items-center justify-center p-4 text-center">
               <Trophy className="w-16 h-16 text-yellow-500 mb-4" />
               <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-2">Game Over!</h2>
-              <p className="text-gray-600 dark:text-gray-400 dark:text-gray-500 mb-6">You scored {score} points.</p>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">You scored {score} points.</p>
               <div className="flex gap-3">
                 <button onClick={startGame} className="flex items-center gap-2 px-5 py-2.5 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 font-semibold rounded-full hover:shadow-lg transition-all">
                   <RefreshCw className="w-4 h-4" /> Play Again
@@ -273,30 +273,30 @@ export default function SnakeGamePage() {
         </div>
 
         {/* Mobile controls */}
-        <div className="md:hidden relative w-48 h-48 mx-auto mt-6 bg-gray-100 dark:bg-gray-800 dark:bg-gray-200 rounded-full shadow-inner border border-gray-200 dark:border-gray-800">
+        <div className="md:hidden relative w-48 h-48 mx-auto mt-6 bg-gray-100 dark:bg-gray-800 rounded-full shadow-inner border border-gray-200 dark:border-gray-800">
           <button 
-            className="absolute top-2 left-1/2 -translate-x-1/2 w-14 h-14 bg-white dark:bg-gray-950 rounded-full shadow-md hover:bg-gray-50 dark:bg-gray-900 dark:bg-gray-100 active:scale-90 active:bg-gray-200 dark:bg-gray-700 transition-all flex items-center justify-center text-gray-700 dark:text-gray-300" 
+            className="absolute top-2 left-1/2 -translate-x-1/2 w-14 h-14 bg-white dark:bg-gray-950 rounded-full shadow-md hover:bg-gray-50 dark:hover:bg-gray-900 active:scale-90 active:bg-gray-200 dark:active:bg-gray-700 transition-all flex items-center justify-center text-gray-700 dark:text-gray-300" 
             onClick={() => changeDirection({ x: 0, y: -1 })}
           >
             <i className="fas fa-chevron-up text-xl"></i>
           </button>
           
           <button 
-            className="absolute bottom-2 left-1/2 -translate-x-1/2 w-14 h-14 bg-white dark:bg-gray-950 rounded-full shadow-md hover:bg-gray-50 dark:bg-gray-900 dark:bg-gray-100 active:scale-90 active:bg-gray-200 dark:bg-gray-700 transition-all flex items-center justify-center text-gray-700 dark:text-gray-300" 
+            className="absolute bottom-2 left-1/2 -translate-x-1/2 w-14 h-14 bg-white dark:bg-gray-950 rounded-full shadow-md hover:bg-gray-50 dark:hover:bg-gray-900 active:scale-90 active:bg-gray-200 dark:active:bg-gray-700 transition-all flex items-center justify-center text-gray-700 dark:text-gray-300" 
             onClick={() => changeDirection({ x: 0, y: 1 })}
           >
             <i className="fas fa-chevron-down text-xl"></i>
           </button>
           
           <button 
-            className="absolute left-2 top-1/2 -translate-y-1/2 w-14 h-14 bg-white dark:bg-gray-950 rounded-full shadow-md hover:bg-gray-50 dark:bg-gray-900 dark:bg-gray-100 active:scale-90 active:bg-gray-200 dark:bg-gray-700 transition-all flex items-center justify-center text-gray-700 dark:text-gray-300" 
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-14 h-14 bg-white dark:bg-gray-950 rounded-full shadow-md hover:bg-gray-50 dark:hover:bg-gray-900 active:scale-90 active:bg-gray-200 dark:active:bg-gray-700 transition-all flex items-center justify-center text-gray-700 dark:text-gray-300" 
             onClick={() => changeDirection({ x: -1, y: 0 })}
           >
             <i className="fas fa-chevron-left text-xl"></i>
           </button>
           
           <button 
-            className="absolute right-2 top-1/2 -translate-y-1/2 w-14 h-14 bg-white dark:bg-gray-950 rounded-full shadow-md hover:bg-gray-50 dark:bg-gray-900 dark:bg-gray-100 active:scale-90 active:bg-gray-200 dark:bg-gray-700 transition-all flex items-center justify-center text-gray-700 dark:text-gray-300" 
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-14 h-14 bg-white dark:bg-gray-950 rounded-full shadow-md hover:bg-gray-50 dark:hover:bg-gray-900 active:scale-90 active:bg-gray-200 dark:active:bg-gray-700 transition-all flex items-center justify-center text-gray-700 dark:text-gray-300" 
             onClick={() => changeDirection({ x: 1, y: 0 })}
           >
             <i className="fas fa-chevron-right text-xl"></i>

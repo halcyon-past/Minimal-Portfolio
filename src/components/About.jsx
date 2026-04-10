@@ -73,7 +73,7 @@ export default function About() {
                       className="border-l-2 border-gray-200 dark:border-gray-800 pl-4 py-1"
                     >
                       <h4 className="font-medium text-lg text-gray-900 dark:text-gray-100">{item.title}</h4>
-                      <p className="text-gray-500 dark:text-gray-400 dark:text-gray-500 text-sm mt-1">{item.duration}</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">{item.duration}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -90,7 +90,7 @@ export default function About() {
                       className="border-l-2 border-gray-200 dark:border-gray-800 pl-4 py-1"
                     >
                       <h4 className="font-medium text-lg text-gray-900 dark:text-gray-100">{item.title}</h4>
-                      <p className="text-gray-500 dark:text-gray-400 dark:text-gray-500 text-sm mt-1">{item.institution}, {item.year}</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">{item.institution}, {item.year}</p>
                     </motion.div>
                   ))}
                 </div>

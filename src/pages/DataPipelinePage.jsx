@@ -179,7 +179,7 @@ export default function DataPipelinePage() {
     <div className="relative max-w-4xl mx-auto px-4 py-8 md:py-12 min-h-[85vh] flex flex-col justify-start items-center font-sans">
       <div className="w-full flex justify-start mb-4 relative z-10">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
-          <Link to="/play" className="text-gray-500 dark:text-gray-400 dark:text-gray-500 hover:text-[var(--celadon)] flex items-center gap-2 transition-colors text-sm md:text-base font-medium bg-white dark:bg-gray-950 px-4 py-2 rounded-full shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md">
+          <Link to="/play" className="text-gray-500 dark:text-gray-400 hover:text-[var(--celadon)] flex items-center gap-2 transition-colors text-sm md:text-base font-medium bg-white dark:bg-gray-950 px-4 py-2 rounded-full shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md">
             <i className="fas fa-arrow-left"></i> Back to Arcade
           </Link>
         </motion.div>
@@ -193,15 +193,15 @@ export default function DataPipelinePage() {
         <div className="flex justify-between items-center mb-6">
           <div>
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">Data <span className="text-[var(--celadon)]">Pipeline</span></h1>
-            <p className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500">Connect the Database to the Analytics node.</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400">Connect the Database to the Analytics node.</p>
           </div>
           <div className="text-right">
-            <div className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-500 font-semibold uppercase tracking-wider">Level: <span className="text-lg text-[var(--celadon)]">{levelIndex + 1} / {LEVELS.length}</span></div>
+            <div className="text-sm text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wider">Level: <span className="text-lg text-[var(--celadon)]">{levelIndex + 1} / {LEVELS.length}</span></div>
             <div className="text-xs text-gray-400 dark:text-gray-500">Moves: {moves}</div>
           </div>
         </div>
 
-        <div className="relative w-full max-w-[400px] aspect-square mx-auto bg-gray-50 dark:bg-gray-900 dark:bg-gray-100 border border-gray-200 dark:border-gray-800 rounded-lg p-2 md:p-4 touch-none">
+        <div className="relative w-full max-w-[400px] aspect-square mx-auto bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-2 md:p-4 touch-none">
           {status === 'waiting' && (
             <div className="absolute inset-0 bg-white/80 dark:bg-gray-950/80 backdrop-blur-sm z-10 flex flex-col items-center justify-center rounded-lg">
               <BrainCircuit className="w-16 h-16 text-[var(--celadon)] mb-4" />
@@ -224,7 +224,7 @@ export default function DataPipelinePage() {
             <div className="absolute inset-0 bg-white/90 dark:bg-gray-950/90 backdrop-blur-sm z-10 flex flex-col items-center justify-center p-4 text-center rounded-lg">
               <CheckCircle2 className="w-16 h-16 text-green-500 mb-4" />
               <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-2">Pipeline Connected!</h2>
-              <p className="text-gray-600 dark:text-gray-400 dark:text-gray-500 mb-6">You solved it in {moves} moves.</p>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">You solved it in {moves} moves.</p>
               <div className="flex flex-col gap-3">
                 <button onClick={nextLevel} className="flex items-center justify-center gap-2 px-5 py-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 font-semibold rounded-full hover:shadow-lg transition-all w-full">
                   <Play className="w-4 h-4" /> {levelIndex < LEVELS.length - 1 ? 'Next Level' : 'Restart Game'}
