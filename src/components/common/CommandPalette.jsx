@@ -1,16 +1,19 @@
 import { useState, useEffect } from 'react';
 import { Command } from 'cmdk';
 import { useNavigate } from 'react-router-dom';
-import { FileText, User, Image, Link as LinkIcon, Command as CommandIcon, Mail, Folder, Gamepad2 } from 'lucide-react';
+import { FileText, User, Image, Link as LinkIcon, Command as CommandIcon, Mail, Folder, Gamepad2, Search } from 'lucide-react';
 import { projects } from '../../data/data';
 import './CommandPalette.css';
 
 export default function CommandPalette() {
   const [open, setOpen] = useState(false);
+  const [isMac, setIsMac] = useState(true);
   const navigate = useNavigate();
 
-  // Toggle the menu when ⌘K is pressed
+  // Toggle the menu when ⌘K or Ctrl+K is pressed
   useEffect(() => {
+    setIsMac(navigator.platform.toUpperCase().indexOf('MAC') >= 0);
+
     const down = (e) => {
       if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
@@ -33,10 +36,14 @@ export default function CommandPalette() {
         className="fixed bottom-4 left-4 z-50 bg-white dark:bg-gray-950 shadow-lg border border-gray-100 dark:border-gray-800 rounded-full px-4 py-2 flex items-center gap-2 cursor-pointer hover:bg-gray-50 dark:bg-gray-900 dark:bg-gray-100 transition-colors text-sm font-medium text-gray-700 dark:text-gray-300"
         onClick={() => setOpen(true)}
       >
-        <CommandIcon size={16} className="text-gray-500 dark:text-gray-400 dark:text-gray-500" />
+        {isMac ? (
+          <CommandIcon size={16} className="text-gray-500 dark:text-gray-400 dark:text-gray-500" />
+        ) : (
+          <Search size={16} className="text-gray-500 dark:text-gray-400 dark:text-gray-500" />
+        )}
         <span>Menu</span>
         <kbd className="hidden md:ml-1 md:inline-flex items-center gap-1 bg-gray-100 dark:bg-gray-800 dark:bg-gray-200 px-1.5 py-0.5 rounded text-xs text-gray-400 dark:text-gray-500 font-sans">
-          <span className="text-[10px]">⌘</span>K
+          {isMac ? <span className="text-[10px]">⌘</span> : <span className="text-[10px]">Ctrl</span>}K
         </kbd>
       </div>
 
