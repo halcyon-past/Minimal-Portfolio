@@ -17,9 +17,9 @@ export default defineConfig({
         maximumFileSizeToCacheInBytes: 10000000 // 10MB to ensure large game assets are cached
       },
       manifest: {
-        name: 'Minimal Portfolio & Games',
-        short_name: 'Portfolio',
-        description: 'Offline capable portfolio and games arcade',
+        name: 'The Arcade by Aritro',
+        short_name: 'Arcade',
+        description: 'An arcade of games to play with',
         theme_color: '#ffffff',
         display: 'standalone',
         background_color: '#ffffff',
