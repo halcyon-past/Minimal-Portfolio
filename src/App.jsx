@@ -154,7 +154,7 @@ export default function Portfolio() {
         
         <div className="min-h-screen flex flex-col bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-family-poppins font-normal">
           <Header />
-          <main className="flex-grow pt-16">
+          <main className="grow pt-16">
             <AnimatedRoutes />
           </main>
           <Footer />
