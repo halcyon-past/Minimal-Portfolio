@@ -211,7 +211,7 @@ export default function TicTacToePage() {
                     </AnimatePresence>
                 )}
                 {status === 'config' && (
-                    <div className="h-[36px]"></div> /* Placeholder to prevent layout shift */
+                    <div className="h-9"></div> /* Placeholder to prevent layout shift */
                 )}
             </div>
 
@@ -246,7 +246,7 @@ export default function TicTacToePage() {
                           </div>
                       </div>
 
-                      <button onClick={startGame} className="flex items-center justify-center gap-2 px-8 py-3 bg-purple-500 text-white font-bold rounded-full hover:shadow-lg hover:scale-105 transition-all w-full max-w-[200px]">
+                      <button onClick={startGame} className="flex items-center justify-center gap-2 px-8 py-3 bg-purple-500 text-white font-bold rounded-full hover:shadow-lg hover:scale-105 transition-all w-full max-w-50">
                         <Play className="w-5 h-5" /> Play Now
                       </button>
                     </div>
@@ -296,7 +296,7 @@ export default function TicTacToePage() {
                         exit={{ opacity: 0, scale: 0.9 }}
                         className="absolute inset-0 flex items-center justify-center bg-black/60 backdrop-blur-md rounded-lg z-10 p-4"
                     >
-                        <div className="bg-white dark:bg-gray-900 p-6 md:p-8 rounded-xl shadow-2xl text-center w-full max-w-[300px] border border-purple-500/30 flex flex-col items-center">
+                        <div className="bg-white dark:bg-gray-900 p-6 md:p-8 rounded-xl shadow-2xl text-center w-full max-w-75 border border-purple-500/30 flex flex-col items-center">
                             {winner === userPlays ? (
                                 <><Trophy className="w-12 h-12 md:w-16 md:h-16 text-yellow-500 mx-auto mb-4" />
                                 <h2 className="text-2xl md:text-3xl font-bold mb-2">You Win!</h2></>
