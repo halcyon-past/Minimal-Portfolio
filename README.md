@@ -1,7 +1,7 @@
 # Aritro Saha | Developer Portfolio & Arcade 🚀
 
 <div align="center">
-  <img src="public/banner.webp" alt="Portfolio Banner" width="100%" />
+  <img src="public/banner-social.jpg" alt="Portfolio Banner" width="100%" />
 </div>
 
 Welcome to my personal slice of the internet! This isn't just a static resume—it's a fully interactive, mobile-first experience designed to showcase my path as a Software Developer, Data Scientist, and AI enthusiast.
