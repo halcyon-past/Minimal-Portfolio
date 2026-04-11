@@ -138,3 +138,61 @@ This document provides a comprehensive breakdown of every mini-game within the M
   - On `'hard'`, random selection is disabled, making the Minimax AI mathematically impossible to beat (best case scenario evaluates to a Draw).
 - **Handling UI Overlay Flow:**
   - State guards the DOM generation. If `status === 'config'`, absolute positioned overlay menus absorb clicks to set the config states BEFORE the board grid becomes clickable, ensuring strict architectural phase isolation.
+
+---
+
+## 6. Space Invaders (`SpaceInvadersPage.jsx`)
+
+**Concept:** A retro canvas-based arcade shooter featuring a player-controlled ship, a marching grid of alien enemies, and bullet hell mechanics.
+
+### Core Structure & State
+- **State Management:**
+  - `status`, `score`, `highScore` handle the React UI lifecycle.
+  - `gameState` ref: A mutable object housing all engine state without prompting React re-renders. It contains:
+    - `player`: `{x, y, dx, width, height}`.
+    - `aliens`: Array of alien objects with coordinates, size, type, and an `alive` boolean.
+    - `lasers` & `alienLasers`: Arrays representing active projectiles.
+    - `alienDirection`, `alienSpeed`, `keys` (dictionary of currently pressed movement keys), and `lastShot` (throttle timestamp).
+
+### Algorithms & Mechanics
+- **Game Engine Loop:**
+  Uses a performant HTML `<canvas>` combined with `requestAnimationFrame` driving an `update()` and `draw()` cycle at ~60fps.
+- **Movement & Edge Behavior:**
+  - **Player:** Reads boolean toggles from `gameState.keys` (managed by `keydown` and `keyup` listeners) to smoothly translate the `player.x` coordinate without native key-repeating delays. Hard boundary checks cap movement at `0` and `CANVAS_WIDTH`.
+  - **Aliens:** Moves the entire swarm horizontally by `.x += alienSpeed * alienDirection`. If any single living alien touches a screen edge (`x <= 0` or `x + width >= CANVAS_WIDTH`), `hitEdge` evaluates to `true`. This causes the swarm to immediately reverse direction `* -1`, increase `alienSpeed`, and descend on the Y-axis.
+- **Combat & Verification:**
+  - **Shooting Throttle:** Player shots check against Date.now() ensuring a 300ms cooldown threshold. Aliens independently roll `Math.random() < 0.0005` every frame to dictate laser fire probabilities per living unit.
+  - **Collision Detection (AABB):** Iterates over active player lasers and active aliens simultaneously evaluating an Axis-Aligned Bounding Box calculation (`laser.x < alien.x + alien.width && laser.x + laser.width > alien.x ...`). Upon hit, the alien's `alive` state becomes false and the laser shifts out of the array.
+- **Win/Lose Conditions:**
+  - **Win:** Iterates through aliens; if zero aliens are marked `alive`, triggers `'won'` status.
+  - **Game Over:** Triggers if an alien laser AABB overlaps the player, or if the descending alien swarm's Y-coordinates successfully reach the player's Y threshold.
+
+---
+
+## 7. Flappy Bird (`FlappyBirdPage.jsx`)
+
+**Concept:** An endless canvas-based scroller featuring a physics-driven jumping mechanic and scrolling obstacle generation. Environment aesthetics mimic a night-time city skyline where pipes are modeled as buildings with lit windows.
+
+### Core Structure & State
+- **State Management:**
+  - Standard React lifecycle management for `status`, `score`.
+  - `gameState` ref handles high-frequency mutable variables:
+    - `bird`: `{x, y, velocity, width, height}`.
+    - `pipes`: An array of dynamically generated obstacle boundaries.
+    - `frames`: Continuous integer tracking elapsed cycles.
+    - Cosmetic arrays generated once deeply on start: `stars` and `clouds`.
+
+### Algorithms & Mechanics
+- **Physics Engine:** 
+  Every frame, `GRAVITY` (a constant velocity scalar) is continuously added to `bird.velocity`. The `bird.y` coordinate is then updated by this velocity, resulting in a smooth parabolic drop. Pressing Space/Up explicitly sets `bird.velocity` to a negative constant (`JUMP`), instituting sharp upward arcs.
+- **Obstacle (Building) Generation:**
+  Instead of rendering standard Mario pipes, the gap obstacle represents skyscrapers with individual lit windows:
+  - Executes every 100 frames (`state.frames % 100 === 0`).
+  - Calculates a random `topPipeHeight`. Using `PIPE_SPACING` (the static gap distance), the `bottomBuildingHeight` automatically fills the inverse space.
+  - Randomly decorates array loops pushing `{y, lit}` dictionaries representing windows.
+- **Scrolling & Bounds:**
+  - The map naturally loops off-screen by decrementing `x -= PIPE_SPEED` on all tracked obstacles. Once `x + PIPE_WIDTH < 0`, the obstacle drops from the array constraint.
+- **Collision & Verification:**
+  - **Floor/Ceiling Bound:** Instant `'gameover'` if `bird.y` crosses `0` or `CANVAS_HEIGHT`.
+  - **AABB Pass Failures:** Instantly parses Axis-Aligned Bounding checking for overlap natively between `bird` and the top pipe dimensions or bottom pipe dimensions concurrently.
+  - **Scoring Metric:** Monitors boolean flag `.passed` mounted onto each pipe. When `bird.x` overtakes `pipe.x + PIPE_WIDTH` unharmed, the object flags `passed = true` yielding a single point increment.
