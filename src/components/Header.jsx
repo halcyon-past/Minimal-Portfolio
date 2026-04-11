@@ -3,7 +3,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sun, Moon } from 'lucide-react';
 import { useDarkMode } from '../hooks/useDarkMode';
-import logo from '/logo.png';
+import logo from '/logo.webp';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);

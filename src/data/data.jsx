@@ -5,7 +5,7 @@ export const projects = [
   {
     title: 'GlideConnect',
     description: 'Virtual Mouse Control using Gesture Recognition and Voice Assistant',
-    image: '/assets/GlideConnect.png',
+    image: '/assets/GlideConnect.webp',
     alt: 'GlideConnect platform interface',
     link: 'https://github.com/halcyon-past/Glide-Connect',
     color: 'text-[var(--chrysler-blue)]',
@@ -14,7 +14,7 @@ export const projects = [
   {
     title: 'PAWsitive',
     description: 'Centralized Platfrom for Pet Healthcare',
-    image: '/assets/Pawsitive.png',
+    image: '/assets/Pawsitive.webp',
     alt: 'Pawsitive pet healthcare platform interface',
     link: 'https://github.com/halcyon-past/PAW-sitive',
     color: 'text-[var(--amethyst)]',
@@ -23,7 +23,7 @@ export const projects = [
   {
     title: 'EduHelper',
     description: 'AI Assistant to Chat with PDFs',
-    image: '/assets/Eduhelper.png',
+    image: '/assets/Eduhelper.webp',
     alt: 'EduHelper learning platform interface',
     link: 'https://github.com/halcyon-past/EDUHELPER',
     color: 'text-[var(--celadon)]',
@@ -79,49 +79,49 @@ export const socialMedia = [
 
 export const galleryImages = [
   { 
-    src: '/assets/gallery/image1.jpeg', 
+    src: '/assets/gallery/image1.webp', 
     alt: 'Gallery Image 1', 
     span: 'col-span-2 row-span-1', 
     aspectRatio: 'aspect-[3/2]' 
   },
   { 
-    src: '/assets/gallery/image7.jpeg', 
+    src: '/assets/gallery/image7.webp', 
     alt: 'Gallery Image 7', 
     span: 'col-span-1 row-span-2', 
     aspectRatio: 'aspect-[2/3]' 
   },
   { 
-    src: '/assets/gallery/image3.jpeg', 
+    src: '/assets/gallery/image3.webp', 
     alt: 'Gallery Image 3', 
     span: 'col-span-1 row-span-1', 
     aspectRatio: 'aspect-square' 
   },
   { 
-    src: '/assets/gallery/image5.jpeg', 
+    src: '/assets/gallery/image5.webp', 
     alt: 'Gallery Image 5', 
     span: 'col-span-3 row-span-1', 
     aspectRatio: 'aspect-[3/1]' 
   },
   { 
-    src: '/assets/gallery/image4.png', 
+    src: '/assets/gallery/image4.webp', 
     alt: 'Gallery Image 4', 
     span: 'col-span-1 row-span-1', 
     aspectRatio: 'aspect-square' 
   },
   { 
-    src: '/assets/gallery/image8.jpeg', 
+    src: '/assets/gallery/image8.webp', 
     alt: 'Gallery Image 8', 
     span: 'col-span-2 row-span-1', 
     aspectRatio: 'aspect-[3/2]' 
   },
   { 
-    src: '/assets/gallery/image2.jpeg', 
+    src: '/assets/gallery/image2.webp', 
     alt: 'Gallery Image 2', 
     span: 'col-span-2 row-span-1', 
     aspectRatio: 'aspect-[3/2]' 
   },
   { 
-    src: '/assets/gallery/image6.jpeg', 
+    src: '/assets/gallery/image6.webp', 
     alt: 'Gallery Image 6', 
     span: 'col-span-2 row-span-1', 
     aspectRatio: 'aspect-[3/2]' 

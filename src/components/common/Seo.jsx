@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 
-export default function Seo({ title, description, url, image = 'https://www.aritro.cloud/logo.png', type = 'website' }) {
+export default function Seo({ title, description, url, image = 'https://www.aritro.cloud/logo.webp', type = 'website' }) {
   const fullTitle = `${title} | Aritro Saha`;
   const defaultDescription = "Portfolio of Aritro Saha, a Software Developer specializing in full-stack web development, data science, and AI. Discover my interactive developer arcade, projects, experience, and skills.";
   const finalDescription = description || defaultDescription;
@@ -14,7 +14,7 @@ export default function Seo({ title, description, url, image = 'https://www.arit
         "@type": "Person",
         "name": "Aritro Saha",
         "url": "https://www.aritro.cloud/",
-        "image": "https://www.aritro.cloud/logo.png",
+        "image": "https://www.aritro.cloud/logo.webp",
         "jobTitle": "Software Developer",
         "worksFor": {
           "@type": "Organization",
