@@ -212,8 +212,8 @@ export const GAMES = [
     title: 'Space Invaders',
     description: 'Defend the server from incoming bugs in this classic retro shooter.',
     icon: <Rocket className="w-8 h-8 md:w-10 md:h-10 text-rose-500" />,
-    path: '#',
-    status: 'Coming Soon',
+    path: '/play/space-invaders',
+    status: 'Available',
     color: 'text-rose-500'
   },
   {
