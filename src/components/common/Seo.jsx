@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import profileImg from '../../assets/profile.webp';
 
 export default function Seo({ title, description, url, image = 'https://www.aritro.cloud/banner.png', type = 'website' }) {
   const fullTitle = `${title} | Aritro Saha`;
@@ -14,7 +15,7 @@ export default function Seo({ title, description, url, image = 'https://www.arit
         "@type": "Person",
         "name": "Aritro Saha",
         "url": "https://www.aritro.cloud/",
-        "image": "https://www.aritro.cloud/logo.webp",
+        "image": `https://www.aritro.cloud${profileImg}`,
         "jobTitle": "Software Developer",
         "worksFor": {
           "@type": "Organization",
