@@ -1,5 +1,9 @@
 # Aritro Saha | Developer Portfolio & Arcade 🚀
 
+<div align="center">
+  <img src="public/banner.webp" alt="Portfolio Banner" width="100%" />
+</div>
+
 Welcome to my personal slice of the internet! This isn't just a static resume—it's a fully interactive, mobile-first experience designed to showcase my path as a Software Developer, Data Scientist, and AI enthusiast.
 
 ## ✨ Features
@@ -8,16 +12,22 @@ Welcome to my personal slice of the internet! This isn't just a static resume—
   - **🐍 AI Snake**: A classic with a twist. Eat the `🤖` icon for bonus points! (Full mobile D-Pad support)
   - **🧩 Data Pipeline**: A matrix-based puzzle game testing your logic to connect the nodes smoothly.
   - **⌨️ Typing Test**: Test your coding speed with a minimalist interface.
+  - **🔢 Sudoku**: Challenge your mind with a classic, fully playable Sudoku game.
 - **🔍 Global Command Palette**: Hit `Cmd+K` or `Ctrl+K` to instantly jump between pages, games, and sections like a true power user.
-- **⚡ Fluid Animations**: Smooth page transitions, custom curvy text reveals, and micro-interactions powered by Framer Motion.
-- **📱 Responsive & Accessible**: From a custom touch joystick for mobile games to seamlessly hidden semantic HTML for SEO crawlers.
+- **🌗 Dark/Light Mode**: Seamlessly switches themes according to your system preference or a manual toggle.
+- **⚡ Fluid Animations & Micro-interactions**: Smooth page transitions, custom curvy text reveals, and a custom interactive cursor powered by Framer Motion.
+- **📈 Advanced SEO & Performance**: Fully optimized with dynamic meta tags, JSON-LD structured data, and automated image conversion to WebP format. Includes lazy loading for images and gallery assets.
+- **🛠️ Utilities & Navigation**: Features a dynamic scroll progress bar and a quick scroll-to-top button for better UX.
+- **🖼️ Gallery & Project Details**: Dedicated project case studies and a lazy-loaded photography gallery section.
+- **� Smart Routing & 404 Handling**: Custom 404 error page routing with SPA redirects to keep navigation seamless.
+- **�📱 Responsive & Accessible**: From a custom touch joystick for mobile games to seamlessly hidden semantic HTML for SEO crawlers.
 - **🎨 Minimalist Design**: A clean, distraction-free environment that lets the projects and content shine.
 
 ## 🔗 Connect with me
 
 I'm always open to discussing new opportunities, collaborations, or just chatting about tech!
 
-- **LinkedIn**: [in/aritro-saha](https://linkedin.com/in/aritro-saha)
+- **LinkedIn**: [aritro-saha](https://linkedin.com/in/aritro-saha)
 - **GitHub**: [@halcyon-past](https://github.com/halcyon-past)
 - **LeetCode**: [AritroSaha](https://leetcode.com/u/AritroSaha/)
 - **YouTube**: [@veripyed](https://www.youtube.com/@veripyed)
