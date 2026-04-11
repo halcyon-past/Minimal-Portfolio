@@ -62,7 +62,7 @@ export default function Hero() {
                   transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <div className="flex items-center gap-3 md:gap-5">
-                    <span className="inline-block w-2.5 h-2.5 md:w-4 md:h-4 bg-[var(--amethyst)] rounded-full mt-1 md:mt-2"></span>
+                    <span className="inline-block w-2.5 h-2.5 md:w-4 md:h-4 bg-(--amethyst) rounded-full mt-1 md:mt-2"></span>
                     {greetings[greetingIndex]}
                   </div>
                 </motion.div>
@@ -86,11 +86,11 @@ export default function Hero() {
               href="https://siliconsync.aritro.cloud/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-1.5 text-sm md:text-sm font-medium text-[var(--chrysler-blue)] bg-[var(--honeydew)] hover:bg-[var(--amethyst)] hover:text-white border border-[var(--amethyst)]/20 rounded-full transition-all duration-300"
+              className="inline-flex items-center gap-2 px-4 py-1.5 text-sm md:text-sm font-medium text-(--chrysler-blue) bg-(--honeydew) hover:bg-(--amethyst) hover:text-white border border-(--amethyst)/20 rounded-full transition-all duration-300"
             >
               <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--amethyst)] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[var(--chrysler-blue)]"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-(--amethyst) opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-(--chrysler-blue)"></span>
               </span>
               Check out my daily AI news blog
               <span>→</span>
@@ -103,7 +103,7 @@ export default function Hero() {
             animate={{ y: showIntro ? 50 : 0, opacity: showIntro ? 0 : 1 }}
             transition={{ duration: 0.8, delay: showIntro ? 0 : 0.2, ease: "easeOut" }}
           >
-            Hi, I'm <span className="text-[var(--amethyst)] font-semibold">Aritro Saha</span>.
+            Hi, I'm <span className="text-(--amethyst) font-semibold">Aritro Saha</span>.
           </motion.h1>
           
           <motion.p 
@@ -112,7 +112,7 @@ export default function Hero() {
             animate={{ y: showIntro ? 30 : 0, opacity: showIntro ? 0 : 1 }}
             transition={{ duration: 0.8, delay: showIntro ? 0 : 0.4, ease: "easeOut" }}
           >
-            A <span className="font-medium">versatile</span> <span className="font-medium">full-stack developer</span> and <span className="font-medium">data science engineer</span> focused on creating <span className="font-medium">unique</span> and <span className="bg-[var(--chrysler-blue)] text-[var(--honeydew)] font-medium px-1 rounded">user-centric products</span>, currently working at <span className="font-medium">Bristol Myers Squibb</span>.
+            A <span className="font-medium">versatile</span> <span className="font-medium">full-stack developer</span> and <span className="font-medium">data science engineer</span> focused on creating <span className="font-medium">unique</span> and <span className="bg-(--chrysler-blue) text-(--honeydew) font-medium px-1 rounded">user-centric products</span>, currently working at <span className="font-medium">Bristol Myers Squibb</span>.
           </motion.p>
         </div>
         

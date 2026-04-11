@@ -21,7 +21,7 @@ export default function Gallery() {
       <section id="gallery" className="py-16 px-4 md:px-8 bg-white dark:bg-gray-950 cursor-default">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-2xl md:text-3xl font-medium mb-8 text-center text-gray-900 dark:text-gray-100">
-            My <span className="text-[var(--amethyst)] font-medium">Gallery</span>
+            My <span className="text-(--amethyst) font-medium">Gallery</span>
           </h2>
           <p className="text-lg text-center mb-8 text-gray-700 dark:text-gray-300">
             A glimpse into my world — where <span className="font-medium">creativity</span>, <span className="font-medium">moments</span>, and <span className="font-medium">memories</span> come to life through visual storytelling.

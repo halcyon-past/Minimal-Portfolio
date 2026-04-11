@@ -138,7 +138,7 @@ export default function Projects({ projects }) {
                 )}
                 <button 
                   onClick={() => handleShare(project)}
-                  className="text-gray-500 dark:text-gray-400 hover:text-[var(--amethyst)] transition-colors duration-300"
+                  className="text-gray-500 dark:text-gray-400 hover:text-(--amethyst) transition-colors duration-300"
                   aria-label={`Share ${project.title}`}
                   title={`Share ${project.title}`}
                 >

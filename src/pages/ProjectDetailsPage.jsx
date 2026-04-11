@@ -37,7 +37,7 @@ const ProjectDetailsPage = () => {
         >
           <Link 
             to="/" 
-            className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-[var(--text-color)] dark:text-gray-400 dark:hover:text-white transition-colors"
+            className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-(--text-color) dark:text-gray-400 dark:hover:text-white transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Home
@@ -82,7 +82,7 @@ const ProjectDetailsPage = () => {
                   href={project.details.liveDemo} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-transparent border-2 border-gray-200 dark:border-gray-800 hover:border-gray-900 dark:hover:border-white text-[var(--text-color)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-medium"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-transparent border-2 border-gray-200 dark:border-gray-800 hover:border-gray-900 dark:hover:border-white text-(--text-color) hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-medium"
                 >
                   <ExternalLink className="w-5 h-5 mr-2" />
                   Live Demo
@@ -193,7 +193,7 @@ const ProjectDetailsPage = () => {
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     className="p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow group"
                   >
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-[var(--chrysler-blue)] transition-colors">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-(--chrysler-blue) transition-colors">
                       {description ? title : feature}
                     </h3>
                     {description && (

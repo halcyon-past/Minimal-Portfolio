@@ -10,7 +10,7 @@ export const projects = [
     alt: 'GlideConnect platform interface',
     link: '/projects/glide-connect',
     github: 'https://github.com/halcyon-past/Glide-Connect',
-    color: 'text-[var(--chrysler-blue)]',
+    color: 'text-(--chrysler-blue)',
     HomepageVisibility: true,
     details: {
       overview: 'A Final Year Project for VIT, this project demonstrates a novel way to control a computer interface using hand gestures and voice commands. It leverages MediaPipe for real-time gesture recognition, integrates a custom voice assistant named Krishna, and incorporates generative AI (using Google Gemini) for enhanced query responses.',
@@ -34,7 +34,7 @@ export const projects = [
     alt: 'Pawsitive pet healthcare platform interface',
     link: '/projects/pawsitive',
     github: 'https://github.com/halcyon-past/PAW-sitive',
-    color: 'text-[var(--amethyst)]',
+    color: 'text-(--amethyst)',
     HomepageVisibility: true,
     details: {
       overview: 'PAWsitive is a comprehensive web application designed to help pet owners find blood donors, veterinary clinics, and rescue centers with ease. Built at Hack4Bengal, Eastern India\'s Largest Hackathon.',
@@ -57,7 +57,7 @@ export const projects = [
     alt: 'EduHelper learning platform interface',
     link: '/projects/eduhelper',
     github: 'https://github.com/halcyon-past/EDUHELPER',
-    color: 'text-[var(--celadon)]',
+    color: 'text-(--celadon)',
     HomepageVisibility: true,
     details: {
       overview: 'This Streamlit application allows users to upload PDF files and ask questions based on their content. The application utilizes the Google Generative AI API for text embedding and question answering.',
@@ -89,32 +89,32 @@ export const socialMedia = [
     platform: 'LinkedIn',
     url: 'https://linkedin.com/in/aritro-saha',
     icon: 'fab fa-linkedin',
-    color: 'text-[var(--amethyst)]',
-    hoverColor: 'hover:text-[var(--chrysler-blue)]',
+    color: 'text-(--amethyst)',
+    hoverColor: 'hover:text-(--chrysler-blue)',
     ariaLabel: 'LinkedIn'
   },
   {
     platform: 'Instagram',
     url: 'https://instagram.com/halcyon-past',
     icon: 'fab fa-instagram',
-    color: 'text-[var(--celadon)]',
-    hoverColor: 'hover:text-[var(--amethyst)]',
+    color: 'text-(--celadon)',
+    hoverColor: 'hover:text-(--amethyst)',
     ariaLabel: 'Instagram'
   },
   {
     platform: 'GitHub',
     url: 'https://github.com/halcyon-past',
     icon: 'fab fa-github',
-    color: 'text-[var(--chrysler-blue)]',
-    hoverColor: 'hover:text-[var(--amethyst)]',
+    color: 'text-(--chrysler-blue)',
+    hoverColor: 'hover:text-(--amethyst)',
     ariaLabel: 'GitHub'
   },
   {
     platform: 'YouTube',
     url: 'https://www.youtube.com/@veripyed',
     icon: 'fab fa-youtube',
-    color: 'text-[var(--tea-green)]',
-    hoverColor: 'hover:text-[var(--amethyst)]',
+    color: 'text-(--tea-green)',
+    hoverColor: 'hover:text-(--amethyst)',
     ariaLabel: 'YouTube'
   }
 ];
@@ -175,7 +175,7 @@ export const GAMES = [
     id: 'typing-test',
     title: 'Developer Speed Test',
     description: 'Test your coding typing speed with this minimalist terminal-style speed test game. Features top programming keywords!',
-    icon: <Keyboard className="w-8 h-8 md:w-10 md:h-10 text-[var(--chrysler-blue)]" />,
+    icon: <Keyboard className="w-8 h-8 md:w-10 md:h-10 text-(--chrysler-blue)" />,
     path: '/play/typing-test',
     status: 'Available',
     color: 'var(--chrysler-blue)'
@@ -184,10 +184,10 @@ export const GAMES = [
     id: 'data-pipeline-puzzle',
     title: 'Data Pipeline Puzzle',
     description: 'Connect the nodes to build a data pipeline without crossing lines. A logic puzzle for data science engineers.',
-    icon: <BrainCircuit className="w-8 h-8 md:w-10 md:h-10 text-[var(--celadon)]" />,
+    icon: <BrainCircuit className="w-8 h-8 md:w-10 md:h-10 text-(--celadon)" />,
     path: '/play/data-pipeline',
     status: 'Available',
-    color: 'text-[var(--celadon)]'
+    color: 'text-(--celadon)'
   },
   {
     id: 'minimalist-snake',
@@ -202,10 +202,10 @@ export const GAMES = [
     id: 'sudoku',
     title: 'Sudoku',
     description: 'Classic logic-based number placement puzzle.',
-    icon: <Grid3X3 className="w-8 h-8 md:w-10 md:h-10 text-[var(--amethyst)]" />,
+    icon: <Grid3X3 className="w-8 h-8 md:w-10 md:h-10 text-(--amethyst)" />,
     path: '/play/sudoku',
     status: 'Available',
-    color: 'text-[var(--amethyst)]'
+    color: 'text-(--amethyst)'
   },
   {
     id: 'space-invaders',

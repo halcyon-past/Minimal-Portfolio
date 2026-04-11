@@ -7,11 +7,11 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <p className="text-gray-700 dark:text-gray-300 cursor-default">
-              © 2025 <span className="text-[var(--amethyst)] font-medium">Aritro Saha</span>. All rights reserved.
+              © 2025 <span className="text-(--amethyst) font-medium">Aritro Saha</span>. All rights reserved.
             </p>
             <a
               href="mailto:aritrosaha2025@gmail.com"
-              className="text-[var(--chrysler-blue)] hover:text-[var(--amethyst)] font-medium transition-colors duration-300 flex items-center mt-2 justify-center"
+              className="text-(--chrysler-blue) hover:text-(--amethyst) font-medium transition-colors duration-300 flex items-center mt-2 justify-center"
               aria-label="Email"
             >
               <i className="fas fa-envelope mr-2"></i>

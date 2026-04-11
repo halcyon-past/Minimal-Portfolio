@@ -68,19 +68,19 @@ export default function Header() {
         
         {/* Desktop menu */}
         <div className="hidden md:flex space-x-8 font-normal items-center">
-          <button onClick={handleProjectsClick} className="relative group text-gray-800 dark:text-gray-200 hover:text-[var(--amethyst)] transition-colors duration-300">
+          <button onClick={handleProjectsClick} className="relative group text-gray-800 dark:text-gray-200 hover:text-(--amethyst) transition-colors duration-300">
             Projects
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--amethyst)] transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-(--amethyst) transition-all duration-300 group-hover:w-full"></span>
           </button>
-          <Link to="/about" className="relative group text-gray-800 dark:text-gray-200 hover:text-[var(--amethyst)] transition-colors duration-300">
+          <Link to="/about" className="relative group text-gray-800 dark:text-gray-200 hover:text-(--amethyst) transition-colors duration-300">
             About
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--amethyst)] transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-(--amethyst) transition-all duration-300 group-hover:w-full"></span>
           </Link>
-          <Link to="/gallery" className="relative group text-gray-800 dark:text-gray-200 hover:text-[var(--amethyst)] transition-colors duration-300">
+          <Link to="/gallery" className="relative group text-gray-800 dark:text-gray-200 hover:text-(--amethyst) transition-colors duration-300">
             Gallery
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--amethyst)] transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-(--amethyst) transition-all duration-300 group-hover:w-full"></span>
           </Link>
-          <Link to="/play" className="relative group flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold rounded-md bg-[var(--amethyst)]/10 text-[var(--chrysler-blue)] dark:text-purple-300 hover:bg-[var(--amethyst)] hover:text-white transition-all duration-300 border border-[var(--amethyst)]/30 shadow-[0_0_10px_var(--amethyst)]/20">
+          <Link to="/play" className="relative group flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold rounded-md bg-(--amethyst)/10 text-(--chrysler-blue) dark:text-purple-300 hover:bg-(--amethyst) hover:text-white transition-all duration-300 border border-(--amethyst)/30 shadow-[0_0_10px_var(--amethyst)]/20">
             <i className="fas fa-terminal"></i> Play
           </Link>
           <button 
@@ -115,7 +115,7 @@ export default function Header() {
               <div className="flex flex-col space-y-8 text-3xl font-light items-center">
                 <motion.button 
                   onClick={handleProjectsClick} 
-                  className="relative group hover:text-[var(--amethyst)]"
+                  className="relative group hover:text-(--amethyst)"
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
@@ -131,7 +131,7 @@ export default function Header() {
                   <Link 
                     to="/about" 
                     onClick={() => setMenuOpen(false)}
-                    className="relative group hover:text-[var(--amethyst)]"
+                    className="relative group hover:text-(--amethyst)"
                   >
                     <span className="block">About</span>
                   </Link>
@@ -145,7 +145,7 @@ export default function Header() {
                   <Link 
                     to="/gallery" 
                     onClick={() => setMenuOpen(false)}
-                    className="relative group hover:text-[var(--amethyst)]"
+                    className="relative group hover:text-(--amethyst)"
                   >
                     <span className="block">Gallery</span>
                   </Link>
@@ -159,7 +159,7 @@ export default function Header() {
                   <Link 
                     to="/play" 
                     onClick={() => setMenuOpen(false)}
-                    className="relative group text-[var(--chrysler-blue)] dark:text-purple-300 font-medium flex items-center justify-center gap-2"
+                    className="relative group text-(--chrysler-blue) dark:text-purple-300 font-medium flex items-center justify-center gap-2"
                   >
                     <i className="fas fa-terminal"></i> Play Game
                   </Link>

@@ -219,7 +219,7 @@ export default function SudokuGamePage() {
       
       <div className="max-w-4xl w-full flex justify-start mb-4 relative z-10 px-2 lg:px-0">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
-          <Link to="/play" className="text-gray-500 dark:text-gray-400 hover:text-[var(--amethyst)] flex items-center gap-2 transition-colors text-sm md:text-base font-medium bg-white dark:bg-[#111111] px-4 py-2 rounded-full shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md">
+          <Link to="/play" className="text-gray-500 dark:text-gray-400 hover:text-(--amethyst) flex items-center gap-2 transition-colors text-sm md:text-base font-medium bg-white dark:bg-[#111111] px-4 py-2 rounded-full shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md">
             <ArrowLeft size={16} /> Back to Arcade
           </Link>
         </motion.div>
@@ -229,7 +229,7 @@ export default function SudokuGamePage() {
         {/* Header Area */}
         <div className="flex justify-between items-center mb-4 md:mb-6 max-w-xl mx-auto md:mx-0 w-full md:max-w-none px-2 lg:px-0">
           <div className="flex flex-col">
-            <h1 className="text-2xl md:text-3xl font-bold dark:text-gray-100 mb-0.5 md:mb-1 text-[var(--chrysler-blue)]">Sudoku</h1>
+            <h1 className="text-2xl md:text-3xl font-bold dark:text-gray-100 mb-0.5 md:mb-1 text-(--chrysler-blue)">Sudoku</h1>
             <p className="text-xs md:text-sm dark:text-gray-400">Errors: {errors}/10</p>
           </div>
           <div className="flex items-center gap-2 md:gap-4">
@@ -258,7 +258,7 @@ export default function SudokuGamePage() {
             <div className="absolute inset-0 bg-white/60 dark:bg-black/60 backdrop-blur-sm z-10 flex items-center justify-center rounded-xl">
               <button 
                 onClick={() => setIsPlaying(true)}
-                className="bg-[var(--amethyst)] text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-[#8656cd] transition"
+                className="bg-(--amethyst) text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-[#8656cd] transition"
               >
                 Resume Game
               </button>
@@ -266,12 +266,12 @@ export default function SudokuGamePage() {
           )}
           {won && (
             <div className="absolute inset-0 bg-white/80 dark:bg-black/80 backdrop-blur-sm z-10 flex flex-col items-center justify-center rounded-xl">
-              <Check size={48} className="text-[var(--honeydew)] mb-4" />
+              <Check size={48} className="text-(--honeydew) mb-4" />
               <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-2">You Won!</h2>
               <p className="text-gray-600 dark:text-gray-400 mb-6">Time: {formatTime(timer)}</p>
               <button 
                 onClick={initGame}
-                className="bg-[var(--amethyst)] text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-[#8656cd] transition"
+                className="bg-(--amethyst) text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-[#8656cd] transition"
               >
                 Play Again
               </button>
@@ -317,10 +317,10 @@ export default function SudokuGamePage() {
                     onClick={() => handleCellClick(rIndex, cIndex)}
                     className={`
                       aspect-square flex justify-center items-center cursor-pointer text-lg md:text-xl font-medium sm:font-bold transition-colors
-                      ${cell.isInitial ? 'text-gray-900 dark:text-gray-100' : 'text-[var(--amethyst)]'}
+                      ${cell.isInitial ? 'text-gray-900 dark:text-gray-100' : 'text-(--amethyst)'}
                       ${isWrong ? 'text-red-500 dark:text-red-400 bg-red-100 dark:bg-red-900/30' : ''}
-                      ${isSelected ? 'bg-[var(--honeydew)] dark:bg-[var(--amethyst)]/40' : 
-                        isSameValue ? 'bg-[var(--celeste)] dark:bg-[var(--amethyst)]/20' :
+                      ${isSelected ? 'bg-(--honeydew) dark:bg-(--amethyst)/40' : 
+                        isSameValue ? 'bg-(--celeste) dark:bg-(--amethyst)/20' :
                         isHighlighted ? 'bg-gray-100 dark:bg-gray-800' : 'bg-white dark:bg-[#111111]'}
                       ${borderClasses}
                     `}
@@ -349,7 +349,7 @@ export default function SudokuGamePage() {
           <div className="flex justify-between md:flex-col gap-2 md:gap-4 px-1 md:px-0">
             <button
               onClick={() => setNotesMode(!notesMode)}
-              className={`flex-1 md:flex-none flex items-center justify-center gap-1.5 md:gap-2 px-3 py-2 md:px-4 md:py-3 rounded-xl md:rounded-full text-sm md:text-base font-medium transition-colors ${notesMode ? 'bg-[var(--chrysler-blue)] text-white shadow-md' : 'bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300'}`}
+              className={`flex-1 md:flex-none flex items-center justify-center gap-1.5 md:gap-2 px-3 py-2 md:px-4 md:py-3 rounded-xl md:rounded-full text-sm md:text-base font-medium transition-colors ${notesMode ? 'bg-(--chrysler-blue) text-white shadow-md' : 'bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300'}`}
             >
               <PenTool size={16} /> {notesMode ? 'Notes (ON)' : 'Notes (OFF)'}
             </button>
@@ -366,7 +366,7 @@ export default function SudokuGamePage() {
               <button
                 key={num}
                 onClick={() => handleNumberInput(num)}
-                className="h-10 md:h-auto md:aspect-square flex items-center justify-center text-lg md:text-3xl font-semibold bg-white dark:bg-[#111111] border border-gray-200 dark:border-gray-800 rounded-md md:rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-[var(--amethyst)] transition-colors dark:text-white shadow-sm"
+                className="h-10 md:h-auto md:aspect-square flex items-center justify-center text-lg md:text-3xl font-semibold bg-white dark:bg-[#111111] border border-gray-200 dark:border-gray-800 rounded-md md:rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-(--amethyst) transition-colors dark:text-white shadow-sm"
               >
                 {num}
               </button>
