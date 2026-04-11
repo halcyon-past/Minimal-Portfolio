@@ -214,7 +214,7 @@ export default function SnakeGamePage() {
         </div>
 
         <div 
-          className="relative w-full max-w-[450px] mx-auto aspect-square bg-gray-50 dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden touch-none"
+          className="relative w-full max-w-112.5 mx-auto aspect-square bg-gray-50 dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden touch-none"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >

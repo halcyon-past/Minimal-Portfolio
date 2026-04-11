@@ -368,7 +368,7 @@ export default function SpaceInvadersPage() {
           </div>
         </div>
 
-        <div className="relative aspect-[4/3] md:aspect-video w-full bg-[#0a0a0a] rounded-lg overflow-hidden flex items-center justify-center border-2 border-gray-800 shadow-inner">
+        <div className="relative aspect-4/3 md:aspect-video w-full bg-[#0a0a0a] rounded-lg overflow-hidden flex items-center justify-center border-2 border-gray-800 shadow-inner">
           <canvas 
             ref={canvasRef}
             width={CANVAS_WIDTH}
@@ -402,7 +402,7 @@ export default function SpaceInvadersPage() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
               >
-                <div className="bg-white dark:bg-gray-900 p-4 md:p-8 rounded-xl md:rounded-2xl shadow-2xl text-center max-w-[280px] md:max-w-sm w-full border border-red-500/30">
+                <div className="bg-white dark:bg-gray-900 p-4 md:p-8 rounded-xl md:rounded-2xl shadow-2xl text-center max-w-70 md:max-w-sm w-full border border-red-500/30">
                   <h2 className="text-2xl md:text-3xl font-black text-red-600 dark:text-red-500 mb-1 md:mb-2 uppercase tracking-wide">Game Over</h2>
                   <p className="text-gray-600 dark:text-gray-400 mb-4 md:mb-6 text-base md:text-lg">Final Score: <span className="font-bold text-gray-900 dark:text-white">{score}</span></p>
                   
@@ -432,7 +432,7 @@ export default function SpaceInvadersPage() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
               >
-                <div className="bg-white dark:bg-gray-900 p-4 md:p-8 rounded-xl md:rounded-2xl shadow-2xl text-center max-w-[280px] md:max-w-sm w-full border border-green-500/30">
+                <div className="bg-white dark:bg-gray-900 p-4 md:p-8 rounded-xl md:rounded-2xl shadow-2xl text-center max-w-70 md:max-w-sm w-full border border-green-500/30">
                   <h2 className="text-2xl md:text-3xl font-black text-green-600 dark:text-green-500 mb-1 md:mb-2 uppercase tracking-wide">Victory!</h2>
                   <p className="text-gray-600 dark:text-gray-400 mb-4 md:mb-6 text-sm md:text-lg">You cleared the bugs!<br/>Final Score: <span className="font-bold text-gray-900 dark:text-white">{score}</span></p>
                   

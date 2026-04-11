@@ -386,7 +386,7 @@ export default function FlappyBirdPage() {
         </div>
 
         <div 
-          className="relative w-full max-w-[400px] mx-auto bg-[#0f172a] rounded-lg overflow-hidden flex items-center justify-center border-2 border-gray-800 shadow-inner"
+          className="relative w-full max-w-100 mx-auto bg-[#0f172a] rounded-lg overflow-hidden flex items-center justify-center border-2 border-gray-800 shadow-inner"
           style={{ aspectRatio: '4/5' }}
           onTouchStart={(e) => { e.preventDefault(); jump(); }}
           onMouseDown={jump}
@@ -424,7 +424,7 @@ export default function FlappyBirdPage() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
               >
-                <div className="bg-white dark:bg-gray-900 p-4 md:p-8 rounded-xl md:rounded-2xl shadow-2xl text-center max-w-[280px] md:max-w-sm w-full border border-red-500/30" onClick={(e) => e.stopPropagation()}>
+                <div className="bg-white dark:bg-gray-900 p-4 md:p-8 rounded-xl md:rounded-2xl shadow-2xl text-center max-w-70 md:max-w-sm w-full border border-red-500/30" onClick={(e) => e.stopPropagation()}>
                   <h2 className="text-2xl md:text-3xl font-black text-red-600 dark:text-red-500 mb-1 md:mb-2 uppercase tracking-wide">Game Over</h2>
                   <p className="text-gray-600 dark:text-gray-400 mb-4 md:mb-6 text-base md:text-lg">Final Score: <span className="font-bold text-gray-900 dark:text-white">{score}</span></p>
                   
