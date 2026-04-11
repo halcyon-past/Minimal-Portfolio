@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import CurvyTextAnimation from './CurvyTextAnimation';
 
 import { createPortal } from 'react-dom';
@@ -80,7 +81,7 @@ export default function Hero() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: showIntro ? 20 : 0, opacity: showIntro ? 0 : 1 }}
             transition={{ duration: 0.8, delay: showIntro ? 0 : 0.1, ease: "easeOut" }}
-            className="mb-6 inline-block"
+            className="mb-6 flex flex-wrap gap-4"
           >
             <a 
               href="https://siliconsync.aritro.cloud/" 
@@ -95,6 +96,15 @@ export default function Hero() {
               Check out my daily AI news blog
               <span>→</span>
             </a>
+            
+            <Link 
+              to="/play" 
+              className="inline-flex items-center gap-2 px-4 py-1.5 text-sm md:text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 border border-indigo-500/30 rounded-full shadow-[0_0_15px_rgba(79,70,229,0.4)] hover:shadow-[0_0_20px_rgba(79,70,229,0.6)] transition-all duration-300"
+            >
+              <span className="text-base">🎮</span>
+              Play my Developer Arcade
+              <span>→</span>
+            </Link>
           </motion.div>
 
           <motion.h1 
