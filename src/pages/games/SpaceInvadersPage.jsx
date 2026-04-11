@@ -153,6 +153,13 @@ export default function SpaceInvadersPage() {
 
     if (!activeAliens) {
       setStatus('won');
+      setScore(s => {
+        if (s > highScore) {
+          setHighScore(s);
+          localStorage.setItem('spaceInvadersHighScore', s.toString());
+        }
+        return s;
+      });
       return;
     }
 
