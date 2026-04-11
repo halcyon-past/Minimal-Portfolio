@@ -22,7 +22,7 @@ async function processDirectory(dir) {
       await processDirectory(fullPath);
     } else {
       const ext = path.extname(fullPath).toLowerCase();
-      if (extensions.includes(ext) && file !== 'logo.png') {
+      if (extensions.includes(ext) && file !== 'logo.png' && file !== 'banner-social.jpg') {
         const webpPath = fullPath.replace(new RegExp(ext + '$', 'i'), '.webp');
         try {
           await sharp(fullPath).webp({ quality: 80 }).toFile(webpPath);

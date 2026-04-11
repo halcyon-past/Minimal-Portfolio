@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import profileImg from '../../assets/profile.webp';
 
-export default function Seo({ title, description, url, image = 'https://www.aritro.cloud/banner.png', type = 'website' }) {
+export default function Seo({ title, description, url, image = 'https://www.aritro.cloud/banner-social.jpg', type = 'website' }) {
   const fullTitle = `${title} | Aritro Saha`;
   const defaultDescription = "Portfolio of Aritro Saha, a Software Developer specializing in full-stack web development, data science, and AI. Discover my interactive developer arcade, projects, experience, and skills.";
   const finalDescription = description || defaultDescription;
