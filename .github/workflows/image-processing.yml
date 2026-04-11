@@ -1,0 +1,96 @@
+name: Process Image Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_path:
+        description: 'Relative path to the image or folder (e.g. public/assets or src/assets/profile.webp)'
+        required: true
+        type: string
+      format:
+        description: 'Convert format to:'
+        required: false
+        type: choice
+        default: 'keep-original'
+        options:
+          - 'keep-original'
+          - 'webp'
+          - 'jpg'
+          - 'png'
+          - 'favicon'
+      resize:
+        description: 'Resize dimensions (e.g., 800x600, or 1200 for width only)'
+        required: false
+        type: string
+      quality:
+        description: 'Compression quality (1-100). Leave blank for default (80). Highly recommended to use this to compress images without format change.'
+        required: false
+        type: string
+      remove_original:
+        description: 'Delete original file / Overwrite with compressed image?'
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  process-image:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm i sharp png-to-ico
+
+      - name: Process Image
+        run: |
+          CMD="node scripts/convert-images.js"
+          if [[ "${{ inputs.format }}" == "favicon" ]]; then
+            CMD="$CMD --favicon"
+          elif [[ "${{ inputs.format }}" != "keep-original" ]]; then
+            CMD="$CMD --${{ inputs.format }}"
+          fi
+          
+          if [[ -n "${{ inputs.resize }}" ]]; then
+            CMD="$CMD --resize ${{ inputs.resize }}"
+          fi
+          
+          if [[ -n "${{ inputs.quality }}" ]]; then
+            CMD="$CMD --quality ${{ inputs.quality }}"
+          fi
+          
+          if [[ "${{ inputs.remove_original }}" == "true" ]]; then
+            CMD="$CMD --remove-original"
+          fi
+          
+          CMD="$CMD \"${{ inputs.image_path }}\""
+          echo "Executing: $CMD"
+          eval $CMD
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(images): process images via GH Actions workflow"
+          title: "Update Images: ${{ inputs.image_path }}"
+          body: |
+            Image processing triggered by @${{ github.actor }}
+            
+            **Configuration:**
+            - Path: `${{ inputs.image_path }}`
+            - Format: `${{ inputs.format }}`
+            - Resize: `${{ inputs.resize || 'None' }}`
+            - Quality/Compress: `${{ inputs.quality || 'Default' }}`
+            - Remove/Overwrite Original: `${{ inputs.remove_original }}`
+          branch: "image-update-${{ github.run_id }}"
+          reviewers: ${{ github.actor }}
+          assignees: ${{ github.actor }}
