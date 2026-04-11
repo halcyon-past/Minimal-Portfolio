@@ -58,7 +58,8 @@ export default function SpaceInvadersPage() {
   };
 
   const handleShare = async () => {
-    const text = `🚀 I scored ${score} points in the Space Invaders developer game! Can you beat my high score of ${highScore}?`;
+    const currentHighScore = Math.max(score, highScore);
+    const text = `🚀 I scored ${score} points in the Space Invaders developer game! Can you beat my high score of ${currentHighScore}?`;
     if (navigator.share) {
       try {
         await navigator.share({ title: 'Space Invaders', text: text + '\n\n' + window.location.href });

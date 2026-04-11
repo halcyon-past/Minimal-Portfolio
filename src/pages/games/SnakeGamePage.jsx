@@ -43,7 +43,8 @@ export default function SnakeGamePage() {
   const scoreRef = useRef(score);
 
   const handleShare = async () => {
-    const text = `🐍 I scored ${score} points in the Minimalist Snake developer game! Can you beat my high score of ${highScore}?`;
+    const currentHighScore = Math.max(scoreRef.current, highScore);
+    const text = `🐍 I scored ${scoreRef.current} points in the Minimalist Snake developer game! Can you beat my high score of ${currentHighScore}?`;
     if (navigator.share) {
       try {
         await navigator.share({ title: 'Minimalist Snake', text: text + '\n\n' + window.location.href });
