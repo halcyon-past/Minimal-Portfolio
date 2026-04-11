@@ -13,6 +13,7 @@ import SudokuGamePage from './pages/games/SudokuGamePage';
 import DataPipelinePage from './pages/games/DataPipelinePage';
 import SpaceInvadersPage from './pages/games/SpaceInvadersPage';
 import FlappyBirdPage from './pages/games/FlappyBirdPage';
+import TicTacToePage from './pages/games/TicTacToePage';
 import ProjectDetailsPage from './pages/ProjectDetailsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import Footer from './components/Footer';
@@ -118,6 +119,15 @@ function AnimatedRoutes() {
             <PageTransition>
               <Seo title="Flappy Bird" url="/play/flappy-bird" description="Navigate the bird through the pipes!" />
               <FlappyBirdPage />
+            </PageTransition>
+          } 
+        />
+        <Route 
+          path="/play/tictactoe" 
+          element={
+            <PageTransition>
+              <Seo title="Tic Tac Toe" url="/play/tictactoe" description="Beat the AI in this minimalist classic!" />
+              <TicTacToePage />
             </PageTransition>
           } 
         />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Keyboard, BrainCircuit, Gamepad2, Grid3X3, Rocket, Bird } from 'lucide-react';
+import { Keyboard, BrainCircuit, Gamepad2, Grid3X3, Rocket, Bird, Swords } from 'lucide-react';
 
 export const projects = [
   {
@@ -224,5 +224,14 @@ export const GAMES = [
     path: '/play/flappy-bird',
     status: 'Available',
     color: 'text-yellow-500'
+  },
+  {
+    id: 'tictactoe',
+    title: 'Tic Tac Toe',
+    description: 'Play against an AI in this classic game. Can you beat the Minimax algorithm?',
+    icon: <Swords className="w-8 h-8 md:w-10 md:h-10 text-purple-500" />,
+    path: '/play/tictactoe',
+    status: 'Available',
+    color: 'text-purple-500'
   }
 ];
