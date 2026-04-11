@@ -11,6 +11,7 @@ import GamesCatalogPage from './pages/GamesCatalogPage';
 import SnakeGamePage from './pages/games/SnakeGamePage';
 import SudokuGamePage from './pages/games/SudokuGamePage';
 import DataPipelinePage from './pages/games/DataPipelinePage';
+import ProjectDetailsPage from './pages/ProjectDetailsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -97,6 +98,14 @@ function AnimatedRoutes() {
             <PageTransition>
               <Seo title="Data Pipeline Puzzle" url="/play/data-pipeline" description="Connect the nodes to build a data pipeline without crossing lines. A logic puzzle for data science engineers." />
               <DataPipelinePage />
+            </PageTransition>
+          } 
+        />
+        <Route 
+          path="/projects/:id" 
+          element={
+            <PageTransition>
+              <ProjectDetailsPage />
             </PageTransition>
           } 
         />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import Gears from './Gears';
 import LazyImage from './common/LazyImage';
 
@@ -95,22 +96,46 @@ export default function Projects({ projects }) {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <TiltCard project={project} />
+              {project.link.startsWith('http') ? (
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="block w-full cursor-pointer">
+                  <TiltCard project={project} />
+                </a>
+              ) : (
+                <Link to={project.link} className="block w-full cursor-pointer">
+                  <TiltCard project={project} />
+                </Link>
+              )}
               
               <div className="mb-3 mt-6 flex justify-between items-center">
-                <a href={project.link} className="inline-block group" target="_blank" rel="noopener noreferrer">
-                  <h2 className="text-2xl md:text-3xl font-medium flex items-center border-b border-black pb-1 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bottom-[-2px] after:left-0 after:bg-black after:origin-bottom-right after:transition-transform after:duration-300 group-hover:after:scale-x-100 group-hover:after:origin-bottom-left">
-                    {String(index + 1).padStart(2, '0')}. {project.title}
-                    <motion.span 
-                      className="ml-2 transform text-3xl inline-block"
-                      initial={{ x: 0, y: 0 }}
-                      whileHover={{ x: 4, y: -4 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      ↗︎
-                    </motion.span>
-                  </h2>
-                </a>
+                {project.link.startsWith('http') ? (
+                  <a href={project.link} className="inline-block group" target="_blank" rel="noopener noreferrer">
+                    <h2 className="text-2xl md:text-3xl font-medium flex items-center border-b border-black pb-1 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bottom-[-2px] after:left-0 after:bg-black after:origin-bottom-right after:transition-transform after:duration-300 group-hover:after:scale-x-100 group-hover:after:origin-bottom-left">
+                      {String(index + 1).padStart(2, '0')}. {project.title}
+                      <motion.span 
+                        className="ml-2 transform text-3xl inline-block"
+                        initial={{ x: 0, y: 0 }}
+                        whileHover={{ x: 4, y: -4 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        ↗︎
+                      </motion.span>
+                    </h2>
+                  </a>
+                ) : (
+                  <Link to={project.link} className="inline-block group">
+                    <h2 className="text-2xl md:text-3xl font-medium flex items-center border-b border-black pb-1 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bottom-[-2px] after:left-0 after:bg-black after:origin-bottom-right after:transition-transform after:duration-300 group-hover:after:scale-x-100 group-hover:after:origin-bottom-left">
+                      {String(index + 1).padStart(2, '0')}. {project.title}
+                      <motion.span 
+                        className="ml-2 transform text-3xl inline-block"
+                        initial={{ x: 0, y: 0 }}
+                        whileHover={{ x: 4, y: -4 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        →
+                      </motion.span>
+                    </h2>
+                  </Link>
+                )}
                 <button 
                   onClick={() => handleShare(project)}
                   className="text-gray-500 dark:text-gray-400 hover:text-[var(--amethyst)] transition-colors duration-300"

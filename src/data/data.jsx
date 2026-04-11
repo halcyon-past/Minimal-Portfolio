@@ -3,31 +3,73 @@ import { Keyboard, BrainCircuit, Gamepad2, Grid3X3, Rocket, Bird } from 'lucide-
 
 export const projects = [
   {
+    id: 'glide-connect',
     title: 'GlideConnect',
     description: 'Virtual Mouse Control using Gesture Recognition and Voice Assistant',
     image: '/assets/GlideConnect.webp',
     alt: 'GlideConnect platform interface',
-    link: 'https://github.com/halcyon-past/Glide-Connect',
+    link: '/projects/glide-connect',
+    github: 'https://github.com/halcyon-past/Glide-Connect',
     color: 'text-[var(--chrysler-blue)]',
     HomepageVisibility: true,
+    details: {
+      overview: 'A Final Year Project for VIT, this project demonstrates a novel way to control a computer interface using hand gestures and voice commands. It leverages MediaPipe for real-time gesture recognition, integrates a custom voice assistant named Krishna, and incorporates generative AI (using Google Gemini) for enhanced query responses.',
+      features: [
+        'Cursor Control: Move the mouse pointer using hand movements.',
+        'Click Operations: Perform left, right, and double clicks with specific finger gestures.',
+        'System Controls: Adjust system volume and screen brightness using pinch gestures.',
+        'Voice Assistant (Krishna): Launch gesture recognition, Google search, file navigation, and enter Divine Mode.',
+        'Divine Mode (GenAI): Leverage Google Gemini Flash for generative AI responses including screenshot analysis.'
+      ],
+      techStack: ['Python 3.9', 'MediaPipe', 'OpenCV', 'Google Gemini API', 'PyAutoGUI', 'PyCAW'],
+      liveDemo: '',
+      researchPaper: 'https://ijirt.org/article?manuscript=180711'
+    }
   },
   {
+    id: 'pawsitive',
     title: 'PAWsitive',
     description: 'Centralized Platfrom for Pet Healthcare',
     image: '/assets/Pawsitive.webp',
     alt: 'Pawsitive pet healthcare platform interface',
-    link: 'https://github.com/halcyon-past/PAW-sitive',
+    link: '/projects/pawsitive',
+    github: 'https://github.com/halcyon-past/PAW-sitive',
     color: 'text-[var(--amethyst)]',
     HomepageVisibility: true,
+    details: {
+      overview: 'PAWsitive is a comprehensive web application designed to help pet owners find blood donors, veterinary clinics, and rescue centers with ease. Built at Hack4Bengal, Eastern India\'s Largest Hackathon.',
+      features: [
+        'Blood Donors & Vet Clinics Directory: Search and filter based on specific criteria.',
+        'Rescue Centers Directory: Access a directory of rescue centers with ambulance services.',
+        'Registration Portals: Register as a blood donor, veterinary clinic, rescue center, or event host.',
+        'Voice Assistant: Customer support and educational resources via Callchimp.AI.',
+        'AI Chatbot: Gemini powered AI chatbot to tackle animal-related queries.'
+      ],
+      techStack: ['React', 'Next.js', 'TypeScript', 'MongoDB', 'Tailwind CSS', 'Node.js', 'Kinde Auth', 'UploadThing', 'Callchimp.AI'],
+      liveDemo: 'https://www.bepawsitive.xyz'
+    }
   },
   {
+    id: 'eduhelper',
     title: 'EduHelper',
     description: 'AI Assistant to Chat with PDFs',
     image: '/assets/Eduhelper.webp',
     alt: 'EduHelper learning platform interface',
-    link: 'https://github.com/halcyon-past/EDUHELPER',
+    link: '/projects/eduhelper',
+    github: 'https://github.com/halcyon-past/EDUHELPER',
     color: 'text-[var(--celadon)]',
     HomepageVisibility: true,
+    details: {
+      overview: 'This Streamlit application allows users to upload PDF files and ask questions based on their content. The application utilizes the Google Generative AI API for text embedding and question answering.',
+      features: [
+        'Extract text from uploaded PDF files.',
+        'Split text into smaller chunks for efficient embedding and retrieval.',
+        'Create a vector store (FAISS index) using Google Generative AI Embeddings.',
+        'Conversational chain for QA using the Google Generative AI Chat model.'
+      ],
+      techStack: ['Python', 'Streamlit', 'PyPDF2', 'LangChain', 'Google Generative AI', 'FAISS'],
+      liveDemo: 'https://eduprovider.streamlit.app/'
+    }
   },
 ];
 
