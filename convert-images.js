@@ -40,6 +40,9 @@ async function generateFavicon() {
   const logoPath = path.join(__dirname, 'public', 'logo.png');
   const icoPath = path.join(__dirname, 'public', 'favicon.ico');
   const webpLogoPath = path.join(__dirname, 'public', 'logo.webp');
+  
+  const bannerPath = path.join(__dirname, 'public', 'banner.png');
+  const webpBannerPath = path.join(__dirname, 'public', 'banner.webp');
 
   if (fs.existsSync(logoPath)) {
     try {
@@ -52,6 +55,16 @@ async function generateFavicon() {
       console.log(`Converted logo.png to logo.webp`);
     } catch (err) {
       console.error(`Favicon generation failed:`, err);
+    }
+  }
+
+  if (fs.existsSync(bannerPath)) {
+    try {
+      await sharp(bannerPath).webp({ quality: 80 }).toFile(webpBannerPath);
+      fs.unlinkSync(bannerPath);
+      console.log(`Converted banner.png to banner.webp`);
+    } catch (err) {
+      console.error(`Banner conversion failed:`, err);
     }
   }
 }
