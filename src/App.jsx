@@ -12,6 +12,7 @@ import SnakeGamePage from './pages/games/SnakeGamePage';
 import SudokuGamePage from './pages/games/SudokuGamePage';
 import DataPipelinePage from './pages/games/DataPipelinePage';
 import SpaceInvadersPage from './pages/games/SpaceInvadersPage';
+import FlappyBirdPage from './pages/games/FlappyBirdPage';
 import ProjectDetailsPage from './pages/ProjectDetailsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import Footer from './components/Footer';
@@ -108,6 +109,15 @@ function AnimatedRoutes() {
             <PageTransition>
               <Seo title="Space Invaders" url="/play/space-invaders" description="Defend your codebase from bugs!" />
               <SpaceInvadersPage />
+            </PageTransition>
+          } 
+        />
+        <Route 
+          path="/play/flappy-bird" 
+          element={
+            <PageTransition>
+              <Seo title="Flappy Bird" url="/play/flappy-bird" description="Navigate the bird through the pipes!" />
+              <FlappyBirdPage />
             </PageTransition>
           } 
         />

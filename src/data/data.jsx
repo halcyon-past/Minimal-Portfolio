@@ -221,8 +221,8 @@ export const GAMES = [
     title: 'Flappy Bird',
     description: 'Navigate the bird through the pipes in this challenging arcade classic.',
     icon: <Bird className="w-8 h-8 md:w-10 md:h-10 text-yellow-500" />,
-    path: '#',
-    status: 'Coming Soon',
+    path: '/play/flappy-bird',
+    status: 'Available',
     color: 'text-yellow-500'
   }
 ];
