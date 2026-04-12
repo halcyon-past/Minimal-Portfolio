@@ -109,6 +109,8 @@ This document provides a comprehensive breakdown of every mini-game within the M
   5. **Port Alignment Validation:** If the current tile has an outgoing port `0` (Top), it verifies if the neighbor tile directly above it has an active outgoing port `2` (Bottom).
   6. **Expansion:** Valid flowing tiles push to the queue and activate `flowBoard[index] = true`.
 - **Win Condition:** If the BFS algorithm ever sets the index of the 'E' (End) tile to `true` in `flowBoard`, the circuit is complete, instantly triggering the solved state.
+- **Level Persistence & Navigation:**
+  The game tracks the user's completed levels and stores their current progression in `localStorage` (`pipelineCurrentLevel` and `pipelineBestMoves_N`). Upon successful completion of a level, the game strictly advances the user to the next map. Navigation directly to specific levels using URL queries (`?level=N`) is strictly validated against prior completion logic. If a user attempts to jump ahead via URL parameters without a verified highscore from `N-1`, the system routes them structurally to a 404 block for security and progression pacing.
 
 ---
 
@@ -196,3 +198,25 @@ This document provides a comprehensive breakdown of every mini-game within the M
   - **Floor/Ceiling Bound:** Instant `'gameover'` if `bird.y` crosses `0` or `CANVAS_HEIGHT`.
   - **AABB Pass Failures:** Instantly parses Axis-Aligned Bounding checking for overlap natively between `bird` and the top pipe dimensions or bottom pipe dimensions concurrently.
   - **Scoring Metric:** Monitors boolean flag `.passed` mounted onto each pipe. When `bird.x` overtakes `pipe.x + PIPE_WIDTH` unharmed, the object flags `passed = true` yielding a single point increment.
+
+---
+
+## 8. 404 Endless Runner (`EndlessRunner.jsx`)
+
+**Concept:** A hidden, Canvas-based endless runner mini-game embedded directly into the custom 404 page. The objective is to jump over barrels and dodge flying tickets as a developer dinosaur.
+
+### Core Structure & State
+- **State Management:**
+  - `status`, `score`, `highScore` (persisted in `localStorage` as `runnerHighScore`).
+  - `imagesLoaded`: Verifies that all sprites (`dinoImg`, `barrelImg`, `ticketImg`) are loaded successfully before initializing playback loops.
+  - `gameState` ref handling continuous high-frequency metrics inside the loop:
+    - `dino`: `{x, y, velocityY, width, height, isGrounded}`.
+    - `obstacles`: Dynamic array mapping `x`, `y`, `width`, `type`.
+
+### Algorithms & Mechanics
+- **Physics Engine (Jumping):** 
+  Utilizes the same standard vertical gravity cycle applied to `dino.velocityY`. Ground bounds clamp collisions stopping decent perfectly on horizontal floor traces while immediately re-enabling jumping flags (`isGrounded = true`). Frame rate and scaling dictate progressive `speed` increments corresponding roughly to thousands of points increasing jump timing rigor.
+- **Resource Loading Protocol:**
+  Canvas objects instantly pull `ctx.drawImage` logic and would throw null bounds failing asynchronously if image pointers were absent. An `imagesLoaded` state tracks a strict count matrix against multiple image instances guaranteeing sprites render cleanly for the initial placeholder visual prior to interactivity logic toggling `isPlaying`.
+- **AABB Hit Detection:**
+  A frame-locked loop verifies hitbox boundaries continuously between the primary `dino` matrix coordinates and every item looping through the `obstacles` array per cycle, enforcing instant-termination mechanics and updating local high scores instantly.

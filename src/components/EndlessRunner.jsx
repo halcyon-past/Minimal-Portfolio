@@ -22,6 +22,7 @@ const EndlessRunner = () => {
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(parseInt(localStorage.getItem('runnerHighScore')) || 0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   const gameState = useRef({
     frames: 0,
@@ -33,6 +34,14 @@ const EndlessRunner = () => {
   const images = useRef({ dino: null, barrel: null, ticket: null });
 
   useEffect(() => {
+    let loadedCount = 0;
+    const checkLoad = () => {
+      loadedCount++;
+      if (loadedCount >= 3) {
+        setImagesLoaded(true);
+      }
+    };
+
     const dinoImg = new Image();
     dinoImg.src = dinoImgSrc;
     const barrelImg = new Image();
@@ -40,9 +49,9 @@ const EndlessRunner = () => {
     const ticketImg = new Image();
     ticketImg.src = ticketImgSrc;
 
-    dinoImg.onload = () => (images.current.dino = dinoImg);
-    barrelImg.onload = () => (images.current.barrel = barrelImg);
-    ticketImg.onload = () => (images.current.ticket = ticketImg);
+    dinoImg.onload = () => { images.current.dino = dinoImg; checkLoad(); };
+    barrelImg.onload = () => { images.current.barrel = barrelImg; checkLoad(); };
+    ticketImg.onload = () => { images.current.ticket = ticketImg; checkLoad(); };
   }, []);
 
   const jump = useCallback(() => {
@@ -201,7 +210,7 @@ const EndlessRunner = () => {
     animationId = requestAnimationFrame(gameLoop);
 
     return () => cancelAnimationFrame(animationId);
-  }, [isPlaying, highScore]);
+  }, [isPlaying, highScore, imagesLoaded]);
 
   // Click handler on canvas
   const handleCanvasClick = (e) => {

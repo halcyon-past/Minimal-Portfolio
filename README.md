@@ -10,9 +10,10 @@ Welcome to my personal slice of the internet! This isn't just a static resume—
 
 - **👾 Developer Arcade**: Take a break and play some natively built mini-games!
   - **🐍 AI Snake**: A classic with a twist. Eat the `🤖` icon for bonus points! (Full mobile D-Pad support)
-  - **🧩 Data Pipeline**: A matrix-based puzzle game testing your logic to connect the nodes smoothly.
+  - **🧩 Data Pipeline**: A matrix-based puzzle game testing your logic to connect the nodes smoothly. Features level persistence and URL parameter support for direct level access.
   - **⌨️ Typing Test**: Test your coding speed with a minimalist interface.
   - **🔢 Sudoku**: Challenge your mind with a classic, fully playable Sudoku game.
+  - **🦖 404 Runner**: A hidden endless runner mini-game on the 404 page. Jump over barrels and dodge flying tickets!
 - **🔍 Global Command Palette**: Hit `Cmd+K` or `Ctrl+K` to instantly jump between pages, games, and sections like a true power user.
 - **🌗 Dark/Light Mode**: Seamlessly switches themes according to your system preference or a manual toggle.
 - **⚡ Fluid Animations & Micro-interactions**: Smooth page transitions, custom curvy text reveals, and a custom interactive cursor powered by Framer Motion.
