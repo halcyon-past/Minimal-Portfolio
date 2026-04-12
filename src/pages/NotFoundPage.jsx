@@ -20,7 +20,7 @@ const NotFoundPage = () => {
           >
             <h1 
               onClick={() => setShowGame(true)}
-              className="text-8xl md:text-9xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-(--chrysler-blue) to-(--amethyst) mb-4 cursor-pointer hover:scale-105 transition-transform"
+              className="text-8xl md:text-9xl font-bold bg-clip-text text-transparent bg-linear-to-r from-(--chrysler-blue) to-(--amethyst) mb-4 cursor-pointer hover:scale-105 transition-transform"
               title="Click me for a surprise!"
             >
               404

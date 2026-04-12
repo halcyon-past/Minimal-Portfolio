@@ -1,7 +1,7 @@
 import { LEVELS } from "../../data/pipelineLevels";
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { RefreshCw, Play, BrainCircuit, CheckCircle2 } from 'lucide-react';
 
 // Pipe types: [top, right, bottom, left]
@@ -26,7 +26,62 @@ const initBoard = (levelIndex) => {
 };
 
 export default function DataPipelinePage() {
-  const [levelIndex, setLevelIndex] = useState(0);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
+
+  const [levelIndex, setLevelIndex] = useState(() => {
+    // If URL has a 'level' parameter
+    const paramLevel = searchParams.get('level');
+    if (paramLevel !== null) {
+      const parsedLevel = parseInt(paramLevel, 10);
+      if (!isNaN(parsedLevel) && parsedLevel >= 1 && parsedLevel <= LEVELS.length) {
+        const targetIndex = parsedLevel - 1;
+        // Check if previous level is completed
+        if (targetIndex > 0) {
+          const prevCompleted = localStorage.getItem(`pipelineBestMoves_${targetIndex - 1}`);
+          if (!prevCompleted) {
+            return -1; // Flag for 404 redirect
+          }
+        }
+        return targetIndex;
+      }
+      return -1; // Invalid level param
+    }
+
+    // No URL parameter: use saved last played level
+    const savedLevel = localStorage.getItem('pipelineCurrentLevel');
+    if (savedLevel !== null) {
+        let targetIndex = parseInt(savedLevel, 10);
+        if (!isNaN(targetIndex) && targetIndex >= 0 && targetIndex < LEVELS.length) {
+          return targetIndex;
+        }
+    }
+
+    // Default to highest unlocked level if no current level is saved
+    let highestUnlocked = 0;
+    for (let i = 0; i < LEVELS.length - 1; i++) {
+        if (localStorage.getItem(`pipelineBestMoves_${i}`)) {
+            highestUnlocked = i + 1;
+        } else {
+            break;
+        }
+    }
+    return Math.min(highestUnlocked, LEVELS.length - 1);
+  });
+
+  useEffect(() => {
+    if (levelIndex === -1) {
+      navigate('/404', { replace: true });
+    }
+  }, [levelIndex, navigate]);
+
+  useEffect(() => {
+    if (levelIndex !== -1) {
+      localStorage.setItem('pipelineCurrentLevel', levelIndex.toString());
+      setSearchParams({ level: levelIndex + 1 }, { replace: true });
+    }
+  }, [levelIndex, setSearchParams]);
+
   const [board, setBoard] = useState([]);
   const [status, setStatus] = useState('waiting'); // waiting, playing, solved, gameover
   const [flowBoard, setFlowBoard] = useState([]);
@@ -35,7 +90,8 @@ export default function DataPipelinePage() {
     return parseInt(localStorage.getItem(`pipelineBestMoves_${levelIndex}`) || '0', 10);
   });
   
-  const currentLevel = LEVELS[Math.min(levelIndex, LEVELS.length - 1)];
+  // Safe fallback if levelIndex is -1 during render before redirect
+  const currentLevel = LEVELS[Math.min(Math.max(0, levelIndex), LEVELS.length - 1)];
 
   // Update bestMoves when level changes
   useEffect(() => {
@@ -126,6 +182,13 @@ export default function DataPipelinePage() {
       if (currentBest === 0 || moves < currentBest) {
         localStorage.setItem(`pipelineBestMoves_${levelIndex}`, moves.toString());
         setBestMoves(moves);
+      }
+
+      // Auto-advance the saved level so returning to the game starts at the next level
+      if (levelIndex < LEVELS.length - 1) {
+        localStorage.setItem('pipelineCurrentLevel', (levelIndex + 1).toString());
+      } else {
+        localStorage.setItem('pipelineCurrentLevel', '0');
       }
 
       setTimeout(() => {
