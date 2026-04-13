@@ -114,7 +114,7 @@ export default function CommandPalette() {
               <Command.Item onSelect={() => runCommand(() => window.open('https://www.youtube.com/@veripyed', '_blank'))}>
                 <i className="fab fa-youtube opacity-70 w-4 h-4 flex items-center justify-center"></i> YouTube Channel
               </Command.Item>
-              <Command.Item onSelect={() => runCommand(() => window.location.href = 'mailto:aritrosaha2025@gmail.com')}>
+              <Command.Item onSelect={() => runCommand(() => window.location.href = `mailto:${'aritrosaha2025'}@${'gmail.com'}`)}>
                 <Mail size={16} /> Send Email
               </Command.Item>
             </Command.Group>

@@ -59,12 +59,16 @@ export default function Footer() {
                 © {new Date().getFullYear()} <span className="text-(--amethyst)">Aritro Saha</span>. All rights reserved.
               </p>
               <a
-                href="mailto:aritrosaha2025@gmail.com"
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = `mailto:${'aritrosaha2025'}@${'gmail.com'}`;
+                }}
                 className="text-(--chrysler-blue) hover:text-(--amethyst) font-medium transition-colors duration-300 flex items-center justify-center md:justify-start mt-2"
                 aria-label="Email"
               >
                 <i className="fas fa-envelope mr-2"></i>
-                aritrosaha2025@gmail.com
+                <span>{'aritrosaha2025'}@{'gmail.com'}</span>
               </a>
             </div>
 
