@@ -94,6 +94,15 @@ export default function Footer() {
               >
                 <i className="fas fa-share-nodes text-xl md:text-2xl"></i>
               </button>
+              
+              {/* Visually hidden links so SEO bots and screen readers can crawl them without clicking */}
+              <div className="sr-only">
+                {shareLinks.map((share, index) => (
+                  <a key={`seo-share-${index}`} href={share.url}>
+                    Share on {share.name}
+                  </a>
+                ))}
+              </div>
             </div>
 
           </div>
