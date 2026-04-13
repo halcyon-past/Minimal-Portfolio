@@ -12,11 +12,11 @@
       "permanent": false
     },
     {
-      "source": "/",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
-          "value": "games.aritro.cloud"
+          "value": "(?!www\\.)games\\.aritro\\.cloud"
         }
       ],
       "destination": "https://aritro.cloud/play",
