@@ -5,7 +5,7 @@ export default function Seo({ title, description, url, image = 'https://www.arit
   const fullTitle = `${title} | Aritro Saha`;
   const defaultDescription = "Portfolio of Aritro Saha, a Software Developer specializing in full-stack web development, data science, and AI. Discover my interactive developer arcade, projects, experience, and skills.";
   const finalDescription = description || defaultDescription;
-  const keywords = "Aritro Saha, Software Developer, Portfolio, Full-Stack, React, Node.js, Python, Databricks, AI, Machine Learning, Developer Arcade, Snake Game, Data Pipeline Puzzle, Typing Test, Web Development, Data Science";
+  const keywords = "Aritro, Aritro Saha, Aritro BMS, Aritro Software Engineer, Aritro Developer, Aritro Games, Aritro Arcade, Software Developer, Portfolio, Full-Stack, React, Node.js, Python, Databricks, AI, Machine Learning, Developer Arcade, Snake Game, Data Pipeline Puzzle, Web Development, Data Science, Bristol Myers Squibb";
 
   // JSON-LD structured data for rich search results (Person and WebSite)
   const structuredData = {
@@ -14,12 +14,14 @@ export default function Seo({ title, description, url, image = 'https://www.arit
       {
         "@type": "Person",
         "name": "Aritro Saha",
+        "alternateName": "Aritro",
         "url": "https://www.aritro.cloud/",
         "image": `https://www.aritro.cloud${profileImg}`,
-        "jobTitle": "Software Developer",
+        "jobTitle": "Software Engineer",
         "worksFor": {
           "@type": "Organization",
-          "name": "Bristol Myers Squibb"
+          "name": "Bristol Myers Squibb",
+          "alternateName": "BMS"
         },
         "sameAs": [
           "https://linkedin.com/in/aritro-saha",
