@@ -5,22 +5,22 @@
       "has": [
         {
           "type": "host",
-          "value": "(?!www\\.)(?<subdomain>[^.]+)\\.aritro\\.cloud"
+          "value": "(?!www\\.)games\\.aritro\\.cloud"
         }
       ],
-      "destination": "https://aritro.cloud/404",
-      "permanent": false
+      "destination": "https://aritro.cloud/play",
+      "permanent": true
     },
     {
       "source": "/(.*)",
       "has": [
         {
           "type": "host",
-          "value": "(?!www\\.)games\\.aritro\\.cloud"
+          "value": "(?!www\\.)(?<subdomain>[^.]+)\\.aritro\\.cloud"
         }
       ],
-      "destination": "https://aritro.cloud/play",
-      "permanent": true
+      "destination": "https://aritro.cloud/404",
+      "permanent": false
     }
   ],
   "rewrites": [
