@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import profileImg from '../../assets/profile.webp';
 
-export default function Seo({ title, description, url, image = 'https://www.aritro.cloud/banner-social.jpg', type = 'website' }) {
+export default function Seo({ title, description, url, image = 'https://www.aritro.cloud/banner-social.jpg', type = 'website', noindex = false }) {
   const fullTitle = title === 'Home' || !title 
     ? 'Aritro Saha | Software Engineer & Data Analytics | BMS | Arcade' 
     : `${title} | Aritro Saha - Software Engineer Portfolio`;
@@ -46,6 +46,7 @@ export default function Seo({ title, description, url, image = 'https://www.arit
       <meta name="description" content={finalDescription} />
       <meta name="keywords" content={keywords} />
       <meta name="author" content="Aritro Saha" />
+      {noindex && <meta name="robots" content="noindex" />}
       <link rel="canonical" href={`https://www.aritro.cloud${url}`} />
 
       {/* Open Graph / Facebook */}

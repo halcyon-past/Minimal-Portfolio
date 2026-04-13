@@ -143,7 +143,7 @@ function AnimatedRoutes() {
           path="*" 
           element={
             <PageTransition>
-              <Seo title="404 - Not Found" />
+              <Seo title="404 - Not Found" noindex={true} />
               <NotFoundPage />
             </PageTransition>
           } 
