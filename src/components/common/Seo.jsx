@@ -3,7 +3,7 @@ import profileImg from '../../assets/profile.webp';
 
 export default function Seo({ title, description, url, image = 'https://www.aritro.cloud/banner-social.jpg', type = 'website' }) {
   const fullTitle = `${title} | Aritro Saha`;
-  const defaultDescription = "Portfolio of Aritro Saha, a Software Developer specializing in full-stack web development, data science, and AI. Discover my interactive developer arcade, projects, experience, and skills.";
+  const defaultDescription = "Portfolio of Aritro Saha, a Software Engineer specializing in full-stack web dev, AI, and data analytics. Explore my interactive developer arcade and projects.";
   const finalDescription = description || defaultDescription;
   const keywords = "Aritro, Aritro Saha, Aritro BMS, Aritro Software Engineer, Aritro Developer, Aritro Games, Aritro Arcade, Software Developer, Portfolio, Full-Stack, React, Node.js, Python, Databricks, AI, Machine Learning, Developer Arcade, Snake Game, Data Pipeline Puzzle, Web Development, Data Science, Bristol Myers Squibb";
 
