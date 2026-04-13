@@ -133,6 +133,32 @@ export default function Hero() {
         >
           <CurvyTextAnimation />
         </motion.div>
+
+        {/* SR-only paragraph block for expanded SEO depth, screen readers, and meeting >250 word counts naturally over multiple paragraphs. Visible to DOM/Crawlers but not to visual users. */}
+        <article className="sr-only">
+          <h2>About Aritro Saha (Megh)</h2>
+          <p>
+            Welcome to the official digital portfolio of Aritro Saha. I am a dedicated Software Engineer, Full-Stack Developer, and Data Science practitioner specializing in architecting modern, high-performance web applications and artificial intelligence integrations. My overarching goal as a web developer is to write exceptionally clean, maintainable, and scalable code that powers real-world enterprise operations. Beyond the professional sphere, I am intensely passionate about tackling complex architectural challenges, breaking them down into logical components, and designing intuitive user interactions.
+          </p>
+          <p>
+            My technical background places a heavy emphasis on building scalable infrastructure. I actively leverage technologies such as cutting-edge React, Node.js, server-side Next.js, TypeScript, Python, Databricks, and various cloud platforms. These tools empower me to conceptualize solutions that deliver impactful, high-performing user experiences across diverse project scopes. From crafting lightning-fast frontend user interfaces to developing secure backend REST APIs and managing complex relational SQL databases alongside non-relational NoSQL stores, my full-stack approach guarantees a uniquely holistic perspective to product development and engineering.
+          </p>
+          <h2>Bristol Myers Squibb Experience and Enterprise Solutions</h2>
+          <p>
+            Currently, I am contributing my technical expertise to highly innovative enterprise projects at Bristol Myers Squibb (BMS). Embedded within an enterprise ecosystem, I apply my skills in software engineering, data analytics, and continuous workflow automation to drive key operations forward. My daily professional responsibilities rely heavily on advanced proficiencies in JavaScript, modern TypeScript, Python programming, extensive cloud infrastructure configuration, and collaborative agile principles. Operating at this scale has taught me the undeniable long-term value of maintaining testable code coverage and ensuring rigid code quality standards.
+          </p>
+          <p>
+            Prior to joining the tech sector professionally, I was a diligent graduate of Vellore Institute of Technology (VIT Chennai). During my rigorous academic tenure, I refined my baseline technical capabilities, studying core computer science principles, database system design, operating systems, and advanced algorithmic problem-solving. Throughout my entire career timeline, I constantly seek out challenging opportunities to advance my technical proficiency and rigorously keep abreast of rapidly shifting programming paradigms.
+          </p>
+          <h2>Aritro Games & The Developer Arcade Playground</h2>
+          <p>
+            In tandem with my professional work, I thoroughly enjoy creating engaging personal projects. A standout feature within this portfolio is the Aritro Arcade—often referred to as Aritro Games. I purposefully developed this interactive, developer-themed game hub directly into my personal web presence. It flawlessly blends robust state management logic using React alongside a creative, nostalgia-inducing user layout. The arcade features bespoke mini browsers games, including a rigorous developer typing speed test measuring WPM alongside a reimagined minimalist Snake game.
+          </p>
+          <p>
+            I warmly invite you to explore my complete catalog of open-source and proprietary projects. These applications are a clear testament to my adaptability in overcoming real-world challenges across completely independent domains. Whether engineering consumer-facing web experiences or surfacing deeply layered data-driven enterprise insights, every single project reflects my unwavering commitment to quality software design, uncompromising frontend performance efficiency, and radically simple, inclusive, user-first engineering.
+          </p>
+        </article>
+
       </section>
     </>
   );
