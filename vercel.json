@@ -5,11 +5,11 @@
       "has": [
         {
           "type": "host",
-          "value": "(?!www\\.)games\\.aritro\\.cloud"
+          "value": "^games\\.aritro\\.cloud$"
         }
       ],
       "destination": "https://aritro.cloud/play",
-      "permanent": true
+      "permanent": false
     },
     {
       "source": "/(.*)",
