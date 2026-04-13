@@ -47,7 +47,9 @@ export default function Header() {
           <motion.img 
             src={logo} 
             alt="Aritro Saha Logo" 
-            className="md:h-14 h-10" 
+            className="h-10 w-10 md:h-14 md:w-14 object-contain" 
+            width="56"
+            height="56"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           />

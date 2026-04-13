@@ -27,7 +27,14 @@ export default function Gallery() {
             A glimpse into my world — where <span className="font-medium">creativity</span>, <span className="font-medium">moments</span>, and <span className="font-medium">memories</span> come to life through visual storytelling.
           </p>
           <div className="grid grid-cols-4 gap-3 md:gap-4">
-            {galleryImages.map((image, index) => (
+            {galleryImages.map((image, index) => {
+              let w = 800, h = 800;
+              if (image.aspectRatio === 'aspect-[3/2]') { w = 900; h = 600; }
+              else if (image.aspectRatio === 'aspect-[2/3]') { w = 600; h = 900; }
+              else if (image.aspectRatio === 'aspect-[3/1]') { w = 900; h = 300; }
+              else if (image.aspectRatio === 'aspect-video') { w = 800; h = 450; }
+
+              return (
               <motion.div 
                 key={index} 
                 className={`${image.span} relative overflow-hidden rounded-xl border border-gray-200 shadow-sm group transition-all duration-300 hover:shadow-md cursor-pointer`}
@@ -39,10 +46,12 @@ export default function Gallery() {
                   alt={image.alt}
                   aspectRatio={image.aspectRatio}
                   className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  width={w}
+                  height={h}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(131,103,199,0.3)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
               </motion.div>
-            ))}
+            )})}
           </div>
         </div>
       </section>

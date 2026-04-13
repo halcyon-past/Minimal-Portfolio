@@ -54,7 +54,9 @@ function TiltCard({ project }) {
         <LazyImage 
           src={project.image} 
           alt={project.alt} 
-          className="w-full h-auto"
+          width={800}
+          height={450}
+          className="w-full h-auto object-cover"
           blockClass="aspect-video" 
         />
       </div>

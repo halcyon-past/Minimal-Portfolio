@@ -42,6 +42,8 @@ export default function About() {
                 src={profileImage}
                 alt="Aritro Saha profile picture"
                 className="w-56 h-56 rounded-full border-4 border-white object-cover shadow-sm"
+                width={224}
+                height={224}
               />
             </motion.div>
             <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-900 dark:text-gray-100 cursor-default">
