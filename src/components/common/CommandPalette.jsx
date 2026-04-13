@@ -80,7 +80,7 @@ export default function CommandPalette() {
                 <Gamepad2 size={16} /> Arcade
               </Command.Item>
               <Command.Item onSelect={() => runCommand(() => navigate('/404'))}>
-                <Gamepad2 size={16} /> Dino Run
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12,2H20V4H22V10H20V12H18V14H16V22H13V18H10V22H7V16H5V14H3V12H5V10H7V8H9V6H12V2M15,4H13V6H15V4M20,6H16V8H20V6Z"/></svg> Dino Run
               </Command.Item>
             </Command.Group>
 
