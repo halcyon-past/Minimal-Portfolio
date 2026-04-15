@@ -47,7 +47,7 @@ export default function CommandPalette() {
         </kbd>
       </div>
 
-      <Command.Dialog open={open} onOpenChange={setOpen} label="Global Command Menu" className="cmdk-dialog z-[999]">
+      <Command.Dialog open={open} onOpenChange={setOpen} label="Global Command Menu" className="cmdk-dialog z-999">
         <div className="cmdk-overlay" onClick={() => setOpen(false)} />
         <div className="cmdk-content">
           <Command.Input placeholder="Type a command or search..." className="cmdk-input" />
