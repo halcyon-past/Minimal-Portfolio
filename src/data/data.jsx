@@ -3,6 +3,28 @@ import { Keyboard, BrainCircuit, Gamepad2, Grid3X3, Rocket, Bird, Swords } from 
 
 export const projects = [
   {
+    id: 'luffy-laser-dodge',
+    title: 'Luffy Laser Dodge 🏴‍☠️🤖',
+    description: 'Interactive 3D reflex game dodging laser beams using actual head movements via webcam',
+    image: '/assets/luffy-laser-dodge.webp',
+    alt: 'Luffy Laser Dodge',
+    link: '/projects/luffy-laser-dodge',
+    github: 'https://github.com/halcyon-past/Luffy-Laser-Dodge',
+    color: 'text-[#ffbd2e]',
+    HomepageVisibility: true,
+    details: {
+      overview: 'Luffy Laser Dodge is an interactive, browser-based 3D reflex game where you use your actual head movements via webcam to dodge laser beams shot by Kuma! The game seamlessly melds computer vision with 3D web rendering to create a unique physically interactive experience—all running 100% locally in your browser.',
+      features: [
+        'Real-Time AI Head Tracking: Uses Google\'s MediaPipe via WebAssembly (WASM) to detect face and lean angles instantly.',
+        'Dynamic 3D Scene: Powered by Three.js and @react-three/fiber with fully rigged 3D models with bone-level procedural animation.',
+        '100% Client-Side Processing: Webcam data is processed entirely on the local GPU/CPU for zero latency and absolute privacy.',
+        'Legacy WebRTC Support: Originally built with a WebRTC + Python FastAPI backend for heavy AI inference, later migrated to WASM for zero-latency serverless deployment.'
+      ],
+      techStack: ['React', 'Vite', 'React Three Fiber', 'Three.js', 'MediaPipe AI', 'WebAssembly', 'WebRTC (Legacy)', 'Python FastAPI (Legacy)'],
+      liveDemo: 'https://onepiece.aritro.cloud/'
+    }
+  },
+  {
     id: 'glide-connect',
     title: 'GlideConnect',
     description: 'Virtual Mouse Control using Gesture Recognition and Voice Assistant',
