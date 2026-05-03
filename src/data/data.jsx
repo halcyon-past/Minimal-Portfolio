@@ -4,7 +4,7 @@ import { Keyboard, BrainCircuit, Gamepad2, Grid3X3, Rocket, Bird, Swords } from 
 export const projects = [
   {
     id: 'luffy-laser-dodge',
-    title: 'Luffy Laser Dodge 🏴‍☠️🤖',
+    title: 'Luffy Laser Dodge',
     description: 'Interactive 3D reflex game dodging laser beams using actual head movements via webcam',
     image: '/assets/luffy-laser-dodge.webp',
     alt: 'Luffy Laser Dodge',
