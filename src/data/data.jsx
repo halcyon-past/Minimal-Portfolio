@@ -3,6 +3,29 @@ import { Keyboard, BrainCircuit, Gamepad2, Grid3X3, Rocket, Bird, Swords } from 
 
 export const projects = [
   {
+    id: 'structurify',
+    title: 'Structurify',
+    description: 'AI-powered SaaS that transforms messy spreadsheet data into a clean master schema',
+    image: '/assets/Structurify.webp',
+    alt: 'Structurify data transformation dashboard',
+    link: '/projects/structurify',
+    color: 'text-(--celadon)',
+    HomepageVisibility: true,
+    details: {
+      overview: 'Structurify is a production-ready, event-driven B2B SaaS platform that turns unstructured CSV and XLSX files into a standardized schema using Google Gemini, with a serverless fan-out architecture on GCP for resilient, scalable processing.',
+      features: [
+        'Strict Schema Enforcement: Enforces exact JSON and Excel structure with reliable type-casting and validation.',
+        'Sandbox Preview Mode: Lets users validate the first 10 rows before launching a full job.',
+        'Auto-Clean Mode: Infers schema from headers and normalizes capitalization, whitespace, and date formats automatically.',
+        'Serverless Fan-Out Pipeline: Uses Pub/Sub, Cloud Run workers, and a LangGraph map-reduce flow to process large jobs without blocking the API.',
+        'Real-Time Observability: Streams job progress, audit logs, and secure download links through Firestore-backed live updates.'
+      ],
+      techStack: ['Next.js 14', 'React', 'TailwindCSS', 'Firebase', 'FastAPI', 'Python', 'LangGraph', 'Google Gemini', 'Google Cloud Platform'],
+      liveDemo: 'https://structurify.aritro.cloud',
+      github: 'https://github.com/halcyon-past/Structurify',
+    }
+  },
+  {
     id: 'luffy-laser-dodge',
     title: 'Luffy Laser Dodge',
     description: 'Interactive 3D reflex game dodging laser beams using actual head movements via webcam',
@@ -70,29 +93,7 @@ export const projects = [
       techStack: ['React', 'Next.js', 'TypeScript', 'MongoDB', 'Tailwind CSS', 'Node.js', 'Kinde Auth', 'UploadThing', 'Callchimp.AI'],
       liveDemo: 'https://www.bepawsitive.xyz'
     }
-  },
-  {
-    id: 'eduhelper',
-    title: 'EduHelper',
-    description: 'AI Assistant to Chat with PDFs',
-    image: '/assets/Eduhelper.webp',
-    alt: 'EduHelper learning platform interface',
-    link: '/projects/eduhelper',
-    github: 'https://github.com/halcyon-past/EDUHELPER',
-    color: 'text-(--celadon)',
-    HomepageVisibility: true,
-    details: {
-      overview: 'This Streamlit application allows users to upload PDF files and ask questions based on their content. The application utilizes the Google Generative AI API for text embedding and question answering.',
-      features: [
-        'Extract text from uploaded PDF files.',
-        'Split text into smaller chunks for efficient embedding and retrieval.',
-        'Create a vector store (FAISS index) using Google Generative AI Embeddings.',
-        'Conversational chain for QA using the Google Generative AI Chat model.'
-      ],
-      techStack: ['Python', 'Streamlit', 'PyPDF2', 'LangChain', 'Google Generative AI', 'FAISS'],
-      liveDemo: 'https://eduprovider.streamlit.app/'
-    }
-  },
+  }
 ];
 
 export const experience = [
