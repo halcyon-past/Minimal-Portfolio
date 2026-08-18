@@ -7,6 +7,7 @@ export const projects = [
     title: 'Structurify',
     description: 'AI-powered SaaS that transforms messy spreadsheet data into a clean master schema',
     image: '/assets/Structurify.webp',
+    github: 'https://github.com/halcyon-past/Structurify',
     alt: 'Structurify data transformation dashboard',
     link: '/projects/structurify',
     color: 'text-(--celadon)',
@@ -22,7 +23,6 @@ export const projects = [
       ],
       techStack: ['Next.js 14', 'React', 'TailwindCSS', 'Firebase', 'FastAPI', 'Python', 'LangGraph', 'Google Gemini', 'Google Cloud Platform'],
       liveDemo: 'https://structurify.aritro.cloud',
-      github: 'https://github.com/halcyon-past/Structurify',
     }
   },
   {
