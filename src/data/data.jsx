@@ -3,6 +3,31 @@ import { Keyboard, BrainCircuit, Gamepad2, Grid3X3, Rocket, Bird, Swords } from 
 
 export const projects = [
   {
+    id: 'quarantine',
+    title: 'Quarantine',
+    description: 'Zero-dependency dead-letter queue and fault-tolerance library for Python loops',
+    image: '/assets/Quarantine.webp',
+    github: 'https://github.com/halcyon-past/quarantine',
+    alt: 'Quarantine - Dead-letter queues for Python loops',
+    link: '/projects/quarantine',
+    color: 'text-rose-500',
+    HomepageVisibility: true,
+    details: {
+      overview: 'quarantine is an open-source, zero-dependency Python library that brings dead-letter queue resilience to regular loops and batch data pipelines. When processing thousands of records (e.g., CSV ingestion, scraping, API syncing), an unexpected exception at item #5,247 no longer crashes the entire multi-hour run. quarantine safely isolates the failing item, captures the error and full execution state to disk, and keeps the loop running.',
+      features: [
+        'Zero-Crash Decorators: Wrap any sync or async function with @quarantine or iterate with shield() to set aside failures without interrupting the pipeline.',
+        'Atomic On-Disk Isolation: Serializes failed inputs, exceptions, and full tracebacks atomically to disk (.quarantine/) without requiring external message brokers.',
+        'Surgical Replays & Interactive Debugging: Rerun only failed items using quarantine retry or drop straight into pdb with the exact failing input using quarantine debug.',
+        'Circuit Breakers & Sensitive Redaction: Automatic circuit breaker tripping via halt_after to prevent cascading external outages, plus built-in key/regex redaction for secrets.',
+        'Local Web UI & Observability: Built-in CLI commands and a local web dashboard to inspect tracebacks, track recovery stats, and integrate into CI/CD pipelines.'
+      ],
+      techStack: ['Python 3.9+', 'PyPI', 'AsyncIO', 'CLI', 'Dead-Letter Queue', 'Fault Tolerance', 'Pytest'],
+      pypi: 'https://pypi.org/project/quarantine-py/',
+      liveDemo: 'https://pypi.org/project/quarantine-py/',
+      docs: 'https://quarantine-py.aritro.cloud'
+    }
+  },
+  {
     id: 'structurify',
     title: 'Structurify',
     description: 'AI-powered SaaS that transforms messy spreadsheet data into a clean master schema',

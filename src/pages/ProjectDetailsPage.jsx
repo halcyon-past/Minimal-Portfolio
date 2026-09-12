@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ExternalLink, Layers, Target, Code2, BookOpen } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Layers, Target, Code2, BookOpen, Package } from 'lucide-react';
 import { projects } from '../data/data';
 import PageTransition from '../components/common/PageTransition';
 import Seo from '../components/common/Seo';
@@ -77,7 +77,18 @@ const ProjectDetailsPage = () => {
                   View Source
                 </a>
               )}
-              {project.details?.liveDemo && (
+              {project.details?.pypi && (
+                <a 
+                  href={project.details.pypi} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-transparent border-2 border-gray-200 dark:border-gray-800 hover:border-gray-900 dark:hover:border-white text-(--text-color) hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-medium"
+                >
+                  <Package className="w-5 h-5 mr-2" />
+                  View on PyPI
+                </a>
+              )}
+              {project.details?.liveDemo && !project.details?.pypi && (
                 <a 
                   href={project.details.liveDemo} 
                   target="_blank" 
@@ -86,6 +97,17 @@ const ProjectDetailsPage = () => {
                 >
                   <ExternalLink className="w-5 h-5 mr-2" />
                   Live Demo
+                </a>
+              )}
+              {project.details?.docs && (
+                <a 
+                  href={project.details.docs} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-800 text-indigo-700 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-medium"
+                >
+                  <BookOpen className="w-5 h-5 mr-2" />
+                  Documentation
                 </a>
               )}
               {project.details?.researchPaper && (
@@ -134,7 +156,7 @@ const ProjectDetailsPage = () => {
           >
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-12 h-12 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
-                <Target className={`w-6 h-6 ${project.color.replace('text-', '')}`} />
+                <Target className={`w-6 h-6 ${project.color}`} />
               </div>
               <h2 className="text-3xl font-bold">Overview</h2>
             </div>
@@ -152,7 +174,7 @@ const ProjectDetailsPage = () => {
             className="bg-gray-50 dark:bg-gray-900 rounded-3xl p-8 border border-gray-100 dark:border-gray-800 h-fit"
           >
             <div className="flex items-center space-x-3 mb-6">
-              <Code2 className={`w-6 h-6 ${project.color.replace('text-', '')}`} />
+              <Code2 className={`w-6 h-6 ${project.color}`} />
               <h3 className="text-xl font-bold">Tech Stack</h3>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -177,7 +199,7 @@ const ProjectDetailsPage = () => {
           >
             <div className="flex items-center space-x-3 mb-8">
               <div className="w-12 h-12 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
-                <Layers className={`w-6 h-6 ${project.color.replace('text-', '')}`} />
+                <Layers className={`w-6 h-6 ${project.color}`} />
               </div>
               <h2 className="text-3xl font-bold">Key Features</h2>
             </div>
