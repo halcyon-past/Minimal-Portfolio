@@ -93,7 +93,7 @@ export default function CommandPalette() {
             </Command.Group>
 
             <Command.Group heading="Documents" className="cmdk-group">
-              <Command.Item onSelect={() => runCommand(() => window.open('/assets/resume/Aritro-Saha-Resume.pdf', '_blank'))}>
+              <Command.Item onSelect={() => runCommand(() => window.open('/assets/resume/Aritro-Saha-Software-Engineer-Resume.pdf', '_blank'))}>
                 <FileText size={16} /> View Resume
               </Command.Item>
             </Command.Group>
