@@ -53,7 +53,7 @@ export default function About() {
           
           <div className="md:w-1/2 text-gray-700 dark:text-gray-300 cursor-default">
             <motion.p variants={itemVariants} className="mb-6 text-lg md:text-xl leading-relaxed">
-              I am an <span className="font-medium text-(--amethyst)">Associate Software Developer</span> at <span className="font-medium">Bristol Myers Squibb</span>. As a passionate <span className="font-medium text-(--chrysler-blue)">Data Science Engineer</span> with a strong 
+              I am a <span className="font-medium text-(--amethyst)">Software Engineer 1</span> at <span className="font-medium">Bristol Myers Squibb</span>. As a passionate <span className="font-medium text-(--chrysler-blue)">Data Science Engineer</span> with a strong 
               footing in <span className="font-medium text-(--amethyst)">Full Stack Development</span>, I enjoy bridging the gap between backend logic and user-facing design while leveraging data to drive smart, impactful decisions.
             </motion.p>
             <motion.p variants={itemVariants} className="mb-6 text-lg md:text-xl leading-relaxed">
