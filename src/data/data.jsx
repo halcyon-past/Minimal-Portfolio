@@ -3,6 +3,29 @@ import { Keyboard, BrainCircuit, Gamepad2, Grid3X3, Rocket, Bird, Swords } from 
 
 export const projects = [
   {
+    id: 'openworld-portfolio',
+    title: 'OpenWorld Portfolio',
+    description: 'Interactive 2.5D retro Pokémon-inspired open-world developer portfolio set in Pallet Cloud',
+    image: '/assets/OpenWorld-Portfolio.webp',
+    github: 'https://github.com/halcyon-past/openworld-portfolio',
+    alt: 'OpenWorld Portfolio - 2.5D Retro RPG Developer Portfolio',
+    link: '/projects/openworld-portfolio',
+    color: 'text-sky-500',
+    HomepageVisibility: true,
+    details: {
+      overview: 'OpenWorld Portfolio is an interactive, retro Pokémon-inspired 2.5D open-world developer portfolio set in Pallet Cloud. Built completely from scratch with Next.js 16, React 19, and native HTML5 Canvas 2D without third-party game engines, it features interactive buildings, a high-definition Mega Jumbotron TV, a turn-based Pokémon battle arena against Gym Leader Aritro at the Silicon Gym, a Poké Mart skill shopping cart with rich HTML mail requisitions, and an instant-toggle Executive Recruiter Dossier.',
+      features: [
+        'Custom 2.5D Canvas Engine: Delivers hardware-accelerated 60 FPS rendering with Painter\'s algorithm depth sorting, dynamic elevation plateaus, and procedural GBA-styled wild grass with random developer encounters.',
+        'Silicon Gym & Turn-Based Boss Battle: Authentic GBA-style Pokémon battle arena featuring Gym Leader Aritro (Lv. 99), a tactical 4-action decision menu, elemental animations, 8 inspectable Gym Badges, and a Master Ball recruit sequence.',
+        'Poké Mart Tech Stack & Graphical Requisitions: Interactive skill catalog partitioned across Languages, Cloud, Backend, and AI, allowing recruiters to add capabilities to a cart, compose inquiries, and dispatch authentic Pokémon airmail-styled requisitions directly via email or rich clipboard export.',
+        'Interactive Town Landmarks & World Exploration: Explore Pallet Cloud landmarks including rotating project previews on the Mega Jumbotron TV, Innovation Pokédex Center, AI Research Lab with LeetCode Knight stats, developer arcade minigames, and animated wildlife.',
+        'Executive Recruiter Dossier Mode: Instant one-click toggle between the 2.5D game world and an executive portfolio dossier view, featuring direct resume access, enterprise highlights, and URL hash navigation.'
+      ],
+      techStack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS', 'HTML5 Canvas 2D', 'Web Audio API', 'Web Speech API'],
+      liveDemo: 'https://openworld.aritro.cloud/'
+    }
+  },
+  {
     id: 'quarantine',
     title: 'Quarantine',
     description: 'Zero-dependency dead-letter queue and fault-tolerance library for Python loops',
