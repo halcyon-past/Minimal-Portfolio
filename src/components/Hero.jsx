@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import CurvyTextAnimation from './CurvyTextAnimation';
 
 import { createPortal } from 'react-dom';
@@ -77,35 +76,6 @@ export default function Hero() {
       {/* Main Content */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-24 relative bg-white dark:bg-gray-950 cursor-default">
         <div className="container mx-auto px-4 md:px-8 overflow-hidden">
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: showIntro ? 20 : 0, opacity: showIntro ? 0 : 1 }}
-            transition={{ duration: 0.8, delay: showIntro ? 0 : 0.1, ease: "easeOut" }}
-            className="mb-6 flex flex-wrap gap-4"
-          >
-            <a 
-              href="https://siliconsync.aritro.cloud/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-1.5 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-800 rounded-full transition-all duration-200 hover:-translate-y-0.5"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-(--amethyst)"></span>
-              </span>
-              Check out my daily AI news blog
-              <span>→</span>
-            </a>
-            
-            <Link 
-              to="/play" 
-              className="inline-flex items-center gap-2 px-4 py-1.5 text-sm font-medium text-white bg-gray-900 hover:bg-gray-800 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-100 border border-transparent rounded-full shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-0.5"
-            >
-              <span className="text-base">🎮</span>
-              Play my Developer Arcade
-              <span>→</span>
-            </Link>
-          </motion.div>
-
           <motion.h1 
             className="text-4xl md:text-6xl font-medium mb-8 text-gray-900 dark:text-gray-100"
             initial={{ y: 50, opacity: 0 }}
