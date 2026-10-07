@@ -87,11 +87,10 @@ export default function Hero() {
               href="https://siliconsync.aritro.cloud/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-1.5 text-sm md:text-sm font-medium text-(--chrysler-blue) bg-(--honeydew) hover:bg-(--amethyst) hover:text-white border border-(--amethyst)/20 rounded-full transition-all duration-300"
+              className="inline-flex items-center gap-2 px-4 py-1.5 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-800 rounded-full transition-all duration-200 hover:-translate-y-0.5"
             >
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-(--amethyst) opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-(--chrysler-blue)"></span>
+              <span className="relative flex h-2 w-2">
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-(--amethyst)"></span>
               </span>
               Check out my daily AI news blog
               <span>→</span>
@@ -99,7 +98,7 @@ export default function Hero() {
             
             <Link 
               to="/play" 
-              className="inline-flex items-center gap-2 px-4 py-1.5 text-sm md:text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 border border-indigo-500/30 rounded-full shadow-[0_0_15px_rgba(79,70,229,0.4)] hover:shadow-[0_0_20px_rgba(79,70,229,0.6)] transition-all duration-300"
+              className="inline-flex items-center gap-2 px-4 py-1.5 text-sm font-medium text-white bg-gray-900 hover:bg-gray-800 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-100 border border-transparent rounded-full shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-0.5"
             >
               <span className="text-base">🎮</span>
               Play my Developer Arcade
@@ -117,12 +116,12 @@ export default function Hero() {
           </motion.h1>
           
           <motion.p 
-            className="text-lg md:text-xl max-w-3xl text-gray-700 dark:text-gray-300"
+            className="text-lg md:text-xl max-w-3xl text-gray-700 dark:text-gray-300 leading-relaxed"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: showIntro ? 30 : 0, opacity: showIntro ? 0 : 1 }}
             transition={{ duration: 0.8, delay: showIntro ? 0 : 0.4, ease: "easeOut" }}
           >
-            A <span className="font-medium">versatile</span> <span className="font-medium">full-stack developer</span> and <span className="font-medium">data science engineer</span> focused on creating <span className="font-medium">unique</span> and <span className="bg-(--chrysler-blue) text-(--honeydew) font-medium px-1 rounded">user-centric products</span>, currently working at <span className="font-medium">Bristol Myers Squibb</span>.
+            Software Engineer 1 at <span className="font-medium text-gray-900 dark:text-gray-100">Bristol Myers Squibb</span>. I engineer high-throughput data pipelines, cloud infrastructure, and interactive web applications.
           </motion.p>
         </div>
         
@@ -155,7 +154,7 @@ export default function Hero() {
             In tandem with my professional work, I thoroughly enjoy creating engaging personal projects. A standout feature within this portfolio is the Aritro Arcade—often referred to as Aritro Games. I purposefully developed this interactive, developer-themed game hub directly into my personal web presence. It flawlessly blends robust state management logic using React alongside a creative, nostalgia-inducing user layout. The arcade features bespoke mini browsers games, including a rigorous developer typing speed test measuring WPM alongside a reimagined minimalist Snake game.
           </p>
           <p>
-            I warmly invite you to explore my complete catalog of open-source and proprietary projects. These applications are a clear testament to my adaptability in overcoming real-world challenges across completely independent domains. Whether engineering consumer-facing web experiences or surfacing deeply layered data-driven enterprise insights, every single project reflects my unwavering commitment to quality software design, uncompromising frontend performance efficiency, and radically simple, inclusive, user-first engineering.
+            Explore my catalog of open-source projects, CLI tools, and web applications. Each project focuses on clean software architecture, performance efficiency, and accessible user design.
           </p>
         </article>
 

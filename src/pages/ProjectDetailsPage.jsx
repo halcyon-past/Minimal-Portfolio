@@ -52,7 +52,7 @@ const ProjectDetailsPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.6 }}
             >
-              <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 ${project.color} bg-clip-text`}>
+              <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 ${project.color}`}>
                 {project.title}
               </h1>
               <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-light mb-6">

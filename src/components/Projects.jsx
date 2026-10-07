@@ -111,7 +111,7 @@ export default function Projects({ projects }) {
               <div className="mb-3 mt-6 flex justify-between items-center">
                 {project.link.startsWith('http') ? (
                   <a href={project.link} className="inline-block group" target="_blank" rel="noopener noreferrer">
-                    <h2 className="text-2xl md:text-3xl font-medium flex items-center border-b border-black pb-1 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bottom-[-2px] after:left-0 after:bg-black after:origin-bottom-right after:transition-transform after:duration-300 group-hover:after:scale-x-100 group-hover:after:origin-bottom-left">
+                    <h2 className="text-2xl md:text-3xl font-medium flex items-center border-b border-gray-900 dark:border-gray-100 pb-1 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bottom-[-2px] after:left-0 after:bg-gray-900 dark:after:bg-gray-100 after:origin-bottom-right after:transition-transform after:duration-300 group-hover:after:scale-x-100 group-hover:after:origin-bottom-left">
                       {String(index + 1).padStart(2, '0')}. {project.title}
                       <motion.span 
                         className="ml-2 transform text-3xl inline-block"
@@ -125,7 +125,7 @@ export default function Projects({ projects }) {
                   </a>
                 ) : (
                   <Link to={project.link} className="inline-block group">
-                    <h2 className="text-2xl md:text-3xl font-medium flex items-center border-b border-black pb-1 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bottom-[-2px] after:left-0 after:bg-black after:origin-bottom-right after:transition-transform after:duration-300 group-hover:after:scale-x-100 group-hover:after:origin-bottom-left">
+                    <h2 className="text-2xl md:text-3xl font-medium flex items-center border-b border-gray-900 dark:border-gray-100 pb-1 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bottom-[-2px] after:left-0 after:bg-gray-900 dark:after:bg-gray-100 after:origin-bottom-right after:transition-transform after:duration-300 group-hover:after:scale-x-100 group-hover:after:origin-bottom-left">
                       {String(index + 1).padStart(2, '0')}. {project.title}
                       <motion.span 
                         className="ml-2 transform text-3xl inline-block"
@@ -147,8 +147,8 @@ export default function Projects({ projects }) {
                   <i className="fas fa-share-alt text-xl"></i>
                 </button>
               </div>
-              <p className="text-base text-gray-800 dark:text-gray-200 leading-relaxed">
-                <span className="font-medium">What is it? </span> — {project.description}
+              <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                {project.description}
               </p>
             </motion.div>
           ))}

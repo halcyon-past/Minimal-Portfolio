@@ -33,19 +33,15 @@ export default function About() {
       >
         <div className="flex flex-col items-center md:flex-row md:items-start md:justify-center md:space-x-16">
           <motion.div variants={itemVariants} className="md:w-1/3 mb-10 md:mb-0 text-center md:sticky md:top-24 z-10 bg-white dark:bg-gray-950 md:bg-transparent pb-4 md:pb-0">
-            <motion.div 
-              className="inline-block p-1 rounded-full bg-gradient-to-br from-(--chrysler-blue) via-(--amethyst) to-(--celadon) mb-6 shadow-lg"
-              whileHover={{ scale: 1.05, rotate: 2 }}
-              transition={{ duration: 0.3 }}
-            >
+            <div className="inline-block p-1 rounded-full border border-gray-200 dark:border-gray-800 mb-6 shadow-sm">
               <LazyImage
                 src={profileImage}
                 alt="Aritro Saha profile picture"
-                className="w-56 h-56 rounded-full border-4 border-white object-cover shadow-sm"
+                className="w-56 h-56 rounded-full object-cover"
                 width={224}
                 height={224}
               />
-            </motion.div>
+            </div>
             <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-900 dark:text-gray-100 cursor-default">
               About <span className="text-(--amethyst) font-bold">Me</span>
             </h2>
@@ -53,14 +49,13 @@ export default function About() {
           
           <div className="md:w-1/2 text-gray-700 dark:text-gray-300 cursor-default">
             <motion.p variants={itemVariants} className="mb-6 text-lg md:text-xl leading-relaxed">
-              I am a <span className="font-medium text-(--amethyst)">Software Engineer 1</span> at <span className="font-medium">Bristol Myers Squibb</span>. As a passionate <span className="font-medium text-(--chrysler-blue)">Data Science Engineer</span> with a strong 
-              footing in <span className="font-medium text-(--amethyst)">Full Stack Development</span>, I enjoy bridging the gap between backend logic and user-facing design while leveraging data to drive smart, impactful decisions.
+              I am a <span className="font-medium text-gray-900 dark:text-gray-100">Software Engineer 1</span> at <span className="font-medium text-gray-900 dark:text-gray-100">Bristol Myers Squibb</span> with a focus on data science engineering and full-stack development. I build scalable backend services and user interfaces driven by reliable data pipelines.
             </motion.p>
             <motion.p variants={itemVariants} className="mb-6 text-lg md:text-xl leading-relaxed">
-              I've had the privilege of winning <span className="font-medium text-(--chrysler-blue)">Hack4Bengal 3.0</span>—Eastern India's largest hackathon—where I led the charge on building impactful tech under pressure. Whether it's crafting <span className="font-medium text-(--amethyst)">scalable web apps</span> or building <span className="font-medium text-(--tea-green)">predictive models</span>, I thrive at the intersection of code, creativity, and real-world problem solving.
+              I won <span className="font-medium text-gray-900 dark:text-gray-100">Hack4Bengal 3.0</span>—Eastern India's largest hackathon—leading development under tight constraints. Whether architecting event-driven systems or building interactive web games, I focus on shipping software that is resilient, accessible, and fast.
             </motion.p>
             <motion.p variants={itemVariants} className="mb-6 text-lg md:text-xl leading-relaxed">
-              When I'm not coding, you'll find me <span className="font-medium text-(--amethyst)">beatboxing</span>, <span className="font-medium text-(--chrysler-blue)">playing football</span>, or chasing my next creative outlet.
+              When I'm not coding, you'll find me beatboxing, playing football, or exploring creative digital audio experiments.
             </motion.p>
             
             <div className="mt-16 flex flex-col md:flex-row gap-12">
