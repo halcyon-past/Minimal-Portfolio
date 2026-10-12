@@ -3,6 +3,30 @@ import { Keyboard, BrainCircuit, Gamepad2, Grid3X3, Rocket, Bird, Swords } from 
 
 export const projects = [
   {
+    id: 'byakugan-scan',
+    title: 'Byakugan Scan',
+    description: 'Instant, in-memory screen OCR, QR code, and barcode recognition utility for macOS',
+    image: '/assets/Byakugan-Scan.webp',
+    github: 'https://github.com/halcyon-past/byakugan-scan',
+    alt: 'Byakugan Scan - Instant In-Memory OCR & QR Scanner for macOS',
+    link: '/projects/byakugan-scan',
+    color: 'text-violet-500',
+    HomepageVisibility: true,
+    details: {
+      overview: 'Byakugan Scan is a native macOS menu bar utility for instant, in-memory screen OCR, QR code, and barcode recognition. Unlike conventional screenshot OCR tools that write temporary image files to disk and trigger Spotlight or media analysis daemons, Byakugan Scan captures selected screen regions directly into NSPasteboard memory as a CGImage buffer and processes them on the Apple Neural Engine in under 50ms—with zero temporary files, zero network calls, and zero external Swift package dependencies.',
+      features: [
+        'Zero-Disk In-Memory Pipeline: Captures screen selections straight into RAM via NSPasteboard and runs Apple Vision requests (VNRecognizeTextRequest and VNDetectBarcodesRequest) on the Neural Engine in under 50ms.',
+        '60/120Hz Custom AppKit Overlay: Smooth multi-display selection reticle with customizable theme accents (Byakugan Violet, Tenseigan Cyan, Sharingan Crimson, Sage Emerald, Nine-Tails Amber) and adjustable backdrop dimming.',
+        'Multi-Language OCR & Barcode Decoding: Supports automatic language detection across 13+ languages alongside QR, MicroQR, EAN-8/13, UPC-E, Code 128/39/93, PDF417, Aztec, and Data Matrix symbologies.',
+        'Floating HUD & Contextual Actions: Frosted-glass HUD toast displaying character/word counts and one-click actions to open URLs, compose emails, or dial phone numbers without cluttering Notification Center.',
+        'URL Scheme Automation & Local History: Deep-link automation via byakugan:// for Raycast, Alfred, and Shortcuts, plus a searchable local scan history with category filters and pinning.'
+      ],
+      techStack: ['Swift 6.0', 'AppKit', 'SwiftUI', 'Apple Vision Framework', 'Neural Engine', 'macOS 14+', 'Homebrew Cask'],
+      liveDemo: 'https://byakugan-scan.aritro.cloud',
+      docs: 'https://byakugan-scan.aritro.cloud/support'
+    }
+  },
+  {
     id: 'openworld-portfolio',
     title: 'OpenWorld Portfolio',
     description: 'Interactive 2.5D retro Pokémon-inspired open-world developer portfolio set in Pallet Cloud',
