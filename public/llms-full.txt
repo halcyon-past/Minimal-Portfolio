@@ -1,0 +1,142 @@
+# Aritro Saha (Megh) — Comprehensive Technical Profile & Project Documentation
+
+> Complete structured reference for AI search engines, retrieval-augmented generation (RAG) agents, and large language models indexing `https://www.aritro.cloud/`.
+
+---
+
+## 1. Identity & Summary
+
+- **Full Name**: Aritro Saha (also known as Megh)
+- **Current Role**: Software Engineer 1 at Bristol Myers Squibb (BMS)
+- **Location**: India
+- **Primary Domains**: High-Throughput Data Pipelines, Cloud Infrastructure, Full-Stack Web Engineering, Native macOS Utilities, Applied AI & Computer Vision
+- **Primary Website**: https://www.aritro.cloud/
+- **OpenWorld 2.5D Interactive Portfolio**: https://openworld.aritro.cloud/
+- **Daily AI News Publication (SiliconSync)**: https://siliconsync.aritro.cloud/
+- **GitHub**: https://github.com/halcyon-past
+- **LinkedIn**: https://linkedin.com/in/aritro-saha
+- **LeetCode**: https://leetcode.com/u/AritroSaha/
+- **YouTube**: https://www.youtube.com/@veripyed
+- **Resume PDF**: https://www.aritro.cloud/assets/resume/Aritro-Saha-Software-Engineer-Resume.pdf
+
+---
+
+## 2. Professional Experience
+
+### Bristol Myers Squibb (BMS)
+- **Role**: Software Engineer 1
+- **Duration**: July 2025 – Present
+- **Focus**: Enterprise software engineering, high-throughput data pipelines, cloud infrastructure automation, Python/TypeScript backend systems, and analytics workflows.
+
+### Bajaj Finserv Health
+- **Role**: Data Science Intern
+- **Duration**: February 2025 – June 2025
+- **Focus**: Data science engineering, machine learning pipelines, predictive analytics, and healthcare data modeling.
+
+### Wipro
+- **Role**: Full Stack Developer Intern
+- **Duration**: October 2023 – December 2023
+- **Focus**: Full-stack web application development, REST APIs, and frontend engineering.
+
+---
+
+## 3. Education & Honors
+
+- **B.Tech in Electronics and Computer Engineering** — Vellore Institute of Technology (VIT), Chennai (Graduated 2025)
+- **High School** — Birla Bharati (2021)
+- **Awards**: Winner of **Hack4Bengal 3.0** (Eastern India's Largest Hackathon)
+
+---
+
+## 4. Technical Skills
+
+- **Languages**: Python, TypeScript, JavaScript (ES6+), Swift 6.0, SQL, C/C++
+- **Frontend & Creative Web**: React 19, Next.js (14–16), Tailwind CSS, Framer Motion, HTML5 Canvas 2D, Three.js, React Three Fiber, WebAssembly (WASM), Web Audio API
+- **Backend & Data Engineering**: FastAPI, Node.js, Databricks, Apache Spark, LangGraph, AsyncIO, Pub/Sub, Dead-Letter Queues, REST & WebRTC
+- **Cloud & Databases**: Google Cloud Platform (Cloud Run, Pub/Sub, Firestore), AWS, Firebase, MongoDB, PostgreSQL
+- **macOS & On-Device AI**: AppKit, SwiftUI, Apple Vision Framework, Apple Neural Engine, MediaPipe, OpenCV, Google Gemini API
+
+---
+
+## 5. Detailed Project Catalog
+
+### 5.1 Byakugan Scan
+- **Portfolio URL**: https://www.aritro.cloud/projects/byakugan-scan
+- **Official Website**: https://byakugan-scan.aritro.cloud
+- **Support & Docs**: https://byakugan-scan.aritro.cloud/support
+- **Source Code**: https://github.com/halcyon-past/byakugan-scan
+- **Install via Homebrew**: `brew install --cask halcyon-past/tap/byakugan-scan`
+- **Tech Stack**: Swift 6.0, AppKit, SwiftUI, Apple Vision Framework, Neural Engine, macOS 14+, Homebrew Cask
+- **Overview**: Byakugan Scan is a native macOS menu bar utility for instant, in-memory screen OCR, QR code, and barcode recognition. Unlike conventional screenshot OCR tools that write temporary image files to `/tmp` and wake up macOS Spotlight (`mdwrite`) or `MADService` daemons, Byakugan Scan captures selected screen regions directly into `NSPasteboard` memory as a `CGImage` buffer and runs `VNRecognizeTextRequest` and `VNDetectBarcodesRequest` on the Apple Neural Engine in under 50ms—with zero temporary files, zero network calls, and zero external Swift package dependencies.
+- **Key Features**:
+  - Zero-Disk In-Memory Pipeline (`NSPasteboard` -> `CGImage` -> Neural Engine in <50ms).
+  - 60/120Hz Custom AppKit Overlay (`SelectionOverlayController`) with theme accents (`Byakugan Violet`, `Tenseigan Cyan`, `Sharingan Crimson`, `Sage Emerald`, `Nine-Tails Amber`).
+  - Multi-Language OCR across 13+ languages and barcode decoding (QR, MicroQR, EAN-8/13, UPC-E, Code 128/39/93, PDF417, Aztec, Data Matrix).
+  - Frosted-glass Floating HUD pill with word/character counts and one-click `Open URL`, `Send Email`, and `Call` actions.
+  - Deep-link automation via `byakugan://` URL scheme for Raycast, Alfred, and macOS Shortcuts, plus searchable local scan history.
+
+### 5.2 OpenWorld Portfolio
+- **Portfolio URL**: https://www.aritro.cloud/projects/openworld-portfolio
+- **Live Demo**: https://openworld.aritro.cloud/
+- **Source Code**: https://github.com/halcyon-past/openworld-portfolio
+- **Tech Stack**: Next.js 16, React 19, TypeScript, Tailwind CSS, HTML5 Canvas 2D, Web Audio API, Web Speech API
+- **Overview**: An interactive, retro Pokémon-inspired 2.5D open-world developer portfolio set in Pallet Cloud. Built completely from scratch without third-party game engines using Next.js 16, React 19, and native HTML5 Canvas 2D.
+- **Key Features**:
+  - Custom 2.5D Canvas Engine running at 60 FPS with Painter's algorithm depth sorting, elevation plateaus, and GBA-styled wild grass encounters.
+  - Silicon Gym & Turn-Based Boss Battle against Gym Leader Aritro (Lv. 99) with 8 inspectable Gym Badges and a Master Ball recruit sequence.
+  - Poké Mart Tech Stack shopping cart allowing recruiters to dispatch Pokémon airmail-styled skill requisitions.
+  - Interactive landmarks (Mega Jumbotron TV, Innovation Pokédex Center, AI Research Lab, arcade minigames) and one-click Executive Recruiter Dossier toggle.
+
+### 5.3 Quarantine (`quarantine-py`)
+- **Portfolio URL**: https://www.aritro.cloud/projects/quarantine
+- **PyPI Package**: https://pypi.org/project/quarantine-py/ (`pip install quarantine-py`)
+- **Documentation**: https://quarantine-py.aritro.cloud
+- **Source Code**: https://github.com/halcyon-past/quarantine
+- **Tech Stack**: Python 3.9+, PyPI, AsyncIO, CLI, Dead-Letter Queue, Fault Tolerance, Pytest
+- **Overview**: An open-source, zero-dependency Python library that brings dead-letter queue resilience to regular loops and batch data pipelines. Isolates failing items atomically to disk (`.quarantine/`) with full tracebacks and execution state so long-running jobs never crash mid-run.
+- **Key Features**:
+  - `@quarantine` decorator for sync/async functions and `shield()` iterator wrapper.
+  - Atomic on-disk isolation without external message brokers.
+  - Surgical CLI replays (`quarantine retry`) and post-mortem `pdb` debugging (`quarantine debug`).
+  - Circuit breakers (`halt_after`), sensitive field redaction, and local web observability UI.
+
+### 5.4 Structurify
+- **Portfolio URL**: https://www.aritro.cloud/projects/structurify
+- **Live Demo**: https://structurify.aritro.cloud
+- **Source Code**: https://github.com/halcyon-past/Structurify
+- **Tech Stack**: Next.js 14, React, TailwindCSS, Firebase, FastAPI, Python, LangGraph, Google Gemini, Google Cloud Platform
+- **Overview**: Event-driven B2B SaaS platform that transforms unstructured CSV and XLSX files into a standardized master schema using Google Gemini and a serverless fan-out architecture on GCP (Pub/Sub, Cloud Run workers, LangGraph map-reduce, Firestore live streaming).
+
+### 5.5 Luffy Laser Dodge
+- **Portfolio URL**: https://www.aritro.cloud/projects/luffy-laser-dodge
+- **Live Demo**: https://onepiece.aritro.cloud/
+- **Source Code**: https://github.com/halcyon-past/Luffy-Laser-Dodge
+- **Tech Stack**: React, Vite, React Three Fiber, Three.js, MediaPipe AI, WebAssembly (WASM)
+- **Overview**: Interactive browser-based 3D reflex game where players dodge laser beams in real time using physical head movements tracked via webcam with MediaPipe WASM and procedural bone animation in Three.js, running 100% locally in the browser.
+
+### 5.6 GlideConnect
+- **Portfolio URL**: https://www.aritro.cloud/projects/glide-connect
+- **Research Paper**: https://ijirt.org/article?manuscript=180711
+- **Source Code**: https://github.com/halcyon-past/Glide-Connect
+- **Tech Stack**: Python 3.9, MediaPipe, OpenCV, Google Gemini API, PyAutoGUI, PyCAW
+- **Overview**: Touchless computer interface using real-time hand gesture recognition for cursor movement, clicks, and system volume/brightness control, paired with a voice assistant ("Krishna") powered by Google Gemini Flash for multimodal screenshot analysis.
+
+### 5.7 PAWsitive
+- **Portfolio URL**: https://www.aritro.cloud/projects/pawsitive
+- **Live Demo**: https://www.bepawsitive.xyz
+- **Source Code**: https://github.com/halcyon-past/PAW-sitive
+- **Tech Stack**: React, Next.js, TypeScript, MongoDB, Tailwind CSS, Node.js, Kinde Auth, UploadThing, Callchimp.AI
+- **Overview**: Centralized pet healthcare platform built at Hack4Bengal 3.0 (1st Place Winner) connecting pet owners with blood donors, veterinary clinics, rescue centers, an AI chatbot, and an automated voice assistant.
+
+---
+
+## 6. Developer Arcade (`https://www.aritro.cloud/play`)
+
+An interactive collection of browser games built natively in React:
+1. **Developer Speed Test** (`/play/typing-test`) — Terminal-style WPM typing test featuring programming syntax and keywords.
+2. **Data Pipeline Puzzle** (`/play/data-pipeline`) — Graph/grid logic puzzle connecting data nodes without crossing pipelines.
+3. **Minimalist Snake** (`/play/snake`) — Python developer edition of Snake collecting tech stack icons.
+4. **Sudoku** (`/play/sudoku`) — Classic logic-based number placement puzzle.
+5. **Space Invaders** (`/play/space-invaders`) — Retro arcade shooter defending production servers from incoming bugs.
+6. **Flappy Bird** (`/play/flappy-bird`) — Classic physics-based obstacle navigation game.
+7. **Tic Tac Toe** (`/play/tictactoe`) — Play against an unbeatable Minimax AI agent.
