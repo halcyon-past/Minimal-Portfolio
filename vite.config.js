@@ -11,11 +11,11 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       injectRegister: 'auto',
-      includeAssets: ['favicon.ico', 'robots.txt', 'sitemap.xml', '**/*.{png,jpg,jpeg,svg,mp3,wav,json,pdf}'],
+      includeAssets: ['favicon.ico', 'robots.txt', 'sitemap.xml', 'llms.txt', 'llms-full.txt', 'ai.txt', '**/*.{png,jpg,jpeg,svg,mp3,wav,json,pdf}'],
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,jpg,jpeg,json,mp3,wav,pdf}'],
         maximumFileSizeToCacheInBytes: 10000000, // 10MB to ensure large game assets are cached
-        navigateFallbackDenylist: [/^\/assets\/resume\//, /\.pdf$/]
+        navigateFallbackDenylist: [/^\/assets\/resume\//, /\.pdf$/, /\.txt$/, /\.xml$/]
       },
       manifest: {
         name: 'The Arcade by Aritro',

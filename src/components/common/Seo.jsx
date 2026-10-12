@@ -55,11 +55,27 @@ export default function Seo({ title, description, url = '/', image = 'https://ww
         "sameAs": [
           "https://linkedin.com/in/aritro-saha",
           "https://github.com/halcyon-past",
+          "https://pypi.org/project/quarantine-py/",
           "https://leetcode.com/u/AritroSaha/",
           "https://www.youtube.com/@veripyed",
+          "https://instagram.com/halcyon-past",
           "https://siliconsync.aritro.cloud/",
-          "https://openworld.aritro.cloud/"
+          "https://openworld.aritro.cloud/",
+          "https://byakugan-scan.aritro.cloud/",
+          "https://quarantine-py.aritro.cloud/",
+          "https://structurify.aritro.cloud/",
+          "https://onepiece.aritro.cloud/",
+          "https://ijirt.org/article?manuscript=180711"
         ]
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://www.aritro.cloud/#profilepage",
+        "url": "https://www.aritro.cloud/",
+        "name": "Aritro Saha — Software Engineer 1 Portfolio",
+        "mainEntity": {
+          "@id": "https://www.aritro.cloud/#person"
+        }
       },
       {
         "@type": "WebSite",
@@ -108,6 +124,19 @@ export default function Seo({ title, description, url = '/', image = 'https://ww
       <link rel="canonical" href={canonicalUrl} />
       <link rel="alternate" type="text/plain" href="https://www.aritro.cloud/llms.txt" title="LLM Context Summary" />
       <link rel="alternate" type="text/plain" href="https://www.aritro.cloud/llms-full.txt" title="LLM Full Context" />
+      <link rel="alternate" type="text/plain" href="https://www.aritro.cloud/ai.txt" title="AI Scraper Policy & Identity" />
+
+      {/* Bidirectional Identity Verification (rel="me") */}
+      <link rel="me" href="https://github.com/halcyon-past" />
+      <link rel="me" href="https://linkedin.com/in/aritro-saha" />
+      <link rel="me" href="https://pypi.org/project/quarantine-py/" />
+      <link rel="me" href="https://www.youtube.com/@veripyed" />
+      <link rel="me" href="https://leetcode.com/u/AritroSaha/" />
+      <link rel="me" href="https://instagram.com/halcyon-past" />
+      <link rel="me" href="https://siliconsync.aritro.cloud/" />
+      <link rel="me" href="https://openworld.aritro.cloud/" />
+      <link rel="me" href="https://byakugan-scan.aritro.cloud/" />
+      <link rel="me" href="https://quarantine-py.aritro.cloud/" />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
