@@ -53,6 +53,8 @@ export default function Seo({ title, description, url = '/', image = 'https://ww
           "Artificial Intelligence"
         ],
         "sameAs": [
+          "https://www.wikidata.org/wiki/Q141715213",
+          "https://www.wikidata.org/entity/Q141715213",
           "https://linkedin.com/in/aritro-saha",
           "https://github.com/halcyon-past",
           "https://pypi.org/project/quarantine-py/",
@@ -127,6 +129,7 @@ export default function Seo({ title, description, url = '/', image = 'https://ww
       <link rel="alternate" type="text/plain" href="https://www.aritro.cloud/ai.txt" title="AI Scraper Policy & Identity" />
 
       {/* Bidirectional Identity Verification (rel="me") */}
+      <link rel="me" href="https://www.wikidata.org/wiki/Q141715213" />
       <link rel="me" href="https://github.com/halcyon-past" />
       <link rel="me" href="https://linkedin.com/in/aritro-saha" />
       <link rel="me" href="https://pypi.org/project/quarantine-py/" />

@@ -44,6 +44,8 @@ const personGraphNode = {
     "Artificial Intelligence"
   ],
   "sameAs": [
+    "https://www.wikidata.org/wiki/Q141715213",
+    "https://www.wikidata.org/entity/Q141715213",
     "https://linkedin.com/in/aritro-saha",
     "https://github.com/halcyon-past",
     "https://pypi.org/project/quarantine-py/",

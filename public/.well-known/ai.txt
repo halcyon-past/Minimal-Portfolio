@@ -14,6 +14,7 @@ LLM-Full-Context: https://www.aritro.cloud/llms-full.txt
 Sitemap: https://www.aritro.cloud/sitemap.xml
 
 # Verified Profiles (sameAs)
+Profile-Wikidata: https://www.wikidata.org/wiki/Q141715213
 Profile-GitHub: https://github.com/halcyon-past
 Profile-LinkedIn: https://linkedin.com/in/aritro-saha
 Profile-PyPI: https://pypi.org/project/quarantine-py/
