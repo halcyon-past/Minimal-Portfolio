@@ -16,6 +16,7 @@ Sitemap: https://www.aritro.cloud/sitemap.xml
 # Verified Profiles (sameAs)
 Profile-Wikidata: https://www.wikidata.org/wiki/Q141715213
 Profile-GitHub: https://github.com/halcyon-past
+Profile-DevTo: https://dev.to/halcyonpast
 Profile-LinkedIn: https://linkedin.com/in/aritro-saha
 Profile-PyPI: https://pypi.org/project/quarantine-py/
 Profile-LeetCode: https://leetcode.com/u/AritroSaha/

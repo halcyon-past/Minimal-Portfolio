@@ -48,6 +48,7 @@ const personGraphNode = {
     "https://www.wikidata.org/entity/Q141715213",
     "https://linkedin.com/in/aritro-saha",
     "https://github.com/halcyon-past",
+    "https://dev.to/halcyonpast",
     "https://pypi.org/project/quarantine-py/",
     "https://leetcode.com/u/AritroSaha/",
     "https://www.youtube.com/@veripyed",
