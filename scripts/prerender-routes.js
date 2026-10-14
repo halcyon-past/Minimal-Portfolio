@@ -499,4 +499,14 @@ function run() {
   console.log(`✅ Pre-rendered ${generatedCount} static HTML routes for LLM & non-JS web scrapers.`);
 }
 
-run();
+async function main() {
+  run();
+  try {
+    const { pingIndexNow } = await import('./ping-indexnow.js');
+    await pingIndexNow();
+  } catch (err) {
+    console.warn('IndexNow notification skipped:', err.message);
+  }
+}
+
+main();
