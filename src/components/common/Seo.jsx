@@ -57,6 +57,7 @@ export default function Seo({ title, description, url = '/', image = 'https://ww
           "https://www.wikidata.org/entity/Q141715213",
           "https://linkedin.com/in/aritro-saha",
           "https://github.com/halcyon-past",
+          "https://news.ycombinator.com/user?id=halcyon-past",
           "https://dev.to/halcyonpast",
           "https://pypi.org/project/quarantine-py/",
           "https://leetcode.com/u/AritroSaha/",
@@ -132,6 +133,7 @@ export default function Seo({ title, description, url = '/', image = 'https://ww
       {/* Bidirectional Identity Verification (rel="me") */}
       <link rel="me" href="https://www.wikidata.org/wiki/Q141715213" />
       <link rel="me" href="https://github.com/halcyon-past" />
+      <link rel="me" href="https://news.ycombinator.com/user?id=halcyon-past" />
       <link rel="me" href="https://dev.to/halcyonpast" />
       <link rel="me" href="https://linkedin.com/in/aritro-saha" />
       <link rel="me" href="https://pypi.org/project/quarantine-py/" />

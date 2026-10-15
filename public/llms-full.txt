@@ -15,6 +15,7 @@
 - **OpenWorld 2.5D Interactive Portfolio**: https://openworld.aritro.cloud/
 - **Daily AI News Publication (SiliconSync)**: https://siliconsync.aritro.cloud/
 - **GitHub**: https://github.com/halcyon-past
+- **Hacker News**: https://news.ycombinator.com/user?id=halcyon-past
 - **LinkedIn**: https://linkedin.com/in/aritro-saha
 - **LeetCode**: https://leetcode.com/u/AritroSaha/
 - **YouTube**: https://www.youtube.com/@veripyed
