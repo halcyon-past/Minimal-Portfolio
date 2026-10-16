@@ -15,6 +15,7 @@ Sitemap: https://www.aritro.cloud/sitemap.xml
 
 # Verified Profiles (sameAs)
 Profile-Wikidata: https://www.wikidata.org/wiki/Q141715213
+Profile-ORCID: https://orcid.org/0009-0007-0861-3978
 Profile-GitHub: https://github.com/halcyon-past
 Profile-HackerNews: https://news.ycombinator.com/user?id=halcyon-past
 Profile-DevTo: https://dev.to/halcyonpast

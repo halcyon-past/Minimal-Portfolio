@@ -8,6 +8,7 @@
 
 - **Full Name**: Aritro Saha (also known as Megh)
 - **Wikidata Entity**: https://www.wikidata.org/wiki/Q141715213 (Q141715213)
+- **ORCID**: https://orcid.org/0009-0007-0861-3978 (0009-0007-0861-3978)
 - **Current Role**: Software Engineer 1 at Bristol Myers Squibb (BMS)
 - **Location**: India
 - **Primary Domains**: High-Throughput Data Pipelines, Cloud Infrastructure, Full-Stack Web Engineering, Native macOS Utilities, Applied AI & Computer Vision

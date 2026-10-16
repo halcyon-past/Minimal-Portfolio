@@ -4,6 +4,7 @@
 
 - **Canonical Website**: [https://www.aritro.cloud/](https://www.aritro.cloud/)
 - **Wikidata Entity**: [https://www.wikidata.org/wiki/Q141715213](https://www.wikidata.org/wiki/Q141715213)
+- **ORCID**: [https://orcid.org/0009-0007-0861-3978](https://orcid.org/0009-0007-0861-3978)
 - **Detailed LLM Context**: [https://www.aritro.cloud/llms-full.txt](https://www.aritro.cloud/llms-full.txt)
 - **Resume**: [https://www.aritro.cloud/assets/resume/Aritro-Saha-Software-Engineer-Resume.pdf](https://www.aritro.cloud/assets/resume/Aritro-Saha-Software-Engineer-Resume.pdf)
 - **GitHub**: [https://github.com/halcyon-past](https://github.com/halcyon-past)
