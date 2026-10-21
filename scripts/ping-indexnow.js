@@ -17,6 +17,7 @@ const URL_LIST = [
   `https://${HOST}/play/flappy-bird`,
   `https://${HOST}/play/tictactoe`,
   `https://${HOST}/projects/byakugan-scan`,
+  `https://${HOST}/projects/sutrakey`,
   `https://${HOST}/projects/openworld-portfolio`,
   `https://${HOST}/projects/quarantine`,
   `https://${HOST}/projects/structurify`,

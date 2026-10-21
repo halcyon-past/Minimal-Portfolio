@@ -8,7 +8,7 @@ export default function Seo({ title, description, url = '/', image = 'https://ww
     : `${title} | Aritro Saha - Software Engineer Portfolio`;
   const defaultDescription = "Portfolio of Aritro Saha, a Software Engineer 1 at Bristol Myers Squibb specializing in full-stack web dev, AI, macOS tools, and data analytics.";
   const finalDescription = description || defaultDescription;
-  const keywords = "Aritro, Aritro Saha, Aritro BMS, Aritro Software Engineer, Aritro Software Engineer 1, Software Engineer 1, Aritro Developer, Aritro Games, Aritro Arcade, Byakugan Scan, OpenWorld Portfolio, Quarantine Python, Structurify, Software Developer, Portfolio, Full-Stack, React, Node.js, Python, Swift, Databricks, AI, Machine Learning, Bristol Myers Squibb";
+  const keywords = "Aritro, Aritro Saha, Aritro BMS, Aritro Software Engineer, Aritro Software Engineer 1, Software Engineer 1, Aritro Developer, Aritro Games, Aritro Arcade, Byakugan Scan, SutraKey, OpenWorld Portfolio, Quarantine Python, Structurify, Software Developer, Portfolio, Full-Stack, React, Node.js, Python, Swift, Databricks, AI, Machine Learning, Bristol Myers Squibb";
 
   const canonicalUrl = url.startsWith('http') ? url : `https://www.aritro.cloud${url.startsWith('/') ? url : `/${url}`}`;
 
@@ -67,6 +67,7 @@ export default function Seo({ title, description, url = '/', image = 'https://ww
           "https://siliconsync.aritro.cloud/",
           "https://openworld.aritro.cloud/",
           "https://byakugan-scan.aritro.cloud/",
+          "https://sutrakey.aritro.cloud/",
           "https://quarantine-py.aritro.cloud/",
           "https://structurify.aritro.cloud/",
           "https://onepiece.aritro.cloud/",
@@ -145,6 +146,7 @@ export default function Seo({ title, description, url = '/', image = 'https://ww
       <link rel="me" href="https://siliconsync.aritro.cloud/" />
       <link rel="me" href="https://openworld.aritro.cloud/" />
       <link rel="me" href="https://byakugan-scan.aritro.cloud/" />
+      <link rel="me" href="https://sutrakey.aritro.cloud/" />
       <link rel="me" href="https://quarantine-py.aritro.cloud/" />
 
       {/* Open Graph / Facebook */}

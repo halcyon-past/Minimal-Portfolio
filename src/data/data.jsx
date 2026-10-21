@@ -27,6 +27,30 @@ export const projects = [
     }
   },
   {
+    id: 'sutrakey',
+    title: 'SutraKey',
+    description: 'Instant Shift+Select radial pie menu for video, audio, and clean document actions on macOS',
+    image: '/assets/SutraKey.webp',
+    github: 'https://github.com/halcyon-past/SutraKey',
+    alt: 'SutraKey - Instant Text-to-Media & Document Actions for macOS',
+    link: '/projects/sutrakey',
+    color: 'text-amber-500',
+    HomepageVisibility: true,
+    details: {
+      overview: 'SutraKey (सूत्र) is a native, lightweight macOS utility designed as an invisible thread connecting text selection to instant media and document actions. When you hold Shift and select any URL or text, an under-cursor radial pie menu smoothly appears, letting you download videos, extract high-bitrate audio, pull clean subtitles, scrape gallery images, or generate ad-free reader-mode PDFs directly into ~/Downloads—with 0% idle CPU and zero background bloat.',
+      features: [
+        'Exclusive Shift + Select Trigger: Uses CGEventTap with bitwise modifier evaluation (NSEvent.modifierFlags) ensuring the radial menu only summons when Shift is exclusively held, completely avoiding interference with standard Command, Option, or Control shortcuts.',
+        '60 FPS Under-Cursor Radial Menu: A frameless, transparent, non-activating NSPanel with 5 radial slices (Video MP4 via yt-dlp+ffmpeg, 320kbps MP3 Audio, Clean Subtitles, High-Res Image Gallery, Reader-Mode Clean PDF via offscreen WKWebView) and a dead-zone center for instant flick-cancelling.',
+        'Ephemeral Menu Bar Presence: Remains 100% invisible when idle; dynamically surfaces a monochrome progress indicator in the macOS menu bar only during active conversion tasks and auto-vanishes 1.5s after completion.',
+        'Frosted Glass Toast HUD: Native floating status notifications with macOS .ultraThinMaterial blur displaying transfer speeds, ETA, and one-click "Show in Finder" buttons.',
+        'Strict Sandboxed Output & Security: Strictly confines all downloads to ~/Downloads with automatic path-traversal guards (--no-exec, --restrict-filenames).'
+      ],
+      techStack: ['Swift 6.0', 'AppKit', 'SwiftUI', 'CGEventTap', 'macOS 14+ Sonoma', 'yt-dlp', 'ffmpeg', 'Homebrew Cask'],
+      liveDemo: 'https://sutrakey.aritro.cloud',
+      docs: 'https://sutrakey.aritro.cloud'
+    }
+  },
+  {
     id: 'openworld-portfolio',
     title: 'OpenWorld Portfolio',
     description: 'Interactive 2.5D retro Pokémon-inspired open-world developer portfolio set in Pallet Cloud',
