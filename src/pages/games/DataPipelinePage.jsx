@@ -109,7 +109,9 @@ export default function DataPipelinePage() {
     if (navigator.share) {
       try {
         await navigator.share({ title: 'Data Pipeline Puzzle', text: text + '\n\n' + window.location.href });
-      } catch (e) {}
+      } catch {
+        // Share cancelled or not supported
+      }
     } else {
       navigator.clipboard.writeText(text + ' ' + window.location.href);
       alert('Copied to clipboard!');
@@ -130,7 +132,7 @@ export default function DataPipelinePage() {
     const queue = [sourceIdx];
     isFlowing[sourceIdx] = true;
 
-    const getConnections = (cell, isFixed) => {
+    const getConnections = (cell) => {
         let ports = [...PIPE_TYPES[cell.type]];
         // Rotate the ports array right by cell.rotations % 4
         const effectiveRotations = cell.rotations % 4;

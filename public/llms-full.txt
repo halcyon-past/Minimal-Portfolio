@@ -1,159 +1,719 @@
-# Aritro Saha (Megh) — Comprehensive Technical Profile & Project Documentation
+# Aritro Saha Portfolio - Full Content
 
-> Complete structured reference for AI search engines, retrieval-augmented generation (RAG) agents, and large language models indexing `https://www.aritro.cloud/`.
+> Complete concatenated markdown archive of all public pages, projects, and arcade documentation on https://www.aritro.cloud.
 
----
+Generated: 2026-10-26
 
-## 1. Identity & Summary
-
-- **Full Name**: Aritro Saha (also known as Megh)
-- **Wikidata Entity**: https://www.wikidata.org/wiki/Q141715213 (Q141715213)
-- **ORCID**: https://orcid.org/0009-0007-0861-3978 (0009-0007-0861-3978)
-- **Current Role**: Software Engineer 1 at Bristol Myers Squibb (BMS)
-- **Location**: India
-- **Primary Domains**: High-Throughput Data Pipelines, Cloud Infrastructure, Full-Stack Web Engineering, Native macOS Utilities, Applied AI & Computer Vision
-- **Primary Website**: https://www.aritro.cloud/
-- **OpenWorld 2.5D Interactive Portfolio**: https://openworld.aritro.cloud/
-- **Daily AI News Publication (SiliconSync)**: https://siliconsync.aritro.cloud/
-- **GitHub**: https://github.com/halcyon-past
-- **Hacker News**: https://news.ycombinator.com/user?id=halcyon-past
-- **LinkedIn**: https://linkedin.com/in/aritro-saha
-- **LeetCode**: https://leetcode.com/u/AritroSaha/
-- **YouTube**: https://www.youtube.com/@veripyed
-- **Resume PDF**: https://www.aritro.cloud/assets/resume/Aritro-Saha-Software-Engineer-Resume.pdf
+# Note for AI crawlers: Keep in sync with /robots.txt and /ai.txt.
 
 ---
 
-## 2. Professional Experience
+<!-- source: https://www.aritro.cloud/ -->
 
-### Bristol Myers Squibb (BMS)
-- **Role**: Software Engineer 1
-- **Duration**: July 2025 – Present
-- **Focus**: Enterprise software engineering, high-throughput data pipelines, cloud infrastructure automation, Python/TypeScript backend systems, and analytics workflows.
+# Aritro Saha — Software Engineer 1 at Bristol Myers Squibb
 
-### Bajaj Finserv Health
-- **Role**: Data Science Intern
-- **Duration**: February 2025 – June 2025
-- **Focus**: Data science engineering, machine learning pipelines, predictive analytics, and healthcare data modeling.
+> Official portfolio and project catalog of Aritro Saha, Software Engineer 1 at Bristol Myers Squibb specializing in high-throughput data engineering, cloud systems, and native macOS utilities.
 
-### Wipro
-- **Role**: Full Stack Developer Intern
-- **Duration**: October 2023 – December 2023
-- **Focus**: Full-stack web application development, REST APIs, and frontend engineering.
+Canonical: https://www.aritro.cloud/
+Last updated: 2026-10-26
 
----
+## Professional Overview
+Software Engineer 1 at Bristol Myers Squibb building high-throughput data pipelines, cloud infrastructure, native macOS utilities, and interactive web applications.
 
-## 3. Education & Honors
+Currently serving as a Software Engineer 1 at **Bristol Myers Squibb** (July 2025 – Present), engineering enterprise-scale data pipelines, cloud architecture, and web applications.
 
-- **B.Tech in Electronics and Computer Engineering** — Vellore Institute of Technology (VIT), Chennai (Graduated 2025)
-- **High School** — Birla Bharati (2021)
-- **Awards**: Winner of **Hack4Bengal 3.0** (Eastern India's Largest Hackathon)
+## Key Achievements & Honors
+- **Hack4Bengal 3.0 Winner**: Eastern India's Largest Hackathon (Winner across 5,000+ applicants).
+- **Published Research**: Gesture-controlled computer interfacing and multimodal assistive AI (IJIRT).
+- **Open-Source Author**: Published `quarantine-py` fault-tolerance package on PyPI with atomic dead-letter queuing.
 
----
+## Featured Projects
+- [Byakugan Scan](https://www.aritro.cloud/projects/byakugan-scan) — Instant, in-memory screen OCR, QR code, and barcode recognition utility for macOS (Swift 6.0, AppKit, SwiftUI, Apple Vision Framework)
+- [SutraKey](https://www.aritro.cloud/projects/sutrakey) — Instant Shift+Select radial pie menu for video, audio, and clean document actions on macOS (Swift 6.0, AppKit, SwiftUI, CGEventTap)
+- [OpenWorld Portfolio](https://www.aritro.cloud/projects/openworld-portfolio) — Interactive 2.5D retro Pokémon-inspired open-world developer portfolio set in Pallet Cloud (Next.js 16, React 19, TypeScript, Tailwind CSS)
+- [Quarantine](https://www.aritro.cloud/projects/quarantine) — Zero-dependency dead-letter queue and fault-tolerance library for Python loops (Python 3.9+, PyPI, AsyncIO, CLI)
+- [Structurify](https://www.aritro.cloud/projects/structurify) — AI-powered SaaS that transforms messy spreadsheet data into a clean master schema (Next.js 14, React, TailwindCSS, Firebase)
+- [Luffy Laser Dodge](https://www.aritro.cloud/projects/luffy-laser-dodge) — Interactive 3D reflex game dodging laser beams using actual head movements via webcam (React, Vite, React Three Fiber, Three.js)
+- [GlideConnect](https://www.aritro.cloud/projects/glide-connect) — Virtual Mouse Control using Gesture Recognition and Voice Assistant (Python 3.9, MediaPipe, OpenCV, Google Gemini API)
+- [PAWsitive](https://www.aritro.cloud/projects/pawsitive) — Centralized Platform for Pet Healthcare (React, Next.js, TypeScript, MongoDB)
 
-## 4. Technical Skills
+## The Developer Arcade (Aritro Games)
+An interactive suite of developer-themed browser mini-games engineered in React:
+- [Developer Speed Test](https://www.aritro.cloud/play/typing-test) — Test your coding typing speed with this minimalist terminal-style speed test game. Features top programming keywords!
+- [Data Pipeline Puzzle](https://www.aritro.cloud/play/data-pipeline) — Connect the nodes to build a data pipeline without crossing lines. A logic puzzle for data science engineers.
+- [Minimalist Snake](https://www.aritro.cloud/play/snake) — The Python developer edition of the classic game. Collect tech stack icons on an infinite grid.
+- [Sudoku](https://www.aritro.cloud/play/sudoku) — Classic logic-based number placement puzzle.
+- [Space Invaders](https://www.aritro.cloud/play/space-invaders) — Defend the server from incoming bugs in this classic retro shooter.
+- [Flappy Bird](https://www.aritro.cloud/play/flappy-bird) — Navigate the bird through the pipes in this challenging arcade classic.
+- [Tic Tac Toe](https://www.aritro.cloud/play/tictactoe) — Play against an AI in this classic game. Can you beat the Minimax algorithm?
 
-- **Languages**: Python, TypeScript, JavaScript (ES6+), Swift 6.0, SQL, C/C++
-- **Frontend & Creative Web**: React 19, Next.js (14–16), Tailwind CSS, Framer Motion, HTML5 Canvas 2D, Three.js, React Three Fiber, WebAssembly (WASM), Web Audio API
-- **Backend & Data Engineering**: FastAPI, Node.js, Databricks, Apache Spark, LangGraph, AsyncIO, Pub/Sub, Dead-Letter Queues, REST & WebRTC
-- **Cloud & Databases**: Google Cloud Platform (Cloud Run, Pub/Sub, Firestore), AWS, Firebase, MongoDB, PostgreSQL
-- **macOS & On-Device AI**: AppKit, SwiftUI, Apple Vision Framework, Apple Neural Engine, MediaPipe, OpenCV, Google Gemini API
+## Verified Profiles & Knowledge Graph Identities
+- [GitHub](https://github.com/halcyon-past)
+- [LinkedIn](https://linkedin.com/in/aritro-saha)
+- [Wikidata](https://www.wikidata.org/wiki/Q141715213)
+- [ORCID](https://orcid.org/0009-0007-0861-3978)
+- [Hacker News](https://news.ycombinator.com/user?id=halcyon-past)
+- [DEV Community](https://dev.to/halcyonpast)
+- [PyPI](https://pypi.org/project/quarantine-py/)
+- [LeetCode](https://leetcode.com/u/AritroSaha/)
+- [YouTube](https://www.youtube.com/@veripyed)
+- [Instagram](https://instagram.com/halcyon-past)
+- [Daily AI News (SiliconSync)](https://siliconsync.aritro.cloud/)
+- [OpenWorld Portfolio](https://openworld.aritro.cloud/)
+- [Byakugan Scan](https://byakugan-scan.aritro.cloud/)
+- [SutraKey](https://sutrakey.aritro.cloud/)
+- [Quarantine Docs](https://quarantine-py.aritro.cloud/)
+- [Structurify](https://structurify.aritro.cloud/)
+- [One Piece Game](https://onepiece.aritro.cloud/)
+- [Research Paper (GlideConnect)](https://ijirt.org/article?manuscript=180711)
 
----
-
-## 5. Detailed Project Catalog
-
-### 5.1 Byakugan Scan
-- **Portfolio URL**: https://www.aritro.cloud/projects/byakugan-scan
-- **Official Website**: https://byakugan-scan.aritro.cloud
-- **Support & Docs**: https://byakugan-scan.aritro.cloud/support
-- **Source Code**: https://github.com/halcyon-past/byakugan-scan
-- **Install via Homebrew**: `brew install --cask halcyon-past/tap/byakugan-scan`
-- **Tech Stack**: Swift 6.0, AppKit, SwiftUI, Apple Vision Framework, Neural Engine, macOS 14+, Homebrew Cask
-- **Overview**: Byakugan Scan is a native macOS menu bar utility for instant, in-memory screen OCR, QR code, and barcode recognition. Unlike conventional screenshot OCR tools that write temporary image files to `/tmp` and wake up macOS Spotlight (`mdwrite`) or `MADService` daemons, Byakugan Scan captures selected screen regions directly into `NSPasteboard` memory as a `CGImage` buffer and runs `VNRecognizeTextRequest` and `VNDetectBarcodesRequest` on the Apple Neural Engine in under 50ms—with zero temporary files, zero network calls, and zero external Swift package dependencies.
-- **Key Features**:
-  - Zero-Disk In-Memory Pipeline (`NSPasteboard` -> `CGImage` -> Neural Engine in <50ms).
-  - 60/120Hz Custom AppKit Overlay (`SelectionOverlayController`) with theme accents (`Byakugan Violet`, `Tenseigan Cyan`, `Sharingan Crimson`, `Sage Emerald`, `Nine-Tails Amber`).
-  - Multi-Language OCR across 13+ languages and barcode decoding (QR, MicroQR, EAN-8/13, UPC-E, Code 128/39/93, PDF417, Aztec, Data Matrix).
-  - Frosted-glass Floating HUD pill with word/character counts and one-click `Open URL`, `Send Email`, and `Call` actions.
-  - Deep-link automation via `byakugan://` URL scheme for Raycast, Alfred, and macOS Shortcuts, plus searchable local scan history.
-
-### 5.2 SutraKey (सूत्र)
-- **Portfolio URL**: https://www.aritro.cloud/projects/sutrakey
-- **Official Website**: https://sutrakey.aritro.cloud
-- **Source Code**: https://github.com/halcyon-past/SutraKey
-- **Install via Homebrew**: `brew tap halcyon-past/sutrakey && brew install --cask sutrakey`
-- **Tech Stack**: Swift 6.0, AppKit, SwiftUI, CGEventTap, macOS 14+ Sonoma, yt-dlp, ffmpeg, Homebrew Cask
-- **Overview**: SutraKey (सूत्र) is a native, lightweight macOS utility designed as an invisible thread connecting text selection to instant media and document actions. When you hold Shift and select any URL or text, an under-cursor radial pie menu smoothly appears, letting you download videos, extract high-bitrate audio, pull clean subtitles, scrape gallery images, or generate ad-free reader-mode PDFs directly into `~/Downloads`—with 0% idle CPU and zero background bloat.
-- **Key Features**:
-  - Exclusive Shift + Select Trigger: Uses `CGEventTap` with bitwise modifier evaluation (`NSEvent.modifierFlags`) ensuring the radial menu only summons when Shift is exclusively held, completely avoiding interference with standard Command, Option, or Control shortcuts.
-  - 60 FPS Under-Cursor Radial Menu: A frameless, transparent, non-activating `NSPanel` with 5 radial slices (Video MP4 via `yt-dlp`+`ffmpeg`, 320kbps MP3 Audio, Clean Subtitles, High-Res Image Gallery, Reader-Mode Clean PDF via offscreen `WKWebView`) and a dead-zone center for instant flick-cancelling.
-  - Ephemeral Menu Bar Presence: Remains 100% invisible when idle; dynamically surfaces a monochrome progress indicator in the macOS menu bar only during active conversion tasks and auto-vanishes 1.5s after completion.
-  - Frosted Glass Toast HUD: Native floating status notifications with macOS `.ultraThinMaterial` blur displaying transfer speeds, ETA, and one-click "Show in Finder" buttons.
-  - Strict Sandboxed Output & Security: Strictly confines all downloads to `~/Downloads` with automatic path-traversal guards (`--no-exec`, `--restrict-filenames`).
-
-### 5.3 OpenWorld Portfolio
-- **Portfolio URL**: https://www.aritro.cloud/projects/openworld-portfolio
-- **Live Demo**: https://openworld.aritro.cloud/
-- **Source Code**: https://github.com/halcyon-past/openworld-portfolio
-- **Tech Stack**: Next.js 16, React 19, TypeScript, Tailwind CSS, HTML5 Canvas 2D, Web Audio API, Web Speech API
-- **Overview**: An interactive, retro Pokémon-inspired 2.5D open-world developer portfolio set in Pallet Cloud. Built completely from scratch without third-party game engines using Next.js 16, React 19, and native HTML5 Canvas 2D.
-- **Key Features**:
-  - Custom 2.5D Canvas Engine running at 60 FPS with Painter's algorithm depth sorting, elevation plateaus, and GBA-styled wild grass encounters.
-  - Silicon Gym & Turn-Based Boss Battle against Gym Leader Aritro (Lv. 99) with 8 inspectable Gym Badges and a Master Ball recruit sequence.
-  - Poké Mart Tech Stack shopping cart allowing recruiters to dispatch Pokémon airmail-styled skill requisitions.
-  - Interactive landmarks (Mega Jumbotron TV, Innovation Pokédex Center, AI Research Lab, arcade minigames) and one-click Executive Recruiter Dossier toggle.
-
-### 5.3 Quarantine (`quarantine-py`)
-- **Portfolio URL**: https://www.aritro.cloud/projects/quarantine
-- **PyPI Package**: https://pypi.org/project/quarantine-py/ (`pip install quarantine-py`)
-- **Documentation**: https://quarantine-py.aritro.cloud
-- **Source Code**: https://github.com/halcyon-past/quarantine
-- **Tech Stack**: Python 3.9+, PyPI, AsyncIO, CLI, Dead-Letter Queue, Fault Tolerance, Pytest
-- **Overview**: An open-source, zero-dependency Python library that brings dead-letter queue resilience to regular loops and batch data pipelines. Isolates failing items atomically to disk (`.quarantine/`) with full tracebacks and execution state so long-running jobs never crash mid-run.
-- **Key Features**:
-  - `@quarantine` decorator for sync/async functions and `shield()` iterator wrapper.
-  - Atomic on-disk isolation without external message brokers.
-  - Surgical CLI replays (`quarantine retry`) and post-mortem `pdb` debugging (`quarantine debug`).
-  - Circuit breakers (`halt_after`), sensitive field redaction, and local web observability UI.
-
-### 5.4 Structurify
-- **Portfolio URL**: https://www.aritro.cloud/projects/structurify
-- **Live Demo**: https://structurify.aritro.cloud
-- **Source Code**: https://github.com/halcyon-past/Structurify
-- **Tech Stack**: Next.js 14, React, TailwindCSS, Firebase, FastAPI, Python, LangGraph, Google Gemini, Google Cloud Platform
-- **Overview**: Event-driven B2B SaaS platform that transforms unstructured CSV and XLSX files into a standardized master schema using Google Gemini and a serverless fan-out architecture on GCP (Pub/Sub, Cloud Run workers, LangGraph map-reduce, Firestore live streaming).
-
-### 5.5 Luffy Laser Dodge
-- **Portfolio URL**: https://www.aritro.cloud/projects/luffy-laser-dodge
-- **Live Demo**: https://onepiece.aritro.cloud/
-- **Source Code**: https://github.com/halcyon-past/Luffy-Laser-Dodge
-- **Tech Stack**: React, Vite, React Three Fiber, Three.js, MediaPipe AI, WebAssembly (WASM)
-- **Overview**: Interactive browser-based 3D reflex game where players dodge laser beams in real time using physical head movements tracked via webcam with MediaPipe WASM and procedural bone animation in Three.js, running 100% locally in the browser.
-
-### 5.6 GlideConnect
-- **Portfolio URL**: https://www.aritro.cloud/projects/glide-connect
-- **Research Paper**: https://ijirt.org/article?manuscript=180711
-- **Source Code**: https://github.com/halcyon-past/Glide-Connect
-- **Tech Stack**: Python 3.9, MediaPipe, OpenCV, Google Gemini API, PyAutoGUI, PyCAW
-- **Overview**: Touchless computer interface using real-time hand gesture recognition for cursor movement, clicks, and system volume/brightness control, paired with a voice assistant ("Krishna") powered by Google Gemini Flash for multimodal screenshot analysis.
-
-### 5.7 PAWsitive
-- **Portfolio URL**: https://www.aritro.cloud/projects/pawsitive
-- **Live Demo**: https://www.bepawsitive.xyz
-- **Source Code**: https://github.com/halcyon-past/PAW-sitive
-- **Tech Stack**: React, Next.js, TypeScript, MongoDB, Tailwind CSS, Node.js, Kinde Auth, UploadThing, Callchimp.AI
-- **Overview**: Centralized pet healthcare platform built at Hack4Bengal 3.0 (1st Place Winner) connecting pet owners with blood donors, veterinary clinics, rescue centers, an AI chatbot, and an automated voice assistant.
+## Related
+- [About Aritro Saha (Experience & Education)](https://www.aritro.cloud/about)
+- [The Developer Arcade](https://www.aritro.cloud/play)
+- [Visual Gallery & Events](https://www.aritro.cloud/gallery)
+- [Byakugan Scan (macOS OCR Utility)](https://www.aritro.cloud/projects/byakugan-scan)
+- [SutraKey (macOS Media Utility)](https://www.aritro.cloud/projects/sutrakey)
 
 ---
 
-## 6. Developer Arcade (`https://www.aritro.cloud/play`)
+<!-- source: https://www.aritro.cloud/about -->
 
-An interactive collection of browser games built natively in React:
-1. **Developer Speed Test** (`/play/typing-test`) — Terminal-style WPM typing test featuring programming syntax and keywords.
-2. **Data Pipeline Puzzle** (`/play/data-pipeline`) — Graph/grid logic puzzle connecting data nodes without crossing pipelines.
-3. **Minimalist Snake** (`/play/snake`) — Python developer edition of Snake collecting tech stack icons.
-4. **Sudoku** (`/play/sudoku`) — Classic logic-based number placement puzzle.
-5. **Space Invaders** (`/play/space-invaders`) — Retro arcade shooter defending production servers from incoming bugs.
-6. **Flappy Bird** (`/play/flappy-bird`) — Classic physics-based obstacle navigation game.
-7. **Tic Tac Toe** (`/play/tictactoe`) — Play against an unbeatable Minimax AI agent.
+# About Aritro Saha — Software Engineer 1 at Bristol Myers Squibb
+
+> Professional experience, engineering education, hackathon awards, and core technical proficiencies of Aritro Saha.
+
+Canonical: https://www.aritro.cloud/about
+Last updated: 2026-10-26
+
+## Biography
+I am a Software Engineer 1 at Bristol Myers Squibb with a deep focus on data science engineering and resilient full-stack systems. I architect and maintain scalable backend services, event-driven streaming pipelines, and high-performance user interfaces.
+
+I won Hack4Bengal 3.0—Eastern India's largest hackathon—leading rapid full-stack and mobile prototyping under intense competition constraints. When not building software, I explore digital audio signal experiments, beatboxing, and football.
+
+## Professional Experience
+| Role & Organization | Duration |
+| --- | --- |
+| Software Engineer 1, Bristol Myers Squibb | July 2025 - Present |
+| Data Science Intern, Bajaj Finserv Health | Feb 2025 - June 2025 |
+| Full Stack Developer Intern, Wipro | Oct 2023 - Dec 2023 |
+
+## Education & Academic Foundation
+| Degree / Program | Institution | Year |
+| --- | --- | --- |
+| B.Tech in Electronics and Computer Engineering | Vellore Institute of Technology, Chennai | 2025 |
+| High School | Birla Bharati | 2021 |
+
+## Core Competencies & Technical Skills
+- **Languages**: Python (AsyncIO, FastMCP, Pytest), TypeScript, JavaScript (ESM, React 19, Next.js), Swift 6.0 (AppKit, SwiftUI), SQL
+- **Cloud & Distributed Data**: Databricks, Apache Spark, Google Cloud Platform (Cloud Run, Pub/Sub), Firebase / Firestore, MongoDB
+- **System & Native Engineering**: Apple Neural Engine, Apple Vision Framework, CGEventTap, macOS Menu Bar daemons, WASM
+- **AI & Machine Learning**: Google Gemini API, MediaPipe CV, LangGraph, Retrieval-Augmented Generation (RAG)
+
+## Related
+- [Portfolio Home](https://www.aritro.cloud/)
+- [The Developer Arcade](https://www.aritro.cloud/play)
+- [Engineering & Hackathon Gallery](https://www.aritro.cloud/gallery)
+- [Official Resume (PDF)](https://www.aritro.cloud/assets/resume/Aritro-Saha-Software-Engineer-Resume.pdf)
+
+---
+
+<!-- source: https://www.aritro.cloud/gallery -->
+
+# Visual Gallery — Moments & Hackathons | Aritro Saha
+
+> Visual moments, hackathon achievements, and project showcases from Aritro Saha’s engineering journey.
+
+Canonical: https://www.aritro.cloud/gallery
+Last updated: 2026-10-26
+
+## Visual Storytelling & Hackathon Highlights
+A curated photographic chronicle of hackathon victories, developer conferences, engineering setup, and collaborative milestones:
+
+- Gallery Image 1 - Hack4Bengal 3.0 Winner Celebration (https://www.aritro.cloud/assets/gallery/image1.webp)
+- Gallery Image 7 - Engineering Workspace and Hardware Setup (https://www.aritro.cloud/assets/gallery/image7.webp)
+- Gallery Image 3 - Tech Presentation at VIT Chennai (https://www.aritro.cloud/assets/gallery/image3.webp)
+- Gallery Image 5 - Collaborative Hackathon Sprint (https://www.aritro.cloud/assets/gallery/image5.webp)
+- Gallery Image 4 - Hack4Bengal Developer Showcase (https://www.aritro.cloud/assets/gallery/image4.webp)
+- Gallery Image 8 - Conference and Industry Engagement (https://www.aritro.cloud/assets/gallery/image8.webp)
+- Gallery Image 2 - Campus Tech Fest VIT Chennai (https://www.aritro.cloud/assets/gallery/image2.webp)
+- Gallery Image 6 - Team Collaboration Session (https://www.aritro.cloud/assets/gallery/image6.webp)
+
+## Notable Event Highlights
+- **Hack4Bengal 3.0 Grand Finale**: Winners out of 5,000+ applicants for developing PAWsitive.
+- **VIT Chennai Campus Tech Fests**: Demonstrating native gesture-controlled computing with GlideConnect.
+- **Continuous Collaboration**: Team workshops and hackathon sprints across Eastern India.
+
+## Related
+- [Home](https://www.aritro.cloud/)
+- [About Aritro Saha](https://www.aritro.cloud/about)
+- [Featured Projects](https://www.aritro.cloud/#projects)
+
+---
+
+<!-- source: https://www.aritro.cloud/play -->
+
+# The Arcade — Developer Games by Aritro Saha
+
+> A collection of minimalist, developer-themed browser games built natively in React by Aritro Saha.
+
+Canonical: https://www.aritro.cloud/play
+Last updated: 2026-10-26
+
+## The Arcade Overview
+The Arcade is a suite of responsive, developer-themed games built natively into Aritro Saha’s portfolio. Engineered in React 19 without third-party game engines, each mini-game demonstrates clean state machines, high-frame-rate requestAnimationFrame loops, or algorithmic AI.
+
+## Games Catalog
+- [Developer Speed Test](https://www.aritro.cloud/play/typing-test) — **Available** — Test your coding typing speed with this minimalist terminal-style speed test game. Features top programming keywords! (Tech: React, Custom WPM & Accuracy Engine, Timer Hook)
+- [Data Pipeline Puzzle](https://www.aritro.cloud/play/data-pipeline) — **Available** — Connect the nodes to build a data pipeline without crossing lines. A logic puzzle for data science engineers. (Tech: React, BFS Pathfinding, Grid Geometry)
+- [Minimalist Snake](https://www.aritro.cloud/play/snake) — **Available** — The Python developer edition of the classic game. Collect tech stack icons on an infinite grid. (Tech: React, HTML5 Canvas / Grid, Game Loop)
+- [Sudoku](https://www.aritro.cloud/play/sudoku) — **Available** — Classic logic-based number placement puzzle. (Tech: React, Backtracking Solver, Board Generator)
+- [Space Invaders](https://www.aritro.cloud/play/space-invaders) — **Available** — Defend the server from incoming bugs in this classic retro shooter. (Tech: React, requestAnimationFrame Game Loop, Collision Detection)
+- [Flappy Bird](https://www.aritro.cloud/play/flappy-bird) — **Available** — Navigate the bird through the pipes in this challenging arcade classic. (Tech: React, 2D Gravity Physics, Box-Model Collision)
+- [Tic Tac Toe](https://www.aritro.cloud/play/tictactoe) — **Available** — Play against an AI in this classic game. Can you beat the Minimax algorithm? (Tech: React, Recursive Minimax Algorithm with Alpha-Beta Pruning)
+
+## Algorithmic Highlights
+- **Minimax AI**: Unbeatable Alpha-Beta decision tree evaluation in Tic Tac Toe.
+- **Pathfinding & Graph Isolation**: Breadth-First Search (BFS) connection validation in Data Pipeline Puzzle.
+- **Backtracking Search**: Constraint-satisfaction solving engine in Sudoku.
+- **Real-Time WPM & Accuracy**: Microsecond keystroke interval computation in Developer Speed Test.
+
+## Related
+- [Developer Speed Test](https://www.aritro.cloud/play/typing-test)
+- [Data Pipeline Puzzle](https://www.aritro.cloud/play/data-pipeline)
+- [Minimalist Snake](https://www.aritro.cloud/play/snake)
+- [Sudoku](https://www.aritro.cloud/play/sudoku)
+- [Space Invaders](https://www.aritro.cloud/play/space-invaders)
+- [Flappy Bird](https://www.aritro.cloud/play/flappy-bird)
+- [Tic Tac Toe](https://www.aritro.cloud/play/tictactoe)
+- [Portfolio Home](https://www.aritro.cloud/)
+
+---
+
+<!-- source: https://www.aritro.cloud/play/typing-test -->
+
+# Developer Speed Test — Aritro Saha Arcade
+
+> Test your coding typing speed with this minimalist terminal-style speed test game. Features top programming keywords!
+
+Canonical: https://www.aritro.cloud/play/typing-test
+Last updated: 2026-10-26
+
+## Game Overview
+A retro terminal-style typing speed test tailored specifically for software engineers. Measures Gross and Net Words Per Minute (WPM), character accuracy, and keystroke timing using syntax snippets from JavaScript, Python, Swift, and Rust.
+
+## Technical Implementation
+- **Architecture**: React, Custom WPM & Accuracy Engine, Timer Hook
+- **Status**: Available
+- **Controls**: Optimized for desktop keyboard & mouse as well as mobile touch screens.
+
+## How to Play
+Access the live interactive playable game at https://www.aritro.cloud/play/typing-test.
+
+## Related
+- [All Arcade Games](https://www.aritro.cloud/play)
+- [Data Pipeline Puzzle](https://www.aritro.cloud/play/data-pipeline)
+- [Minimalist Snake](https://www.aritro.cloud/play/snake)
+- [Sudoku](https://www.aritro.cloud/play/sudoku)
+- [Space Invaders](https://www.aritro.cloud/play/space-invaders)
+
+---
+
+<!-- source: https://www.aritro.cloud/play/data-pipeline -->
+
+# Data Pipeline Puzzle — Aritro Saha Arcade
+
+> Connect the nodes to build a data pipeline without crossing lines. A logic puzzle for data science engineers.
+
+Canonical: https://www.aritro.cloud/play/data-pipeline
+Last updated: 2026-10-26
+
+## Game Overview
+An interactive graph connectivity puzzle modeled after distributed data pipelines (like Spark, Airflow, and Databricks). Connect ingestion sources to storage sinks without allowing pipelines to overlap or deadlock.
+
+## Technical Implementation
+- **Architecture**: React, BFS Pathfinding, Grid Geometry
+- **Status**: Available
+- **Controls**: Optimized for desktop keyboard & mouse as well as mobile touch screens.
+
+## How to Play
+Access the live interactive playable game at https://www.aritro.cloud/play/data-pipeline.
+
+## Related
+- [All Arcade Games](https://www.aritro.cloud/play)
+- [Developer Speed Test](https://www.aritro.cloud/play/typing-test)
+- [Minimalist Snake](https://www.aritro.cloud/play/snake)
+- [Sudoku](https://www.aritro.cloud/play/sudoku)
+- [Space Invaders](https://www.aritro.cloud/play/space-invaders)
+
+---
+
+<!-- source: https://www.aritro.cloud/play/snake -->
+
+# Minimalist Snake — Aritro Saha Arcade
+
+> The Python developer edition of the classic game. Collect tech stack icons on an infinite grid.
+
+Canonical: https://www.aritro.cloud/play/snake
+Last updated: 2026-10-26
+
+## Game Overview
+A modern, clean reimagining of the classic Snake game where the snake grows by collecting popular languages and tools across Python, React, Swift, and Docker.
+
+## Technical Implementation
+- **Architecture**: React, HTML5 Canvas / Grid, Game Loop
+- **Status**: Available
+- **Controls**: Optimized for desktop keyboard & mouse as well as mobile touch screens.
+
+## How to Play
+Access the live interactive playable game at https://www.aritro.cloud/play/snake.
+
+## Related
+- [All Arcade Games](https://www.aritro.cloud/play)
+- [Developer Speed Test](https://www.aritro.cloud/play/typing-test)
+- [Data Pipeline Puzzle](https://www.aritro.cloud/play/data-pipeline)
+- [Sudoku](https://www.aritro.cloud/play/sudoku)
+- [Space Invaders](https://www.aritro.cloud/play/space-invaders)
+
+---
+
+<!-- source: https://www.aritro.cloud/play/sudoku -->
+
+# Sudoku — Aritro Saha Arcade
+
+> Classic logic-based number placement puzzle.
+
+Canonical: https://www.aritro.cloud/play/sudoku
+Last updated: 2026-10-26
+
+## Game Overview
+A minimalist 9x9 Sudoku implementation equipped with an on-demand backtracking validation engine and conflict detection.
+
+## Technical Implementation
+- **Architecture**: React, Backtracking Solver, Board Generator
+- **Status**: Available
+- **Controls**: Optimized for desktop keyboard & mouse as well as mobile touch screens.
+
+## How to Play
+Access the live interactive playable game at https://www.aritro.cloud/play/sudoku.
+
+## Related
+- [All Arcade Games](https://www.aritro.cloud/play)
+- [Developer Speed Test](https://www.aritro.cloud/play/typing-test)
+- [Data Pipeline Puzzle](https://www.aritro.cloud/play/data-pipeline)
+- [Minimalist Snake](https://www.aritro.cloud/play/snake)
+- [Space Invaders](https://www.aritro.cloud/play/space-invaders)
+
+---
+
+<!-- source: https://www.aritro.cloud/play/space-invaders -->
+
+# Space Invaders — Aritro Saha Arcade
+
+> Defend the server from incoming bugs in this classic retro shooter.
+
+Canonical: https://www.aritro.cloud/play/space-invaders
+Last updated: 2026-10-26
+
+## Game Overview
+A retro arcade shooter where your ship defends production cloud infrastructure from descending waves of bugs, 500 errors, and memory leaks.
+
+## Technical Implementation
+- **Architecture**: React, requestAnimationFrame Game Loop, Collision Detection
+- **Status**: Available
+- **Controls**: Optimized for desktop keyboard & mouse as well as mobile touch screens.
+
+## How to Play
+Access the live interactive playable game at https://www.aritro.cloud/play/space-invaders.
+
+## Related
+- [All Arcade Games](https://www.aritro.cloud/play)
+- [Developer Speed Test](https://www.aritro.cloud/play/typing-test)
+- [Data Pipeline Puzzle](https://www.aritro.cloud/play/data-pipeline)
+- [Minimalist Snake](https://www.aritro.cloud/play/snake)
+- [Sudoku](https://www.aritro.cloud/play/sudoku)
+
+---
+
+<!-- source: https://www.aritro.cloud/play/flappy-bird -->
+
+# Flappy Bird — Aritro Saha Arcade
+
+> Navigate the bird through the pipes in this challenging arcade classic.
+
+Canonical: https://www.aritro.cloud/play/flappy-bird
+Last updated: 2026-10-26
+
+## Game Overview
+A physics-driven browser mini-game implementing smooth acceleration, jump impulses, and real-time pipe bounding-box collision detection.
+
+## Technical Implementation
+- **Architecture**: React, 2D Gravity Physics, Box-Model Collision
+- **Status**: Available
+- **Controls**: Optimized for desktop keyboard & mouse as well as mobile touch screens.
+
+## How to Play
+Access the live interactive playable game at https://www.aritro.cloud/play/flappy-bird.
+
+## Related
+- [All Arcade Games](https://www.aritro.cloud/play)
+- [Developer Speed Test](https://www.aritro.cloud/play/typing-test)
+- [Data Pipeline Puzzle](https://www.aritro.cloud/play/data-pipeline)
+- [Minimalist Snake](https://www.aritro.cloud/play/snake)
+- [Sudoku](https://www.aritro.cloud/play/sudoku)
+
+---
+
+<!-- source: https://www.aritro.cloud/play/tictactoe -->
+
+# Tic Tac Toe — Aritro Saha Arcade
+
+> Play against an AI in this classic game. Can you beat the Minimax algorithm?
+
+Canonical: https://www.aritro.cloud/play/tictactoe
+Last updated: 2026-10-26
+
+## Game Overview
+A classic 3x3 Tic Tac Toe game powered by an unbeatable recursive Minimax algorithm that evaluates game trees to ensure the AI never loses.
+
+## Technical Implementation
+- **Architecture**: React, Recursive Minimax Algorithm with Alpha-Beta Pruning
+- **Status**: Available
+- **Controls**: Optimized for desktop keyboard & mouse as well as mobile touch screens.
+
+## How to Play
+Access the live interactive playable game at https://www.aritro.cloud/play/tictactoe.
+
+## Related
+- [All Arcade Games](https://www.aritro.cloud/play)
+- [Developer Speed Test](https://www.aritro.cloud/play/typing-test)
+- [Data Pipeline Puzzle](https://www.aritro.cloud/play/data-pipeline)
+- [Minimalist Snake](https://www.aritro.cloud/play/snake)
+- [Sudoku](https://www.aritro.cloud/play/sudoku)
+
+---
+
+<!-- source: https://www.aritro.cloud/projects/byakugan-scan -->
+
+# Byakugan Scan — by Aritro Saha
+
+> Instant, in-memory screen OCR, QR code, and barcode recognition utility for macOS
+
+Canonical: https://www.aritro.cloud/projects/byakugan-scan
+Last updated: 2026-10-26
+
+## Project Overview
+Byakugan Scan is a native macOS menu bar utility for instant, in-memory screen OCR, QR code, and barcode recognition. Unlike conventional screenshot OCR tools that write temporary image files to disk and trigger Spotlight or media analysis daemons, Byakugan Scan captures selected screen regions directly into NSPasteboard memory as a CGImage buffer and processes them on the Apple Neural Engine in under 50ms—with zero temporary files, zero network calls, and zero external Swift package dependencies.
+
+## Key Engineering Features
+- Zero-Disk In-Memory Pipeline: Captures screen selections straight into RAM via NSPasteboard and runs Apple Vision requests (VNRecognizeTextRequest and VNDetectBarcodesRequest) on the Neural Engine in under 50ms.
+- 60/120Hz Custom AppKit Overlay: Smooth multi-display selection reticle with customizable theme accents (Byakugan Violet, Tenseigan Cyan, Sharingan Crimson, Sage Emerald, Nine-Tails Amber) and adjustable backdrop dimming.
+- Multi-Language OCR & Barcode Decoding: Supports automatic language detection across 13+ languages alongside QR, MicroQR, EAN-8/13, UPC-E, Code 128/39/93, PDF417, Aztec, and Data Matrix symbologies.
+- Floating HUD & Contextual Actions: Frosted-glass HUD toast displaying character/word counts and one-click actions to open URLs, compose emails, or dial phone numbers without cluttering Notification Center.
+- URL Scheme Automation & Local History: Deep-link automation via byakugan:// for Raycast, Alfred, and Shortcuts, plus a searchable local scan history with category filters and pinning.
+
+## Technologies & Architecture
+- Swift 6.0
+- AppKit
+- SwiftUI
+- Apple Vision Framework
+- Neural Engine
+- macOS 14+
+- Homebrew Cask
+
+## Verified Links & Source Code
+- **GitHub Repository**: [https://github.com/halcyon-past/byakugan-scan](https://github.com/halcyon-past/byakugan-scan)
+- **Live Website / Deployment**: [https://byakugan-scan.aritro.cloud](https://byakugan-scan.aritro.cloud)
+- **Documentation**: [https://byakugan-scan.aritro.cloud/support](https://byakugan-scan.aritro.cloud/support)
+
+## Related
+- [All Featured Projects](https://www.aritro.cloud/#projects)
+- [SutraKey](https://www.aritro.cloud/projects/sutrakey)
+- [OpenWorld Portfolio](https://www.aritro.cloud/projects/openworld-portfolio)
+- [Quarantine](https://www.aritro.cloud/projects/quarantine)
+
+---
+
+<!-- source: https://www.aritro.cloud/projects/sutrakey -->
+
+# SutraKey — by Aritro Saha
+
+> Instant Shift+Select radial pie menu for video, audio, and clean document actions on macOS
+
+Canonical: https://www.aritro.cloud/projects/sutrakey
+Last updated: 2026-10-26
+
+## Project Overview
+SutraKey (सूत्र) is a native, lightweight macOS utility designed as an invisible thread connecting text selection to instant media and document actions. When you hold Shift and select any URL or text, an under-cursor radial pie menu smoothly appears, letting you download videos, extract high-bitrate audio, pull clean subtitles, scrape gallery images, or generate ad-free reader-mode PDFs directly into ~/Downloads—with 0% idle CPU and zero background bloat.
+
+## Key Engineering Features
+- Exclusive Shift + Select Trigger: Uses CGEventTap with bitwise modifier evaluation (NSEvent.modifierFlags) ensuring the radial menu only summons when Shift is exclusively held, completely avoiding interference with standard Command, Option, or Control shortcuts.
+- 60 FPS Under-Cursor Radial Menu: A frameless, transparent, non-activating NSPanel with 5 radial slices (Video MP4 via yt-dlp+ffmpeg, 320kbps MP3 Audio, Clean Subtitles, High-Res Image Gallery, Reader-Mode Clean PDF via offscreen WKWebView) and a dead-zone center for instant flick-cancelling.
+- Ephemeral Menu Bar Presence: Remains 100% invisible when idle; dynamically surfaces a monochrome progress indicator in the macOS menu bar only during active conversion tasks and auto-vanishes 1.5s after completion.
+- Frosted Glass Toast HUD: Native floating status notifications with macOS .ultraThinMaterial blur displaying transfer speeds, ETA, and one-click "Show in Finder" buttons.
+- Strict Sandboxed Output & Security: Strictly confines all downloads to ~/Downloads with automatic path-traversal guards (--no-exec, --restrict-filenames).
+
+## Technologies & Architecture
+- Swift 6.0
+- AppKit
+- SwiftUI
+- CGEventTap
+- macOS 14+ Sonoma
+- yt-dlp
+- ffmpeg
+- Homebrew Cask
+
+## Verified Links & Source Code
+- **GitHub Repository**: [https://github.com/halcyon-past/SutraKey](https://github.com/halcyon-past/SutraKey)
+- **Live Website / Deployment**: [https://sutrakey.aritro.cloud](https://sutrakey.aritro.cloud)
+- **Documentation**: [https://sutrakey.aritro.cloud](https://sutrakey.aritro.cloud)
+
+## Related
+- [All Featured Projects](https://www.aritro.cloud/#projects)
+- [Byakugan Scan](https://www.aritro.cloud/projects/byakugan-scan)
+- [OpenWorld Portfolio](https://www.aritro.cloud/projects/openworld-portfolio)
+- [Quarantine](https://www.aritro.cloud/projects/quarantine)
+
+---
+
+<!-- source: https://www.aritro.cloud/projects/openworld-portfolio -->
+
+# OpenWorld Portfolio — by Aritro Saha
+
+> Interactive 2.5D retro Pokémon-inspired open-world developer portfolio set in Pallet Cloud
+
+Canonical: https://www.aritro.cloud/projects/openworld-portfolio
+Last updated: 2026-10-26
+
+## Project Overview
+OpenWorld Portfolio is an interactive, retro Pokémon-inspired 2.5D open-world developer portfolio set in Pallet Cloud. Built completely from scratch with Next.js 16, React 19, and native HTML5 Canvas 2D without third-party game engines, it features interactive buildings, a high-definition Mega Jumbotron TV, a turn-based Pokémon battle arena against Gym Leader Aritro at the Silicon Gym, a Poké Mart skill shopping cart with rich HTML mail requisitions, and an instant-toggle Executive Recruiter Dossier.
+
+## Key Engineering Features
+- Custom 2.5D Canvas Engine: Delivers hardware-accelerated 60 FPS rendering with Painter's algorithm depth sorting, dynamic elevation plateaus, and procedural GBA-styled wild grass with random developer encounters.
+- Silicon Gym & Turn-Based Boss Battle: Authentic GBA-style Pokémon battle arena featuring Gym Leader Aritro (Lv. 99), a tactical 4-action decision menu, elemental animations, 8 inspectable Gym Badges, and a Master Ball recruit sequence.
+- Poké Mart Tech Stack & Graphical Requisitions: Interactive skill catalog partitioned across Languages, Cloud, Backend, and AI, allowing recruiters to add capabilities to a cart, compose inquiries, and dispatch authentic Pokémon airmail-styled requisitions directly via email or rich clipboard export.
+- Interactive Town Landmarks & World Exploration: Explore Pallet Cloud landmarks including rotating project previews on the Mega Jumbotron TV, Innovation Pokédex Center, AI Research Lab with LeetCode Knight stats, developer arcade minigames, and animated wildlife.
+- Executive Recruiter Dossier Mode: Instant one-click toggle between the 2.5D game world and an executive portfolio dossier view, featuring direct resume access, enterprise highlights, and URL hash navigation.
+
+## Technologies & Architecture
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- HTML5 Canvas 2D
+- Web Audio API
+- Web Speech API
+
+## Verified Links & Source Code
+- **GitHub Repository**: [https://github.com/halcyon-past/openworld-portfolio](https://github.com/halcyon-past/openworld-portfolio)
+- **Live Website / Deployment**: [https://openworld.aritro.cloud/](https://openworld.aritro.cloud/)
+
+## Related
+- [All Featured Projects](https://www.aritro.cloud/#projects)
+- [Byakugan Scan](https://www.aritro.cloud/projects/byakugan-scan)
+- [SutraKey](https://www.aritro.cloud/projects/sutrakey)
+- [Quarantine](https://www.aritro.cloud/projects/quarantine)
+
+---
+
+<!-- source: https://www.aritro.cloud/projects/quarantine -->
+
+# Quarantine — by Aritro Saha
+
+> Zero-dependency dead-letter queue and fault-tolerance library for Python loops
+
+Canonical: https://www.aritro.cloud/projects/quarantine
+Last updated: 2026-10-26
+
+## Project Overview
+quarantine is an open-source, zero-dependency Python library that brings dead-letter queue resilience to regular loops and batch data pipelines. When processing thousands of records (e.g., CSV ingestion, scraping, API syncing), an unexpected exception at item #5,247 no longer crashes the entire multi-hour run. quarantine safely isolates the failing item, captures the error and full execution state to disk, and keeps the loop running.
+
+## Key Engineering Features
+- Zero-Crash Decorators: Wrap any sync or async function with @quarantine or iterate with shield() to set aside failures without interrupting the pipeline.
+- Atomic On-Disk Isolation: Serializes failed inputs, exceptions, and full tracebacks atomically to disk (.quarantine/) without requiring external message brokers.
+- Surgical Replays & Interactive Debugging: Rerun only failed items using quarantine retry or drop straight into pdb with the exact failing input using quarantine debug.
+- Circuit Breakers & Sensitive Redaction: Automatic circuit breaker tripping via halt_after to prevent cascading external outages, plus built-in key/regex redaction for secrets.
+- Local Web UI & Observability: Built-in CLI commands and a local web dashboard to inspect tracebacks, track recovery stats, and integrate into CI/CD pipelines.
+
+## Technologies & Architecture
+- Python 3.9+
+- PyPI
+- AsyncIO
+- CLI
+- Dead-Letter Queue
+- Fault Tolerance
+- Pytest
+
+## Verified Links & Source Code
+- **GitHub Repository**: [https://github.com/halcyon-past/quarantine](https://github.com/halcyon-past/quarantine)
+- **Live Website / Deployment**: [https://pypi.org/project/quarantine-py/](https://pypi.org/project/quarantine-py/)
+- **Documentation**: [https://quarantine-py.aritro.cloud](https://quarantine-py.aritro.cloud)
+- **PyPI Package**: [https://pypi.org/project/quarantine-py/](https://pypi.org/project/quarantine-py/)
+
+## Related
+- [All Featured Projects](https://www.aritro.cloud/#projects)
+- [Byakugan Scan](https://www.aritro.cloud/projects/byakugan-scan)
+- [SutraKey](https://www.aritro.cloud/projects/sutrakey)
+- [OpenWorld Portfolio](https://www.aritro.cloud/projects/openworld-portfolio)
+
+---
+
+<!-- source: https://www.aritro.cloud/projects/structurify -->
+
+# Structurify — by Aritro Saha
+
+> AI-powered SaaS that transforms messy spreadsheet data into a clean master schema
+
+Canonical: https://www.aritro.cloud/projects/structurify
+Last updated: 2026-10-26
+
+## Project Overview
+Structurify is a production-ready, event-driven B2B SaaS platform that turns unstructured CSV and XLSX files into a standardized schema using Google Gemini, with a serverless fan-out architecture on GCP for resilient, scalable processing.
+
+## Key Engineering Features
+- Strict Schema Enforcement: Enforces exact JSON and Excel structure with reliable type-casting and validation.
+- Sandbox Preview Mode: Lets users validate the first 10 rows before launching a full job.
+- Auto-Clean Mode: Infers schema from headers and normalizes capitalization, whitespace, and date formats automatically.
+- Serverless Fan-Out Pipeline: Uses Pub/Sub, Cloud Run workers, and a LangGraph map-reduce flow to process large jobs without blocking the API.
+- Real-Time Observability: Streams job progress, audit logs, and secure download links through Firestore-backed live updates.
+
+## Technologies & Architecture
+- Next.js 14
+- React
+- TailwindCSS
+- Firebase
+- FastAPI
+- Python
+- LangGraph
+- Google Gemini
+- Google Cloud Platform
+
+## Verified Links & Source Code
+- **GitHub Repository**: [https://github.com/halcyon-past/Structurify](https://github.com/halcyon-past/Structurify)
+- **Live Website / Deployment**: [https://structurify.aritro.cloud](https://structurify.aritro.cloud)
+
+## Related
+- [All Featured Projects](https://www.aritro.cloud/#projects)
+- [Byakugan Scan](https://www.aritro.cloud/projects/byakugan-scan)
+- [SutraKey](https://www.aritro.cloud/projects/sutrakey)
+- [OpenWorld Portfolio](https://www.aritro.cloud/projects/openworld-portfolio)
+
+---
+
+<!-- source: https://www.aritro.cloud/projects/luffy-laser-dodge -->
+
+# Luffy Laser Dodge — by Aritro Saha
+
+> Interactive 3D reflex game dodging laser beams using actual head movements via webcam
+
+Canonical: https://www.aritro.cloud/projects/luffy-laser-dodge
+Last updated: 2026-10-26
+
+## Project Overview
+Luffy Laser Dodge is an interactive, browser-based 3D reflex game where you use your actual head movements via webcam to dodge laser beams shot by Kuma! The game seamlessly melds computer vision with 3D web rendering to create a unique physically interactive experience—all running 100% locally in your browser.
+
+## Key Engineering Features
+- Real-Time AI Head Tracking: Uses Google's MediaPipe via WebAssembly (WASM) to detect face and lean angles instantly.
+- Dynamic 3D Scene: Powered by Three.js and @react-three/fiber with fully rigged 3D models with bone-level procedural animation.
+- 100% Client-Side Processing: Webcam data is processed entirely on the local GPU/CPU for zero latency and absolute privacy.
+- Legacy WebRTC Support: Originally built with a WebRTC + Python FastAPI backend for heavy AI inference, later migrated to WASM for zero-latency serverless deployment.
+
+## Technologies & Architecture
+- React
+- Vite
+- React Three Fiber
+- Three.js
+- MediaPipe AI
+- WebAssembly
+- WebRTC (Legacy)
+- Python FastAPI (Legacy)
+
+## Verified Links & Source Code
+- **GitHub Repository**: [https://github.com/halcyon-past/Luffy-Laser-Dodge](https://github.com/halcyon-past/Luffy-Laser-Dodge)
+- **Live Website / Deployment**: [https://onepiece.aritro.cloud/](https://onepiece.aritro.cloud/)
+
+## Related
+- [All Featured Projects](https://www.aritro.cloud/#projects)
+- [Byakugan Scan](https://www.aritro.cloud/projects/byakugan-scan)
+- [SutraKey](https://www.aritro.cloud/projects/sutrakey)
+- [OpenWorld Portfolio](https://www.aritro.cloud/projects/openworld-portfolio)
+
+---
+
+<!-- source: https://www.aritro.cloud/projects/glide-connect -->
+
+# GlideConnect — by Aritro Saha
+
+> Virtual Mouse Control using Gesture Recognition and Voice Assistant
+
+Canonical: https://www.aritro.cloud/projects/glide-connect
+Last updated: 2026-10-26
+
+## Project Overview
+A Final Year Project for VIT, this project demonstrates a novel way to control a computer interface using hand gestures and voice commands. It leverages MediaPipe for real-time gesture recognition, integrates a custom voice assistant named Krishna, and incorporates generative AI (using Google Gemini) for enhanced query responses.
+
+## Key Engineering Features
+- Cursor Control: Move the mouse pointer using hand movements.
+- Click Operations: Perform left, right, and double clicks with specific finger gestures.
+- System Controls: Adjust system volume and screen brightness using pinch gestures.
+- Voice Assistant (Krishna): Launch gesture recognition, Google search, file navigation, and enter Divine Mode.
+- Divine Mode (GenAI): Leverage Google Gemini Flash for generative AI responses including screenshot analysis.
+
+## Technologies & Architecture
+- Python 3.9
+- MediaPipe
+- OpenCV
+- Google Gemini API
+- PyAutoGUI
+- PyCAW
+
+## Verified Links & Source Code
+- **GitHub Repository**: [https://github.com/halcyon-past/Glide-Connect](https://github.com/halcyon-past/Glide-Connect)
+- **Published Research Paper**: [https://ijirt.org/article?manuscript=180711](https://ijirt.org/article?manuscript=180711)
+
+## Related
+- [All Featured Projects](https://www.aritro.cloud/#projects)
+- [Byakugan Scan](https://www.aritro.cloud/projects/byakugan-scan)
+- [SutraKey](https://www.aritro.cloud/projects/sutrakey)
+- [OpenWorld Portfolio](https://www.aritro.cloud/projects/openworld-portfolio)
+
+---
+
+<!-- source: https://www.aritro.cloud/projects/pawsitive -->
+
+# PAWsitive — by Aritro Saha
+
+> Centralized Platform for Pet Healthcare
+
+Canonical: https://www.aritro.cloud/projects/pawsitive
+Last updated: 2026-10-26
+
+## Project Overview
+PAWsitive is a comprehensive web application designed to help pet owners find blood donors, veterinary clinics, and rescue centers with ease. Built at Hack4Bengal, Eastern India's Largest Hackathon.
+
+## Key Engineering Features
+- Blood Donors & Vet Clinics Directory: Search and filter based on specific criteria.
+- Rescue Centers Directory: Access a directory of rescue centers with ambulance services.
+- Registration Portals: Register as a blood donor, veterinary clinic, rescue center, or event host.
+- Voice Assistant: Customer support and educational resources via Callchimp.AI.
+- AI Chatbot: Gemini powered AI chatbot to tackle animal-related queries.
+
+## Technologies & Architecture
+- React
+- Next.js
+- TypeScript
+- MongoDB
+- Tailwind CSS
+- Node.js
+- Kinde Auth
+- UploadThing
+- Callchimp.AI
+
+## Verified Links & Source Code
+- **GitHub Repository**: [https://github.com/halcyon-past/PAW-sitive](https://github.com/halcyon-past/PAW-sitive)
+- **Live Website / Deployment**: [https://www.bepawsitive.xyz](https://www.bepawsitive.xyz)
+
+## Related
+- [All Featured Projects](https://www.aritro.cloud/#projects)
+- [Byakugan Scan](https://www.aritro.cloud/projects/byakugan-scan)
+- [SutraKey](https://www.aritro.cloud/projects/sutrakey)
+- [OpenWorld Portfolio](https://www.aritro.cloud/projects/openworld-portfolio)

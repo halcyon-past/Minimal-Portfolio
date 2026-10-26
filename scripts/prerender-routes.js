@@ -1,33 +1,36 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { projects } from '../src/data/portfolioData.js';
+import { listMarkdownRoutes, renderMarkdownRoute, renderCatalogMarkdown } from '../src/lib/md/registry.js';
+import { generateLlmsTxt, generateLlmsFullTxt, generateAiTxt } from '../src/lib/md/llms.js';
+import { SITE_URL, AUTHOR, CONTACT_EMAIL } from '../src/lib/siteConfig.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const distDir = path.resolve(__dirname, '../dist');
-
-const SITE_URL = 'https://www.aritro.cloud';
+const publicDir = path.resolve(__dirname, '../public');
 
 const personGraphNode = {
   "@type": "Person",
   "@id": `${SITE_URL}/#person`,
-  "name": "Aritro Saha",
-  "alternateName": ["Aritro", "Megh", "halcyon-past"],
+  "name": AUTHOR.name,
+  "alternateName": AUTHOR.alternateName,
   "url": `${SITE_URL}/`,
-  "jobTitle": "Software Engineer 1",
-  "description": "Software Engineer 1 at Bristol Myers Squibb building high-throughput data pipelines, cloud infrastructure, native macOS utilities, and interactive web applications.",
+  "jobTitle": AUTHOR.jobTitle,
+  "description": AUTHOR.description,
   "worksFor": {
     "@type": "Organization",
-    "name": "Bristol Myers Squibb",
-    "alternateName": "BMS",
-    "url": "https://www.bms.com/"
+    "name": AUTHOR.worksFor.name,
+    "alternateName": AUTHOR.worksFor.alternateName,
+    "url": AUTHOR.worksFor.url
   },
   "alumniOf": {
     "@type": "CollegeOrUniversity",
-    "name": "Vellore Institute of Technology, Chennai",
-    "alternateName": "VIT Chennai"
+    "name": AUTHOR.alumniOf.name,
+    "alternateName": AUTHOR.alumniOf.alternateName
   },
-  "award": "Winner of Hack4Bengal 3.0 (Eastern India's Largest Hackathon)",
+  "award": AUTHOR.award,
   "knowsAbout": [
     "Software Engineering",
     "Data Science Engineering",
@@ -66,146 +69,23 @@ const personGraphNode = {
   ]
 };
 
-const PROJECTS = [
-  {
-    id: 'byakugan-scan',
-    title: 'Byakugan Scan',
-    description: 'Instant, in-memory screen OCR, QR code, and barcode recognition utility for macOS',
-    image: '/assets/Byakugan-Scan.webp',
-    github: 'https://github.com/halcyon-past/byakugan-scan',
-    liveDemo: 'https://byakugan-scan.aritro.cloud',
-    docs: 'https://byakugan-scan.aritro.cloud/support',
-    techStack: ['Swift 6.0', 'AppKit', 'SwiftUI', 'Apple Vision Framework', 'Neural Engine', 'macOS 14+', 'Homebrew Cask'],
-    overview: 'Byakugan Scan is a native macOS menu bar utility for instant, in-memory screen OCR, QR code, and barcode recognition. Unlike conventional screenshot OCR tools that write temporary image files to disk and trigger Spotlight or media analysis daemons, Byakugan Scan captures selected screen regions directly into NSPasteboard memory as a CGImage buffer and processes them on the Apple Neural Engine in under 50ms—with zero temporary files, zero network calls, and zero external Swift package dependencies.',
-    features: [
-      'Zero-Disk In-Memory Pipeline: Captures screen selections straight into RAM via NSPasteboard and runs Apple Vision requests (VNRecognizeTextRequest and VNDetectBarcodesRequest) on the Neural Engine in under 50ms.',
-      '60/120Hz Custom AppKit Overlay: Smooth multi-display selection reticle with customizable theme accents (Byakugan Violet, Tenseigan Cyan, Sharingan Crimson, Sage Emerald, Nine-Tails Amber) and adjustable backdrop dimming.',
-      'Multi-Language OCR & Barcode Decoding: Supports automatic language detection across 13+ languages alongside QR, MicroQR, EAN-8/13, UPC-E, Code 128/39/93, PDF417, Aztec, and Data Matrix symbologies.',
-      'Floating HUD & Contextual Actions: Frosted-glass HUD toast displaying character/word counts and one-click actions to open URLs, compose emails, or dial phone numbers without cluttering Notification Center.',
-      'URL Scheme Automation & Local History: Deep-link automation via byakugan:// for Raycast, Alfred, and Shortcuts, plus a searchable local scan history with category filters and pinning.'
-    ]
-  },
-  {
-    id: 'sutrakey',
-    title: 'SutraKey',
-    description: 'Instant Shift+Select radial pie menu for video, audio, and clean document actions on macOS',
-    image: '/assets/SutraKey.webp',
-    github: 'https://github.com/halcyon-past/SutraKey',
-    liveDemo: 'https://sutrakey.aritro.cloud',
-    docs: 'https://sutrakey.aritro.cloud',
-    techStack: ['Swift 6.0', 'AppKit', 'SwiftUI', 'CGEventTap', 'macOS 14+ Sonoma', 'yt-dlp', 'ffmpeg', 'Homebrew Cask'],
-    overview: 'SutraKey (सूत्र) is a native, lightweight macOS utility designed as an invisible thread connecting text selection to instant media and document actions. When you hold Shift and select any URL or text, an under-cursor radial pie menu smoothly appears, letting you download videos, extract high-bitrate audio, pull clean subtitles, scrape gallery images, or generate ad-free reader-mode PDFs directly into ~/Downloads—with 0% idle CPU and zero background bloat.',
-    features: [
-      'Exclusive Shift + Select Trigger: Uses CGEventTap with bitwise modifier evaluation (NSEvent.modifierFlags) ensuring the radial menu only summons when Shift is exclusively held, completely avoiding interference with standard Command, Option, or Control shortcuts.',
-      '60 FPS Under-Cursor Radial Menu: A frameless, transparent, non-activating NSPanel with 5 radial slices (Video MP4 via yt-dlp+ffmpeg, 320kbps MP3 Audio, Clean Subtitles, High-Res Image Gallery, Reader-Mode Clean PDF via offscreen WKWebView) and a dead-zone center for instant flick-cancelling.',
-      'Ephemeral Menu Bar Presence: Remains 100% invisible when idle; dynamically surfaces a monochrome progress indicator in the macOS menu bar only during active conversion tasks and auto-vanishes 1.5s after completion.',
-      'Frosted Glass Toast HUD: Native floating status notifications with macOS .ultraThinMaterial blur displaying transfer speeds, ETA, and one-click "Show in Finder" buttons.',
-      'Strict Sandboxed Output & Security: Strictly confines all downloads to ~/Downloads with automatic path-traversal guards (--no-exec, --restrict-filenames).'
-    ]
-  },
-  {
-    id: 'openworld-portfolio',
-    title: 'OpenWorld Portfolio',
-    description: 'Interactive 2.5D retro Pokémon-inspired open-world developer portfolio set in Pallet Cloud',
-    image: '/assets/OpenWorld-Portfolio.webp',
-    github: 'https://github.com/halcyon-past/openworld-portfolio',
-    liveDemo: 'https://openworld.aritro.cloud/',
-    techStack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS', 'HTML5 Canvas 2D', 'Web Audio API', 'Web Speech API'],
-    overview: 'OpenWorld Portfolio is an interactive, retro Pokémon-inspired 2.5D open-world developer portfolio set in Pallet Cloud. Built completely from scratch with Next.js 16, React 19, and native HTML5 Canvas 2D without third-party game engines, it features interactive buildings, a high-definition Mega Jumbotron TV, a turn-based Pokémon battle arena against Gym Leader Aritro at the Silicon Gym, a Poké Mart skill shopping cart with rich HTML mail requisitions, and an instant-toggle Executive Recruiter Dossier.',
-    features: [
-      'Custom 2.5D Canvas Engine: Delivers hardware-accelerated 60 FPS rendering with Painter\'s algorithm depth sorting, dynamic elevation plateaus, and procedural GBA-styled wild grass with random developer encounters.',
-      'Silicon Gym & Turn-Based Boss Battle: Authentic GBA-style Pokémon battle arena featuring Gym Leader Aritro (Lv. 99), a tactical 4-action decision menu, elemental animations, 8 inspectable Gym Badges, and a Master Ball recruit sequence.',
-      'Poké Mart Tech Stack & Graphical Requisitions: Interactive skill catalog partitioned across Languages, Cloud, Backend, and AI, allowing recruiters to add capabilities to a cart, compose inquiries, and dispatch authentic Pokémon airmail-styled requisitions directly via email or rich clipboard export.',
-      'Interactive Town Landmarks & World Exploration: Explore Pallet Cloud landmarks including rotating project previews on the Mega Jumbotron TV, Innovation Pokédex Center, AI Research Lab with LeetCode Knight stats, developer arcade minigames, and animated wildlife.',
-      'Executive Recruiter Dossier Mode: Instant one-click toggle between the 2.5D game world and an executive portfolio dossier view, featuring direct resume access, enterprise highlights, and URL hash navigation.'
-    ]
-  },
-  {
-    id: 'quarantine',
-    title: 'Quarantine',
-    description: 'Zero-dependency dead-letter queue and fault-tolerance library for Python loops',
-    image: '/assets/Quarantine.webp',
-    github: 'https://github.com/halcyon-past/quarantine',
-    liveDemo: 'https://pypi.org/project/quarantine-py/',
-    docs: 'https://quarantine-py.aritro.cloud',
-    techStack: ['Python 3.9+', 'PyPI', 'AsyncIO', 'CLI', 'Dead-Letter Queue', 'Fault Tolerance', 'Pytest'],
-    overview: 'quarantine is an open-source, zero-dependency Python library that brings dead-letter queue resilience to regular loops and batch data pipelines. When processing thousands of records (e.g., CSV ingestion, scraping, API syncing), an unexpected exception at item #5,247 no longer crashes the entire multi-hour run. quarantine safely isolates the failing item, captures the error and full execution state to disk, and keeps the loop running.',
-    features: [
-      'Zero-Crash Decorators: Wrap any sync or async function with @quarantine or iterate with shield() to set aside failures without interrupting the pipeline.',
-      'Atomic On-Disk Isolation: Serializes failed inputs, exceptions, and full tracebacks atomically to disk (.quarantine/) without requiring external message brokers.',
-      'Surgical Replays & Interactive Debugging: Rerun only failed items using quarantine retry or drop straight into pdb with the exact failing input using quarantine debug.',
-      'Circuit Breakers & Sensitive Redaction: Automatic circuit breaker tripping via halt_after to prevent cascading external outages, plus built-in key/regex redaction for secrets.',
-      'Local Web UI & Observability: Built-in CLI commands and a local web dashboard to inspect tracebacks, track recovery stats, and integrate into CI/CD pipelines.'
-    ]
-  },
-  {
-    id: 'structurify',
-    title: 'Structurify',
-    description: 'AI-powered SaaS that transforms messy spreadsheet data into a clean master schema',
-    image: '/assets/Structurify.webp',
-    github: 'https://github.com/halcyon-past/Structurify',
-    liveDemo: 'https://structurify.aritro.cloud',
-    techStack: ['Next.js 14', 'React', 'TailwindCSS', 'Firebase', 'FastAPI', 'Python', 'LangGraph', 'Google Gemini', 'Google Cloud Platform'],
-    overview: 'Structurify is a production-ready, event-driven B2B SaaS platform that turns unstructured CSV and XLSX files into a standardized schema using Google Gemini, with a serverless fan-out architecture on GCP for resilient, scalable processing.',
-    features: [
-      'Strict Schema Enforcement: Enforces exact JSON and Excel structure with reliable type-casting and validation.',
-      'Sandbox Preview Mode: Lets users validate the first 10 rows before launching a full job.',
-      'Auto-Clean Mode: Infers schema from headers and normalizes capitalization, whitespace, and date formats automatically.',
-      'Serverless Fan-Out Pipeline: Uses Pub/Sub, Cloud Run workers, and a LangGraph map-reduce flow to process large jobs without blocking the API.',
-      'Real-Time Observability: Streams job progress, audit logs, and secure download links through Firestore-backed live updates.'
-    ]
-  },
-  {
-    id: 'luffy-laser-dodge',
-    title: 'Luffy Laser Dodge',
-    description: 'Interactive 3D reflex game dodging laser beams using actual head movements via webcam',
-    image: '/assets/luffy-laser-dodge.webp',
-    github: 'https://github.com/halcyon-past/Luffy-Laser-Dodge',
-    liveDemo: 'https://onepiece.aritro.cloud/',
-    techStack: ['React', 'Vite', 'React Three Fiber', 'Three.js', 'MediaPipe AI', 'WebAssembly', 'WebRTC (Legacy)', 'Python FastAPI (Legacy)'],
-    overview: 'Luffy Laser Dodge is an interactive, browser-based 3D reflex game where you use your actual head movements via webcam to dodge laser beams shot by Kuma! The game seamlessly melds computer vision with 3D web rendering to create a unique physically interactive experience—all running 100% locally in your browser.',
-    features: [
-      'Real-Time AI Head Tracking: Uses Google\'s MediaPipe via WebAssembly (WASM) to detect face and lean angles instantly.',
-      'Dynamic 3D Scene: Powered by Three.js and @react-three/fiber with fully rigged 3D models with bone-level procedural animation.',
-      '100% Client-Side Processing: Webcam data is processed entirely on the local GPU/CPU for zero latency and absolute privacy.',
-      'Legacy WebRTC Support: Originally built with a WebRTC + Python FastAPI backend for heavy AI inference, later migrated to WASM for zero-latency serverless deployment.'
-    ]
-  },
-  {
-    id: 'glide-connect',
-    title: 'GlideConnect',
-    description: 'Virtual Mouse Control using Gesture Recognition and Voice Assistant',
-    image: '/assets/GlideConnect.webp',
-    github: 'https://github.com/halcyon-past/Glide-Connect',
-    researchPaper: 'https://ijirt.org/article?manuscript=180711',
-    techStack: ['Python 3.9', 'MediaPipe', 'OpenCV', 'Google Gemini API', 'PyAutoGUI', 'PyCAW'],
-    overview: 'A Final Year Project for VIT, this project demonstrates a novel way to control a computer interface using hand gestures and voice commands. It leverages MediaPipe for real-time gesture recognition, integrates a custom voice assistant named Krishna, and incorporates generative AI (using Google Gemini) for enhanced query responses.',
-    features: [
-      'Cursor Control: Move the mouse pointer using hand movements.',
-      'Click Operations: Perform left, right, and double clicks with specific finger gestures.',
-      'System Controls: Adjust system volume and screen brightness using pinch gestures.',
-      'Voice Assistant (Krishna): Launch gesture recognition, Google search, file navigation, and enter Divine Mode.',
-      'Divine Mode (GenAI): Leverage Google Gemini Flash for generative AI responses including screenshot analysis.'
-    ]
-  },
-  {
-    id: 'pawsitive',
-    title: 'PAWsitive',
-    description: 'Centralized Platform for Pet Healthcare',
-    image: '/assets/Pawsitive.webp',
-    github: 'https://github.com/halcyon-past/PAW-sitive',
-    liveDemo: 'https://www.bepawsitive.xyz',
-    techStack: ['React', 'Next.js', 'TypeScript', 'MongoDB', 'Tailwind CSS', 'Node.js', 'Kinde Auth', 'UploadThing', 'Callchimp.AI'],
-    overview: 'PAWsitive is a comprehensive web application designed to help pet owners find blood donors, veterinary clinics, and rescue centers with ease. Built at Hack4Bengal, Eastern India\'s Largest Hackathon.',
-    features: [
-      'Blood Donors & Vet Clinics Directory: Search and filter based on specific criteria.',
-      'Rescue Centers Directory: Access a directory of rescue centers with ambulance services.',
-      'Registration Portals: Register as a blood donor, veterinary clinic, rescue center, or event host.',
-      'Voice Assistant: Customer support and educational resources via Callchimp.AI.',
-      'AI Chatbot: Gemini powered AI chatbot to tackle animal-related queries.'
-    ]
+const organizationGraphNode = {
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  "name": "Aritro Saha Portfolio",
+  "url": `${SITE_URL}/`,
+  "logo": `${SITE_URL}/logo.webp`,
+  "sameAs": [
+    "https://github.com/halcyon-past",
+    "https://linkedin.com/in/aritro-saha",
+    "https://www.wikidata.org/wiki/Q141715213"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": CONTACT_EMAIL,
+    "contactType": "developer"
   }
-];
+};
 
 const STATIC_ROUTES = [
   {
@@ -339,6 +219,7 @@ function escapeHtml(str) {
 
 function buildRouteHtml(template, { route, title, description, image, articleHtml, extraJsonLdNodes = [] }) {
   const canonicalUrl = `${SITE_URL}${route}`;
+  const markdownUrl = `${SITE_URL}${route === '/' ? '/index.md' : `${route}.md`}`;
   const escapedTitle = escapeHtml(title);
   const escapedDesc = escapeHtml(description);
   const escapedImage = escapeHtml(image);
@@ -347,6 +228,7 @@ function buildRouteHtml(template, { route, title, description, image, articleHtm
     "@context": "https://schema.org",
     "@graph": [
       personGraphNode,
+      organizationGraphNode,
       {
         "@type": "WebPage",
         "@id": `${canonicalUrl}#webpage`,
@@ -373,10 +255,22 @@ function buildRouteHtml(template, { route, title, description, image, articleHtm
     `<meta data-rh="true" name="description" content="${escapedDesc}" />`
   );
 
+  // Replace ai-summary
+  html = html.replace(
+    /<meta name="ai-summary" content="[^"]*"\s*\/>/,
+    `<meta name="ai-summary" content="${escapedDesc}" />`
+  );
+
   // Replace canonical link
   html = html.replace(
     /<link data-rh="true" rel="canonical" href="[^"]*"\s*\/>/,
     `<link data-rh="true" rel="canonical" href="${canonicalUrl}" />`
+  );
+
+  // Replace alternate markdown link
+  html = html.replace(
+    /<link rel="alternate" type="text\/markdown" href="[^"]*"\s*title="[^"]*"\s*\/>/,
+    `<link rel="alternate" type="text/markdown" href="${markdownUrl}" title="Markdown Version" />`
   );
 
   // Replace OG & Twitter tags
@@ -438,25 +332,25 @@ function run() {
   const template = fs.readFileSync(indexHtmlPath, 'utf-8');
   let generatedCount = 0;
 
-  // 1. Generate static pages for all Projects
-  for (const project of PROJECTS) {
+  // 1. Generate static HTML pages for all Projects
+  for (const project of projects) {
     const route = `/projects/${project.id}`;
     const title = `${project.title} | Projects by Aritro Saha`;
-    const description = project.overview || project.description;
+    const description = project.details?.overview || project.description;
     const image = `${SITE_URL}${project.image}`;
 
-    const featuresList = project.features
+    const featuresList = (project.details?.features || [])
       .map((f) => `<li>${escapeHtml(f)}</li>`)
       .join('\n            ');
-    const techList = project.techStack
+    const techList = (project.details?.techStack || [])
       .map((t) => `<li>${escapeHtml(t)}</li>`)
       .join('\n            ');
 
     const linksList = [
       project.github ? `<li><a href="${project.github}">GitHub Repository</a></li>` : '',
-      project.liveDemo ? `<li><a href="${project.liveDemo}">Live Website / Package</a></li>` : '',
-      project.docs ? `<li><a href="${project.docs}">Documentation</a></li>` : '',
-      project.researchPaper ? `<li><a href="${project.researchPaper}">Published Research Paper</a></li>` : ''
+      project.details?.liveDemo ? `<li><a href="${project.details.liveDemo}">Live Website / Package</a></li>` : '',
+      project.details?.docs ? `<li><a href="${project.details.docs}">Documentation</a></li>` : '',
+      project.details?.researchPaper ? `<li><a href="${project.details.researchPaper}">Published Research Paper</a></li>` : ''
     ].filter(Boolean).join('\n            ');
 
     const articleHtml = `
@@ -467,7 +361,7 @@ function run() {
         <main>
           <article>
             <h2>Overview</h2>
-            <p>${escapeHtml(project.overview)}</p>
+            <p>${escapeHtml(project.details?.overview || project.description)}</p>
             <h2>Key Features</h2>
             <ul>
             ${featuresList}
@@ -487,10 +381,10 @@ function run() {
       "@type": "SoftwareSourceCode",
       "@id": `${SITE_URL}${route}#software`,
       "name": project.title,
-      "description": project.overview,
+      "description": project.details?.overview || project.description,
       "url": `${SITE_URL}${route}`,
       "codeRepository": project.github,
-      "programmingLanguage": project.techStack,
+      "programmingLanguage": project.details?.techStack || [],
       "author": { "@id": `${SITE_URL}/#person` }
     };
 
@@ -509,7 +403,7 @@ function run() {
     generatedCount++;
   }
 
-  // 2. Generate static pages for core & arcade routes
+  // 2. Generate static HTML pages for core & arcade routes
   for (const page of STATIC_ROUTES) {
     const routeHtml = buildRouteHtml(template, page);
     const outDir = path.join(distDir, page.route.replace(/^\//, ''));
@@ -518,7 +412,54 @@ function run() {
     generatedCount++;
   }
 
-  console.log(`✅ Pre-rendered ${generatedCount} static HTML routes for LLM & non-JS web scrapers.`);
+  console.log(`✅ Pre-rendered ${generatedCount} static HTML routes for web scrapers & bots.`);
+
+  // 3. Pre-render all markdown (.md) documents to dist
+  const markdownRoutes = listMarkdownRoutes();
+  let mdCount = 0;
+
+  for (const route of markdownRoutes) {
+    const rendered = renderMarkdownRoute(route.path);
+    if (rendered.status === 200 && rendered.body) {
+      const relPath = route.mdPath.replace(/^\//, '');
+      const fullPath = path.join(distDir, relPath);
+      fs.mkdirSync(path.dirname(fullPath), { recursive: true });
+      fs.writeFileSync(fullPath, rendered.body, 'utf-8');
+      mdCount++;
+    }
+  }
+
+  // Pre-render root index.md as well
+  const homeRendered = renderMarkdownRoute('/');
+  if (homeRendered.status === 200 && homeRendered.body) {
+    fs.writeFileSync(path.join(distDir, 'index.md'), homeRendered.body, 'utf-8');
+  }
+
+  // Write catalog to dist/api/md/_catalog
+  const catalogBody = renderCatalogMarkdown();
+  const catalogDir = path.join(distDir, 'api', 'md');
+  fs.mkdirSync(catalogDir, { recursive: true });
+  fs.writeFileSync(path.join(catalogDir, '_catalog'), catalogBody, 'utf-8');
+  fs.writeFileSync(path.join(catalogDir, '_catalog.md'), catalogBody, 'utf-8');
+
+  console.log(`✅ Pre-rendered ${mdCount} markdown (.md) pages and API catalog to dist.`);
+
+  // 4. Generate fresh llms.txt, llms-full.txt, and ai.txt
+  const llmsTxt = generateLlmsTxt();
+  const llmsFullTxt = generateLlmsFullTxt();
+  const aiTxt = generateAiTxt();
+
+  // Write to public/ so git and dev mode have them
+  fs.writeFileSync(path.join(publicDir, 'llms.txt'), llmsTxt, 'utf-8');
+  fs.writeFileSync(path.join(publicDir, 'llms-full.txt'), llmsFullTxt, 'utf-8');
+  fs.writeFileSync(path.join(publicDir, 'ai.txt'), aiTxt, 'utf-8');
+
+  // Write to dist/ as well
+  fs.writeFileSync(path.join(distDir, 'llms.txt'), llmsTxt, 'utf-8');
+  fs.writeFileSync(path.join(distDir, 'llms-full.txt'), llmsFullTxt, 'utf-8');
+  fs.writeFileSync(path.join(distDir, 'ai.txt'), aiTxt, 'utf-8');
+
+  console.log(`✅ Generated updated llms.txt, llms-full.txt, and ai.txt.`);
 }
 
 async function main() {

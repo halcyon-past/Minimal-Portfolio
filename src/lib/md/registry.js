@@ -1,0 +1,484 @@
+import { formatMarkdownPage, bulletList, mdLink, table, absoluteUrl } from './format.js';
+import { buildMarkdownHeaders, build404Markdown } from './http.js';
+import { SITE_URL, AUTHOR, SOCIAL_PROFILES } from '../siteConfig.js';
+import { projects, experience, education, galleryImages, rawGames } from '../../data/portfolioData.js';
+
+const LAST_UPDATED = '2026-10-26';
+
+/**
+ * 1. Home Page Renderer (/)
+ */
+export function renderHomePage() {
+  const featuredProjects = projects.filter((p) => p.HomepageVisibility !== false);
+
+  const content = [
+    '## Professional Overview',
+    AUTHOR.description,
+    '',
+    'Currently serving as a Software Engineer 1 at **Bristol Myers Squibb** (July 2025 – Present), engineering enterprise-scale data pipelines, cloud architecture, and web applications.',
+    '',
+    '## Key Achievements & Honors',
+    `- **Hack4Bengal 3.0 Winner**: Eastern India's Largest Hackathon (Winner across 5,000+ applicants).`,
+    `- **Published Research**: Gesture-controlled computer interfacing and multimodal assistive AI (IJIRT).`,
+    `- **Open-Source Author**: Published \`quarantine-py\` fault-tolerance package on PyPI with atomic dead-letter queuing.`,
+    '',
+    '## Featured Projects',
+    bulletList(
+      featuredProjects.map((p) => {
+        const stack = p.details?.techStack?.slice(0, 4).join(', ') || '';
+        return `${mdLink(p.title, absoluteUrl(`/projects/${p.id}`))} — ${p.description} (${stack})`;
+      })
+    ),
+    '',
+    '## The Developer Arcade (Aritro Games)',
+    'An interactive suite of developer-themed browser mini-games engineered in React:',
+    bulletList(
+      rawGames.map((g) => `${mdLink(g.title, absoluteUrl(g.path))} — ${g.description}`)
+    ),
+    '',
+    '## Verified Profiles & Knowledge Graph Identities',
+    bulletList(
+      SOCIAL_PROFILES.map((s) => mdLink(s.name, s.url))
+    )
+  ].join('\n');
+
+  const related = [
+    { title: 'About Aritro Saha (Experience & Education)', url: '/about' },
+    { title: 'The Developer Arcade', url: '/play' },
+    { title: 'Visual Gallery & Events', url: '/gallery' },
+    { title: 'Byakugan Scan (macOS OCR Utility)', url: '/projects/byakugan-scan' },
+    { title: 'SutraKey (macOS Media Utility)', url: '/projects/sutrakey' }
+  ];
+
+  return formatMarkdownPage({
+    title: 'Aritro Saha — Software Engineer 1 at Bristol Myers Squibb',
+    summary: 'Official portfolio and project catalog of Aritro Saha, Software Engineer 1 at Bristol Myers Squibb specializing in high-throughput data engineering, cloud systems, and native macOS utilities.',
+    canonicalPath: '/',
+    lastUpdated: LAST_UPDATED,
+    content,
+    relatedLinks: related
+  });
+}
+
+/**
+ * 2. About Page Renderer (/about)
+ */
+export function renderAboutPage() {
+  const expHeaders = ['Role & Organization', 'Duration'];
+  const expRows = experience.map((e) => [e.title, e.duration]);
+
+  const eduHeaders = ['Degree / Program', 'Institution', 'Year'];
+  const eduRows = education.map((ed) => [ed.title, ed.institution, ed.year]);
+
+  const content = [
+    '## Biography',
+    'I am a Software Engineer 1 at Bristol Myers Squibb with a deep focus on data science engineering and resilient full-stack systems. I architect and maintain scalable backend services, event-driven streaming pipelines, and high-performance user interfaces.',
+    '',
+    "I won Hack4Bengal 3.0—Eastern India's largest hackathon—leading rapid full-stack and mobile prototyping under intense competition constraints. When not building software, I explore digital audio signal experiments, beatboxing, and football.",
+    '',
+    '## Professional Experience',
+    table(expHeaders, expRows),
+    '',
+    '## Education & Academic Foundation',
+    table(eduHeaders, eduRows),
+    '',
+    '## Core Competencies & Technical Skills',
+    '- **Languages**: Python (AsyncIO, FastMCP, Pytest), TypeScript, JavaScript (ESM, React 19, Next.js), Swift 6.0 (AppKit, SwiftUI), SQL',
+    '- **Cloud & Distributed Data**: Databricks, Apache Spark, Google Cloud Platform (Cloud Run, Pub/Sub), Firebase / Firestore, MongoDB',
+    '- **System & Native Engineering**: Apple Neural Engine, Apple Vision Framework, CGEventTap, macOS Menu Bar daemons, WASM',
+    '- **AI & Machine Learning**: Google Gemini API, MediaPipe CV, LangGraph, Retrieval-Augmented Generation (RAG)'
+  ].join('\n');
+
+  const related = [
+    { title: 'Portfolio Home', url: '/' },
+    { title: 'The Developer Arcade', url: '/play' },
+    { title: 'Engineering & Hackathon Gallery', url: '/gallery' },
+    { title: 'Official Resume (PDF)', url: AUTHOR.resumeUrl }
+  ];
+
+  return formatMarkdownPage({
+    title: 'About Aritro Saha — Software Engineer 1 at Bristol Myers Squibb',
+    summary: 'Professional experience, engineering education, hackathon awards, and core technical proficiencies of Aritro Saha.',
+    canonicalPath: '/about',
+    lastUpdated: LAST_UPDATED,
+    content,
+    relatedLinks: related
+  });
+}
+
+/**
+ * 3. Gallery Page Renderer (/gallery)
+ */
+export function renderGalleryPage() {
+  const content = [
+    '## Visual Storytelling & Hackathon Highlights',
+    'A curated photographic chronicle of hackathon victories, developer conferences, engineering setup, and collaborative milestones:',
+    '',
+    bulletList(
+      galleryImages.map((img) => `${img.alt} (${absoluteUrl(img.src)})`)
+    ),
+    '',
+    '## Notable Event Highlights',
+    '- **Hack4Bengal 3.0 Grand Finale**: Winners out of 5,000+ applicants for developing PAWsitive.',
+    '- **VIT Chennai Campus Tech Fests**: Demonstrating native gesture-controlled computing with GlideConnect.',
+    '- **Continuous Collaboration**: Team workshops and hackathon sprints across Eastern India.'
+  ].join('\n');
+
+  const related = [
+    { title: 'Home', url: '/' },
+    { title: 'About Aritro Saha', url: '/about' },
+    { title: 'Featured Projects', url: '/#projects' }
+  ];
+
+  return formatMarkdownPage({
+    title: 'Visual Gallery — Moments & Hackathons | Aritro Saha',
+    summary: 'Visual moments, hackathon achievements, and project showcases from Aritro Saha’s engineering journey.',
+    canonicalPath: '/gallery',
+    lastUpdated: LAST_UPDATED,
+    content,
+    relatedLinks: related
+  });
+}
+
+/**
+ * 4. The Arcade Catalog (/play)
+ */
+export function renderArcadeCatalogPage() {
+  const content = [
+    '## The Arcade Overview',
+    'The Arcade is a suite of responsive, developer-themed games built natively into Aritro Saha’s portfolio. Engineered in React 19 without third-party game engines, each mini-game demonstrates clean state machines, high-frame-rate requestAnimationFrame loops, or algorithmic AI.',
+    '',
+    '## Games Catalog',
+    bulletList(
+      rawGames.map((g) => {
+        return `${mdLink(g.title, absoluteUrl(g.path))} — **${g.status}** — ${g.description} (Tech: ${g.tech})`;
+      })
+    ),
+    '',
+    '## Algorithmic Highlights',
+    '- **Minimax AI**: Unbeatable Alpha-Beta decision tree evaluation in Tic Tac Toe.',
+    '- **Pathfinding & Graph Isolation**: Breadth-First Search (BFS) connection validation in Data Pipeline Puzzle.',
+    '- **Backtracking Search**: Constraint-satisfaction solving engine in Sudoku.',
+    '- **Real-Time WPM & Accuracy**: Microsecond keystroke interval computation in Developer Speed Test.'
+  ].join('\n');
+
+  const related = rawGames.map((g) => ({ title: g.title, url: g.path })).concat([
+    { title: 'Portfolio Home', url: '/' }
+  ]);
+
+  return formatMarkdownPage({
+    title: 'The Arcade — Developer Games by Aritro Saha',
+    summary: 'A collection of minimalist, developer-themed browser games built natively in React by Aritro Saha.',
+    canonicalPath: '/play',
+    lastUpdated: LAST_UPDATED,
+    content,
+    relatedLinks: related
+  });
+}
+
+/**
+ * 5. Individual Game Renderer (/play/:gameId)
+ */
+export function renderGamePage(gameId) {
+  const game = rawGames.find(
+    (g) => g.id === gameId || g.path === `/play/${gameId}` || g.path.replace('/play/', '') === gameId
+  );
+
+  if (!game) return null;
+
+  const content = [
+    '## Game Overview',
+    game.overview,
+    '',
+    '## Technical Implementation',
+    `- **Architecture**: ${game.tech}`,
+    `- **Status**: ${game.status}`,
+    `- **Controls**: Optimized for desktop keyboard & mouse as well as mobile touch screens.`,
+    '',
+    '## How to Play',
+    `Access the live interactive playable game at ${absoluteUrl(game.path)}.`
+  ].join('\n');
+
+  const otherGames = rawGames
+    .filter((g) => g.id !== game.id)
+    .slice(0, 4)
+    .map((g) => ({ title: g.title, url: g.path }));
+
+  return formatMarkdownPage({
+    title: `${game.title} — Aritro Saha Arcade`,
+    summary: game.description,
+    canonicalPath: game.path,
+    lastUpdated: LAST_UPDATED,
+    content,
+    relatedLinks: [{ title: 'All Arcade Games', url: '/play' }, ...otherGames]
+  });
+}
+
+/**
+ * 6. Dynamic Project Renderer (/projects/:id)
+ */
+export function renderProjectPage(projectId) {
+  const project = projects.find(
+    (p) => p.id === projectId || p.link === `/projects/${projectId}`
+  );
+
+  if (!project) return null;
+
+  const details = project.details || {};
+  const overview = details.overview || project.description;
+  const features = details.features || [];
+  const techStack = details.techStack || [];
+
+  const externalLinks = [];
+  if (project.github) externalLinks.push(`- **GitHub Repository**: ${mdLink(project.github, project.github)}`);
+  if (details.liveDemo) externalLinks.push(`- **Live Website / Deployment**: ${mdLink(details.liveDemo, details.liveDemo)}`);
+  if (details.docs) externalLinks.push(`- **Documentation**: ${mdLink(details.docs, details.docs)}`);
+  if (details.pypi) externalLinks.push(`- **PyPI Package**: ${mdLink(details.pypi, details.pypi)}`);
+  if (details.researchPaper) externalLinks.push(`- **Published Research Paper**: ${mdLink(details.researchPaper, details.researchPaper)}`);
+
+  const content = [
+    '## Project Overview',
+    overview,
+    '',
+    '## Key Engineering Features',
+    bulletList(features),
+    '',
+    '## Technologies & Architecture',
+    bulletList(techStack),
+    '',
+    '## Verified Links & Source Code',
+    externalLinks.length ? externalLinks.join('\n') : '- Direct access available upon request.'
+  ].join('\n');
+
+  const otherProjects = projects
+    .filter((p) => p.id !== project.id)
+    .slice(0, 3)
+    .map((p) => ({ title: p.title, url: `/projects/${p.id}` }));
+
+  return formatMarkdownPage({
+    title: `${project.title} — by Aritro Saha`,
+    summary: project.description,
+    canonicalPath: `/projects/${project.id}`,
+    lastUpdated: LAST_UPDATED,
+    content,
+    relatedLinks: [{ title: 'All Featured Projects', url: '/#projects' }, ...otherProjects]
+  });
+}
+
+/**
+ * Maps static paths to renderers
+ */
+const staticRoutes = {
+  '/': renderHomePage,
+  '/index': renderHomePage,
+  '/about': renderAboutPage,
+  '/gallery': renderGalleryPage,
+  '/play': renderArcadeCatalogPage,
+  '/play/typing-test': () => renderGamePage('typing-test'),
+  '/play/data-pipeline': () => renderGamePage('data-pipeline-puzzle'),
+  '/play/data-pipeline-puzzle': () => renderGamePage('data-pipeline-puzzle'),
+  '/play/snake': () => renderGamePage('minimalist-snake'),
+  '/play/minimalist-snake': () => renderGamePage('minimalist-snake'),
+  '/play/sudoku': () => renderGamePage('sudoku'),
+  '/play/space-invaders': () => renderGamePage('space-invaders'),
+  '/play/flappy-bird': () => renderGamePage('flappy-bird'),
+  '/play/tictactoe': () => renderGamePage('tictactoe')
+};
+
+/**
+ * Returns list of all addressable markdown routes
+ */
+export function listMarkdownRoutes() {
+  const routes = [
+    {
+      path: '/',
+      mdPath: '/index.md',
+      title: 'Home — Aritro Saha Portfolio',
+      description: 'Overview of engineering background, skills, and featured software products.',
+      category: 'core'
+    },
+    {
+      path: '/about',
+      mdPath: '/about.md',
+      title: 'About Aritro Saha',
+      description: 'Professional experience at Bristol Myers Squibb, education at VIT Chennai, and awards.',
+      category: 'core'
+    },
+    {
+      path: '/gallery',
+      mdPath: '/gallery.md',
+      title: 'Engineering & Hackathon Gallery',
+      description: 'Visual chronicles of hackathon wins and software demonstrations.',
+      category: 'core'
+    },
+    {
+      path: '/play',
+      mdPath: '/play.md',
+      title: 'The Arcade (Aritro Games)',
+      description: 'Interactive browser mini-games catalog built in React 19.',
+      category: 'arcade'
+    }
+  ];
+
+  // Arcade sub-routes
+  for (const game of rawGames) {
+    const normalizedPath = game.path.replace(/\/$/, '');
+    routes.push({
+      path: normalizedPath,
+      mdPath: `${normalizedPath}.md`,
+      title: `${game.title} (Arcade)`,
+      description: game.description,
+      category: 'arcade'
+    });
+  }
+
+  // Project routes
+  for (const project of projects) {
+    routes.push({
+      path: `/projects/${project.id}`,
+      mdPath: `/projects/${project.id}.md`,
+      title: `${project.title}`,
+      description: project.description,
+      category: 'projects'
+    });
+  }
+
+  return routes;
+}
+
+/**
+ * Renders the markdown catalog (/api/md/_catalog)
+ */
+export function renderCatalogMarkdown() {
+  const allRoutes = listMarkdownRoutes();
+  const headers = ['Route', 'Markdown URL', 'Title', 'Category'];
+  const rows = allRoutes.map((r) => [
+    r.path,
+    absoluteUrl(r.mdPath),
+    r.title,
+    r.category
+  ]);
+
+  const content = [
+    '## Overview',
+    `This endpoint catalogs all ${allRoutes.length} machine-readable markdown routes available across ${SITE_URL}. Each route provides clean, structured markdown identical in factual content to its canonical HTML counterpart.`,
+    '',
+    '## Route Catalog',
+    table(headers, rows),
+    '',
+    '## Direct Access Guidelines',
+    '- Add `.md` suffix to any public route (e.g., `/about.md`, `/projects/sutrakey.md`).',
+    '- Request the route with header `Accept: text/markdown`.',
+    '- Call `/api/md/<path>` directly for programmatic agent ingestion.'
+  ].join('\n');
+
+  return formatMarkdownPage({
+    title: 'Markdown Route Catalog — Aritro Saha Portfolio',
+    summary: `Complete index of all ${allRoutes.length} addressable markdown documents on this website.`,
+    canonicalPath: '/api/md/_catalog',
+    lastUpdated: LAST_UPDATED,
+    content,
+    relatedLinks: [
+      { title: 'LLM Context Summary (/llms.txt)', url: '/llms.txt' },
+      { title: 'Full LLM Concatenated Corpus (/llms-full.txt)', url: '/llms-full.txt' },
+      { title: 'AI Crawler Policy (/ai.txt)', url: '/ai.txt' }
+    ]
+  });
+}
+
+/**
+ * Primary dispatch router function for markdown requests
+ */
+export function renderMarkdownRoute(rawPath = '/', isNegotiated = false) {
+  let cleanPath = (rawPath || '/').trim();
+
+  // Strip /api/md prefix if present
+  if (cleanPath.startsWith('/api/md')) {
+    cleanPath = cleanPath.slice('/api/md'.length);
+  }
+
+  // Special catalog route
+  if (cleanPath === '/_catalog' || cleanPath === '_catalog' || cleanPath === '/_catalog.md') {
+    const body = renderCatalogMarkdown();
+    return {
+      status: 200,
+      body,
+      canonicalPath: '/api/md/_catalog',
+      headers: buildMarkdownHeaders({
+        body,
+        canonicalPath: '/api/md/_catalog',
+        isNegotiated
+      })
+    };
+  }
+
+  // Strip .md suffix
+  if (cleanPath.endsWith('.md')) {
+    cleanPath = cleanPath.slice(0, -3);
+  }
+
+  // Normalize leading slash & root aliases
+  if (!cleanPath.startsWith('/')) {
+    cleanPath = `/${cleanPath}`;
+  }
+  if (cleanPath === '/index' || cleanPath === '') {
+    cleanPath = '/';
+  }
+
+  // 1. Check static route registry
+  if (staticRoutes[cleanPath]) {
+    const body = staticRoutes[cleanPath]();
+    const canonicalPath = cleanPath === '/index' ? '/' : cleanPath;
+    return {
+      status: 200,
+      body,
+      canonicalPath,
+      headers: buildMarkdownHeaders({
+        body,
+        canonicalPath,
+        isNegotiated
+      })
+    };
+  }
+
+  // 2. Check dynamic project route: /projects/:id
+  const projectMatch = cleanPath.match(/^\/projects\/([^/]+)$/);
+  if (projectMatch) {
+    const projectId = projectMatch[1];
+    const body = renderProjectPage(projectId);
+    if (body) {
+      return {
+        status: 200,
+        body,
+        canonicalPath: `/projects/${projectId}`,
+        headers: buildMarkdownHeaders({
+          body,
+          canonicalPath: `/projects/${projectId}`,
+          isNegotiated
+        })
+      };
+    }
+  }
+
+  // 3. Check dynamic play route: /play/:gameId
+  const playMatch = cleanPath.match(/^\/play\/([^/]+)$/);
+  if (playMatch) {
+    const gameId = playMatch[1];
+    const body = renderGamePage(gameId);
+    if (body) {
+      return {
+        status: 200,
+        body,
+        canonicalPath: `/play/${gameId}`,
+        headers: buildMarkdownHeaders({
+          body,
+          canonicalPath: `/play/${gameId}`,
+          isNegotiated
+        })
+      };
+    }
+  }
+
+  // Not found
+  return build404Markdown(cleanPath);
+}

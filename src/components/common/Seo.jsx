@@ -1,16 +1,32 @@
 import { Helmet } from 'react-helmet-async';
 import profileImg from '../../assets/profile.webp';
 import { projects } from '../../data/data';
+import { SITE_URL, CONTACT_EMAIL, AUTHOR } from '../../lib/siteConfig';
 
-export default function Seo({ title, description, url = '/', image = 'https://www.aritro.cloud/banner-social.jpg', type = 'website', noindex = false }) {
+export default function Seo({ 
+  title, 
+  description, 
+  aiSummary,
+  url = '/', 
+  image = 'https://www.aritro.cloud/banner-social.jpg', 
+  type = 'website', 
+  noindex = false 
+}) {
   const fullTitle = title === 'Home' || !title 
     ? 'Aritro Saha | Software Engineer & Data Analytics | BMS | Arcade' 
     : `${title} | Aritro Saha - Software Engineer Portfolio`;
   const defaultDescription = "Portfolio of Aritro Saha, a Software Engineer 1 at Bristol Myers Squibb specializing in full-stack web dev, AI, macOS tools, and data analytics.";
   const finalDescription = description || defaultDescription;
+  const finalAiSummary = aiSummary || finalDescription;
   const keywords = "Aritro, Aritro Saha, Aritro BMS, Aritro Software Engineer, Aritro Software Engineer 1, Software Engineer 1, Aritro Developer, Aritro Games, Aritro Arcade, Byakugan Scan, SutraKey, OpenWorld Portfolio, Quarantine Python, Structurify, Software Developer, Portfolio, Full-Stack, React, Node.js, Python, Swift, Databricks, AI, Machine Learning, Bristol Myers Squibb";
 
-  const canonicalUrl = url.startsWith('http') ? url : `https://www.aritro.cloud${url.startsWith('/') ? url : `/${url}`}`;
+  const canonicalUrl = url.startsWith('http') ? url : `${SITE_URL}${url.startsWith('/') ? url : `/${url}`}`;
+  
+  // Calculate markdown URL for alternate link tag
+  let cleanPath = url.split('?')[0].replace(/\/$/, '');
+  if (!cleanPath || cleanPath === '') cleanPath = '/index';
+  if (!cleanPath.startsWith('/')) cleanPath = `/${cleanPath}`;
+  const markdownUrl = `${SITE_URL}${cleanPath}.md`;
 
   // JSON-LD structured data for rich search results & LLM Knowledge Graphs
   const structuredData = {
@@ -18,25 +34,25 @@ export default function Seo({ title, description, url = '/', image = 'https://ww
     "@graph": [
       {
         "@type": "Person",
-        "@id": "https://www.aritro.cloud/#person",
-        "name": "Aritro Saha",
-        "alternateName": ["Aritro", "Megh", "halcyon-past"],
-        "url": "https://www.aritro.cloud/",
-        "image": `https://www.aritro.cloud${profileImg}`,
-        "jobTitle": "Software Engineer 1",
-        "description": "Software Engineer 1 at Bristol Myers Squibb building high-throughput data pipelines, cloud infrastructure, native macOS utilities, and interactive web applications.",
+        "@id": `${SITE_URL}/#person`,
+        "name": AUTHOR.name,
+        "alternateName": AUTHOR.alternateName,
+        "url": `${SITE_URL}/`,
+        "image": `${SITE_URL}${profileImg}`,
+        "jobTitle": AUTHOR.jobTitle,
+        "description": AUTHOR.description,
         "worksFor": {
           "@type": "Organization",
-          "name": "Bristol Myers Squibb",
-          "alternateName": "BMS",
-          "url": "https://www.bms.com/"
+          "name": AUTHOR.worksFor.name,
+          "alternateName": AUTHOR.worksFor.alternateName,
+          "url": AUTHOR.worksFor.url
         },
         "alumniOf": {
           "@type": "CollegeOrUniversity",
-          "name": "Vellore Institute of Technology, Chennai",
-          "alternateName": "VIT Chennai"
+          "name": AUTHOR.alumniOf.name,
+          "alternateName": AUTHOR.alumniOf.alternateName
         },
-        "award": "Winner of Hack4Bengal 3.0 (Eastern India's Largest Hackathon)",
+        "award": AUTHOR.award,
         "knowsAbout": [
           "Software Engineering",
           "Data Science Engineering",
@@ -75,26 +91,43 @@ export default function Seo({ title, description, url = '/', image = 'https://ww
         ]
       },
       {
+        "@type": "Organization",
+        "@id": `${SITE_URL}/#organization`,
+        "name": "Aritro Saha Portfolio",
+        "url": `${SITE_URL}/`,
+        "logo": `${SITE_URL}/logo.webp`,
+        "sameAs": [
+          "https://github.com/halcyon-past",
+          "https://linkedin.com/in/aritro-saha",
+          "https://www.wikidata.org/wiki/Q141715213"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": CONTACT_EMAIL,
+          "contactType": "developer"
+        }
+      },
+      {
         "@type": "ProfilePage",
-        "@id": "https://www.aritro.cloud/#profilepage",
-        "url": "https://www.aritro.cloud/",
+        "@id": `${SITE_URL}/#profilepage`,
+        "url": `${SITE_URL}/`,
         "name": "Aritro Saha — Software Engineer 1 Portfolio",
         "mainEntity": {
-          "@id": "https://www.aritro.cloud/#person"
+          "@id": `${SITE_URL}/#person`
         }
       },
       {
         "@type": "WebSite",
-        "@id": "https://www.aritro.cloud/#website",
+        "@id": `${SITE_URL}/#website`,
         "name": "Aritro Saha Portfolio",
-        "url": "https://www.aritro.cloud/",
+        "url": `${SITE_URL}/`,
         "publisher": {
-          "@id": "https://www.aritro.cloud/#person"
+          "@id": `${SITE_URL}/#person`
         }
       },
       {
         "@type": "ItemList",
-        "@id": "https://www.aritro.cloud/#projects",
+        "@id": `${SITE_URL}/#projects`,
         "name": "Software Engineering Projects by Aritro Saha",
         "itemListElement": projects.map((proj, idx) => ({
           "@type": "ListItem",
@@ -103,11 +136,11 @@ export default function Seo({ title, description, url = '/', image = 'https://ww
             "@type": "SoftwareSourceCode",
             "name": proj.title,
             "description": proj.details?.overview || proj.description,
-            "url": `https://www.aritro.cloud${proj.link}`,
+            "url": `${SITE_URL}${proj.link}`,
             "codeRepository": proj.github,
             "programmingLanguage": proj.details?.techStack || [],
             "author": {
-              "@id": "https://www.aritro.cloud/#person"
+              "@id": `${SITE_URL}/#person`
             }
           }
         }))
@@ -122,15 +155,17 @@ export default function Seo({ title, description, url = '/', image = 'https://ww
       <meta name="description" content={finalDescription} />
       <meta name="keywords" content={keywords} />
       <meta name="author" content="Aritro Saha" />
+      <meta name="ai-summary" content={finalAiSummary} />
       {noindex ? (
         <meta name="robots" content="noindex" />
       ) : (
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       )}
       <link rel="canonical" href={canonicalUrl} />
-      <link rel="alternate" type="text/plain" href="https://www.aritro.cloud/llms.txt" title="LLM Context Summary" />
-      <link rel="alternate" type="text/plain" href="https://www.aritro.cloud/llms-full.txt" title="LLM Full Context" />
-      <link rel="alternate" type="text/plain" href="https://www.aritro.cloud/ai.txt" title="AI Scraper Policy & Identity" />
+      <link rel="alternate" type="text/markdown" href={markdownUrl} title="Markdown Version" />
+      <link rel="alternate" type="text/plain" href={`${SITE_URL}/llms.txt`} title="LLM Context Summary" />
+      <link rel="alternate" type="text/plain" href={`${SITE_URL}/llms-full.txt`} title="LLM Full Context" />
+      <link rel="alternate" type="text/plain" href={`${SITE_URL}/ai.txt`} title="AI Scraper Policy & Identity" />
 
       {/* Bidirectional Identity Verification (rel="me") */}
       <link rel="me" href="https://www.wikidata.org/wiki/Q141715213" />

@@ -50,8 +50,7 @@ export async function pingIndexNow() {
 
   return new Promise((resolve) => {
     const req = https.request(options, (res) => {
-      let data = '';
-      res.on('data', (chunk) => { data += chunk; });
+      res.on('data', () => {});
       res.on('end', () => {
         if (res.statusCode === 200 || res.statusCode === 202) {
           console.log(`🚀 IndexNow: Successfully submitted ${URL_LIST.length} URLs to Bing & partner search engines (HTTP ${res.statusCode}).`);

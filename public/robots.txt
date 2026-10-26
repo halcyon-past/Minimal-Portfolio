@@ -1,59 +1,104 @@
+# robots.txt for https://www.aritro.cloud/
+# Notice: Keep in sync with /llms.txt and /ai.txt.
+# AI Crawlers & Agents: See https://www.aritro.cloud/llms.txt and https://www.aritro.cloud/ai.txt
+
 User-agent: *
 Allow: /
+Disallow: /assets/resume/
 
-# AI & LLM Search Crawlers
-User-agent: GPTBot
-Allow: /
-
+# ==============================================================================
+# AI Search & User-Fetch Crawlers (Explicitly Allowed for Answer Engine Citations)
+# ==============================================================================
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /assets/resume/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /assets/resume/
 
-User-agent: ClaudeBot
+User-agent: Claude-SearchBot
 Allow: /
+Disallow: /assets/resume/
 
-User-agent: Claude-Web
+User-agent: Claude-User
 Allow: /
-
-User-agent: anthropic-ai
-Allow: /
+Disallow: /assets/resume/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /assets/resume/
 
 User-agent: Perplexity-User
 Allow: /
+Disallow: /assets/resume/
+
+# ==============================================================================
+# AI Model Training Crawlers (Explicitly Allowed by Site Owner)
+# ==============================================================================
+User-agent: GPTBot
+Allow: /
+Disallow: /assets/resume/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /assets/resume/
 
 User-agent: Google-Extended
 Allow: /
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: Applebot
-Allow: /
+Disallow: /assets/resume/
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /assets/resume/
+
+User-agent: CCBot
+Allow: /
+Disallow: /assets/resume/
+
+User-agent: Bytespider
+Allow: /
+Disallow: /assets/resume/
+
+# ==============================================================================
+# Other LLM & Search Agents
+# ==============================================================================
+User-agent: anthropic-ai
+Allow: /
+Disallow: /assets/resume/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /assets/resume/
+
+User-agent: Applebot
+Allow: /
+Disallow: /assets/resume/
 
 User-agent: Amazonbot
 Allow: /
+Disallow: /assets/resume/
 
 User-agent: YouBot
 Allow: /
+Disallow: /assets/resume/
 
 User-agent: DuckAssistBot
 Allow: /
+Disallow: /assets/resume/
 
 User-agent: cohere-ai
 Allow: /
+Disallow: /assets/resume/
 
 User-agent: Meta-ExternalAgent
 Allow: /
+Disallow: /assets/resume/
 
+# ==============================================================================
+# Machine-Readable Indexes & Verification
+# ==============================================================================
 Sitemap: https://www.aritro.cloud/sitemap.xml
-# LLM Context Files:
-# https://www.aritro.cloud/llms.txt
-# https://www.aritro.cloud/llms-full.txt
+# LLM Context: https://www.aritro.cloud/llms.txt
+# Full LLM Corpus: https://www.aritro.cloud/llms-full.txt
+# AI Crawler Policy: https://www.aritro.cloud/ai.txt

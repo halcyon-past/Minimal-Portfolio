@@ -2,10 +2,21 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { resolve } from 'path';
+import { fileURLToPath } from 'url';
 import { VitePWA } from 'vite-plugin-pwa';
+import { viteMarkdownPlugin } from './scripts/vite-markdown-plugin.js';
+
+const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
+  server: {
+    port: 3000
+  },
+  preview: {
+    port: 3000
+  },
   plugins: [
+    viteMarkdownPlugin(),
     react(), 
     tailwindcss(),
     VitePWA({

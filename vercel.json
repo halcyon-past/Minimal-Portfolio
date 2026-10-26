@@ -24,6 +24,25 @@
     }
   ],
   "rewrites": [
+    {
+      "source": "/api/md/(.*)",
+      "destination": "/api/md?path=$1"
+    },
+    {
+      "source": "/(.*)\\.md",
+      "destination": "/api/md?path=$1.md"
+    },
+    {
+      "source": "/((?!assets/|api/|.*\\..*).*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": "(.*text/markdown.*)"
+        }
+      ],
+      "destination": "/api/md?path=$1"
+    },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
@@ -33,6 +52,19 @@
         {
           "key": "Content-Type",
           "value": "text/plain; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/(llms\\.txt|llms-full\\.txt|ai\\.txt)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
         }
       ]
     },
@@ -60,6 +92,10 @@
         {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
+        },
+        {
+          "key": "Link",
+          "value": "<https://www.aritro.cloud/llms.txt>; rel=\"describedby\", <https://www.aritro.cloud/llms-full.txt>; rel=\"describedby\", <https://www.aritro.cloud/ai.txt>; rel=\"describedby\""
         }
       ]
     }
