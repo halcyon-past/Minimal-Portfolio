@@ -87,6 +87,10 @@ User-agent: DuckAssistBot
 Allow: /
 Disallow: /assets/resume/
 
+User-agent: Bravebot
+Allow: /
+Disallow: /assets/resume/
+
 User-agent: cohere-ai
 Allow: /
 Disallow: /assets/resume/
