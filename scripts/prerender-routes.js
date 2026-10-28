@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { projects } from '../src/data/portfolioData.js';
+import { projects, galleryImages } from '../src/data/portfolioData.js';
 import { listMarkdownRoutes, renderMarkdownRoute, renderCatalogMarkdown } from '../src/lib/md/registry.js';
 import { generateLlmsTxt, generateLlmsFullTxt, generateAiTxt } from '../src/lib/md/llms.js';
 import { SITE_URL, AUTHOR, CONTACT_EMAIL } from '../src/lib/siteConfig.js';
@@ -154,24 +154,49 @@ const STATIC_ROUTES = [
     `
   },
   {
-    route: '/aritro-saha',
-    title: 'Aritro Saha | Software Engineer & Creator',
-    description: 'Portfolio of Aritro Saha. Software Engineer 1 at Bristol Myers Squibb, Hack4Bengal 3.0 winner, and creator of native macOS tools Byakugan Scan and SutraKey.',
+    route: '/resume',
+    title: 'Resume | Aritro Saha — Software Engineer 1 at Bristol Myers Squibb',
+    description: 'Official resume of Aritro Saha, Software Engineer 1 at Bristol Myers Squibb. Enterprise data pipelines, cloud architecture, native macOS utilities, and AI.',
     image: `${SITE_URL}/aritro-saha.webp`,
     articleHtml: `
       <header>
-        <h1>Aritro Saha — Software Engineer & Creator</h1>
-        <figure style="margin: 1.5rem 0;">
-          <img src="${SITE_URL}/aritro-saha.webp" alt="Aritro Saha — Software Engineer 1 at Bristol Myers Squibb" width="400" height="400" style="border-radius: 1rem; max-width: 200px; height: auto;" />
-          <figcaption style="font-size: 0.875rem; color: #6b7280; margin-top: 0.5rem;">Aritro Saha — Software Engineer</figcaption>
-        </figure>
+        <h1>Aritro Saha (Megh) — Software Engineer 1 Resume</h1>
+        <p>Software Engineer 1 at Bristol Myers Squibb specializing in high-throughput data engineering, cloud systems, native macOS utilities, and applied AI.</p>
+        <p style="margin: 1rem 0;">
+          <a href="/assets/resume/Aritro-Saha-Software-Engineer-Resume.pdf" download="Aritro-Saha-Software-Engineer-Resume.pdf" style="display: inline-block; padding: 0.75rem 1.5rem; background: #7c3aed; color: #ffffff; text-decoration: none; border-radius: 0.5rem; font-weight: 600;">Download Official PDF Resume</a>
+        </p>
       </header>
       <main>
         <article>
-          <p>Official canonical dossier for Aritro Saha. Please see <a href="${SITE_URL}/aritrosaha">https://www.aritro.cloud/aritrosaha</a> for the primary profile.</p>
+          <h2>Professional Experience</h2>
+          <ul>
+            <li><strong>Software Engineer 1, Bristol Myers Squibb</strong> (July 2025 – Present): Enterprise software engineering, scalable cloud architecture, workflow automation, and high-throughput data science pipelines.</li>
+            <li><strong>Data Science Intern, Bajaj Finserv Health</strong> (Feb 2025 – June 2025): Machine learning models, healthcare analytics data pipelines, and predictive risk scoring algorithms.</li>
+            <li><strong>Full Stack Developer Intern, Wipro</strong> (Oct 2023 – Dec 2023): Full-stack web applications, REST APIs, and automated UI workflows.</li>
+          </ul>
+          <h2>Education & Academic Foundation</h2>
+          <ul>
+            <li><strong>B.Tech in Electronics and Computer Engineering</strong> — Vellore Institute of Technology, Chennai (2025)</li>
+            <li><strong>High School</strong> — Birla Bharati, Kolkata (2021)</li>
+          </ul>
+          <h2>Key Accolades & Leadership</h2>
+          <ul>
+            <li><strong>Hack4Bengal 3.0 Grand Champion</strong> — Team Lead & 1st Place Winner out of 5,000+ applicants (PAWsitive animal healthcare triage).</li>
+            <li><strong>LeetCode Knight</strong> — Peak rating 1868 (Top 6% globally), 630+ algorithmic solutions solved.</li>
+            <li><strong>Published First Author</strong> — IJIRT research on low-latency multimodal computer vision interfaces (Paper ID: 180711).</li>
+            <li><strong>Upstream Core Contributor</strong> — Kestra (kestra-io/plugin-jdbc v2.2.0, DuckDB file capture engine).</li>
+          </ul>
+          <h2>Core Technical Competencies</h2>
+          <ul>
+            <li><strong>Languages:</strong> Python (AsyncIO, FastMCP, Pytest), TypeScript, JavaScript (ESM, React 19, Next.js), Swift 6.0 (AppKit, SwiftUI), SQL</li>
+            <li><strong>Cloud & Distributed Systems:</strong> Databricks, Apache Spark, Google Cloud Platform (Cloud Run, Pub/Sub), Firebase / Firestore, MongoDB</li>
+            <li><strong>System & Native Engineering:</strong> Apple Neural Engine, Apple Vision Framework, CGEventTap, macOS Menu Bar daemons, WebAssembly</li>
+            <li><strong>AI & Machine Learning:</strong> Google Gemini API, MediaPipe CV, LangGraph, Retrieval-Augmented Generation (RAG)</li>
+          </ul>
         </article>
       </main>
-    `
+    `,
+    extraJsonLdNodes: []
   },
   {
     route: '/about',
@@ -213,14 +238,32 @@ const STATIC_ROUTES = [
     image: `${SITE_URL}/banner-social.jpg`,
     articleHtml: `
       <header>
-        <h1>Gallery — Aritro Saha</h1>
+        <h1>Engineering & Hackathon Gallery — Aritro Saha</h1>
+        <p>Visual highlights from Hack4Bengal 3.0, VIT Chennai tech showcases, engineering workspaces, and developer conferences.</p>
       </header>
       <main>
         <article>
-          <p>Visual gallery featuring moments from Hack4Bengal 3.0, engineering events, and project showcases by Aritro Saha.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+            ${galleryImages.map((img) => `
+              <figure style="margin: 0; background: rgba(0,0,0,0.03); border-radius: 0.75rem; overflow: hidden; padding: 0.5rem;">
+                <img src="${SITE_URL}${img.src}" alt="${escapeHtml(img.alt)}" loading="lazy" width="600" height="400" style="width: 100%; height: auto; border-radius: 0.5rem; object-fit: cover;" />
+                <figcaption style="font-size: 0.875rem; color: #6b7280; padding: 0.5rem 0.25rem 0;">${escapeHtml(img.alt)}</figcaption>
+              </figure>
+            `).join('\n')}
+          </div>
         </article>
       </main>
-    `
+    `,
+    extraJsonLdNodes: [
+      {
+        "@type": "ImageGallery",
+        "@id": `${SITE_URL}/gallery#gallery`,
+        "name": "Aritro Saha Engineering & Hackathon Gallery",
+        "description": "Visual highlights from Hack4Bengal 3.0, tech conferences, and software development milestones.",
+        "author": { "@id": `${SITE_URL}/#person` },
+        "image": galleryImages.map((img) => `${SITE_URL}${img.src}`)
+      }
+    ]
   },
   {
     route: '/play',
@@ -230,71 +273,310 @@ const STATIC_ROUTES = [
     articleHtml: `
       <header>
         <h1>The Developer Arcade by Aritro Saha</h1>
+        <p>A native collection of interactive browser mini-games engineered in React 19 with Framer Motion, requestAnimationFrame canvas loops, and custom sound effects.</p>
       </header>
       <main>
         <article>
-          <p>Interactive browser-based games engineered natively in React by Aritro Saha:</p>
+          <h2>Interactive Game Catalog</h2>
           <ul>
-            <li><a href="${SITE_URL}/play/typing-test">Developer Speed Test</a> — Terminal-style WPM typing speed test for programmers.</li>
-            <li><a href="${SITE_URL}/play/data-pipeline">Data Pipeline Puzzle</a> — Connect data nodes without crossing pipelines.</li>
-            <li><a href="${SITE_URL}/play/snake">Minimalist Snake</a> — Python developer edition of classic Snake.</li>
-            <li><a href="${SITE_URL}/play/sudoku">Sudoku</a> — Classic number placement logic puzzle.</li>
-            <li><a href="${SITE_URL}/play/space-invaders">Space Invaders</a> — Defend the server from incoming bugs.</li>
-            <li><a href="${SITE_URL}/play/flappy-bird">Flappy Bird</a> — Classic obstacle navigation game.</li>
-            <li><a href="${SITE_URL}/play/tictactoe">Tic Tac Toe</a> — Play against an unbeatable Minimax AI agent.</li>
+            <li><a href="${SITE_URL}/play/typing-test">Developer Speed Test</a> — Terminal-style WPM typing speed test with programming language syntax and accuracy tracking.</li>
+            <li><a href="${SITE_URL}/play/data-pipeline">Data Pipeline Puzzle</a> — Connect data source nodes to sink endpoints without crossing stream paths. Features level persistence and URL parameters.</li>
+            <li><a href="${SITE_URL}/play/snake">Minimalist Snake</a> — Classic Snake collecting tech stack icons with custom mobile touch D-Pad support.</li>
+            <li><a href="${SITE_URL}/play/sudoku">Sudoku</a> — Full 9x9 logic puzzle with conflict validation, difficulty modes, and state persistence.</li>
+            <li><a href="${SITE_URL}/play/space-invaders">Space Invaders</a> — Defend production infrastructure from incoming software bugs and merge conflicts.</li>
+            <li><a href="${SITE_URL}/play/flappy-bird">Flappy Bird</a> — Physics-driven obstacle navigation arcade game with responsive controls.</li>
+            <li><a href="${SITE_URL}/play/tictactoe">Tic Tac Toe</a> — Challenge an unbeatable Minimax decision-tree AI agent.</li>
           </ul>
         </article>
       </main>
-    `
+    `,
+    extraJsonLdNodes: [
+      {
+        "@type": "ItemList",
+        "@id": `${SITE_URL}/play#game-list`,
+        "name": "Developer Arcade Games Catalog",
+        "description": "Collection of interactive developer browser games built in React by Aritro Saha.",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "url": `${SITE_URL}/play/typing-test`, "name": "Developer Speed Test" },
+          { "@type": "ListItem", "position": 2, "url": `${SITE_URL}/play/data-pipeline`, "name": "Data Pipeline Puzzle" },
+          { "@type": "ListItem", "position": 3, "url": `${SITE_URL}/play/snake`, "name": "Minimalist Snake" },
+          { "@type": "ListItem", "position": 4, "url": `${SITE_URL}/play/sudoku`, "name": "Sudoku" },
+          { "@type": "ListItem", "position": 5, "url": `${SITE_URL}/play/space-invaders`, "name": "Space Invaders" },
+          { "@type": "ListItem", "position": 6, "url": `${SITE_URL}/play/flappy-bird`, "name": "Flappy Bird" },
+          { "@type": "ListItem", "position": 7, "url": `${SITE_URL}/play/tictactoe`, "name": "Tic Tac Toe" }
+        ]
+      }
+    ]
   },
   {
     route: '/play/typing-test',
     title: 'Developer Speed Test | Aritro Saha Arcade',
     description: 'Test your coding typing speed with this minimalist terminal-style speed test game by Aritro Saha.',
     image: `${SITE_URL}/banner-social.jpg`,
-    articleHtml: `<header><h1>Developer Speed Test — Aritro Saha Arcade</h1></header><main><article><p>Test your coding typing speed (WPM and accuracy) with programming keywords in this terminal-style typing game built by Aritro Saha.</p></article></main>`
+    articleHtml: `
+      <header>
+        <h1>Developer Speed Test — Aritro Saha Arcade</h1>
+        <p>A minimalist terminal-style typing speed test designed for software developers to test coding cadence, Words Per Minute (WPM), and key accuracy.</p>
+      </header>
+      <main>
+        <article>
+          <h2>Game Mechanics & Overview</h2>
+          <p>The Developer Speed Test evaluates real-time typing speed and accuracy using curated programming language keywords from Python, TypeScript, React, Go, and SQL rather than arbitrary prose. As you type, the engine evaluates keystroke accuracy, calculating raw WPM, net WPM, and accuracy percentage in real-time.</p>
+          <h2>Controls & Instructions</h2>
+          <ul>
+            <li><strong>Typing:</strong> Type the highlighted code keyword as it appears on the terminal screen.</li>
+            <li><strong>Spacebar:</strong> Submit current word and advance to the next token.</li>
+            <li><strong>Restart:</strong> Click Restart or hit <code>Tab + Enter</code> to initiate a fresh session.</li>
+          </ul>
+          <h2>Technical Architecture</h2>
+          <p>Built with React state management, fine-grained keyboard event listeners, and accurate delta timing to measure true keystroke cadence without main-thread latency.</p>
+        </article>
+      </main>
+    `,
+    extraJsonLdNodes: [
+      {
+        "@type": ["VideoGame", "WebApplication"],
+        "@id": `${SITE_URL}/play/typing-test#game`,
+        "name": "Developer Speed Test",
+        "description": "Minimalist terminal-style typing speed test measuring WPM and accuracy on top programming keywords.",
+        "gamePlatform": "Web Browser",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any modern web browser",
+        "playMode": "SinglePlayer",
+        "author": { "@id": `${SITE_URL}/#person` }
+      }
+    ]
   },
   {
     route: '/play/data-pipeline',
     title: 'Data Pipeline Puzzle | Aritro Saha Arcade',
     description: 'Connect the nodes to build a data pipeline without crossing lines. A logic puzzle for data science engineers by Aritro Saha.',
     image: `${SITE_URL}/banner-social.jpg`,
-    articleHtml: `<header><h1>Data Pipeline Puzzle — Aritro Saha Arcade</h1></header><main><article><p>A logic puzzle game for data science engineers where you connect source and sink nodes without crossing pipelines.</p></article></main>`
+    articleHtml: `
+      <header>
+        <h1>Data Pipeline Puzzle — Aritro Saha Arcade</h1>
+        <p>A logic puzzle game for data engineers where you rotate pipeline segments to connect data sources to analytical sinks without pipeline deadlocks.</p>
+      </header>
+      <main>
+        <article>
+          <h2>Game Mechanics & Rules</h2>
+          <p>Inspired by enterprise streaming architectures (Kafka, Pub/Sub, Databricks), players are presented with a matrix of pipe connectors. Rotate pipe segments to establish an unbroken stream connection from source nodes to output sinks before the stream buffer overflows.</p>
+          <h2>Features & Level Persistence</h2>
+          <ul>
+            <li><strong>Level Progression:</strong> Progressively challenging grid layouts with branching streams.</li>
+            <li><strong>URL Parameters:</strong> Direct level access supported via <code>?level=N</code> URL parameters.</li>
+            <li><strong>State Saving:</strong> Solved levels and progress are stored in localStorage.</li>
+          </ul>
+          <h2>Controls</h2>
+          <p>Click or tap any pipe tile to rotate it 90 degrees clockwise. Complete the circuit to trigger the data flow animation.</p>
+        </article>
+      </main>
+    `,
+    extraJsonLdNodes: [
+      {
+        "@type": ["VideoGame", "WebApplication"],
+        "@id": `${SITE_URL}/play/data-pipeline#game`,
+        "name": "Data Pipeline Puzzle",
+        "description": "Logic puzzle game where players connect streaming nodes to build data pipelines.",
+        "gamePlatform": "Web Browser",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any modern web browser",
+        "playMode": "SinglePlayer",
+        "author": { "@id": `${SITE_URL}/#person` }
+      }
+    ]
   },
   {
     route: '/play/snake',
     title: 'Minimalist Snake | Aritro Saha Arcade',
     description: 'Play the classic Snake game collecting tech stack icons on an infinite grid, built by Aritro Saha.',
     image: `${SITE_URL}/banner-social.jpg`,
-    articleHtml: `<header><h1>Minimalist Snake — Aritro Saha Arcade</h1></header><main><article><p>The Python developer edition of classic Snake where you collect tech stack icons.</p></article></main>`
+    articleHtml: `
+      <header>
+        <h1>Minimalist Snake — Aritro Saha Arcade</h1>
+        <p>A developer edition of the classic Snake arcade game featuring smooth 60fps canvas rendering, tech stack food tokens, and full mobile touch controls.</p>
+      </header>
+      <main>
+        <article>
+          <h2>Game Rules & Mechanics</h2>
+          <p>Navigate the snake across an infinite grid collecting tech stack icons (Python, React, TypeScript). Each consumed icon increases length and score. Eating the bonus AI icon (<code>🤖</code>) grants multiplier points. Crashing into the arena boundary or your own tail ends the run.</p>
+          <h2>Controls & Mobile D-Pad</h2>
+          <ul>
+            <li><strong>Desktop:</strong> Use Arrow Keys or <code>W, A, S, D</code> to steer the snake. Press <code>Space</code> to pause.</li>
+            <li><strong>Mobile:</strong> Features an integrated virtual touch D-Pad with directional haptic cues.</li>
+          </ul>
+          <h2>Technical Architecture</h2>
+          <p>Engineered using an HTML5 Canvas 2D render loop powered by <code>requestAnimationFrame</code> with discrete coordinate collision checks for zero input latency.</p>
+        </article>
+      </main>
+    `,
+    extraJsonLdNodes: [
+      {
+        "@type": ["VideoGame", "WebApplication"],
+        "@id": `${SITE_URL}/play/snake#game`,
+        "name": "Minimalist Snake — Developer Edition",
+        "description": "Classic Snake browser arcade game collecting tech stack tokens with mobile touch controls.",
+        "gamePlatform": "Web Browser",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any modern web browser",
+        "playMode": "SinglePlayer",
+        "author": { "@id": `${SITE_URL}/#person` }
+      }
+    ]
   },
   {
     route: '/play/sudoku',
     title: 'Sudoku | Aritro Saha Arcade',
     description: 'Play classic Sudoku right inside your browser at Aritro Saha\'s Developer Arcade.',
     image: `${SITE_URL}/banner-social.jpg`,
-    articleHtml: `<header><h1>Sudoku — Aritro Saha Arcade</h1></header><main><article><p>Classic logic-based number placement puzzle built in React by Aritro Saha.</p></article></main>`
+    articleHtml: `
+      <header>
+        <h1>Sudoku — Aritro Saha Arcade</h1>
+        <p>A logic-based 9x9 number-placement puzzle built natively in React with conflict detection, note-taking, and responsive input.</p>
+      </header>
+      <main>
+        <article>
+          <h2>Game Objective & Rules</h2>
+          <p>Fill the 9x9 grid so that every row, every column, and each of the nine 3x3 subgrids contains all digits from 1 to 9 without repetition. The game validates board state automatically and highlights conflicting cells.</p>
+          <h2>Features & Player Tools</h2>
+          <ul>
+            <li><strong>Candidate Notes:</strong> Toggle pencil mode to record candidate digits in candidate cells.</li>
+            <li><strong>Error Highlighting:</strong> Instantly detect duplicate digits in colliding rows, columns, or subgrids.</li>
+            <li><strong>Auto-Save:</strong> Game state and timer automatically persist across browser refreshes.</li>
+          </ul>
+          <h2>Controls</h2>
+          <p>Click any cell and use the on-screen numeric keypad or physical keyboard numbers <code>1-9</code>. Use Backspace or Delete to clear a cell.</p>
+        </article>
+      </main>
+    `,
+    extraJsonLdNodes: [
+      {
+        "@type": ["VideoGame", "WebApplication"],
+        "@id": `${SITE_URL}/play/sudoku#game`,
+        "name": "Sudoku Logic Puzzle",
+        "description": "Classic 9x9 number placement puzzle with candidate notes and conflict detection.",
+        "gamePlatform": "Web Browser",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any modern web browser",
+        "playMode": "SinglePlayer",
+        "author": { "@id": `${SITE_URL}/#person` }
+      }
+    ]
   },
   {
     route: '/play/space-invaders',
     title: 'Space Invaders | Aritro Saha Arcade',
     description: 'Defend your codebase from incoming bugs in this retro shooter by Aritro Saha.',
     image: `${SITE_URL}/banner-social.jpg`,
-    articleHtml: `<header><h1>Space Invaders — Aritro Saha Arcade</h1></header><main><article><p>Retro arcade shooter where you defend production servers from incoming software bugs.</p></article></main>`
+    articleHtml: `
+      <header>
+        <h1>Space Invaders — Aritro Saha Arcade</h1>
+        <p>A retro arcade space shooter where you pilot a defender spaceship to protect production servers from descending software bugs.</p>
+      </header>
+      <main>
+        <article>
+          <h2>Gameplay & Rules</h2>
+          <p>Waves of bugs and merge conflicts descend toward your server cluster. Blast incoming bugs while dodging enemy projectiles and utilizing defensive server shields that absorb incoming fire. As waves clear, enemy march velocity increases.</p>
+          <h2>Controls</h2>
+          <ul>
+            <li><strong>Desktop:</strong> Use <code>Left / Right Arrow</code> or <code>A / D</code> to navigate ship. Press <code>Spacebar</code> to fire laser cannon.</li>
+            <li><strong>Mobile:</strong> Dedicated on-screen touch buttons for directional maneuvering and laser firing.</li>
+          </ul>
+          <h2>Technical Architecture</h2>
+          <p>Sprite animation and projectile collision detection computed using a 60fps canvas loop with bounding box intersection algorithms.</p>
+        </article>
+      </main>
+    `,
+    extraJsonLdNodes: [
+      {
+        "@type": ["VideoGame", "WebApplication"],
+        "@id": `${SITE_URL}/play/space-invaders#game`,
+        "name": "Space Invaders — Production Bug Defense",
+        "description": "Retro arcade space shooter defending production servers from software bugs.",
+        "gamePlatform": "Web Browser",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any modern web browser",
+        "playMode": "SinglePlayer",
+        "author": { "@id": `${SITE_URL}/#person` }
+      }
+    ]
   },
   {
     route: '/play/flappy-bird',
     title: 'Flappy Bird | Aritro Saha Arcade',
     description: 'Navigate the bird through the pipes in Aritro Saha\'s Developer Arcade.',
     image: `${SITE_URL}/banner-social.jpg`,
-    articleHtml: `<header><h1>Flappy Bird — Aritro Saha Arcade</h1></header><main><article><p>Navigate through the pipes in this classic arcade game built by Aritro Saha.</p></article></main>`
+    articleHtml: `
+      <header>
+        <h1>Flappy Bird — Aritro Saha Arcade</h1>
+        <p>A minimalist obstacle-navigation game engineered with realistic gravitational acceleration and collision detection.</p>
+      </header>
+      <main>
+        <article>
+          <h2>Game Mechanics</h2>
+          <p>Guide the bird through narrow pipe gaps by timing flap impulses. Gravity constantly pulls the bird downward, requiring precise rhythmic tapping to sustain altitude without colliding with pipes or the ground.</p>
+          <h2>Controls</h2>
+          <ul>
+            <li><strong>Desktop:</strong> Press <code>Spacebar</code> or click anywhere with mouse to flap wings.</li>
+            <li><strong>Mobile:</strong> Tap anywhere on touch screen to execute upward flap impulse.</li>
+          </ul>
+          <h2>Highscore Persistence</h2>
+          <p>Personal best scores are tracked in localStorage, allowing players to benchmark their reaction time and endurance over time.</p>
+        </article>
+      </main>
+    `,
+    extraJsonLdNodes: [
+      {
+        "@type": ["VideoGame", "WebApplication"],
+        "@id": `${SITE_URL}/play/flappy-bird#game`,
+        "name": "Flappy Bird Arcade",
+        "description": "Physics-driven single-tap obstacle navigation arcade game.",
+        "gamePlatform": "Web Browser",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any modern web browser",
+        "playMode": "SinglePlayer",
+        "author": { "@id": `${SITE_URL}/#person` }
+      }
+    ]
   },
   {
     route: '/play/tictactoe',
     title: 'Tic Tac Toe | Aritro Saha Arcade',
     description: 'Play against a Minimax AI in this minimalist classic by Aritro Saha.',
     image: `${SITE_URL}/banner-social.jpg`,
-    articleHtml: `<header><h1>Tic Tac Toe (Minimax AI) — Aritro Saha Arcade</h1></header><main><article><p>Challenge an unbeatable Minimax algorithm AI in Tic Tac Toe.</p></article></main>`
+    articleHtml: `
+      <header>
+        <h1>Tic Tac Toe (Minimax AI) — Aritro Saha Arcade</h1>
+        <p>Challenge an unbeatable algorithmic artificial intelligence in classic 3x3 Tic Tac Toe powered by the Minimax decision tree algorithm.</p>
+      </header>
+      <main>
+        <article>
+          <h2>Game Overview & AI Decision Engine</h2>
+          <p>This implementation features a recursive Minimax search tree that evaluates all future board states to depth 9. At hard difficulty, the AI plays mathematically optimal moves with alpha-beta pruning, guaranteeing either an AI victory or a forced draw.</p>
+          <h2>Difficulty Settings</h2>
+          <ul>
+            <li><strong>Easy:</strong> Random heuristic moves for relaxed play.</li>
+            <li><strong>Medium:</strong> Heuristic blocking with occasional exploratory moves.</li>
+            <li><strong>Hard (Unbeatable):</strong> Pure Minimax recursion evaluating all possible board branches.</li>
+          </ul>
+          <h2>Controls</h2>
+          <p>Click or tap any available cell to place your X token. The AI responds within milliseconds.</p>
+        </article>
+      </main>
+    `,
+    extraJsonLdNodes: [
+      {
+        "@type": ["VideoGame", "WebApplication"],
+        "@id": `${SITE_URL}/play/tictactoe#game`,
+        "name": "Tic Tac Toe — Minimax AI",
+        "description": "Tic Tac Toe with an unbeatable Minimax algorithm decision tree artificial intelligence.",
+        "gamePlatform": "Web Browser",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any modern web browser",
+        "playMode": "SinglePlayer",
+        "author": { "@id": `${SITE_URL}/#person` }
+      }
+    ]
   }
 ];
 
@@ -470,15 +752,33 @@ function run() {
         </main>`;
 
     const softwareNode = {
-      "@type": "SoftwareSourceCode",
+      "@type": ["SoftwareSourceCode", "SoftwareApplication"],
       "@id": `${SITE_URL}${route}#software`,
       "name": project.title,
       "description": project.details?.overview || project.description,
       "url": `${SITE_URL}${route}`,
       "codeRepository": project.github,
       "programmingLanguage": project.details?.techStack || [],
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": project.title.includes("macOS") || project.title.includes("Byakugan") || project.title.includes("SutraKey") ? "macOS" : "Web Browser",
       "author": { "@id": `${SITE_URL}/#person` }
     };
+
+    const extraNodes = [softwareNode];
+    if (project.id === 'glide-connect') {
+      extraNodes.push({
+        "@type": "ScholarlyArticle",
+        "@id": `${SITE_URL}${route}#research-paper`,
+        "headline": "Virtual Mouse Control Using Gesture Recognition and Voice Assistant",
+        "name": "Virtual Mouse Control Using Gesture Recognition and Voice Assistant",
+        "author": { "@id": `${SITE_URL}/#person` },
+        "publisher": {
+          "@type": "Organization",
+          "name": "International Journal of Innovative Research in Technology (IJIRT)"
+        },
+        "sameAs": "https://ijirt.org/article?manuscript=180711"
+      });
+    }
 
     const routeHtml = buildRouteHtml(template, {
       route,
@@ -486,7 +786,7 @@ function run() {
       description,
       image,
       articleHtml,
-      extraJsonLdNodes: [softwareNode]
+      extraJsonLdNodes: extraNodes
     });
 
     const outDir = path.join(distDir, 'projects', project.id);

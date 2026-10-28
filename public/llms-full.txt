@@ -120,6 +120,56 @@ I won Hack4Bengal 3.0—Eastern India's largest hackathon—leading rapid full-s
 
 ---
 
+<!-- source: https://www.aritro.cloud/resume -->
+
+# Resume — Aritro Saha | Software Engineer 1 at Bristol Myers Squibb
+
+> Official resume of Aritro Saha, Software Engineer 1 at Bristol Myers Squibb specializing in high-throughput data engineering, cloud systems, and native macOS utilities.
+
+Canonical: https://www.aritro.cloud/resume
+Last updated: 2026-10-26
+
+## Professional Overview
+Software Engineer 1 at Bristol Myers Squibb building high-throughput data pipelines, cloud infrastructure, native macOS utilities, and interactive web applications.
+
+Currently serving as a Software Engineer 1 at **Bristol Myers Squibb** (July 2025 – Present), engineering enterprise-scale data pipelines, cloud architecture, and web applications.
+
+## Official Resume Download
+- **Direct PDF Download**: [Download Official Resume (PDF)](https://www.aritro.cloud/assets/resume/Aritro-Saha-Software-Engineer-Resume.pdf)
+
+## Professional Experience
+| Role & Organization | Duration |
+| --- | --- |
+| Software Engineer 1, Bristol Myers Squibb | July 2025 - Present |
+| Data Science Intern, Bajaj Finserv Health | Feb 2025 - June 2025 |
+| Full Stack Developer Intern, Wipro | Oct 2023 - Dec 2023 |
+
+## Education & Academic Foundation
+| Degree / Program | Institution | Year |
+| --- | --- | --- |
+| B.Tech in Electronics and Computer Engineering | Vellore Institute of Technology, Chennai | 2025 |
+| High School | Birla Bharati | 2021 |
+
+## Key Accolades & Leadership
+- **Hack4Bengal 3.0 Grand Champion**: Team Lead & 1st Place Winner out of 5,000+ applicants (PAWsitive animal healthcare triage).
+- **LeetCode Knight**: Peak rating 1868 (Top 6% globally), 630+ algorithmic solutions solved.
+- **Published First Author**: Research on low-latency multimodal computer vision interfaces (IJIRT Paper ID: 180711).
+- **Upstream Core Contributor**: Contributed DuckDB capture engine enhancements to Kestra (kestra-io/plugin-jdbc v2.2.0).
+
+## Core Competencies & Technical Skills
+- **Languages**: Python (AsyncIO, FastMCP, Pytest), TypeScript, JavaScript (ESM, React 19, Next.js), Swift 6.0 (AppKit, SwiftUI), SQL
+- **Cloud & Distributed Data**: Databricks, Apache Spark, Google Cloud Platform (Cloud Run, Pub/Sub), Firebase / Firestore, MongoDB
+- **System & Native Engineering**: Apple Neural Engine, Apple Vision Framework, CGEventTap, macOS Menu Bar daemons, WASM
+- **AI & Machine Learning**: Google Gemini API, MediaPipe CV, LangGraph, Retrieval-Augmented Generation (RAG)
+
+## Related
+- [Portfolio Home](https://www.aritro.cloud/)
+- [About Aritro Saha](https://www.aritro.cloud/about)
+- [All Projects](https://www.aritro.cloud/#projects)
+- [The Developer Arcade](https://www.aritro.cloud/play)
+
+---
+
 <!-- source: https://www.aritro.cloud/aritrosaha -->
 
 # Aritro Saha (aritrosaha) — Verified Software Engineer & Open-Source Creator

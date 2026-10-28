@@ -21,6 +21,7 @@ Professional software engineer and open-source creator based in India with exper
 ## Core pages
 - [Home — Aritro Saha Portfolio](https://www.aritro.cloud/index.md): Overview of engineering background, skills, and featured software products.
 - [About Aritro Saha](https://www.aritro.cloud/about.md): Professional experience at Bristol Myers Squibb, education at VIT Chennai, and awards.
+- [Resume — Aritro Saha | Software Engineer 1 at Bristol Myers Squibb](https://www.aritro.cloud/resume.md): Professional experience, education, awards, technical proficiencies, and resume PDF download.
 - [Aritro Saha (aritrosaha) — Official Profile & Dossier](https://www.aritro.cloud/aritrosaha.md): Official biography, engineering background, and projects of Aritro Saha (Megh).
 - [Engineering & Hackathon Gallery](https://www.aritro.cloud/gallery.md): Visual chronicles of hackathon wins and software demonstrations.
 

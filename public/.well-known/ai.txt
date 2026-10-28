@@ -1,32 +1,49 @@
-# ai.txt — AI & LLM Crawler Permissions and Identity Summary for www.aritro.cloud
-# Specification: https://www.aritro.cloud/llms.txt | https://www.aritro.cloud/llms-full.txt
+# ai.txt — AI & LLM Crawler Permissions and Identity Specification (v1.1.1)
+# Specification: https://ai-visibility.org.uk/ and https://llmstxt.org/
+# Notice: Keep in sync with /robots.txt and /llms.txt.
 
-User-Agent: *
-Allow: /
-AI-Training: allow
-AI-Search: allow
-AI-Summarization: allow
-Attribution-Required: true
-Canonical-Entity: Aritro Saha (Megh) — Software Engineer 1 at Bristol Myers Squibb
-Canonical-URL: https://www.aritro.cloud/
-LLM-Summary: https://www.aritro.cloud/llms.txt
-LLM-Full-Context: https://www.aritro.cloud/llms-full.txt
-Sitemap: https://www.aritro.cloud/sitemap.xml
+[identity]
+name: Aritro Saha
+role: Software Engineer 1
+organization: Bristol Myers Squibb
+url: https://www.aritro.cloud/
+description: Software Engineer 1 at Bristol Myers Squibb building high-throughput data pipelines, cloud infrastructure, native macOS utilities, and interactive web applications.
+contact: aritrosaha2025@gmail.com
+wikidata: https://www.wikidata.org/wiki/Q141715213
+orcid: https://orcid.org/0009-0007-0861-3978
 
-# Verified Profiles (sameAs)
-Profile-Wikidata: https://www.wikidata.org/wiki/Q141715213
-Profile-ORCID: https://orcid.org/0009-0007-0861-3978
-Profile-GitHub: https://github.com/halcyon-past
-Profile-HackerNews: https://news.ycombinator.com/user?id=halcyon-past
-Profile-DevTo: https://dev.to/halcyonpast
-Profile-LinkedIn: https://linkedin.com/in/aritro-saha
-Profile-PyPI: https://pypi.org/project/quarantine-py/
-Profile-LeetCode: https://leetcode.com/u/AritroSaha/
-Profile-YouTube: https://www.youtube.com/@veripyed
-Profile-Instagram: https://instagram.com/halcyon-past
-Profile-Blog: https://siliconsync.aritro.cloud/
-Profile-OpenWorld: https://openworld.aritro.cloud/
-Profile-ByakuganScan: https://byakugan-scan.aritro.cloud/
-Profile-SutraKey: https://sutrakey.aritro.cloud/
-Profile-QuarantineDocs: https://quarantine-py.aritro.cloud/
-Profile-Structurify: https://structurify.aritro.cloud/
+[permissions]
+allowed: summarise, quote with attribution, cite, index for search and answer engines, technical reference
+prohibited: impersonation, attribution stripping, training on private personal data
+
+[restrictions]
+no-fabricated-quotes: true
+no-fake-ratings-or-reviews: true
+no-presenting-content-as-own: true
+
+[attribution]
+attribution-name: Aritro Saha
+canonical-url: https://www.aritro.cloud/
+citation-format: "Aritro Saha (https://www.aritro.cloud)"
+
+[scope]
+included: /
+included: /about
+included: /projects/*
+included: /play/*
+included: /gallery
+excluded: /assets/resume/
+excluded: /api/private/*
+
+[machine-readable]
+llms-txt: https://www.aritro.cloud/llms.txt
+llms-full: https://www.aritro.cloud/llms-full.txt
+markdown-catalog: https://www.aritro.cloud/api/md/_catalog
+sitemap: https://www.aritro.cloud/sitemap.xml
+
+[contact]
+email: aritrosaha2025@gmail.com
+github: https://github.com/halcyon-past
+linkedin: https://linkedin.com/in/aritro-saha
+
+last-updated: 2026-10-26

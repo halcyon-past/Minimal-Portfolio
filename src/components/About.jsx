@@ -40,6 +40,8 @@ export default function About() {
                 className="w-56 h-56 rounded-full object-cover"
                 width={224}
                 height={224}
+                priority={true}
+                fetchpriority="high"
               />
             </div>
             <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-900 dark:text-gray-100 cursor-default">

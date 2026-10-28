@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence } from 'framer-motion';
 import Header from './components/Header';
@@ -16,6 +16,7 @@ import { projects } from './data/data';
 
 // Code-split secondary views & arcade games for optimal Core Web Vitals (INP/LCP)
 const AboutPage = lazy(() => import('./pages/AboutPage'));
+const ResumePage = lazy(() => import('./pages/ResumePage'));
 const GalleryPage = lazy(() => import('./pages/GalleryPage'));
 const GamesCatalogPage = lazy(() => import('./pages/GamesCatalogPage'));
 const TypingTestPage = lazy(() => import('./pages/games/TypingTestPage'));
@@ -70,10 +71,19 @@ function AnimatedRoutes() {
         />
         <Route 
           path="/aritro-saha" 
+          element={<Navigate to="/aritrosaha" replace />} 
+        />
+        <Route 
+          path="/resume" 
           element={
             <PageTransition>
-              <Seo title="Aritro Saha | Software Engineer & Creator" url="/aritrosaha" image="https://www.aritro.cloud/aritro-saha.webp" description="Portfolio of Aritro Saha. Software Engineer 1 at Bristol Myers Squibb, Hack4Bengal 3.0 winner, and creator of native macOS tools Byakugan Scan and SutraKey." />
-              <AboutPage />
+              <Seo 
+                title="Resume | Aritro Saha — Software Engineer 1 at Bristol Myers Squibb" 
+                url="/resume" 
+                image="https://www.aritro.cloud/aritro-saha.webp" 
+                description="Official resume of Aritro Saha, Software Engineer 1 at Bristol Myers Squibb. Enterprise data pipelines, cloud architecture, native macOS utilities, and AI." 
+              />
+              <ResumePage />
             </PageTransition>
           } 
         />

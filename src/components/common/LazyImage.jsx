@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function LazyImage({ src, alt, className, aspectRatio, blockClass, width, height }) {
+export default function LazyImage({ src, alt, className, aspectRatio, blockClass, width, height, priority = false, fetchpriority }) {
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
   
@@ -32,7 +32,8 @@ export default function LazyImage({ src, alt, className, aspectRatio, blockClass
           alt={alt}
           width={width}
           height={height}
-          loading="lazy"
+          loading={priority ? "eager" : "lazy"}
+          fetchpriority={fetchpriority || (priority ? "high" : "auto")}
           className={`w-full h-full object-cover ${className || ''} transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
           onLoad={() => setLoaded(true)}
           onError={() => setError(true)}

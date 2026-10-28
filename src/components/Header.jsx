@@ -78,6 +78,10 @@ export default function Header() {
             About
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-(--amethyst) transition-all duration-300 group-hover:w-full"></span>
           </Link>
+          <Link to="/resume" className="relative group text-gray-800 dark:text-gray-200 hover:text-(--amethyst) transition-colors duration-300">
+            Resume
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-(--amethyst) transition-all duration-300 group-hover:w-full"></span>
+          </Link>
           <Link to="/gallery" className="relative group text-gray-800 dark:text-gray-200 hover:text-(--amethyst) transition-colors duration-300">
             Gallery
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-(--amethyst) transition-all duration-300 group-hover:w-full"></span>
@@ -136,6 +140,20 @@ export default function Header() {
                     className="relative group hover:text-(--amethyst)"
                   >
                     <span className="block">About</span>
+                  </Link>
+                </motion.div>
+
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.35 }}
+                >
+                  <Link 
+                    to="/resume" 
+                    onClick={() => setMenuOpen(false)}
+                    className="relative group hover:text-(--amethyst)"
+                  >
+                    <span className="block">Resume</span>
                   </Link>
                 </motion.div>
                 

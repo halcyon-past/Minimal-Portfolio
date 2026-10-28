@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Command } from 'cmdk';
 import { useNavigate } from 'react-router-dom';
-import { FileText, User, Image, Link as LinkIcon, Command as CommandIcon, Mail, Folder, Gamepad2, Search } from 'lucide-react';
+import { FileText, User, Image, Link as LinkIcon, Command as CommandIcon, Mail, Folder, Gamepad2, Search, Download } from 'lucide-react';
 import { projects } from '../../data/data';
 import './CommandPalette.css';
 
@@ -93,8 +93,11 @@ export default function CommandPalette() {
             </Command.Group>
 
             <Command.Group heading="Documents" className="cmdk-group">
+              <Command.Item onSelect={() => runCommand(() => navigate('/resume'))}>
+                <FileText size={16} /> View Resume Page
+              </Command.Item>
               <Command.Item onSelect={() => runCommand(() => window.open('/assets/resume/Aritro-Saha-Software-Engineer-Resume.pdf', '_blank'))}>
-                <FileText size={16} /> View Resume
+                <Download size={16} /> Download Resume PDF
               </Command.Item>
             </Command.Group>
 

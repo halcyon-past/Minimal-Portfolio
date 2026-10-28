@@ -107,6 +107,61 @@ export function renderAboutPage() {
 }
 
 /**
+ * 2a. Resume Page Renderer (/resume)
+ */
+export function renderResumePage() {
+  const expHeaders = ['Role & Organization', 'Duration'];
+  const expRows = experience.map((e) => [e.title, e.duration]);
+
+  const eduHeaders = ['Degree / Program', 'Institution', 'Year'];
+  const eduRows = education.map((ed) => [ed.title, ed.institution, ed.year]);
+
+  const content = [
+    '## Professional Overview',
+    AUTHOR.description,
+    '',
+    'Currently serving as a Software Engineer 1 at **Bristol Myers Squibb** (July 2025 – Present), engineering enterprise-scale data pipelines, cloud architecture, and web applications.',
+    '',
+    '## Official Resume Download',
+    `- **Direct PDF Download**: [Download Official Resume (PDF)](${AUTHOR.resumeUrl})`,
+    '',
+    '## Professional Experience',
+    table(expHeaders, expRows),
+    '',
+    '## Education & Academic Foundation',
+    table(eduHeaders, eduRows),
+    '',
+    '## Key Accolades & Leadership',
+    `- **Hack4Bengal 3.0 Grand Champion**: Team Lead & 1st Place Winner out of 5,000+ applicants (PAWsitive animal healthcare triage).`,
+    `- **LeetCode Knight**: Peak rating 1868 (Top 6% globally), 630+ algorithmic solutions solved.`,
+    `- **Published First Author**: Research on low-latency multimodal computer vision interfaces (IJIRT Paper ID: 180711).`,
+    `- **Upstream Core Contributor**: Contributed DuckDB capture engine enhancements to Kestra (kestra-io/plugin-jdbc v2.2.0).`,
+    '',
+    '## Core Competencies & Technical Skills',
+    '- **Languages**: Python (AsyncIO, FastMCP, Pytest), TypeScript, JavaScript (ESM, React 19, Next.js), Swift 6.0 (AppKit, SwiftUI), SQL',
+    '- **Cloud & Distributed Data**: Databricks, Apache Spark, Google Cloud Platform (Cloud Run, Pub/Sub), Firebase / Firestore, MongoDB',
+    '- **System & Native Engineering**: Apple Neural Engine, Apple Vision Framework, CGEventTap, macOS Menu Bar daemons, WASM',
+    '- **AI & Machine Learning**: Google Gemini API, MediaPipe CV, LangGraph, Retrieval-Augmented Generation (RAG)'
+  ].join('\n');
+
+  const related = [
+    { title: 'Portfolio Home', url: '/' },
+    { title: 'About Aritro Saha', url: '/about' },
+    { title: 'All Projects', url: '/#projects' },
+    { title: 'The Developer Arcade', url: '/play' }
+  ];
+
+  return formatMarkdownPage({
+    title: 'Resume — Aritro Saha | Software Engineer 1 at Bristol Myers Squibb',
+    summary: 'Official resume of Aritro Saha, Software Engineer 1 at Bristol Myers Squibb specializing in high-throughput data engineering, cloud systems, and native macOS utilities.',
+    canonicalPath: '/resume',
+    lastUpdated: LAST_UPDATED,
+    content,
+    relatedLinks: related
+  });
+}
+
+/**
  * 2b. Aritro Saha Verified Dossier (/aritrosaha and /aritro-saha)
  */
 export function renderAritroSahaDossier() {
@@ -330,6 +385,7 @@ const staticRoutes = {
   '/': renderHomePage,
   '/index': renderHomePage,
   '/about': renderAboutPage,
+  '/resume': renderResumePage,
   '/aritrosaha': renderAritroSahaDossier,
   '/aritro-saha': renderAritroSahaDossier,
   '/gallery': renderGalleryPage,
@@ -362,6 +418,13 @@ export function listMarkdownRoutes() {
       mdPath: '/about.md',
       title: 'About Aritro Saha',
       description: 'Professional experience at Bristol Myers Squibb, education at VIT Chennai, and awards.',
+      category: 'core'
+    },
+    {
+      path: '/resume',
+      mdPath: '/resume.md',
+      title: 'Resume — Aritro Saha | Software Engineer 1 at Bristol Myers Squibb',
+      description: 'Professional experience, education, awards, technical proficiencies, and resume PDF download.',
       category: 'core'
     },
     {

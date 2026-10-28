@@ -5,6 +5,7 @@
 User-agent: *
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 # ==============================================================================
 # AI Search & User-Fetch Crawlers (Explicitly Allowed for Answer Engine Citations)

@@ -3,6 +3,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/aritro-saha",
+      "destination": "/aritrosaha",
+      "permanent": true
+    },
+    {
       "source": "/(.*)",
       "has": [
         {

@@ -51,7 +51,8 @@ function testSitemap() {
   assert(priorityCount === urlBlocks.length, 'Every URL entry declares valid <priority> between 0.1 and 1.0');
   assert(changefreqCount === urlBlocks.length, 'Every URL entry declares valid <changefreq>');
   assert(content.includes('https://www.aritro.cloud/aritrosaha'), 'sitemap contains /aritrosaha');
-  assert(content.includes('https://www.aritro.cloud/aritro-saha'), 'sitemap contains /aritro-saha');
+  assert(content.includes('https://www.aritro.cloud/resume'), 'sitemap contains /resume');
+  assert(!content.includes('https://www.aritro.cloud/llms.txt'), 'sitemap does not contain plain text files (.txt)');
 }
 
 function testRobotsTxt() {
