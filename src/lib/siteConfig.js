@@ -23,12 +23,14 @@ export const AUTHOR = {
   image: `${SITE_URL}/aritro-saha.webp`,
   wikidata: 'https://www.wikidata.org/wiki/Q141715213',
   orcid: 'https://orcid.org/0009-0007-0861-3978',
+  scholar: 'https://scholar.google.com/citations?user=oMN6u4UAAAAJ',
   github: 'https://github.com/halcyon-past',
   linkedin: 'https://linkedin.com/in/aritro-saha',
   resumeUrl: `${SITE_URL}/assets/resume/Aritro-Saha-Software-Engineer-Resume.pdf`
 };
 
 export const SOCIAL_PROFILES = [
+  { name: 'Google Scholar', url: 'https://scholar.google.com/citations?user=oMN6u4UAAAAJ' },
   { name: 'GitHub', url: 'https://github.com/halcyon-past' },
   { name: 'GitHub Profile Repo', url: 'https://github.com/halcyon-past/aritrosaha' },
   { name: 'LinkedIn', url: 'https://linkedin.com/in/aritro-saha' },

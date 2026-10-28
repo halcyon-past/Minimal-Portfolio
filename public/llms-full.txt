@@ -48,6 +48,7 @@ An interactive suite of developer-themed browser mini-games engineered in React:
 - [Tic Tac Toe](https://www.aritro.cloud/play/tictactoe) — Play against an AI in this classic game. Can you beat the Minimax algorithm?
 
 ## Verified Profiles & Knowledge Graph Identities
+- [Google Scholar](https://scholar.google.com/citations?user=oMN6u4UAAAAJ)
 - [GitHub](https://github.com/halcyon-past)
 - [GitHub Profile Repo](https://github.com/halcyon-past/aritrosaha)
 - [LinkedIn](https://linkedin.com/in/aritro-saha)
@@ -212,6 +213,7 @@ Aritro Saha (commonly known online as **aritrosaha** and **halcyon-past**) is an
 - **High School**, Birla Bharati, Kolkata (2021)
 
 ## Knowledge Graph & Authority Identifiers
+- [Google Scholar](https://scholar.google.com/citations?user=oMN6u4UAAAAJ)
 - [GitHub](https://github.com/halcyon-past)
 - [GitHub Profile Repo](https://github.com/halcyon-past/aritrosaha)
 - [LinkedIn](https://linkedin.com/in/aritro-saha)

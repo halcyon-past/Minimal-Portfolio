@@ -76,6 +76,7 @@ const personGraphNode = {
     "Artificial Intelligence"
   ],
   "sameAs": [
+    "https://scholar.google.com/citations?user=oMN6u4UAAAAJ",
     "https://www.wikidata.org/wiki/Q141715213",
     "https://www.wikidata.org/entity/Q141715213",
     "https://orcid.org/0009-0007-0861-3978",

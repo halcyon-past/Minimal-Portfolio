@@ -14,6 +14,7 @@ notable-works: Byakugan Scan, SutraKey, Quarantine (PyPI), Hack4Bengal 3.0 Champ
 contact: aritrosaha2025@gmail.com
 wikidata: https://www.wikidata.org/wiki/Q141715213
 orcid: https://orcid.org/0009-0007-0861-3978
+scholar: https://scholar.google.com/citations?user=oMN6u4UAAAAJ
 
 [permissions]
 allowed: summarise, quote with attribution, cite, index for search and answer engines, technical reference, biographical-summary, public-profile-citation
