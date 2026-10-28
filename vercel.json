@@ -12,6 +12,17 @@
       "has": [
         {
           "type": "host",
+          "value": "^aritro\\.cloud$"
+        }
+      ],
+      "destination": "https://www.aritro.cloud/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
           "value": "^games\\.aritro\\.cloud$"
         }
       ],
@@ -66,6 +77,19 @@
       ]
     },
     {
+      "source": "/feed.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
       "source": "/(llms\\.txt|llms-full\\.txt|ai\\.txt)",
       "headers": [
         {
@@ -97,7 +121,7 @@
       ]
     },
     {
-      "source": "/(.*)\\.(jpg|jpeg|png|webp|svg|ico|js|css)",
+      "source": "/(.*)\\.(jpg|jpeg|png|webp|avif|svg|ico|js|css)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -123,6 +147,10 @@
         {
           "key": "Permissions-Policy",
           "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://stats.g.doubleclick.net; media-src 'self'; object-src 'none'; frame-ancestors 'self'; base-uri 'self'; form-action 'self';"
         },
         {
           "key": "Link",

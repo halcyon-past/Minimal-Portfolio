@@ -29,6 +29,67 @@ export default function Seo({
   if (!cleanPath.startsWith('/')) cleanPath = `/${cleanPath}`;
   const markdownUrl = `${SITE_URL}${cleanPath}.md`;
 
+  // Dynamic breadcrumb & route-specific schema generation
+  const extraNodes = [];
+  const normalizedPath = url.split('?')[0].replace(/\/$/, '') || '/';
+
+  if (normalizedPath !== '/' && normalizedPath !== '') {
+    const breadcrumbItems = [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` }
+    ];
+
+    if (normalizedPath.startsWith('/projects/')) {
+      breadcrumbItems.push(
+        { "@type": "ListItem", "position": 2, "name": "Projects", "item": `${SITE_URL}/#projects` },
+        { "@type": "ListItem", "position": 3, "name": title?.replace(/\s*\|.*$/, '') || 'Project', "item": canonicalUrl }
+      );
+    } else if (normalizedPath.startsWith('/play/')) {
+      breadcrumbItems.push(
+        { "@type": "ListItem", "position": 2, "name": "Arcade", "item": `${SITE_URL}/play` },
+        { "@type": "ListItem", "position": 3, "name": title?.replace(/\s*\|.*$/, '') || 'Game', "item": canonicalUrl }
+      );
+      extraNodes.push({
+        "@type": ["VideoGame", "WebApplication"],
+        "@id": `${canonicalUrl}#game`,
+        "name": title?.replace(/\s*\|.*$/, '') || 'Developer Game',
+        "description": finalDescription,
+        "gamePlatform": "Web Browser",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any modern web browser",
+        "playMode": "SinglePlayer",
+        "author": { "@id": `${SITE_URL}/#person` }
+      });
+    } else if (normalizedPath === '/play') {
+      breadcrumbItems.push(
+        { "@type": "ListItem", "position": 2, "name": "Arcade", "item": `${SITE_URL}/play` }
+      );
+    } else if (normalizedPath === '/about') {
+      breadcrumbItems.push(
+        { "@type": "ListItem", "position": 2, "name": "About", "item": `${SITE_URL}/about` }
+      );
+    } else if (normalizedPath === '/resume') {
+      breadcrumbItems.push(
+        { "@type": "ListItem", "position": 2, "name": "Resume", "item": `${SITE_URL}/resume` }
+      );
+    } else if (normalizedPath === '/gallery') {
+      breadcrumbItems.push(
+        { "@type": "ListItem", "position": 2, "name": "Gallery", "item": `${SITE_URL}/gallery` }
+      );
+    } else if (normalizedPath === '/aritrosaha') {
+      breadcrumbItems.push(
+        { "@type": "ListItem", "position": 2, "name": "Verified Dossier", "item": `${SITE_URL}/aritrosaha` }
+      );
+    }
+
+    if (breadcrumbItems.length > 1) {
+      extraNodes.push({
+        "@type": "BreadcrumbList",
+        "@id": `${canonicalUrl}#breadcrumb`,
+        "itemListElement": breadcrumbItems
+      });
+    }
+  }
+
   // JSON-LD structured data for rich search results & LLM Knowledge Graphs
   const structuredData = {
     "@context": "https://schema.org",
@@ -55,6 +116,29 @@ export default function Seo({
           "alternateName": AUTHOR.alumniOf.alternateName
         },
         "award": AUTHOR.award,
+        "creator": [
+          {
+            "@type": "SoftwareApplication",
+            "name": "Byakugan Scan",
+            "url": "https://byakugan-scan.aritro.cloud"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "SutraKey",
+            "url": "https://sutrakey.aritro.cloud"
+          },
+          {
+            "@type": "SoftwareSourceCode",
+            "name": "Quarantine Python",
+            "url": "https://pypi.org/project/quarantine-py/"
+          },
+          {
+            "@type": "WebApplication",
+            "name": "SiliconSync",
+            "description": "Real-time AI-generated technology news intelligence engine and aggregator",
+            "url": "https://siliconsync.aritro.cloud/"
+          }
+        ],
         "knowsAbout": [
           "Software Engineering",
           "Data Science Engineering",
@@ -164,7 +248,8 @@ export default function Seo({
             }
           }
         }))
-      }
+      },
+      ...extraNodes
     ]
   };
 
@@ -186,6 +271,7 @@ export default function Seo({
       <link rel="alternate" type="text/plain" href={`${SITE_URL}/llms.txt`} title="LLM Context Summary" />
       <link rel="alternate" type="text/plain" href={`${SITE_URL}/llms-full.txt`} title="LLM Full Context" />
       <link rel="alternate" type="text/plain" href={`${SITE_URL}/ai.txt`} title="AI Scraper Policy & Identity" />
+      <link rel="alternate" type="application/rss+xml" href={`${SITE_URL}/feed.xml`} title="Aritro Saha Software Projects & Releases" />
 
       {/* Bidirectional Identity Verification (rel="me") */}
       <link rel="me" href="https://scholar.google.com/citations?user=oMN6u4UAAAAJ" />

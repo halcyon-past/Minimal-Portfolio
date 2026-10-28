@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const EXTENSIONS = ['.png', '.jpg', '.jpeg', '.webp'];
+const EXTENSIONS = ['.png', '.jpg', '.jpeg', '.webp', '.avif'];
 
 /**
  * Standardized utility to process images using sharp.
@@ -52,6 +52,7 @@ async function processImage(inputPath, config) {
 
     if (shouldCompress || modified) {
       if (targetExt === '.webp') instance = instance.webp({ quality: quality });
+      else if (targetExt === '.avif') instance = instance.avif({ quality: quality });
       else if (targetExt === '.jpg' || targetExt === '.jpeg') instance = instance.jpeg({ quality: quality });
       else if (targetExt === '.png') {
         // PNG compression

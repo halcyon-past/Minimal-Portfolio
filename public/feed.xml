@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aritro Saha — Software Projects &amp; Releases</title>
+    <link>https://www.aritro.cloud/</link>
+    <description>Official RSS feed of software products, native utilities, and developer projects engineered by Aritro Saha, Software Engineer 1 at Bristol Myers Squibb.</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Oct 2026 20:57:13 GMT</lastBuildDate>
+    <atom:link href="https://www.aritro.cloud/feed.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>aritrosaha2025@gmail.com (Aritro Saha)</managingEditor>
+    <webMaster>aritrosaha2025@gmail.com (Aritro Saha)</webMaster>
+    <item>
+      <title>Byakugan Scan — Instant, in-memory screen OCR, QR code, and barcode scanner for macOS built with Swift 6.0 and Apple Vision Framework. Zero telemetry, sub-50ms hotkeys.</title>
+      <link>https://www.aritro.cloud/projects/byakugan-scan</link>
+      <guid isPermaLink="true">https://www.aritro.cloud/projects/byakugan-scan</guid>
+      <description><![CDATA[
+        <p>Byakugan Scan is a native macOS menu bar utility for instant, in-memory screen OCR, QR code, and barcode recognition. Unlike conventional screenshot OCR tools that write temporary image files to disk and trigger Spotlight or media analysis daemons, Byakugan Scan captures selected screen regions directly into NSPasteboard memory as a CGImage buffer and processes them on the Apple Neural Engine in under 50ms—with zero temporary files, zero network calls, and zero external Swift package dependencies.</p>
+        <p><strong>Official Dedicated Webpage:</strong> <a href="https://byakugan-scan.aritro.cloud">https://byakugan-scan.aritro.cloud</a></p>
+        <p><strong>Source Code Repository:</strong> <a href="https://github.com/halcyon-past/byakugan-scan">https://github.com/halcyon-past/byakugan-scan</a></p>
+        <p><strong>Tech Stack:</strong> Swift 6.0, AppKit, SwiftUI, Apple Vision Framework, Neural Engine, macOS 14+, Homebrew Cask</p>
+      ]]></description>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
+      <author>aritrosaha2025@gmail.com (Aritro Saha)</author>
+      <category>Swift 6.0</category>
+      <category>AppKit</category>
+      <category>SwiftUI</category>
+      <category>Apple Vision Framework</category>
+      <category>Neural Engine</category>
+      <category>macOS 14+</category>
+      <category>Homebrew Cask</category>
+    </item>
+    <item>
+      <title>SutraKey — Instant Shift+Select radial pie menu for video, audio, and clean document actions on macOS</title>
+      <link>https://www.aritro.cloud/projects/sutrakey</link>
+      <guid isPermaLink="true">https://www.aritro.cloud/projects/sutrakey</guid>
+      <description><![CDATA[
+        <p>SutraKey (सूत्र) is a native, lightweight macOS utility designed as an invisible thread connecting text selection to instant media and document actions. When you hold Shift and select any URL or text, an under-cursor radial pie menu smoothly appears, letting you download videos, extract high-bitrate audio, pull clean subtitles, scrape gallery images, or generate ad-free reader-mode PDFs directly into ~/Downloads—with 0% idle CPU and zero background bloat.</p>
+        <p><strong>Official Dedicated Webpage:</strong> <a href="https://sutrakey.aritro.cloud">https://sutrakey.aritro.cloud</a></p>
+        <p><strong>Source Code Repository:</strong> <a href="https://github.com/halcyon-past/SutraKey">https://github.com/halcyon-past/SutraKey</a></p>
+        <p><strong>Tech Stack:</strong> Swift 6.0, AppKit, SwiftUI, CGEventTap, macOS 14+ Sonoma, yt-dlp, ffmpeg, Homebrew Cask</p>
+      ]]></description>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
+      <author>aritrosaha2025@gmail.com (Aritro Saha)</author>
+      <category>Swift 6.0</category>
+      <category>AppKit</category>
+      <category>SwiftUI</category>
+      <category>CGEventTap</category>
+      <category>macOS 14+ Sonoma</category>
+      <category>yt-dlp</category>
+      <category>ffmpeg</category>
+      <category>Homebrew Cask</category>
+    </item>
+    <item>
+      <title>OpenWorld Portfolio — Interactive 2.5D retro Pokémon-inspired open-world developer portfolio set in Pallet Cloud</title>
+      <link>https://www.aritro.cloud/projects/openworld-portfolio</link>
+      <guid isPermaLink="true">https://www.aritro.cloud/projects/openworld-portfolio</guid>
+      <description><![CDATA[
+        <p>OpenWorld Portfolio is an interactive, retro Pokémon-inspired 2.5D open-world developer portfolio set in Pallet Cloud. Built completely from scratch with Next.js 16, React 19, and native HTML5 Canvas 2D without third-party game engines, it features interactive buildings, a high-definition Mega Jumbotron TV, a turn-based Pokémon battle arena against Gym Leader Aritro at the Silicon Gym, a Poké Mart skill shopping cart with rich HTML mail requisitions, and an instant-toggle Executive Recruiter Dossier.</p>
+        <p><strong>Official Dedicated Webpage:</strong> <a href="https://openworld.aritro.cloud/">https://openworld.aritro.cloud/</a></p>
+        <p><strong>Source Code Repository:</strong> <a href="https://github.com/halcyon-past/openworld-portfolio">https://github.com/halcyon-past/openworld-portfolio</a></p>
+        <p><strong>Tech Stack:</strong> Next.js 16, React 19, TypeScript, Tailwind CSS, HTML5 Canvas 2D, Web Audio API, Web Speech API</p>
+      ]]></description>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
+      <author>aritrosaha2025@gmail.com (Aritro Saha)</author>
+      <category>Next.js 16</category>
+      <category>React 19</category>
+      <category>TypeScript</category>
+      <category>Tailwind CSS</category>
+      <category>HTML5 Canvas 2D</category>
+      <category>Web Audio API</category>
+      <category>Web Speech API</category>
+    </item>
+    <item>
+      <title>Quarantine — Zero-dependency dead-letter queue and fault-tolerance library on PyPI. Wrap Python loops with @quarantine to isolate errors without crashing batch jobs.</title>
+      <link>https://www.aritro.cloud/projects/quarantine</link>
+      <guid isPermaLink="true">https://www.aritro.cloud/projects/quarantine</guid>
+      <description><![CDATA[
+        <p>quarantine is an open-source, zero-dependency Python library that brings dead-letter queue resilience to regular loops and batch data pipelines. When processing thousands of records (e.g., CSV ingestion, scraping, API syncing), an unexpected exception at item #5,247 no longer crashes the entire multi-hour run. quarantine safely isolates the failing item, captures the error and full execution state to disk, and keeps the loop running.</p>
+        <p><strong>Official Dedicated Webpage:</strong> <a href="https://pypi.org/project/quarantine-py/">https://pypi.org/project/quarantine-py/</a></p>
+        <p><strong>Source Code Repository:</strong> <a href="https://github.com/halcyon-past/quarantine">https://github.com/halcyon-past/quarantine</a></p>
+        <p><strong>Tech Stack:</strong> Python 3.9+, PyPI, AsyncIO, CLI, Dead-Letter Queue, Fault Tolerance, Pytest</p>
+      ]]></description>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
+      <author>aritrosaha2025@gmail.com (Aritro Saha)</author>
+      <category>Python 3.9+</category>
+      <category>PyPI</category>
+      <category>AsyncIO</category>
+      <category>CLI</category>
+      <category>Dead-Letter Queue</category>
+      <category>Fault Tolerance</category>
+      <category>Pytest</category>
+    </item>
+    <item>
+      <title>Structurify — AI-powered SaaS that transforms messy spreadsheet data into a clean master schema</title>
+      <link>https://www.aritro.cloud/projects/structurify</link>
+      <guid isPermaLink="true">https://www.aritro.cloud/projects/structurify</guid>
+      <description><![CDATA[
+        <p>Structurify is a production-ready, event-driven B2B SaaS platform that turns unstructured CSV and XLSX files into a standardized schema using Google Gemini, with a serverless fan-out architecture on GCP for resilient, scalable processing.</p>
+        <p><strong>Official Dedicated Webpage:</strong> <a href="https://structurify.aritro.cloud">https://structurify.aritro.cloud</a></p>
+        <p><strong>Source Code Repository:</strong> <a href="https://github.com/halcyon-past/Structurify">https://github.com/halcyon-past/Structurify</a></p>
+        <p><strong>Tech Stack:</strong> Next.js 14, React, TailwindCSS, Firebase, FastAPI, Python, LangGraph, Google Gemini, Google Cloud Platform</p>
+      ]]></description>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
+      <author>aritrosaha2025@gmail.com (Aritro Saha)</author>
+      <category>Next.js 14</category>
+      <category>React</category>
+      <category>TailwindCSS</category>
+      <category>Firebase</category>
+      <category>FastAPI</category>
+      <category>Python</category>
+      <category>LangGraph</category>
+      <category>Google Gemini</category>
+      <category>Google Cloud Platform</category>
+    </item>
+    <item>
+      <title>Luffy Laser Dodge — Interactive 3D reflex game dodging laser beams using actual head movements via webcam</title>
+      <link>https://www.aritro.cloud/projects/luffy-laser-dodge</link>
+      <guid isPermaLink="true">https://www.aritro.cloud/projects/luffy-laser-dodge</guid>
+      <description><![CDATA[
+        <p>Luffy Laser Dodge is an interactive, browser-based 3D reflex game where you use your actual head movements via webcam to dodge laser beams shot by Kuma! The game seamlessly melds computer vision with 3D web rendering to create a unique physically interactive experience—all running 100% locally in your browser.</p>
+        <p><strong>Official Dedicated Webpage:</strong> <a href="https://onepiece.aritro.cloud/">https://onepiece.aritro.cloud/</a></p>
+        <p><strong>Source Code Repository:</strong> <a href="https://github.com/halcyon-past/Luffy-Laser-Dodge">https://github.com/halcyon-past/Luffy-Laser-Dodge</a></p>
+        <p><strong>Tech Stack:</strong> React, Vite, React Three Fiber, Three.js, MediaPipe AI, WebAssembly, WebRTC (Legacy), Python FastAPI (Legacy)</p>
+      ]]></description>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
+      <author>aritrosaha2025@gmail.com (Aritro Saha)</author>
+      <category>React</category>
+      <category>Vite</category>
+      <category>React Three Fiber</category>
+      <category>Three.js</category>
+      <category>MediaPipe AI</category>
+      <category>WebAssembly</category>
+      <category>WebRTC (Legacy)</category>
+      <category>Python FastAPI (Legacy)</category>
+    </item>
+    <item>
+      <title>GlideConnect — Virtual mouse control platform using MediaPipe hand-gesture recognition and Google Gemini voice assistant. Published in peer-reviewed IJIRT research.</title>
+      <link>https://www.aritro.cloud/projects/glide-connect</link>
+      <guid isPermaLink="true">https://www.aritro.cloud/projects/glide-connect</guid>
+      <description><![CDATA[
+        <p>A Final Year Project for VIT, this project demonstrates a novel way to control a computer interface using hand gestures and voice commands. It leverages MediaPipe for real-time gesture recognition, integrates a custom voice assistant named Krishna, and incorporates generative AI (using Google Gemini) for enhanced query responses.</p>
+        
+        <p><strong>Source Code Repository:</strong> <a href="https://github.com/halcyon-past/Glide-Connect">https://github.com/halcyon-past/Glide-Connect</a></p>
+        <p><strong>Tech Stack:</strong> Python 3.9, MediaPipe, OpenCV, Google Gemini API, PyAutoGUI, PyCAW</p>
+      ]]></description>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
+      <author>aritrosaha2025@gmail.com (Aritro Saha)</author>
+      <category>Python 3.9</category>
+      <category>MediaPipe</category>
+      <category>OpenCV</category>
+      <category>Google Gemini API</category>
+      <category>PyAutoGUI</category>
+      <category>PyCAW</category>
+    </item>
+    <item>
+      <title>PAWsitive — Centralized pet healthcare platform connecting blood donors, vet clinics, and rescue centers (Winner of Hack4Bengal 3.0)</title>
+      <link>https://www.aritro.cloud/projects/pawsitive</link>
+      <guid isPermaLink="true">https://www.aritro.cloud/projects/pawsitive</guid>
+      <description><![CDATA[
+        <p>PAWsitive is a comprehensive web application designed to help pet owners find blood donors, veterinary clinics, and rescue centers with ease. Built at Hack4Bengal, Eastern India's Largest Hackathon.</p>
+        <p><strong>Official Dedicated Webpage:</strong> <a href="https://www.bepawsitive.xyz">https://www.bepawsitive.xyz</a></p>
+        <p><strong>Source Code Repository:</strong> <a href="https://github.com/halcyon-past/PAW-sitive">https://github.com/halcyon-past/PAW-sitive</a></p>
+        <p><strong>Tech Stack:</strong> React, Next.js, TypeScript, MongoDB, Tailwind CSS, Node.js, Kinde Auth, UploadThing, Callchimp.AI</p>
+      ]]></description>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
+      <author>aritrosaha2025@gmail.com (Aritro Saha)</author>
+      <category>React</category>
+      <category>Next.js</category>
+      <category>TypeScript</category>
+      <category>MongoDB</category>
+      <category>Tailwind CSS</category>
+      <category>Node.js</category>
+      <category>Kinde Auth</category>
+      <category>UploadThing</category>
+      <category>Callchimp.AI</category>
+    </item>
+    <item>
+      <title>SiliconSync — Real-Time AI Technology News Engine</title>
+      <link>https://siliconsync.aritro.cloud/</link>
+      <guid isPermaLink="true">https://siliconsync.aritro.cloud/</guid>
+      <description><![CDATA[
+        <p>Real-time AI-generated technology news intelligence engine and aggregator that extracts and compiles latest tech breakthroughs from authoritative sources worldwide.</p>
+        <p><strong>Official Dedicated Webpage:</strong> <a href="https://siliconsync.aritro.cloud/">https://siliconsync.aritro.cloud/</a></p>
+        <p><strong>Tech Stack:</strong> Artificial Intelligence, Next.js, LLM Agents, Real-time Web Extraction</p>
+      ]]></description>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
+      <author>aritrosaha2025@gmail.com (Aritro Saha)</author>
+      <category>Artificial Intelligence</category>
+      <category>Tech News</category>
+      <category>LLM</category>
+    </item>
+  </channel>
+</rss>

@@ -83,6 +83,28 @@ function testIndexNowKey() {
   assert(key === '1953f9e8941ee7944f2543cb476201b8', 'Key file matches expected IndexNow verification token');
 }
 
+function testRssFeedAndAvif() {
+  console.log('\n🔍 [3b/6] Testing RSS feed & AVIF image formats...');
+  const feedPath = path.join(publicDir, 'feed.xml');
+  assert(fs.existsSync(feedPath), 'public/feed.xml exists');
+
+  const content = fs.readFileSync(feedPath, 'utf8');
+  assert(content.startsWith('<?xml'), 'feed.xml has valid XML declaration');
+  assert(content.includes('<rss version="2.0"'), 'feed.xml contains <rss version="2.0">');
+  assert(content.includes('<channel>'), 'feed.xml contains <channel>');
+  assert(content.includes('<atom:link'), 'feed.xml contains <atom:link>');
+  assert(content.includes('https://siliconsync.aritro.cloud/'), 'feed.xml contains SiliconSync dedicated webpage');
+
+  const itemMatches = content.match(/<item>[\s\S]*?<\/item>/g) || [];
+  assert(itemMatches.length >= 8, `feed.xml contains at least 8 project items (found: ${itemMatches.length})`);
+
+  // Test AVIF assets
+  const avifPath = path.join(publicDir, 'aritro-saha.avif');
+  assert(fs.existsSync(avifPath), 'public/aritro-saha.avif exists');
+  const logoAvifPath = path.join(publicDir, 'logo.avif');
+  assert(fs.existsSync(logoAvifPath), 'public/logo.avif exists');
+}
+
 function testVercelConfig() {
   console.log('\n🔍 [4/6] Testing vercel.json configuration...');
   const vercelPath = path.join(projectRoot, 'vercel.json');
@@ -101,6 +123,11 @@ function testVercelConfig() {
   assert(headerKeys.includes('X-Frame-Options'), 'X-Frame-Options header present (anti-clickjacking)');
   assert(headerKeys.includes('Referrer-Policy'), 'Referrer-Policy header present');
   assert(headerKeys.includes('Permissions-Policy'), 'Permissions-Policy header present');
+  assert(headerKeys.includes('Content-Security-Policy'), 'Content-Security-Policy header present');
+
+  // Verify explicit 1-hop apex to www redirect
+  const apexRedirect = (config.redirects || []).find((r) => r.has?.some((h) => h.value === '^aritro\\.cloud$'));
+  assert(!!apexRedirect && apexRedirect.destination === 'https://www.aritro.cloud/$1' && apexRedirect.permanent === true, 'Explicit 1-hop apex-to-www redirect rule is defined in vercel.json');
 
   // Verify rewrite rule excludes static file extensions (prevents soft 404s)
   const rewrites = config.rewrites || [];
@@ -173,8 +200,27 @@ function testPrerenderedDist() {
     }
     assert(!!parsedJson, `${rel} JSON-LD is valid JSON`);
 
+    // Verify BreadcrumbList on deep pages
+    if (rel.startsWith('projects/') || rel.startsWith('play/')) {
+      const breadcrumbNode = parsedJson['@graph']?.find((n) => n['@type'] === 'BreadcrumbList');
+      assert(!!breadcrumbNode, `${rel} includes BreadcrumbList schema`);
+    }
+
+    // Verify H3 heading depth on project detail pages
+    if (rel.startsWith('projects/')) {
+      const h3Matches = html.match(/<h3[^>]*>[\s\S]*?<\/h3>/gi) || [];
+      assert(h3Matches.length >= 3, `${rel} has at least 3 <h3> subheadings for passage ranking (found: ${h3Matches.length})`);
+    }
+
+    // Verify VideoGame schema on Arcade games
+    if (rel.startsWith('play/') && rel !== 'play/index.html') {
+      const gameNode = parsedJson['@graph']?.find((n) => Array.isArray(n['@type']) ? n['@type'].includes('VideoGame') : n['@type'] === 'VideoGame');
+      assert(!!gameNode, `${rel} includes VideoGame schema`);
+    }
+
     // Verify sameAs entity links include authority signals on homepage
     if (rel === 'index.html') {
+      assert(html.includes('rel="alternate" type="application/rss+xml"'), 'index.html references RSS feed');
       const personNode = parsedJson['@graph']?.find((n) => n['@type'] === 'Person');
       assert(!!personNode, 'Homepage schema includes Person graph entity');
       assert(!!personNode?.image, 'Person schema includes image URL for search engines and AI answer engines');
@@ -220,6 +266,7 @@ function run() {
     testSitemap();
     testRobotsTxt();
     testIndexNowKey();
+    testRssFeedAndAvif();
     testVercelConfig();
     testPrerenderedDist();
     testBundleSize();

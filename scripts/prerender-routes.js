@@ -58,6 +58,12 @@ const personGraphNode = {
       "@type": "SoftwareSourceCode",
       "name": "Quarantine Python",
       "url": "https://pypi.org/project/quarantine-py/"
+    },
+    {
+      "@type": "WebApplication",
+      "name": "SiliconSync",
+      "description": "Real-time AI-generated technology news intelligence engine and aggregator",
+      "url": "https://siliconsync.aritro.cloud/"
     }
   ],
   "knowsAbout": [
@@ -155,7 +161,10 @@ const STATIC_ROUTES = [
       <header>
         <h1>Aritro Saha (aritrosaha) — Software Engineer & Open-Source Creator</h1>
         <figure style="margin: 1.5rem 0;">
-          <img src="${SITE_URL}/aritro-saha.webp" alt="Aritro Saha — Software Engineer 1 at Bristol Myers Squibb & Open-Source Creator" width="400" height="400" style="border-radius: 1rem; max-width: 200px; height: auto;" />
+          <picture>
+            <source srcset="${SITE_URL}/aritro-saha.avif" type="image/avif" />
+            <img src="${SITE_URL}/aritro-saha.webp" alt="Aritro Saha — Software Engineer 1 at Bristol Myers Squibb & Open-Source Creator" width="400" height="400" fetchpriority="high" style="border-radius: 1rem; max-width: 200px; height: auto;" />
+          </picture>
           <figcaption style="font-size: 0.875rem; color: #6b7280; margin-top: 0.5rem;">Aritro Saha (aritrosaha) — Software Engineer & Open-Source Developer</figcaption>
         </figure>
       </header>
@@ -267,7 +276,10 @@ const STATIC_ROUTES = [
       <header>
         <h1>About Aritro Saha — Software Engineer 1 at Bristol Myers Squibb</h1>
         <figure style="margin: 1.5rem 0;">
-          <img src="${SITE_URL}/aritro-saha.webp" alt="Aritro Saha — Software Engineer 1 at Bristol Myers Squibb" width="400" height="400" style="border-radius: 1rem; max-width: 200px; height: auto;" />
+          <picture>
+            <source srcset="${SITE_URL}/aritro-saha.avif" type="image/avif" />
+            <img src="${SITE_URL}/aritro-saha.webp" alt="Aritro Saha — Software Engineer 1 at Bristol Myers Squibb" width="400" height="400" fetchpriority="high" style="border-radius: 1rem; max-width: 200px; height: auto;" />
+          </picture>
           <figcaption style="font-size: 0.875rem; color: #6b7280; margin-top: 0.5rem;">Aritro Saha (Megh) — Software Engineer 1</figcaption>
         </figure>
       </header>
@@ -883,18 +895,25 @@ function run() {
     const description = rawDesc.length > 158 ? `${rawDesc.slice(0, 155).trim()}...` : rawDesc;
     const image = `${SITE_URL}${project.image}`;
 
-    const featuresList = (project.details?.features || [])
-      .map((f) => `<li>${escapeHtml(f)}</li>`)
-      .join('\n            ');
+    const featuresHtml = (project.details?.features || [])
+      .map((f) => {
+        const [fTitle, ...descParts] = f.includes(':') ? f.split(':') : [f, ''];
+        const fDesc = descParts.join(':').trim();
+        return `            <section>
+              <h3>${escapeHtml(fTitle.trim())}</h3>
+              ${fDesc ? `<p>${escapeHtml(fDesc)}</p>` : ''}
+            </section>`;
+      })
+      .join('\n');
     const techList = (project.details?.techStack || [])
       .map((t) => `<li>${escapeHtml(t)}</li>`)
       .join('\n            ');
 
     const linksList = [
-      project.github ? `<li><a href="${project.github}">GitHub Repository</a></li>` : '',
-      project.details?.liveDemo ? `<li><a href="${project.details.liveDemo}">Live Website / Package</a></li>` : '',
-      project.details?.docs ? `<li><a href="${project.details.docs}">Documentation</a></li>` : '',
-      project.details?.researchPaper ? `<li><a href="${project.details.researchPaper}">Published Research Paper</a></li>` : ''
+      project.details?.liveDemo ? `<li><strong>Dedicated Official Webpage:</strong> <a href="${project.details.liveDemo}">${project.details.liveDemo}</a></li>` : '',
+      project.github ? `<li><strong>Source Code Repository:</strong> <a href="${project.github}">${project.github}</a></li>` : '',
+      project.details?.docs ? `<li><strong>Technical Documentation:</strong> <a href="${project.details.docs}">${project.details.docs}</a></li>` : '',
+      project.details?.researchPaper ? `<li><strong>Published Research Paper:</strong> <a href="${project.details.researchPaper}">${project.details.researchPaper}</a></li>` : ''
     ].filter(Boolean).join('\n            ');
 
     const articleHtml = `
@@ -904,20 +923,25 @@ function run() {
         </header>
         <main>
           <article>
-            <h2>Overview</h2>
+            <h2>Project Overview &amp; Architecture</h2>
             <p>${escapeHtml(project.details?.overview || project.description)}</p>
-            <h2>Key Features</h2>
-            <ul>
-            ${featuresList}
-            </ul>
-            <h2>Tech Stack</h2>
-            <ul>
-            ${techList}
-            </ul>
-            <h2>Links</h2>
-            <ul>
-            ${linksList}
-            </ul>
+            
+            <h2>Core Features &amp; Capabilities</h2>
+${featuresHtml}
+
+            <h2>Technical Specifications &amp; Engineering</h2>
+            <section>
+              <h3>Engineering Tech Stack</h3>
+              <ul>
+                ${techList}
+              </ul>
+            </section>
+            <section>
+              <h3>Dedicated Webpages &amp; Official Resources</h3>
+              <ul>
+                ${linksList}
+              </ul>
+            </section>
           </article>
         </main>`;
 
@@ -1079,6 +1103,67 @@ function run() {
   fs.writeFileSync(path.join(distDir, 'ai.txt'), aiTxt, 'utf-8');
 
   console.log(`✅ Generated updated llms.txt, llms-full.txt, and ai.txt.`);
+
+  // 5. Generate RSS 2.0 Feed for projects and software tools
+  const allFeedItems = [
+    ...projects.map((p) => {
+      const pubDate = new Date('2026-10-28T00:00:00Z').toUTCString();
+      const liveDemoLink = p.details?.liveDemo ? `<p><strong>Official Dedicated Webpage:</strong> <a href="${p.details.liveDemo}">${p.details.liveDemo}</a></p>` : '';
+      const githubLink = p.github ? `<p><strong>Source Code Repository:</strong> <a href="${p.github}">${p.github}</a></p>` : '';
+      const techStackDesc = p.details?.techStack?.length ? `<p><strong>Tech Stack:</strong> ${p.details.techStack.join(', ')}</p>` : '';
+      const categories = (p.details?.techStack || ['Software']).map((t) => `      <category>${escapeHtml(t)}</category>`).join('\n');
+
+      return `    <item>
+      <title>${escapeHtml(p.title)} — ${escapeHtml(p.description)}</title>
+      <link>${SITE_URL}/projects/${p.id}</link>
+      <guid isPermaLink="true">${SITE_URL}/projects/${p.id}</guid>
+      <description><![CDATA[
+        <p>${escapeHtml(p.details?.overview || p.description)}</p>
+        ${liveDemoLink}
+        ${githubLink}
+        ${techStackDesc}
+      ]]></description>
+      <pubDate>${pubDate}</pubDate>
+      <author>${CONTACT_EMAIL} (${escapeHtml(AUTHOR.name)})</author>
+${categories}
+    </item>`;
+    }),
+    `    <item>
+      <title>SiliconSync — Real-Time AI Technology News Engine</title>
+      <link>https://siliconsync.aritro.cloud/</link>
+      <guid isPermaLink="true">https://siliconsync.aritro.cloud/</guid>
+      <description><![CDATA[
+        <p>Real-time AI-generated technology news intelligence engine and aggregator that extracts and compiles latest tech breakthroughs from authoritative sources worldwide.</p>
+        <p><strong>Official Dedicated Webpage:</strong> <a href="https://siliconsync.aritro.cloud/">https://siliconsync.aritro.cloud/</a></p>
+        <p><strong>Tech Stack:</strong> Artificial Intelligence, Next.js, LLM Agents, Real-time Web Extraction</p>
+      ]]></description>
+      <pubDate>${new Date('2026-10-28T00:00:00Z').toUTCString()}</pubDate>
+      <author>${CONTACT_EMAIL} (${escapeHtml(AUTHOR.name)})</author>
+      <category>Artificial Intelligence</category>
+      <category>Tech News</category>
+      <category>LLM</category>
+    </item>`
+  ];
+
+  const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>${escapeHtml(AUTHOR.name)} — Software Projects &amp; Releases</title>
+    <link>${SITE_URL}/</link>
+    <description>Official RSS feed of software products, native utilities, and developer projects engineered by ${escapeHtml(AUTHOR.name)}, Software Engineer 1 at Bristol Myers Squibb.</description>
+    <language>en-us</language>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>${CONTACT_EMAIL} (${escapeHtml(AUTHOR.name)})</managingEditor>
+    <webMaster>${CONTACT_EMAIL} (${escapeHtml(AUTHOR.name)})</webMaster>
+${allFeedItems.join('\n')}
+  </channel>
+</rss>
+`;
+
+  fs.writeFileSync(path.join(publicDir, 'feed.xml'), rssXml, 'utf-8');
+  fs.writeFileSync(path.join(distDir, 'feed.xml'), rssXml, 'utf-8');
+  console.log(`✅ Generated RSS feed: public/feed.xml and dist/feed.xml (${allFeedItems.length} items).`);
 }
 
 async function main() {
