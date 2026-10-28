@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { socialMedia } from '../data/data';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Mail, Share2, X, Link as LinkIcon } from 'lucide-react';
+import { TwitterIcon, LinkedinIcon, WhatsappIcon, GithubIcon, InstagramIcon, YoutubeIcon } from './common/BrandIcons';
 
 export default function Footer() {
   const [currentUrl, setCurrentUrl] = useState('https://www.aritro.cloud/');
@@ -17,23 +19,38 @@ export default function Footer() {
   const shareLinks = [
     {
       name: 'Twitter',
-      icon: 'fa-brands fa-x-twitter',
+      Icon: TwitterIcon,
       url: `https://twitter.com/intent/tweet?url=${currentUrl}&text=${encodeURIComponent(shareMessage)}`,
       color: 'text-gray-900 dark:text-gray-100 hover:text-black dark:hover:text-white bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-750',
     },
     {
       name: 'LinkedIn',
-      icon: 'fa-brands fa-linkedin-in',
+      Icon: LinkedinIcon,
       url: `https://www.linkedin.com/shareArticle?mini=true&url=${currentUrl}`,
       color: 'text-[#0a66c2] dark:text-[#0a66c2] hover:text-[#004182] bg-blue-50 dark:bg-blue-950/40 hover:bg-blue-100 dark:hover:bg-blue-900/50',
     },
     {
       name: 'WhatsApp',
-      icon: 'fa-brands fa-whatsapp',
+      Icon: WhatsappIcon,
       url: `https://api.whatsapp.com/send?text=${encodeURIComponent(shareMessage)}${currentUrl}`,
       color: 'text-[#25d366] dark:text-[#25d366] hover:text-[#128c7e] bg-green-50 dark:bg-green-950/40 hover:bg-green-100 dark:hover:bg-green-900/50',
     }
   ];
+
+  const renderSocialIcon = (platform) => {
+    switch (platform.toLowerCase()) {
+      case 'linkedin':
+        return <LinkedinIcon className="w-5 h-5 md:w-6 md:h-6" />;
+      case 'instagram':
+        return <InstagramIcon className="w-5 h-5 md:w-6 md:h-6" />;
+      case 'github':
+        return <GithubIcon className="w-5 h-5 md:w-6 md:h-6" />;
+      case 'youtube':
+        return <YoutubeIcon className="w-5 h-5 md:w-6 md:h-6" />;
+      default:
+        return null;
+    }
+  };
 
   // Prevent scroll when modal is open
   useEffect(() => {
@@ -67,7 +84,7 @@ export default function Footer() {
                 className="text-(--chrysler-blue) hover:text-(--amethyst) font-medium transition-colors duration-300 flex items-center justify-center md:justify-start mt-2"
                 aria-label="Email"
               >
-                <i className="fas fa-envelope mr-2"></i>
+                <Mail className="w-4 h-4 mr-2" />
                 <span>{'aritrosaha2025'}@{'gmail.com'}</span>
               </a>
             </div>
@@ -83,7 +100,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   aria-label={social.ariaLabel}
                 >
-                  <i className={`${social.icon} text-xl md:text-2xl`}></i>
+                  {renderSocialIcon(social.platform)}
                 </a>
               ))}
               
@@ -96,7 +113,7 @@ export default function Footer() {
                 className="text-gray-500 dark:text-gray-400 hover:text-(--amethyst) dark:hover:text-(--amethyst) font-medium transition-transform hover:scale-110 duration-300 focus:outline-none flex items-center justify-center"
                 aria-label="Open Share Options"
               >
-                <i className="fas fa-share-nodes text-xl md:text-2xl"></i>
+                <Share2 className="w-5 h-5 md:w-6 md:h-6" />
               </button>
               
               {/* Visually hidden links so SEO bots and screen readers can crawl them without clicking */}
@@ -139,7 +156,7 @@ export default function Footer() {
                   className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors p-1"
                   aria-label="Close share modal"
                 >
-                  <i className="fas fa-xmark text-lg"></i>
+                  <X className="w-5 h-5" />
                 </button>
               </div>
               
@@ -153,7 +170,7 @@ export default function Footer() {
                     className={`flex flex-col items-center justify-center p-4 rounded-xl transition-all duration-300 ${share.color}`}
                     onClick={() => setTimeout(() => setIsShareModalOpen(false), 200)}
                   >
-                    <i className={`${share.icon} text-3xl mb-2`}></i>
+                    <share.Icon className="w-7 h-7 mb-2" />
                     <span className="text-xs font-medium">{share.name}</span>
                   </a>
                 ))}
@@ -171,7 +188,7 @@ export default function Footer() {
                   }}
                   className="text-xs font-semibold text-gray-500 hover:text-(--amethyst) uppercase tracking-wider transition-colors flex items-center justify-center w-full focus:outline-none"
                 >
-                  <i className="fas fa-link mr-2"></i>
+                  <LinkIcon className="w-4 h-4 mr-2" />
                   Copy Link
                 </button>
               </div>

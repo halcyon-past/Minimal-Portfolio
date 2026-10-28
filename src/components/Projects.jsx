@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Share2 } from 'lucide-react';
 import Gears from './Gears';
 import LazyImage from './common/LazyImage';
 
@@ -144,7 +145,7 @@ export default function Projects({ projects }) {
                   aria-label={`Share ${project.title}`}
                   title={`Share ${project.title}`}
                 >
-                  <i className="fas fa-share-alt text-xl"></i>
+                  <Share2 size={20} />
                 </button>
               </div>
               <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">

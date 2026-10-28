@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { RefreshCw, Trophy, Cpu, User, Play, Settings } from 'lucide-react';
+import { RefreshCw, Trophy, Cpu, User, Play, Settings, ArrowLeft } from 'lucide-react';
 import PageTransition from '../../components/common/PageTransition';
 
 const PythonLogo = ({ className }) => (
@@ -168,7 +168,7 @@ export default function TicTacToePage() {
         <div className="w-full flex justify-start mb-4 relative z-10">
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
             <Link to="/play" className="text-gray-500 dark:text-gray-400 hover:text-purple-500 flex items-center gap-2 transition-colors text-sm md:text-base font-medium bg-white dark:bg-gray-950 px-4 py-2 rounded-full shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md">
-              <i className="fas fa-arrow-left"></i> Back to Arcade
+              <ArrowLeft className="w-4 h-4" /> Back to Arcade
             </Link>
           </motion.div>
         </div>

@@ -34,6 +34,9 @@ citation-format: "Aritro Saha (https://www.aritro.cloud)"
 [scope]
 included: /
 included: /about
+included: /aritrosaha
+included: /resume
+included: /blog/*
 included: /projects/*
 included: /play/*
 included: /gallery

@@ -917,6 +917,29 @@ function buildRouteHtml(template, { route, title, description, image, articleHtm
     /<meta data-rh="true" property="og:image" content="[^"]*"\s*\/>/,
     `<meta data-rh="true" property="og:image" content="${escapedImage}" />`
   );
+
+  let imageMimeType = 'image/jpeg';
+  if (escapedImage.endsWith('.webp')) {
+    imageMimeType = 'image/webp';
+  } else if (escapedImage.endsWith('.avif')) {
+    imageMimeType = 'image/avif';
+  } else if (escapedImage.endsWith('.png')) {
+    imageMimeType = 'image/png';
+  }
+
+  html = html.replace(
+    /<meta data-rh="true" property="og:image:type" content="[^"]*"\s*\/>/,
+    `<meta data-rh="true" property="og:image:type" content="${imageMimeType}" />`
+  );
+
+  const isBlogPost = route.startsWith('/blog/') && route !== '/blog';
+  const ogType = isBlogPost ? 'article' : 'website';
+
+  html = html.replace(
+    /<meta data-rh="true" property="og:type" content="[^"]*"\s*\/>/,
+    `<meta data-rh="true" property="og:type" content="${ogType}" />`
+  );
+
   html = html.replace(
     /<meta data-rh="true" name="twitter:url" content="[^"]*"\s*\/>/,
     `<meta data-rh="true" name="twitter:url" content="${canonicalUrl}" />`
@@ -949,6 +972,7 @@ function buildRouteHtml(template, { route, title, description, image, articleHtm
         <span style="opacity: 0.5;">/</span>
         <a href="${SITE_URL}/about">About</a>
         <a href="${SITE_URL}/resume">Resume</a>
+        <a href="${SITE_URL}/blog">Blog</a>
         <a href="${SITE_URL}/play">Arcade</a>
         <a href="${SITE_URL}/gallery">Gallery</a>
         <a href="${SITE_URL}/aritrosaha">Dossier</a>

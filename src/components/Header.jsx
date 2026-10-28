@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon, Terminal } from 'lucide-react';
 import { useDarkMode } from '../hooks/useDarkMode';
 import logo from '/logo.webp';
 
@@ -91,7 +91,7 @@ export default function Header() {
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-(--amethyst) transition-all duration-300 group-hover:w-full"></span>
           </Link>
           <Link to="/play" className="relative group flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold rounded-md bg-(--amethyst)/10 text-(--chrysler-blue) dark:text-purple-300 hover:bg-(--amethyst) hover:text-white transition-all duration-300 border border-(--amethyst)/30 shadow-[0_0_10px_var(--amethyst)]/20">
-            <i className="fas fa-terminal"></i> Play
+            <Terminal size={14} className="shrink-0" /> Play
           </Link>
           <button 
             onClick={() => setIsDark(!isDark)}
@@ -199,7 +199,7 @@ export default function Header() {
                     onClick={() => setMenuOpen(false)}
                     className="relative group text-(--chrysler-blue) dark:text-purple-300 font-medium flex items-center justify-center gap-2"
                   >
-                    <i className="fas fa-terminal"></i> Play Game
+                    <Terminal size={18} className="shrink-0" /> Play Game
                   </Link>
                 </motion.div>
 

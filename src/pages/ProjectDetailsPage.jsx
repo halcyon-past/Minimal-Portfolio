@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ExternalLink, Layers, Target, Code2, BookOpen, Package } from 'lucide-react';
+import { GithubIcon } from '../components/common/BrandIcons';
 import { projects } from '../data/data';
 import PageTransition from '../components/common/PageTransition';
 import Seo from '../components/common/Seo';
@@ -74,7 +75,7 @@ const ProjectDetailsPage = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gray-900 border border-transparent dark:bg-white text-white dark:text-gray-900 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-medium"
                 >
-                  <i className="fab fa-github text-xl mr-2"></i>
+                  <GithubIcon className="w-5 h-5 mr-2" />
                   View Source
                 </a>
               )}

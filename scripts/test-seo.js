@@ -121,6 +121,7 @@ function testVercelConfig() {
 
   const headerKeys = (rootHeaderRule?.headers || []).map((h) => h.key);
   assert(headerKeys.includes('X-Content-Type-Options'), 'X-Content-Type-Options header present');
+  assert(headerKeys.includes('Vary'), 'Vary header present (content-negotiation safety)');
   assert(headerKeys.includes('X-Frame-Options'), 'X-Frame-Options header present (anti-clickjacking)');
   assert(headerKeys.includes('Referrer-Policy'), 'Referrer-Policy header present');
   assert(headerKeys.includes('Permissions-Policy'), 'Permissions-Policy header present');
@@ -211,7 +212,10 @@ function testPrerenderedDist() {
     if (rel.startsWith('blog/') && rel !== 'blog/index.html') {
       const articleNode = parsedJson['@graph']?.find((n) => n['@type'] === 'TechArticle' || n['@type'] === 'BlogPosting');
       assert(!!articleNode, `${rel} includes TechArticle schema`);
+      assert(html.includes('property="og:type" content="article"'), `${rel} has og:type="article"`);
     }
+
+    assert(!html.includes('font-awesome'), `${rel} does not contain render-blocking FontAwesome stylesheet`);
 
     // Verify H3 heading depth on project detail pages
     if (rel.startsWith('projects/')) {
@@ -228,6 +232,7 @@ function testPrerenderedDist() {
     // Verify sameAs entity links include authority signals on homepage
     if (rel === 'index.html') {
       assert(html.includes('rel="alternate" type="application/rss+xml"'), 'index.html references RSS feed');
+      assert(html.includes('https://www.aritro.cloud/blog'), 'index.html has static internal link to /blog');
       const personNode = parsedJson['@graph']?.find((n) => n['@type'] === 'Person');
       assert(!!personNode, 'Homepage schema includes Person graph entity');
       assert(!!personNode?.image, 'Person schema includes image URL for search engines and AI answer engines');

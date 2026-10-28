@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Command } from 'cmdk';
 import { useNavigate } from 'react-router-dom';
-import { FileText, User, Image, Link as LinkIcon, Command as CommandIcon, Mail, Folder, Gamepad2, Search, Download, BookOpen } from 'lucide-react';
+import { FileText, User, Image, Link as LinkIcon, Command as CommandIcon, Mail, Folder, Gamepad2, Search, Download, BookOpen, Newspaper, Code } from 'lucide-react';
+import { GithubIcon, LinkedinIcon, YoutubeIcon, LeetcodeIcon } from './BrandIcons';
 import { projects } from '../../data/data';
 import { blogPosts } from '../../data/blogData';
 import './CommandPalette.css';
@@ -91,7 +92,7 @@ export default function CommandPalette() {
             <Command.Group heading="Projects" className="cmdk-group">
               {projects.map((project, index) => (
                 <Command.Item key={index} onSelect={() => runCommand(() => window.open(project.link, '_blank'))}>
-                  <i className={`fab fa-github opacity-70 w-4 h-4 flex items-center justify-center ${project.color || ''}`}></i> {project.title}
+                  <GithubIcon size={16} className={`opacity-70 shrink-0 ${project.color || ''}`} /> {project.title}
                 </Command.Item>
               ))}
             </Command.Group>
@@ -115,22 +116,22 @@ export default function CommandPalette() {
 
             <Command.Group heading="News" className="cmdk-group">
               <Command.Item onSelect={() => runCommand(() => window.open('https://siliconsync.aritro.cloud/', '_blank'))}>
-                <i className="fas fa-newspaper opacity-70 w-4 h-4 flex items-center justify-center"></i> SiliconSync AI News
+                <Newspaper size={16} className="opacity-70 shrink-0" /> SiliconSync AI News
               </Command.Item>
             </Command.Group>
 
             <Command.Group heading="Links" className="cmdk-group">
               <Command.Item onSelect={() => runCommand(() => window.open('https://github.com/halcyon-past', '_blank'))}>
-                <i className="fab fa-github opacity-70 w-4 h-4 flex items-center justify-center"></i> GitHub Profile
+                <GithubIcon size={16} className="opacity-70 shrink-0" /> GitHub Profile
               </Command.Item>
               <Command.Item onSelect={() => runCommand(() => window.open('https://linkedin.com/in/aritro-saha', '_blank'))}>
-                <i className="fab fa-linkedin opacity-70 w-4 h-4 flex items-center justify-center"></i> LinkedIn Profile
+                <LinkedinIcon size={16} className="opacity-70 shrink-0" /> LinkedIn Profile
               </Command.Item>
               <Command.Item onSelect={() => runCommand(() => window.open('https://leetcode.com/u/AritroSaha/', '_blank'))}>
-                <i className="fas fa-code opacity-70 w-4 h-4 flex items-center justify-center"></i> LeetCode Profile
+                <LeetcodeIcon size={16} className="opacity-70 shrink-0" /> LeetCode Profile
               </Command.Item>
               <Command.Item onSelect={() => runCommand(() => window.open('https://www.youtube.com/@veripyed', '_blank'))}>
-                <i className="fab fa-youtube opacity-70 w-4 h-4 flex items-center justify-center"></i> YouTube Channel
+                <YoutubeIcon size={16} className="opacity-70 shrink-0" /> YouTube Channel
               </Command.Item>
               <Command.Item onSelect={() => runCommand(() => window.location.href = `mailto:${'aritrosaha2025'}@${'gmail.com'}`)}>
                 <Mail size={16} /> Send Email

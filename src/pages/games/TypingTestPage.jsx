@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { ArrowLeft, Trophy, RotateCcw, Share2, Keyboard } from 'lucide-react';
 
 const CODE_WORDS = [
   'const', 'let', 'var', 'function', 'return', 'if', 'else', 'for', 'while', 'do',
@@ -203,7 +204,7 @@ export default function TypingTestPage() {
             to="/play"
             className="text-gray-500 dark:text-gray-400 hover:text-(--amethyst) flex items-center gap-2 transition-colors text-sm md:text-base font-medium bg-white dark:bg-gray-950 px-4 py-2 rounded-full shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md hover:border-(--amethyst)/30"
           >
-            <i className="fas fa-arrow-left"></i> Back to Arcade
+            <ArrowLeft className="w-4 h-4" /> Back to Arcade
           </Link>
         </motion.div>
       </div>
@@ -273,7 +274,7 @@ export default function TypingTestPage() {
                     <span className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-gray-100">{accuracy}<span className="text-3xl text-[#27c93f]">%</span></span>
                   </div>
                   <div className="bg-gray-50 dark:bg-gray-900 px-10 py-6 rounded-xl flex flex-col min-w-[200px] border-t-2 border-[#ffbd2e] shadow-sm">
-                    <span className="text-gray-500 dark:text-gray-400 text-sm uppercase tracking-wider mb-2 flex items-center justify-center gap-2"><i className="fas fa-trophy text-[#ffbd2e]"></i> Best</span>
+                    <span className="text-gray-500 dark:text-gray-400 text-sm uppercase tracking-wider mb-2 flex items-center justify-center gap-2"><Trophy className="w-4 h-4 text-[#ffbd2e]" /> Best</span>
                     <span className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-gray-100">{Math.max(wpm, bestWpm)} <span className="text-2xl text-[#ffbd2e]">WPM</span></span>
                   </div>
                 </div>
@@ -283,13 +284,13 @@ export default function TypingTestPage() {
                     onClick={(e) => { e.stopPropagation(); startGame(); }}
                     className="px-8 py-3.5 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 font-medium rounded-lg transition-colors w-full sm:w-auto border border-gray-300 dark:border-gray-700"
                   >
-                    <i className="fas fa-redo mr-2 text-sm"></i> Try Again
+                    <RotateCcw className="w-4 h-4 mr-2 inline-block" /> Try Again
                   </button>
                   <button 
                     onClick={(e) => { e.stopPropagation(); handleShare(); }}
                     className="px-8 py-3.5 bg-(--amethyst) hover:bg-(--chrysler-blue) text-white font-medium rounded-lg shadow-lg shadow-(--amethyst)/20 transition-all w-full sm:w-auto flex items-center justify-center gap-2"
                   >
-                    <i className="fas fa-share-nodes text-sm"></i> Challenge Friends
+                    <Share2 className="w-4 h-4" /> Challenge Friends
                   </button>
                 </div>
               </motion.div>
@@ -303,7 +304,7 @@ export default function TypingTestPage() {
                     onClick={(e) => { e.stopPropagation(); startGame(); }}
                     className="text-(--amethyst) px-6 py-3 border-2 border-(--amethyst)/50 rounded-lg bg-white/90 dark:bg-gray-950/90 font-medium animate-pulse shadow-lg flex items-center gap-3 hover:bg-(--amethyst) hover:text-white transition-colors cursor-pointer"
                   >
-                    <i className="fas fa-keyboard"></i> Start Typing
+                    <Keyboard className="w-5 h-5" /> Start Typing
                   </button>
                 </div>
               )}

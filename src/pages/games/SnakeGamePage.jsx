@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { RefreshCw, Play, Trophy, Gamepad2 } from 'lucide-react';
+import { RefreshCw, Play, Trophy, Gamepad2, ArrowLeft, ChevronUp, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const GRID_SIZE = 20;
 const INITIAL_SPEED = 150;
@@ -192,7 +192,7 @@ export default function SnakeGamePage() {
       <div className="w-full flex justify-start mb-4 relative z-10">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
           <Link to="/play" className="text-gray-500 dark:text-gray-400 hover:text-[#ffbd2e] flex items-center gap-2 transition-colors text-sm md:text-base font-medium bg-white dark:bg-gray-950 px-4 py-2 rounded-full shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md">
-            <i className="fas fa-arrow-left"></i> Back to Arcade
+            <ArrowLeft className="w-4 h-4" /> Back to Arcade
           </Link>
         </motion.div>
       </div>
@@ -278,29 +278,33 @@ export default function SnakeGamePage() {
           <button 
             className="absolute top-2 left-1/2 -translate-x-1/2 w-14 h-14 bg-white dark:bg-gray-950 rounded-full shadow-md hover:bg-gray-50 dark:hover:bg-gray-900 active:scale-90 active:bg-gray-200 dark:active:bg-gray-700 transition-all flex items-center justify-center text-gray-700 dark:text-gray-300" 
             onClick={() => changeDirection({ x: 0, y: -1 })}
+            aria-label="Move Up"
           >
-            <i className="fas fa-chevron-up text-xl"></i>
+            <ChevronUp className="w-6 h-6" />
           </button>
           
           <button 
             className="absolute bottom-2 left-1/2 -translate-x-1/2 w-14 h-14 bg-white dark:bg-gray-950 rounded-full shadow-md hover:bg-gray-50 dark:hover:bg-gray-900 active:scale-90 active:bg-gray-200 dark:active:bg-gray-700 transition-all flex items-center justify-center text-gray-700 dark:text-gray-300" 
             onClick={() => changeDirection({ x: 0, y: 1 })}
+            aria-label="Move Down"
           >
-            <i className="fas fa-chevron-down text-xl"></i>
+            <ChevronDown className="w-6 h-6" />
           </button>
           
           <button 
             className="absolute left-2 top-1/2 -translate-y-1/2 w-14 h-14 bg-white dark:bg-gray-950 rounded-full shadow-md hover:bg-gray-50 dark:hover:bg-gray-900 active:scale-90 active:bg-gray-200 dark:active:bg-gray-700 transition-all flex items-center justify-center text-gray-700 dark:text-gray-300" 
             onClick={() => changeDirection({ x: -1, y: 0 })}
+            aria-label="Move Left"
           >
-            <i className="fas fa-chevron-left text-xl"></i>
+            <ChevronLeft className="w-6 h-6" />
           </button>
           
           <button 
             className="absolute right-2 top-1/2 -translate-y-1/2 w-14 h-14 bg-white dark:bg-gray-950 rounded-full shadow-md hover:bg-gray-50 dark:hover:bg-gray-900 active:scale-90 active:bg-gray-200 dark:active:bg-gray-700 transition-all flex items-center justify-center text-gray-700 dark:text-gray-300" 
             onClick={() => changeDirection({ x: 1, y: 0 })}
+            aria-label="Move Right"
           >
-            <i className="fas fa-chevron-right text-xl"></i>
+            <ChevronRight className="w-6 h-6" />
           </button>
 
           {/* Center Joystick indent / Score */}
