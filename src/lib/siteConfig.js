@@ -19,7 +19,7 @@ export const AUTHOR = {
   },
   award: "Winner of Hack4Bengal 3.0 (Eastern India's Largest Hackathon)",
   description: 'Software Engineer 1 at Bristol Myers Squibb building high-throughput data pipelines, cloud infrastructure, native macOS utilities, and interactive web applications.',
-  disambiguatingDescription: 'Software Engineer 1 at Bristol Myers Squibb and open-source creator; not to be confused with Aritro Saha (Director of Product Design at Eightfold AI).',
+  disambiguatingDescription: 'Software Engineer 1 at Bristol Myers Squibb and open-source creator; legally named Aritro Saha (Bengali: অরিত্র সাহা, English: Aritro Saha), distinct from academic researcher Aritra Saha and Director of UX Design Aritro Saha at Eightfold AI.',
   image: `${SITE_URL}/aritro-saha.webp`,
   wikidata: 'https://www.wikidata.org/wiki/Q141715213',
   orcid: 'https://orcid.org/0009-0007-0861-3978',

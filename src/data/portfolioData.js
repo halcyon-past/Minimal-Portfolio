@@ -167,7 +167,7 @@ export const projects = [
   {
     id: 'pawsitive',
     title: 'PAWsitive',
-    description: 'Centralized Platform for Pet Healthcare',
+    description: 'Centralized pet healthcare platform connecting blood donors, vet clinics, and rescue centers (Winner of Hack4Bengal 3.0)',
     image: '/assets/Pawsitive.webp',
     alt: 'Pawsitive pet healthcare platform interface',
     link: '/projects/pawsitive',

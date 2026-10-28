@@ -21,6 +21,7 @@ export default function Seo({
   const keywords = "Aritro, Aritro Saha, Aritro BMS, Aritro Software Engineer, Aritro Software Engineer 1, Software Engineer 1, Aritro Developer, Aritro Games, Aritro Arcade, Byakugan Scan, SutraKey, OpenWorld Portfolio, Quarantine Python, Structurify, Software Developer, Portfolio, Full-Stack, React, Node.js, Python, Swift, Databricks, AI, Machine Learning, Bristol Myers Squibb";
 
   const canonicalUrl = url.startsWith('http') ? url : `${SITE_URL}${url.startsWith('/') ? url : `/${url}`}`;
+  const fullImage = image?.startsWith('http') ? image : `${SITE_URL}${image?.startsWith('/') ? image : `/${image}`}`;
   
   // Calculate markdown URL for alternate link tag
   let cleanPath = url.split('?')[0].replace(/\/$/, '');
@@ -208,14 +209,14 @@ export default function Seo({
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={finalDescription} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={fullImage} />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:url" content={canonicalUrl} />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={finalDescription} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={fullImage} />
 
       {/* Structured Data */}
       <script type="application/ld+json">

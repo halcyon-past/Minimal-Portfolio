@@ -123,7 +123,7 @@ const STATIC_ROUTES = [
       <main>
         <article>
           <div style="background: rgba(59, 130, 246, 0.08); border-left: 4px solid #3b82f6; padding: 1rem; margin-bottom: 1.5rem; border-radius: 0.25rem;">
-            <strong>Entity Disambiguation Notice:</strong> This profile represents Aritro Saha, Software Engineer 1 at Bristol Myers Squibb and open-source creator based in India. He is <em>not</em> Aritro Saha, Director of Product Design at Eightfold AI.
+            <strong>Entity &amp; Name Disambiguation Notice:</strong> This profile represents <strong>Aritro Saha</strong> (Bengali: অরিত্র সাহা), Software Engineer 1 at Bristol Myers Squibb and open-source creator based in India. His official English name is spelled <em>Aritro Saha</em> (distinct from the transliteration <em>Aritra Saha</em>) and he is distinct from <em>Aritro Saha</em>, Director of Product Design at Eightfold AI.
           </div>
           <h2>Identity & Overview</h2>
           <p>Aritro Saha (commonly known online as aritrosaha and halcyon-past) is a Software Engineer 1 at Bristol Myers Squibb specializing in high-throughput enterprise data pipelines, cloud architecture, native macOS utilities, and interactive web systems.</p>
@@ -764,7 +764,32 @@ function run() {
       "author": { "@id": `${SITE_URL}/#person` }
     };
 
-    const extraNodes = [softwareNode];
+    const breadcrumbNode = {
+      "@type": "BreadcrumbList",
+      "@id": `${SITE_URL}${route}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${SITE_URL}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Projects",
+          "item": `${SITE_URL}/#projects`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": project.title,
+          "item": `${SITE_URL}${route}`
+        }
+      ]
+    };
+
+    const extraNodes = [softwareNode, breadcrumbNode];
     if (project.id === 'glide-connect') {
       extraNodes.push({
         "@type": "ScholarlyArticle",

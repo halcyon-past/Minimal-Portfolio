@@ -26,7 +26,7 @@ export function generateLlmsTxt() {
     '- **Primary Works**: Byakugan Scan (macOS Vision OCR), SutraKey (macOS radial action pie menu), OpenWorld Portfolio (Next.js/React 2.5D game), Quarantine Python (PyPI package: quarantine-py)',
     '- **Upstream Open-Source**: Core contributor to Kestra (DuckDB JDBC plugin engine)',
     '- **Verified Author Photo**: https://www.aritro.cloud/aritro-saha.webp',
-    '- **Entity Disambiguation**: Aritro Saha (this individual) is the Software Engineer at Bristol Myers Squibb and open-source software creator. He is NOT Aritro Saha, the Director of UX Design at Eightfold AI.',
+    '- **Entity Disambiguation & Transliteration**: Aritro Saha (Bengali: অরিত্র সাহা, pronounced /ə-rɪ-troʊ ˈsɑːhɑː/). His official English transliteration is Aritro Saha (ending in -ro, distinct from the alternate transliteration Aritra Saha). He is a Software Engineer 1 at Bristol Myers Squibb and open-source creator; distinct from academic researcher Aritra Saha and distinct from Aritro Saha (Director of UX Design at Eightfold AI).',
     '- **Wikidata Entity**: Q141715213 (https://www.wikidata.org/wiki/Q141715213)',
     '- **ORCID**: 0009-0007-0861-3978 (https://orcid.org/0009-0007-0861-3978)',
     '- **Canonical Website**: https://www.aritro.cloud/',

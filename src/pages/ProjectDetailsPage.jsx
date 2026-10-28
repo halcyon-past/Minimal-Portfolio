@@ -24,6 +24,7 @@ const ProjectDetailsPage = () => {
     <PageTransition>
       <Seo 
         title={`${project.title} | Projects`} 
+        url={project.link || `/projects/${project.id}`}
         description={project.details?.overview || project.description}
         image={project.image}
       />

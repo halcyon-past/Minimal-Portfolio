@@ -35,7 +35,7 @@ Currently serving as a Software Engineer 1 at **Bristol Myers Squibb** (July 202
 - [Structurify](https://www.aritro.cloud/projects/structurify) — AI-powered SaaS that transforms messy spreadsheet data into a clean master schema (Next.js 14, React, TailwindCSS, Firebase)
 - [Luffy Laser Dodge](https://www.aritro.cloud/projects/luffy-laser-dodge) — Interactive 3D reflex game dodging laser beams using actual head movements via webcam (React, Vite, React Three Fiber, Three.js)
 - [GlideConnect](https://www.aritro.cloud/projects/glide-connect) — Virtual Mouse Control using Gesture Recognition and Voice Assistant (Python 3.9, MediaPipe, OpenCV, Google Gemini API)
-- [PAWsitive](https://www.aritro.cloud/projects/pawsitive) — Centralized Platform for Pet Healthcare (React, Next.js, TypeScript, MongoDB)
+- [PAWsitive](https://www.aritro.cloud/projects/pawsitive) — Centralized pet healthcare platform connecting blood donors, vet clinics, and rescue centers (Winner of Hack4Bengal 3.0) (React, Next.js, TypeScript, MongoDB)
 
 ## The Developer Arcade (Aritro Games)
 An interactive suite of developer-themed browser mini-games engineered in React:
@@ -807,7 +807,7 @@ A Final Year Project for VIT, this project demonstrates a novel way to control a
 
 # PAWsitive — by Aritro Saha
 
-> Centralized Platform for Pet Healthcare
+> Centralized pet healthcare platform connecting blood donors, vet clinics, and rescue centers (Winner of Hack4Bengal 3.0)
 
 Canonical: https://www.aritro.cloud/projects/pawsitive
 Last updated: 2026-10-26

@@ -44,9 +44,9 @@ export default function About() {
                 fetchpriority="high"
               />
             </div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-900 dark:text-gray-100 cursor-default">
+            <h1 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-900 dark:text-gray-100 cursor-default">
               About <span className="text-(--amethyst) font-bold">Me</span>
-            </h2>
+            </h1>
           </motion.div>
           
           <div className="md:w-1/2 text-gray-700 dark:text-gray-300 cursor-default">

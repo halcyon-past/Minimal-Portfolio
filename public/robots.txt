@@ -13,26 +13,32 @@ Content-Signal: search=yes, ai-input=yes, ai-train=yes
 User-agent: OAI-SearchBot
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 User-agent: ChatGPT-User
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 User-agent: Claude-SearchBot
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 User-agent: Claude-User
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 User-agent: PerplexityBot
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 User-agent: Perplexity-User
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 # ==============================================================================
 # AI Model Training Crawlers (Explicitly Allowed by Site Owner)
@@ -40,26 +46,32 @@ Disallow: /assets/resume/
 User-agent: GPTBot
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 User-agent: ClaudeBot
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 User-agent: Google-Extended
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 User-agent: Applebot-Extended
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 User-agent: CCBot
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 User-agent: Bytespider
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 # ==============================================================================
 # Other LLM & Search Agents
@@ -67,38 +79,47 @@ Disallow: /assets/resume/
 User-agent: anthropic-ai
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 User-agent: Googlebot
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 User-agent: Applebot
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 User-agent: Amazonbot
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 User-agent: YouBot
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 User-agent: DuckAssistBot
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 User-agent: Bravebot
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 User-agent: cohere-ai
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 User-agent: Meta-ExternalAgent
 Allow: /
 Disallow: /assets/resume/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 # ==============================================================================
 # Machine-Readable Indexes & Verification
