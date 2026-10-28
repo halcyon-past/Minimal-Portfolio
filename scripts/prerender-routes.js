@@ -89,6 +89,61 @@ const organizationGraphNode = {
 
 const STATIC_ROUTES = [
   {
+    route: '/aritrosaha',
+    title: 'Aritro Saha (aritrosaha) | Software Engineer & Creator',
+    description: 'Official verified portfolio & engineering dossier of Aritro Saha (aritrosaha). Software Engineer 1 at Bristol Myers Squibb, Winner of Hack4Bengal 3.0, and creator of Byakugan Scan and SutraKey.',
+    image: `${SITE_URL}/banner-social.jpg`,
+    articleHtml: `
+      <header>
+        <h1>Aritro Saha (aritrosaha) — Software Engineer & Open-Source Creator</h1>
+      </header>
+      <main>
+        <article>
+          <h2>Identity & Overview</h2>
+          <p>Aritro Saha (commonly known online as aritrosaha and halcyon-past) is a Software Engineer 1 at Bristol Myers Squibb specializing in high-throughput enterprise data pipelines, cloud architecture, native macOS utilities, and interactive web systems.</p>
+          <h2>Key Accolades & Leadership</h2>
+          <ul>
+            <li><strong>Hack4Bengal 3.0 Grand Champion</strong> — Team Lead & 1st Place Winner out of 3,000+ applicants (PAWsitive animal healthcare triage).</li>
+            <li><strong>LeetCode Knight</strong> — Peak rating 1868 (Top 6% globally), 630+ algorithmic solutions.</li>
+            <li><strong>Published First Author</strong> — IJIRT research on low-latency multimodal computer vision interfaces (Paper ID: 180711).</li>
+            <li><strong>Upstream Core Contributor</strong> — Kestra (kestra-io/plugin-jdbc v2.2.0, DuckDB file capture engine).</li>
+          </ul>
+          <h2>Featured Works</h2>
+          <ul>
+            <li><a href="${SITE_URL}/projects/byakugan-scan">Byakugan Scan</a> — Instant in-memory screen OCR, QR, and barcode scanner for macOS (Swift 6.0, Apple Vision Framework).</li>
+            <li><a href="${SITE_URL}/projects/sutrakey">SutraKey</a> — Shift + Select liquid radial menu for instant media & clean document actions on macOS.</li>
+            <li><a href="${SITE_URL}/projects/openworld-portfolio">OpenWorld Portfolio</a> — 2.5D retro Pokémon-style developer world in Pallet Cloud.</li>
+            <li><a href="${SITE_URL}/projects/quarantine">Quarantine (quarantine-py)</a> — Fault-tolerant Python error isolation & dead-letter queue decorator on PyPI.</li>
+          </ul>
+          <h2>Career & Education</h2>
+          <ul>
+            <li><strong>Software Engineer 1, Bristol Myers Squibb</strong> (July 2025 – Present)</li>
+            <li><strong>Data Science Intern, Bajaj Finserv Health</strong> (Feb 2025 – June 2025)</li>
+            <li><strong>Full Stack Developer Intern, Wipro</strong> (Oct 2023 – Dec 2023)</li>
+            <li><strong>B.Tech in Electronics & Computer Engineering</strong> — Vellore Institute of Technology, Chennai (2025)</li>
+            <li><strong>High School</strong> — Birla Bharati, Kolkata (2021)</li>
+          </ul>
+        </article>
+      </main>
+    `
+  },
+  {
+    route: '/aritro-saha',
+    title: 'Aritro Saha | Software Engineer & Creator',
+    description: 'Official portfolio & engineering dossier of Aritro Saha. Software Engineer 1 at Bristol Myers Squibb, Winner of Hack4Bengal 3.0, and creator of Byakugan Scan and SutraKey.',
+    image: `${SITE_URL}/banner-social.jpg`,
+    articleHtml: `
+      <header>
+        <h1>Aritro Saha — Software Engineer & Creator</h1>
+      </header>
+      <main>
+        <article>
+          <p>Official canonical dossier for Aritro Saha. Please see <a href="${SITE_URL}/aritrosaha">https://www.aritro.cloud/aritrosaha</a> for the primary profile.</p>
+        </article>
+      </main>
+    `
+  },
+  {
     route: '/about',
     title: 'About Aritro Saha | Software Engineer 1 at Bristol Myers Squibb',
     description: 'Learn about Aritro Saha (Megh), a Software Engineer 1 at Bristol Myers Squibb, VIT Chennai graduate, and Winner of Hack4Bengal 3.0.',

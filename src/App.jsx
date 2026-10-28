@@ -51,6 +51,24 @@ function AnimatedRoutes() {
           } 
         />
         <Route 
+          path="/aritrosaha" 
+          element={
+            <PageTransition>
+              <Seo title="Aritro Saha (aritrosaha) | Software Engineer & Creator" url="/aritrosaha" description="Official verified profile of Aritro Saha (aritrosaha). Software Engineer 1 at Bristol Myers Squibb, Winner of Hack4Bengal 3.0, and creator of Byakugan Scan and SutraKey." />
+              <AboutPage />
+            </PageTransition>
+          } 
+        />
+        <Route 
+          path="/aritro-saha" 
+          element={
+            <PageTransition>
+              <Seo title="Aritro Saha | Software Engineer & Creator" url="/aritrosaha" description="Official verified profile of Aritro Saha. Software Engineer 1 at Bristol Myers Squibb, Winner of Hack4Bengal 3.0, and creator of Byakugan Scan and SutraKey." />
+              <AboutPage />
+            </PageTransition>
+          } 
+        />
+        <Route 
           path="/gallery" 
           element={
             <PageTransition>

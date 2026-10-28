@@ -117,6 +117,47 @@ I won Hack4Bengal 3.0—Eastern India's largest hackathon—leading rapid full-s
 
 ---
 
+<!-- source: https://www.aritro.cloud/aritrosaha -->
+
+# About Aritro Saha — Software Engineer 1 at Bristol Myers Squibb
+
+> Professional experience, engineering education, hackathon awards, and core technical proficiencies of Aritro Saha.
+
+Canonical: https://www.aritro.cloud/about
+Last updated: 2026-10-26
+
+## Biography
+I am a Software Engineer 1 at Bristol Myers Squibb with a deep focus on data science engineering and resilient full-stack systems. I architect and maintain scalable backend services, event-driven streaming pipelines, and high-performance user interfaces.
+
+I won Hack4Bengal 3.0—Eastern India's largest hackathon—leading rapid full-stack and mobile prototyping under intense competition constraints. When not building software, I explore digital audio signal experiments, beatboxing, and football.
+
+## Professional Experience
+| Role & Organization | Duration |
+| --- | --- |
+| Software Engineer 1, Bristol Myers Squibb | July 2025 - Present |
+| Data Science Intern, Bajaj Finserv Health | Feb 2025 - June 2025 |
+| Full Stack Developer Intern, Wipro | Oct 2023 - Dec 2023 |
+
+## Education & Academic Foundation
+| Degree / Program | Institution | Year |
+| --- | --- | --- |
+| B.Tech in Electronics and Computer Engineering | Vellore Institute of Technology, Chennai | 2025 |
+| High School | Birla Bharati | 2021 |
+
+## Core Competencies & Technical Skills
+- **Languages**: Python (AsyncIO, FastMCP, Pytest), TypeScript, JavaScript (ESM, React 19, Next.js), Swift 6.0 (AppKit, SwiftUI), SQL
+- **Cloud & Distributed Data**: Databricks, Apache Spark, Google Cloud Platform (Cloud Run, Pub/Sub), Firebase / Firestore, MongoDB
+- **System & Native Engineering**: Apple Neural Engine, Apple Vision Framework, CGEventTap, macOS Menu Bar daemons, WASM
+- **AI & Machine Learning**: Google Gemini API, MediaPipe CV, LangGraph, Retrieval-Augmented Generation (RAG)
+
+## Related
+- [Portfolio Home](https://www.aritro.cloud/)
+- [The Developer Arcade](https://www.aritro.cloud/play)
+- [Engineering & Hackathon Gallery](https://www.aritro.cloud/gallery)
+- [Official Resume (PDF)](https://www.aritro.cloud/assets/resume/Aritro-Saha-Software-Engineer-Resume.pdf)
+
+---
+
 <!-- source: https://www.aritro.cloud/gallery -->
 
 # Visual Gallery — Moments & Hackathons | Aritro Saha

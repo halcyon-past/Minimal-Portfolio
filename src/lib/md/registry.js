@@ -272,6 +272,8 @@ const staticRoutes = {
   '/': renderHomePage,
   '/index': renderHomePage,
   '/about': renderAboutPage,
+  '/aritrosaha': renderAboutPage,
+  '/aritro-saha': renderAboutPage,
   '/gallery': renderGalleryPage,
   '/play': renderArcadeCatalogPage,
   '/play/typing-test': () => renderGamePage('typing-test'),
@@ -302,6 +304,13 @@ export function listMarkdownRoutes() {
       mdPath: '/about.md',
       title: 'About Aritro Saha',
       description: 'Professional experience at Bristol Myers Squibb, education at VIT Chennai, and awards.',
+      category: 'core'
+    },
+    {
+      path: '/aritrosaha',
+      mdPath: '/aritrosaha.md',
+      title: 'Aritro Saha (aritrosaha) — Official Profile & Dossier',
+      description: 'Official biography, engineering background, and projects of Aritro Saha (Megh).',
       category: 'core'
     },
     {
