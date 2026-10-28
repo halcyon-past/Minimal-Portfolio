@@ -33,6 +33,33 @@ const personGraphNode = {
     "alternateName": AUTHOR.alumniOf.alternateName
   },
   "award": AUTHOR.award,
+  "hasOccupation": [
+    {
+      "@type": "Occupation",
+      "name": "Software Engineer 1"
+    },
+    {
+      "@type": "Occupation",
+      "name": "Open-Source Creator & Software Author"
+    }
+  ],
+  "creator": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Byakugan Scan",
+      "url": "https://byakugan-scan.aritro.cloud"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "SutraKey",
+      "url": "https://sutrakey.aritro.cloud"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Quarantine Python",
+      "url": "https://pypi.org/project/quarantine-py/"
+    }
+  ],
   "knowsAbout": [
     "Software Engineering",
     "Data Science Engineering",
