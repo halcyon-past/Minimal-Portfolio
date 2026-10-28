@@ -6,7 +6,7 @@ export const CONTACT_EMAIL = 'aritrosaha2025@gmail.com';
 
 export const AUTHOR = {
   name: 'Aritro Saha',
-  alternateName: ['Aritro', 'Megh', 'halcyon-past'],
+  alternateName: ['Aritro', 'Megh', 'aritrosaha', 'halcyon-past'],
   jobTitle: 'Software Engineer 1',
   worksFor: {
     name: 'Bristol Myers Squibb',
@@ -19,6 +19,8 @@ export const AUTHOR = {
   },
   award: "Winner of Hack4Bengal 3.0 (Eastern India's Largest Hackathon)",
   description: 'Software Engineer 1 at Bristol Myers Squibb building high-throughput data pipelines, cloud infrastructure, native macOS utilities, and interactive web applications.',
+  disambiguatingDescription: 'Software Engineer 1 at Bristol Myers Squibb and open-source creator; not to be confused with Aritro Saha (Director of Product Design at Eightfold AI).',
+  image: `${SITE_URL}/aritro-saha.webp`,
   wikidata: 'https://www.wikidata.org/wiki/Q141715213',
   orcid: 'https://orcid.org/0009-0007-0861-3978',
   github: 'https://github.com/halcyon-past',
@@ -28,9 +30,12 @@ export const AUTHOR = {
 
 export const SOCIAL_PROFILES = [
   { name: 'GitHub', url: 'https://github.com/halcyon-past' },
+  { name: 'GitHub Profile Repo', url: 'https://github.com/halcyon-past/aritrosaha' },
   { name: 'LinkedIn', url: 'https://linkedin.com/in/aritro-saha' },
   { name: 'Wikidata', url: 'https://www.wikidata.org/wiki/Q141715213' },
   { name: 'ORCID', url: 'https://orcid.org/0009-0007-0861-3978' },
+  { name: 'Product Hunt', url: 'https://www.producthunt.com/@halcyon_past' },
+  { name: 'AlternativeTo', url: 'https://alternativeto.net/software/byakugan-scan/about/' },
   { name: 'Hacker News', url: 'https://news.ycombinator.com/user?id=halcyon-past' },
   { name: 'DEV Community', url: 'https://dev.to/halcyonpast' },
   { name: 'PyPI', url: 'https://pypi.org/project/quarantine-py/' },

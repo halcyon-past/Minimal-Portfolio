@@ -38,9 +38,10 @@ export default function Seo({
         "name": AUTHOR.name,
         "alternateName": AUTHOR.alternateName,
         "url": `${SITE_URL}/`,
-        "image": `${SITE_URL}${profileImg}`,
+        "image": `${SITE_URL}/aritro-saha.webp`,
         "jobTitle": AUTHOR.jobTitle,
         "description": AUTHOR.description,
+        "disambiguatingDescription": AUTHOR.disambiguatingDescription,
         "worksFor": {
           "@type": "Organization",
           "name": AUTHOR.worksFor.name,
@@ -131,6 +132,16 @@ export default function Seo({
         "publisher": {
           "@id": `${SITE_URL}/#person`
         }
+      },
+      {
+        "@type": "ImageObject",
+        "@id": `${SITE_URL}/#author-image`,
+        "url": `${SITE_URL}/aritro-saha.webp`,
+        "contentUrl": `${SITE_URL}/aritro-saha.webp`,
+        "name": "Aritro Saha Headshot",
+        "caption": "Aritro Saha — Software Engineer 1 at Bristol Myers Squibb & Open-Source Creator",
+        "width": 400,
+        "height": 400
       },
       {
         "@type": "ItemList",

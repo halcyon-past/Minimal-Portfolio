@@ -54,7 +54,7 @@ function AnimatedRoutes() {
           path="/about" 
           element={
             <PageTransition>
-              <Seo title="About Me" url="/about" description="Get to know Aritro Saha, his background in AI and full-stack development, and his professional journey." />
+              <Seo title="About Me" url="/about" image="https://www.aritro.cloud/aritro-saha.webp" description="Get to know Aritro Saha, his background in AI systems, high-throughput data engineering, and full-stack development." />
               <AboutPage />
             </PageTransition>
           } 
@@ -63,7 +63,7 @@ function AnimatedRoutes() {
           path="/aritrosaha" 
           element={
             <PageTransition>
-              <Seo title="Aritro Saha (aritrosaha) | Software Engineer & Creator" url="/aritrosaha" description="Official verified profile of Aritro Saha (aritrosaha). Software Engineer 1 at Bristol Myers Squibb, Winner of Hack4Bengal 3.0, and creator of Byakugan Scan and SutraKey." />
+              <Seo title="Aritro Saha (aritrosaha) | Software Engineer & Creator" url="/aritrosaha" image="https://www.aritro.cloud/aritro-saha.webp" description="Verified portfolio of Aritro Saha (aritrosaha). Software Engineer 1 at Bristol Myers Squibb, Hack4Bengal 3.0 winner, and creator of Byakugan Scan & SutraKey." />
               <AboutPage />
             </PageTransition>
           } 
@@ -72,7 +72,7 @@ function AnimatedRoutes() {
           path="/aritro-saha" 
           element={
             <PageTransition>
-              <Seo title="Aritro Saha | Software Engineer & Creator" url="/aritrosaha" description="Official verified profile of Aritro Saha. Software Engineer 1 at Bristol Myers Squibb, Winner of Hack4Bengal 3.0, and creator of Byakugan Scan and SutraKey." />
+              <Seo title="Aritro Saha | Software Engineer & Creator" url="/aritrosaha" image="https://www.aritro.cloud/aritro-saha.webp" description="Portfolio of Aritro Saha. Software Engineer 1 at Bristol Myers Squibb, Hack4Bengal 3.0 winner, and creator of native macOS tools Byakugan Scan and SutraKey." />
               <AboutPage />
             </PageTransition>
           } 

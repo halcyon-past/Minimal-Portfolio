@@ -176,6 +176,10 @@ function testPrerenderedDist() {
     if (rel === 'index.html') {
       const personNode = parsedJson['@graph']?.find((n) => n['@type'] === 'Person');
       assert(!!personNode, 'Homepage schema includes Person graph entity');
+      assert(!!personNode?.image, 'Person schema includes image URL for search engines and AI answer engines');
+      assert(!!personNode?.disambiguatingDescription, 'Person schema includes disambiguatingDescription for AI models');
+      const imageNode = parsedJson['@graph']?.find((n) => n['@type'] === 'ImageObject');
+      assert(!!imageNode, 'Schema includes ImageObject entity for author portrait disambiguation');
       const sameAs = personNode?.sameAs || [];
       assert(sameAs.includes('https://www.wikidata.org/wiki/Q141715213'), 'Person schema includes Wikidata authority');
       assert(sameAs.includes('https://orcid.org/0009-0007-0861-3978'), 'Person schema includes ORCID authority');

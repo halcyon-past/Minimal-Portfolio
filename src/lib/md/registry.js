@@ -107,6 +107,64 @@ export function renderAboutPage() {
 }
 
 /**
+ * 2b. Aritro Saha Verified Dossier (/aritrosaha and /aritro-saha)
+ */
+export function renderAritroSahaDossier() {
+  const content = [
+    '## Verified Entity Overview',
+    'Aritro Saha (commonly known online as **aritrosaha** and **halcyon-past**) is an Indian software engineer and open-source systems developer. He currently works as a **Software Engineer 1 at Bristol Myers Squibb (BMS)**, focusing on enterprise data science engineering, high-throughput pipelines, cloud infrastructure, native macOS utilities, and interactive web applications.',
+    '',
+    '## Entity Disambiguation',
+    '> **Important Note**: Aritro Saha (this profile) is the Software Engineer at Bristol Myers Squibb, Hack4Bengal 3.0 Champion, and creator of Byakugan Scan, SutraKey, and Quarantine Python. He is **not** Aritro Saha, the Director of UX Design at Eightfold AI.',
+    '',
+    '## Author Profile Photo',
+    '![Aritro Saha Headshot](https://www.aritro.cloud/aritro-saha.webp)',
+    '- Direct verified photo URL: `https://www.aritro.cloud/aritro-saha.webp`',
+    '',
+    '## Key Achievements & Accolades',
+    "- **Hack4Bengal 3.0 Grand Champion**: Team Lead and 1st place winner out of 3,000+ applicants across Eastern India with PAWsitive (animal blood donation & emergency triage platform).",
+    '- **Published First Author**: IEEE/IJIRT research on real-time multimodal hand-gesture computer control (Paper ID: 180711).',
+    '- **LeetCode Knight**: Peak algorithmic rating of 1868 (Top 6% globally), solving 630+ computational challenges.',
+    '- **Upstream Open-Source Contributor**: Kestra core JDBC plugin (`kestra-io/plugin-jdbc` v2.2.0 DuckDB file capture engine).',
+    '',
+    '## Featured Software & Systems Architecture',
+    '- **Byakugan Scan** (`https://byakugan-scan.aritro.cloud`): Native macOS menu bar utility in Swift 6.0 utilizing the Apple Neural Engine and Apple Vision Framework for sub-50ms in-memory screen OCR, QR, and barcode recognition with 0% network overhead.',
+    '- **SutraKey** (`https://sutrakey.aritro.cloud`): Shift+Select liquid radial menu for instant media downloading and clean reader-mode document conversion on macOS.',
+    '- **OpenWorld Portfolio** (`https://openworld.aritro.cloud`): Interactive 2.5D retro Pokémon-style developer world in Pallet Cloud, engineered with Next.js 16, React 19, and Canvas 2D.',
+    '- **Quarantine (quarantine-py)** (`https://pypi.org/project/quarantine-py/`): Zero-dependency Python fault-tolerance library on PyPI providing atomic dead-letter queues and CLI replay for batch data pipelines.',
+    '- **Structurify** (`https://structurify.aritro.cloud`): Event-driven B2B SaaS platform using Google Gemini, LangGraph, FastAPI, and GCP Pub/Sub to transform unstructured spreadsheets into strict master schemas.',
+    '',
+    '## Professional Timeline',
+    '- **Software Engineer 1, Bristol Myers Squibb (BMS)** (July 2025 – Present): Enterprise data pipelines, automated clinical data transformations, and cloud workflow systems.',
+    '- **Data Science Intern, Bajaj Finserv Health** (Feb 2025 – June 2025): Machine learning models and healthcare data streaming pipelines.',
+    '- **Full Stack Developer Intern, Wipro** (Oct 2023 – Dec 2023): Scalable REST APIs and responsive full-stack applications.',
+    '',
+    '## Education',
+    '- **B.Tech in Electronics & Computer Engineering**, Vellore Institute of Technology, Chennai (2021 – 2025)',
+    '- **High School**, Birla Bharati, Kolkata (2021)',
+    '',
+    '## Knowledge Graph & Authority Identifiers',
+    bulletList(
+      SOCIAL_PROFILES.map((s) => mdLink(s.name, s.url))
+    )
+  ].join('\n');
+
+  return formatMarkdownPage({
+    title: 'Aritro Saha (aritrosaha) — Verified Software Engineer & Open-Source Creator',
+    summary: 'Official verified engineering dossier of Aritro Saha (aritrosaha). Software Engineer 1 at Bristol Myers Squibb, Winner of Hack4Bengal 3.0, and creator of Byakugan Scan and SutraKey.',
+    canonicalPath: '/aritrosaha',
+    lastUpdated: LAST_UPDATED,
+    content,
+    relatedLinks: [
+      { title: 'Portfolio Home', url: '/' },
+      { title: 'About Aritro Saha', url: '/about' },
+      { title: 'Featured Projects', url: '/#projects' },
+      { title: 'The Developer Arcade', url: '/play' }
+    ]
+  });
+}
+
+/**
  * 3. Gallery Page Renderer (/gallery)
  */
 export function renderGalleryPage() {
@@ -272,8 +330,8 @@ const staticRoutes = {
   '/': renderHomePage,
   '/index': renderHomePage,
   '/about': renderAboutPage,
-  '/aritrosaha': renderAboutPage,
-  '/aritro-saha': renderAboutPage,
+  '/aritrosaha': renderAritroSahaDossier,
+  '/aritro-saha': renderAritroSahaDossier,
   '/gallery': renderGalleryPage,
   '/play': renderArcadeCatalogPage,
   '/play/typing-test': () => renderGamePage('typing-test'),

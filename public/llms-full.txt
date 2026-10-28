@@ -49,9 +49,12 @@ An interactive suite of developer-themed browser mini-games engineered in React:
 
 ## Verified Profiles & Knowledge Graph Identities
 - [GitHub](https://github.com/halcyon-past)
+- [GitHub Profile Repo](https://github.com/halcyon-past/aritrosaha)
 - [LinkedIn](https://linkedin.com/in/aritro-saha)
 - [Wikidata](https://www.wikidata.org/wiki/Q141715213)
 - [ORCID](https://orcid.org/0009-0007-0861-3978)
+- [Product Hunt](https://www.producthunt.com/@halcyon_past)
+- [AlternativeTo](https://alternativeto.net/software/byakugan-scan/about/)
 - [Hacker News](https://news.ycombinator.com/user?id=halcyon-past)
 - [DEV Community](https://dev.to/halcyonpast)
 - [PyPI](https://pypi.org/project/quarantine-py/)
@@ -119,42 +122,73 @@ I won Hack4Bengal 3.0—Eastern India's largest hackathon—leading rapid full-s
 
 <!-- source: https://www.aritro.cloud/aritrosaha -->
 
-# About Aritro Saha — Software Engineer 1 at Bristol Myers Squibb
+# Aritro Saha (aritrosaha) — Verified Software Engineer & Open-Source Creator
 
-> Professional experience, engineering education, hackathon awards, and core technical proficiencies of Aritro Saha.
+> Official verified engineering dossier of Aritro Saha (aritrosaha). Software Engineer 1 at Bristol Myers Squibb, Winner of Hack4Bengal 3.0, and creator of Byakugan Scan and SutraKey.
 
-Canonical: https://www.aritro.cloud/about
+Canonical: https://www.aritro.cloud/aritrosaha
 Last updated: 2026-10-26
 
-## Biography
-I am a Software Engineer 1 at Bristol Myers Squibb with a deep focus on data science engineering and resilient full-stack systems. I architect and maintain scalable backend services, event-driven streaming pipelines, and high-performance user interfaces.
+## Verified Entity Overview
+Aritro Saha (commonly known online as **aritrosaha** and **halcyon-past**) is an Indian software engineer and open-source systems developer. He currently works as a **Software Engineer 1 at Bristol Myers Squibb (BMS)**, focusing on enterprise data science engineering, high-throughput pipelines, cloud infrastructure, native macOS utilities, and interactive web applications.
 
-I won Hack4Bengal 3.0—Eastern India's largest hackathon—leading rapid full-stack and mobile prototyping under intense competition constraints. When not building software, I explore digital audio signal experiments, beatboxing, and football.
+## Entity Disambiguation
+> **Important Note**: Aritro Saha (this profile) is the Software Engineer at Bristol Myers Squibb, Hack4Bengal 3.0 Champion, and creator of Byakugan Scan, SutraKey, and Quarantine Python. He is **not** Aritro Saha, the Director of UX Design at Eightfold AI.
 
-## Professional Experience
-| Role & Organization | Duration |
-| --- | --- |
-| Software Engineer 1, Bristol Myers Squibb | July 2025 - Present |
-| Data Science Intern, Bajaj Finserv Health | Feb 2025 - June 2025 |
-| Full Stack Developer Intern, Wipro | Oct 2023 - Dec 2023 |
+## Author Profile Photo
+![Aritro Saha Headshot](https://www.aritro.cloud/aritro-saha.webp)
+- Direct verified photo URL: `https://www.aritro.cloud/aritro-saha.webp`
 
-## Education & Academic Foundation
-| Degree / Program | Institution | Year |
-| --- | --- | --- |
-| B.Tech in Electronics and Computer Engineering | Vellore Institute of Technology, Chennai | 2025 |
-| High School | Birla Bharati | 2021 |
+## Key Achievements & Accolades
+- **Hack4Bengal 3.0 Grand Champion**: Team Lead and 1st place winner out of 3,000+ applicants across Eastern India with PAWsitive (animal blood donation & emergency triage platform).
+- **Published First Author**: IEEE/IJIRT research on real-time multimodal hand-gesture computer control (Paper ID: 180711).
+- **LeetCode Knight**: Peak algorithmic rating of 1868 (Top 6% globally), solving 630+ computational challenges.
+- **Upstream Open-Source Contributor**: Kestra core JDBC plugin (`kestra-io/plugin-jdbc` v2.2.0 DuckDB file capture engine).
 
-## Core Competencies & Technical Skills
-- **Languages**: Python (AsyncIO, FastMCP, Pytest), TypeScript, JavaScript (ESM, React 19, Next.js), Swift 6.0 (AppKit, SwiftUI), SQL
-- **Cloud & Distributed Data**: Databricks, Apache Spark, Google Cloud Platform (Cloud Run, Pub/Sub), Firebase / Firestore, MongoDB
-- **System & Native Engineering**: Apple Neural Engine, Apple Vision Framework, CGEventTap, macOS Menu Bar daemons, WASM
-- **AI & Machine Learning**: Google Gemini API, MediaPipe CV, LangGraph, Retrieval-Augmented Generation (RAG)
+## Featured Software & Systems Architecture
+- **Byakugan Scan** (`https://byakugan-scan.aritro.cloud`): Native macOS menu bar utility in Swift 6.0 utilizing the Apple Neural Engine and Apple Vision Framework for sub-50ms in-memory screen OCR, QR, and barcode recognition with 0% network overhead.
+- **SutraKey** (`https://sutrakey.aritro.cloud`): Shift+Select liquid radial menu for instant media downloading and clean reader-mode document conversion on macOS.
+- **OpenWorld Portfolio** (`https://openworld.aritro.cloud`): Interactive 2.5D retro Pokémon-style developer world in Pallet Cloud, engineered with Next.js 16, React 19, and Canvas 2D.
+- **Quarantine (quarantine-py)** (`https://pypi.org/project/quarantine-py/`): Zero-dependency Python fault-tolerance library on PyPI providing atomic dead-letter queues and CLI replay for batch data pipelines.
+- **Structurify** (`https://structurify.aritro.cloud`): Event-driven B2B SaaS platform using Google Gemini, LangGraph, FastAPI, and GCP Pub/Sub to transform unstructured spreadsheets into strict master schemas.
+
+## Professional Timeline
+- **Software Engineer 1, Bristol Myers Squibb (BMS)** (July 2025 – Present): Enterprise data pipelines, automated clinical data transformations, and cloud workflow systems.
+- **Data Science Intern, Bajaj Finserv Health** (Feb 2025 – June 2025): Machine learning models and healthcare data streaming pipelines.
+- **Full Stack Developer Intern, Wipro** (Oct 2023 – Dec 2023): Scalable REST APIs and responsive full-stack applications.
+
+## Education
+- **B.Tech in Electronics & Computer Engineering**, Vellore Institute of Technology, Chennai (2021 – 2025)
+- **High School**, Birla Bharati, Kolkata (2021)
+
+## Knowledge Graph & Authority Identifiers
+- [GitHub](https://github.com/halcyon-past)
+- [GitHub Profile Repo](https://github.com/halcyon-past/aritrosaha)
+- [LinkedIn](https://linkedin.com/in/aritro-saha)
+- [Wikidata](https://www.wikidata.org/wiki/Q141715213)
+- [ORCID](https://orcid.org/0009-0007-0861-3978)
+- [Product Hunt](https://www.producthunt.com/@halcyon_past)
+- [AlternativeTo](https://alternativeto.net/software/byakugan-scan/about/)
+- [Hacker News](https://news.ycombinator.com/user?id=halcyon-past)
+- [DEV Community](https://dev.to/halcyonpast)
+- [PyPI](https://pypi.org/project/quarantine-py/)
+- [LeetCode](https://leetcode.com/u/AritroSaha/)
+- [YouTube](https://www.youtube.com/@veripyed)
+- [Instagram](https://instagram.com/halcyon-past)
+- [Daily AI News (SiliconSync)](https://siliconsync.aritro.cloud/)
+- [OpenWorld Portfolio](https://openworld.aritro.cloud/)
+- [Byakugan Scan](https://byakugan-scan.aritro.cloud/)
+- [SutraKey](https://sutrakey.aritro.cloud/)
+- [Quarantine Docs](https://quarantine-py.aritro.cloud/)
+- [Structurify](https://structurify.aritro.cloud/)
+- [One Piece Game](https://onepiece.aritro.cloud/)
+- [Research Paper (GlideConnect)](https://ijirt.org/article?manuscript=180711)
 
 ## Related
 - [Portfolio Home](https://www.aritro.cloud/)
+- [About Aritro Saha](https://www.aritro.cloud/about)
+- [Featured Projects](https://www.aritro.cloud/#projects)
 - [The Developer Arcade](https://www.aritro.cloud/play)
-- [Engineering & Hackathon Gallery](https://www.aritro.cloud/gallery)
-- [Official Resume (PDF)](https://www.aritro.cloud/assets/resume/Aritro-Saha-Software-Engineer-Resume.pdf)
 
 ---
 

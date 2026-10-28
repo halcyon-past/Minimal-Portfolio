@@ -17,8 +17,10 @@ const personGraphNode = {
   "name": AUTHOR.name,
   "alternateName": AUTHOR.alternateName,
   "url": `${SITE_URL}/`,
+  "image": `${SITE_URL}/aritro-saha.webp`,
   "jobTitle": AUTHOR.jobTitle,
   "description": AUTHOR.description,
+  "disambiguatingDescription": AUTHOR.disambiguatingDescription,
   "worksFor": {
     "@type": "Organization",
     "name": AUTHOR.worksFor.name,
@@ -93,18 +95,36 @@ const organizationGraphNode = {
   }
 };
 
+const authorImageGraphNode = {
+  "@type": "ImageObject",
+  "@id": `${SITE_URL}/#author-image`,
+  "url": `${SITE_URL}/aritro-saha.webp`,
+  "contentUrl": `${SITE_URL}/aritro-saha.webp`,
+  "name": "Aritro Saha Headshot",
+  "caption": "Aritro Saha — Software Engineer 1 at Bristol Myers Squibb & Open-Source Creator",
+  "width": 400,
+  "height": 400
+};
+
 const STATIC_ROUTES = [
   {
     route: '/aritrosaha',
     title: 'Aritro Saha (aritrosaha) | Software Engineer & Creator',
     description: 'Verified portfolio of Aritro Saha (aritrosaha). Software Engineer 1 at Bristol Myers Squibb, Hack4Bengal 3.0 winner, and creator of Byakugan Scan & SutraKey.',
-    image: `${SITE_URL}/banner-social.jpg`,
+    image: `${SITE_URL}/aritro-saha.webp`,
     articleHtml: `
       <header>
         <h1>Aritro Saha (aritrosaha) — Software Engineer & Open-Source Creator</h1>
+        <figure style="margin: 1.5rem 0;">
+          <img src="${SITE_URL}/aritro-saha.webp" alt="Aritro Saha — Software Engineer 1 at Bristol Myers Squibb & Open-Source Creator" width="400" height="400" style="border-radius: 1rem; max-width: 200px; height: auto;" />
+          <figcaption style="font-size: 0.875rem; color: #6b7280; margin-top: 0.5rem;">Aritro Saha (aritrosaha) — Software Engineer & Open-Source Developer</figcaption>
+        </figure>
       </header>
       <main>
         <article>
+          <div style="background: rgba(59, 130, 246, 0.08); border-left: 4px solid #3b82f6; padding: 1rem; margin-bottom: 1.5rem; border-radius: 0.25rem;">
+            <strong>Entity Disambiguation Notice:</strong> This profile represents Aritro Saha, Software Engineer 1 at Bristol Myers Squibb and open-source creator based in India. He is <em>not</em> Aritro Saha, Director of Product Design at Eightfold AI.
+          </div>
           <h2>Identity & Overview</h2>
           <p>Aritro Saha (commonly known online as aritrosaha and halcyon-past) is a Software Engineer 1 at Bristol Myers Squibb specializing in high-throughput enterprise data pipelines, cloud architecture, native macOS utilities, and interactive web systems.</p>
           <h2>Key Accolades & Leadership</h2>
@@ -137,10 +157,14 @@ const STATIC_ROUTES = [
     route: '/aritro-saha',
     title: 'Aritro Saha | Software Engineer & Creator',
     description: 'Portfolio of Aritro Saha. Software Engineer 1 at Bristol Myers Squibb, Hack4Bengal 3.0 winner, and creator of native macOS tools Byakugan Scan and SutraKey.',
-    image: `${SITE_URL}/banner-social.jpg`,
+    image: `${SITE_URL}/aritro-saha.webp`,
     articleHtml: `
       <header>
         <h1>Aritro Saha — Software Engineer & Creator</h1>
+        <figure style="margin: 1.5rem 0;">
+          <img src="${SITE_URL}/aritro-saha.webp" alt="Aritro Saha — Software Engineer 1 at Bristol Myers Squibb" width="400" height="400" style="border-radius: 1rem; max-width: 200px; height: auto;" />
+          <figcaption style="font-size: 0.875rem; color: #6b7280; margin-top: 0.5rem;">Aritro Saha — Software Engineer</figcaption>
+        </figure>
       </header>
       <main>
         <article>
@@ -153,10 +177,14 @@ const STATIC_ROUTES = [
     route: '/about',
     title: 'About Aritro Saha | Software Engineer 1 at Bristol Myers Squibb',
     description: 'Learn about Aritro Saha (Megh), a Software Engineer 1 at Bristol Myers Squibb, VIT Chennai graduate, and Winner of Hack4Bengal 3.0.',
-    image: `${SITE_URL}/banner-social.jpg`,
+    image: `${SITE_URL}/aritro-saha.webp`,
     articleHtml: `
       <header>
         <h1>About Aritro Saha — Software Engineer 1 at Bristol Myers Squibb</h1>
+        <figure style="margin: 1.5rem 0;">
+          <img src="${SITE_URL}/aritro-saha.webp" alt="Aritro Saha — Software Engineer 1 at Bristol Myers Squibb" width="400" height="400" style="border-radius: 1rem; max-width: 200px; height: auto;" />
+          <figcaption style="font-size: 0.875rem; color: #6b7280; margin-top: 0.5rem;">Aritro Saha (Megh) — Software Engineer 1</figcaption>
+        </figure>
       </header>
       <main>
         <article>
@@ -290,13 +318,15 @@ function buildRouteHtml(template, { route, title, description, image, articleHtm
     "@graph": [
       personGraphNode,
       organizationGraphNode,
+      authorImageGraphNode,
       {
         "@type": "WebPage",
         "@id": `${canonicalUrl}#webpage`,
         "url": canonicalUrl,
         "name": title,
         "description": description,
-        "author": { "@id": `${SITE_URL}/#person` }
+        "author": { "@id": `${SITE_URL}/#person` },
+        "primaryImageOfPage": { "@id": `${SITE_URL}/#author-image` }
       },
       ...extraJsonLdNodes
     ]
