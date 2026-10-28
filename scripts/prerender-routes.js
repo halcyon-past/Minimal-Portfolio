@@ -821,9 +821,23 @@ function run() {
       extraNodes.push({
         "@type": "ScholarlyArticle",
         "@id": `${SITE_URL}${route}#research-paper`,
-        "headline": "Virtual Mouse Control Using Gesture Recognition and Voice Assistant",
-        "name": "Virtual Mouse Control Using Gesture Recognition and Voice Assistant",
-        "author": { "@id": `${SITE_URL}/#person` },
+        "headline": "KrishnaVision: A Multimodal Virtual Interface Combining MediaPipe-Hands Optimization and Gemini AI for Context-Aware HCI",
+        "name": "KrishnaVision: A Multimodal Virtual Interface Combining MediaPipe-Hands Optimization and Gemini AI for Context-Aware HCI",
+        "author": [
+          { "@id": `${SITE_URL}/#person` },
+          { "@type": "Person", "name": "Rupkatha De" }
+        ],
+        "datePublished": "2025-06",
+        "isPartOf": {
+          "@type": "PublicationIssue",
+          "issueNumber": "1",
+          "volumeNumber": "12",
+          "isPartOf": {
+            "@type": "Periodical",
+            "name": "International Journal of Innovative Research in Technology (IJIRT)",
+            "issn": "2349-6002"
+          }
+        },
         "publisher": {
           "@type": "Organization",
           "name": "International Journal of Innovative Research in Technology (IJIRT)"
