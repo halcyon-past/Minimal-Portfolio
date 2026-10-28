@@ -25,7 +25,11 @@ const URL_LIST = [
   `https://${HOST}/projects/structurify`,
   `https://${HOST}/projects/luffy-laser-dodge`,
   `https://${HOST}/projects/glide-connect`,
-  `https://${HOST}/projects/pawsitive`
+  `https://${HOST}/projects/pawsitive`,
+  `https://${HOST}/blog`,
+  `https://${HOST}/blog/swift-vision-ocr-apple-neural-engine`,
+  `https://${HOST}/blog/python-dead-letter-queue-batch-pipelines`,
+  `https://${HOST}/blog/instant-navigation-speculation-rules-vite-ssg`
 ];
 
 export async function pingIndexNow() {

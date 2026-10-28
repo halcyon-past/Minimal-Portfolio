@@ -27,6 +27,8 @@ const SpaceInvadersPage = lazy(() => import('./pages/games/SpaceInvadersPage'));
 const FlappyBirdPage = lazy(() => import('./pages/games/FlappyBirdPage'));
 const TicTacToePage = lazy(() => import('./pages/games/TicTacToePage'));
 const ProjectDetailsPage = lazy(() => import('./pages/ProjectDetailsPage'));
+const BlogCatalogPage = lazy(() => import('./pages/BlogCatalogPage'));
+const BlogPostPage = lazy(() => import('./pages/BlogPostPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 const PageLoader = () => (
@@ -93,6 +95,22 @@ function AnimatedRoutes() {
             <PageTransition>
               <Seo title="Gallery" url="/gallery" description="Explore personal moments, events, and projects associated with Aritro Saha." />
               <GalleryPage />
+            </PageTransition>
+          } 
+        />
+        <Route 
+          path="/blog" 
+          element={
+            <PageTransition>
+              <BlogCatalogPage />
+            </PageTransition>
+          } 
+        />
+        <Route 
+          path="/blog/:slug" 
+          element={
+            <PageTransition>
+              <BlogPostPage />
             </PageTransition>
           } 
         />

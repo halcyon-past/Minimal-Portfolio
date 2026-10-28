@@ -37,6 +37,12 @@ Professional software engineer and open-source creator based in India with exper
 - [GlideConnect](https://www.aritro.cloud/projects/glide-connect.md): Virtual mouse control platform using MediaPipe hand-gesture recognition and Google Gemini voice assistant. Published in peer-reviewed IJIRT research.
 - [PAWsitive](https://www.aritro.cloud/projects/pawsitive.md): Centralized pet healthcare platform connecting blood donors, vet clinics, and rescue centers (Winner of Hack4Bengal 3.0)
 
+## Engineering Blog & Technical Architecture
+- [Engineering Blog — Systems, Data & Architecture](https://www.aritro.cloud/blog.md): Technical deep-dives and engineering architecture by Aritro Saha.
+- [Building Sub-50ms Zero-Disk Screen OCR with Swift 6 & Apple Vision Framework](https://www.aritro.cloud/blog/swift-vision-ocr-apple-neural-engine.md): How to architect an in-memory macOS screen OCR pipeline using Swift 6, NSPasteboard, and Apple Vision VNRecognizeTextRequest with zero temporary disk writes.
+- [Architecting Zero-Crash Batch Data Pipelines with Python Dead-Letter Queues (DLQ)](https://www.aritro.cloud/blog/python-dead-letter-queue-batch-pipelines.md): Eliminate pipeline crashes at record #5,247. A deep dive into implementing fault-tolerant Python loops, atomic error serialization, and surgical CLI replays.
+- [Achieving 0ms Perceived Navigation in Vite & React 19 with W3C Speculation Rules](https://www.aritro.cloud/blog/instant-navigation-speculation-rules-vite-ssg.md): How to upgrade traditional SPAs into instant-navigation platforms using modern W3C Speculation Rules, React 19 SSG prerendering, and Core Web Vitals optimization.
+
 ## Developer Arcade (Aritro Games)
 - [The Arcade (Aritro Games)](https://www.aritro.cloud/play.md): Interactive browser mini-games catalog built in React 19.
 - [Developer Speed Test (Arcade)](https://www.aritro.cloud/play/typing-test.md): Test your coding typing speed with this minimalist terminal-style speed test game. Features top programming keywords!

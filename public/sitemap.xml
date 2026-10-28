@@ -25,6 +25,30 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.aritro.cloud/blog</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aritro.cloud/blog/swift-vision-ocr-apple-neural-engine</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.aritro.cloud/blog/python-dead-letter-queue-batch-pipelines</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.aritro.cloud/blog/instant-navigation-speculation-rules-vite-ssg</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.aritro.cloud/projects/byakugan-scan</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>

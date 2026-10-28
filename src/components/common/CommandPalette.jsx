@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Command } from 'cmdk';
 import { useNavigate } from 'react-router-dom';
-import { FileText, User, Image, Link as LinkIcon, Command as CommandIcon, Mail, Folder, Gamepad2, Search, Download } from 'lucide-react';
+import { FileText, User, Image, Link as LinkIcon, Command as CommandIcon, Mail, Folder, Gamepad2, Search, Download, BookOpen } from 'lucide-react';
 import { projects } from '../../data/data';
+import { blogPosts } from '../../data/blogData';
 import './CommandPalette.css';
 
 export default function CommandPalette() {
@@ -76,6 +77,9 @@ export default function CommandPalette() {
               <Command.Item onSelect={() => runCommand(() => navigate('/gallery'))}>
                 <Image size={16} /> Gallery
               </Command.Item>
+              <Command.Item onSelect={() => runCommand(() => navigate('/blog'))}>
+                <BookOpen size={16} /> Engineering Blog
+              </Command.Item>
               <Command.Item onSelect={() => runCommand(() => navigate('/play'))}>
                 <Gamepad2 size={16} /> Arcade
               </Command.Item>
@@ -88,6 +92,14 @@ export default function CommandPalette() {
               {projects.map((project, index) => (
                 <Command.Item key={index} onSelect={() => runCommand(() => window.open(project.link, '_blank'))}>
                   <i className={`fab fa-github opacity-70 w-4 h-4 flex items-center justify-center ${project.color || ''}`}></i> {project.title}
+                </Command.Item>
+              ))}
+            </Command.Group>
+
+            <Command.Group heading="Engineering Articles" className="cmdk-group">
+              {blogPosts.map((post, index) => (
+                <Command.Item key={index} onSelect={() => runCommand(() => navigate(`/blog/${post.slug}`))}>
+                  <BookOpen size={16} className="opacity-70 text-(--amethyst)" /> {post.title}
                 </Command.Item>
               ))}
             </Command.Group>

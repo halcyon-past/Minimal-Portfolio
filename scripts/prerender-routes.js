@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { projects, galleryImages } from '../src/data/portfolioData.js';
+import { blogPosts } from '../src/data/blogData.js';
 import { listMarkdownRoutes, renderMarkdownRoute, renderCatalogMarkdown } from '../src/lib/md/registry.js';
 import { generateLlmsTxt, generateLlmsFullTxt, generateAiTxt } from '../src/lib/md/llms.js';
 import { SITE_URL, AUTHOR, CONTACT_EMAIL } from '../src/lib/siteConfig.js';
@@ -887,6 +888,19 @@ function run() {
   const template = fs.readFileSync(indexHtmlPath, 'utf-8');
   let generatedCount = 0;
 
+  // Known project screenshot dimensions for explicit width/height and Google Image Search
+  const projectImageDimensions = {
+    'byakugan-scan': { width: 1376, height: 768 },
+    'sutrakey': { width: 1376, height: 768 },
+    'openworld-portfolio': { width: 1376, height: 768 },
+    'quarantine': { width: 1376, height: 768 },
+    'structurify': { width: 1280, height: 754 },
+    'luffy-laser-dodge': { width: 1599, height: 940 },
+    'glide-connect': { width: 800, height: 533 },
+    'pawsitive': { width: 800, height: 533 },
+    'eduhelper': { width: 800, height: 533 }
+  };
+
   // 1. Generate static HTML pages for all Projects
   for (const project of projects) {
     const route = `/projects/${project.id}`;
@@ -894,6 +908,9 @@ function run() {
     const rawDesc = project.description || project.details?.overview || '';
     const description = rawDesc.length > 158 ? `${rawDesc.slice(0, 155).trim()}...` : rawDesc;
     const image = `${SITE_URL}${project.image}`;
+    const dims = projectImageDimensions[project.id] || { width: 1200, height: 630 };
+    const webpImage = project.image;
+    const avifImage = project.image.replace(/\.webp$/i, '.avif');
 
     const featuresHtml = (project.details?.features || [])
       .map((f) => {
@@ -920,6 +937,24 @@ function run() {
         <header>
           <h1>${escapeHtml(project.title)} — by Aritro Saha</h1>
           <p>${escapeHtml(project.description)}</p>
+          <figure style="margin: 2rem 0; text-align: center;">
+            <picture>
+              <source srcset="${SITE_URL}${avifImage}" type="image/avif" />
+              <source srcset="${SITE_URL}${webpImage}" type="image/webp" />
+              <img 
+                src="${SITE_URL}${webpImage}" 
+                alt="${escapeHtml(project.alt || `${project.title} Architectural Screenshot & Interface`)}" 
+                width="${dims.width}" 
+                height="${dims.height}" 
+                loading="lazy" 
+                decoding="async" 
+                style="max-width: 100%; height: auto; border-radius: 0.75rem; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.3);" 
+              />
+            </picture>
+            <figcaption style="font-size: 0.875rem; color: #6b7280; margin-top: 0.5rem;">
+              ${escapeHtml(project.alt || `${project.title} Architectural Screenshot & Interface`)}
+            </figcaption>
+          </figure>
         </header>
         <main>
           <article>
@@ -951,11 +986,23 @@ ${featuresHtml}
       "name": project.title,
       "description": project.details?.overview || project.description,
       "url": `${SITE_URL}${route}`,
+      "image": `${SITE_URL}${webpImage}`,
+      "screenshot": `${SITE_URL}${webpImage}`,
       "codeRepository": project.github,
       "programmingLanguage": project.details?.techStack || [],
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": project.title.includes("macOS") || project.title.includes("Byakugan") || project.title.includes("SutraKey") ? "macOS" : "Web Browser",
       "author": { "@id": `${SITE_URL}/#person` }
+    };
+
+    const imageNode = {
+      "@type": "ImageObject",
+      "@id": `${SITE_URL}${route}#primaryimage`,
+      "url": `${SITE_URL}${webpImage}`,
+      "contentUrl": `${SITE_URL}${webpImage}`,
+      "caption": project.alt || `${project.title} Architectural Screenshot & Interface`,
+      "width": dims.width,
+      "height": dims.height
     };
 
     const breadcrumbNode = {
@@ -983,7 +1030,7 @@ ${featuresHtml}
       ]
     };
 
-    const extraNodes = [softwareNode, breadcrumbNode];
+    const extraNodes = [softwareNode, imageNode, breadcrumbNode];
     if (project.id === 'glide-connect') {
       extraNodes.push({
         "@type": "ScholarlyArticle",
@@ -1023,6 +1070,151 @@ ${featuresHtml}
     });
 
     const outDir = path.join(distDir, 'projects', project.id);
+    fs.mkdirSync(outDir, { recursive: true });
+    fs.writeFileSync(path.join(outDir, 'index.html'), routeHtml, 'utf-8');
+    generatedCount++;
+  }
+
+  // 1b. Generate static HTML page for Blog Catalog (/blog)
+  {
+    const route = '/blog';
+    const title = 'Engineering Blog | Aritro Saha — Systems, Data & Architecture';
+    const description = 'Technical deep-dives, systems architecture, Apple Silicon OCR engineering, and Python fault-tolerance patterns by Aritro Saha.';
+    const image = `${SITE_URL}/banner-social.jpg`;
+
+    const postsHtml = blogPosts.map((post) => `
+        <section style="margin-bottom: 2rem; padding: 1.5rem; border: 1px solid #e5e7eb; border-radius: 1rem;">
+          <h2><a href="${SITE_URL}/blog/${post.slug}">${escapeHtml(post.title)}</a></h2>
+          <p><strong>Published:</strong> ${post.date} | <strong>Reading Time:</strong> ${post.readingTime} | <strong>Category:</strong> ${escapeHtml(post.category)}</p>
+          <p>${escapeHtml(post.excerpt)}</p>
+          <p><a href="${SITE_URL}/blog/${post.slug}">Read Full Article →</a></p>
+        </section>`).join('\n');
+
+    const articleHtml = `
+        <header>
+          <h1>Engineering Blog — Systems, Data &amp; Architecture</h1>
+          <p>Technical deep-dives, systems architecture, and open-source postmortems by Aritro Saha, Software Engineer 1 at Bristol Myers Squibb.</p>
+        </header>
+        <main>
+          <article>
+${postsHtml}
+          </article>
+        </main>`;
+
+    const breadcrumbNode = {
+      "@type": "BreadcrumbList",
+      "@id": `${SITE_URL}/blog#breadcrumb`,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${SITE_URL}/blog` }
+      ]
+    };
+
+    const collectionNode = {
+      "@type": "CollectionPage",
+      "@id": `${SITE_URL}/blog#collection`,
+      "url": `${SITE_URL}/blog`,
+      "name": title,
+      "description": description,
+      "publisher": { "@id": `${SITE_URL}/#person` }
+    };
+
+    const routeHtml = buildRouteHtml(template, {
+      route,
+      title,
+      description,
+      image,
+      articleHtml,
+      extraJsonLdNodes: [collectionNode, breadcrumbNode]
+    });
+
+    const outDir = path.join(distDir, 'blog');
+    fs.mkdirSync(outDir, { recursive: true });
+    fs.writeFileSync(path.join(outDir, 'index.html'), routeHtml, 'utf-8');
+    generatedCount++;
+  }
+
+  // 1c. Generate static HTML pages for all Blog Posts (/blog/:slug)
+  for (const post of blogPosts) {
+    const route = `/blog/${post.slug}`;
+    const title = post.seoTitle || `${post.title} | Engineering Blog`;
+    const rawDesc = post.excerpt || '';
+    const description = rawDesc.length > 158 ? `${rawDesc.slice(0, 155).trim()}...` : rawDesc;
+    const image = `${SITE_URL}${post.coverImage}`;
+
+    const sectionsHtml = post.sections.map((s) => `
+            <section>
+              <h3>${escapeHtml(s.heading)}</h3>
+              <p>${escapeHtml(s.content)}</p>
+            </section>`).join('\n');
+
+    const articleHtml = `
+        <header>
+          <h1>${escapeHtml(post.title)}</h1>
+          <p><strong>Published:</strong> ${post.date} | <strong>Category:</strong> ${escapeHtml(post.category)} | <strong>Reading Time:</strong> ${post.readingTime}</p>
+          <figure style="margin: 2rem 0; text-align: center;">
+            <img 
+              src="${SITE_URL}${post.coverImage}" 
+              alt="${escapeHtml(post.coverAlt || post.title)}" 
+              width="1200" 
+              height="630" 
+              loading="lazy" 
+              decoding="async" 
+              style="max-width: 100%; height: auto; border-radius: 0.75rem;" 
+            />
+            <figcaption style="font-size: 0.875rem; color: #6b7280; margin-top: 0.5rem;">
+              ${escapeHtml(post.coverAlt || post.title)}
+            </figcaption>
+          </figure>
+        </header>
+        <main>
+          <article>
+            <h2>Article Overview</h2>
+            <p>${escapeHtml(post.excerpt)}</p>
+            
+            <h2>Deep-Dive Engineering &amp; Architecture</h2>
+${sectionsHtml}
+            
+            <h2>Tags &amp; Architectural Concepts</h2>
+            <ul>
+              ${post.tags.map((t) => `<li>#${escapeHtml(t)}</li>`).join('\n              ')}
+            </ul>
+          </article>
+        </main>`;
+
+    const breadcrumbNode = {
+      "@type": "BreadcrumbList",
+      "@id": `${SITE_URL}${route}#breadcrumb`,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${SITE_URL}/blog` },
+        { "@type": "ListItem", "position": 3, "name": post.title, "item": `${SITE_URL}${route}` }
+      ]
+    };
+
+    const postNode = {
+      "@type": "TechArticle",
+      "@id": `${SITE_URL}${route}#article`,
+      "headline": post.title,
+      "description": post.excerpt,
+      "url": `${SITE_URL}${route}`,
+      "image": image,
+      "datePublished": post.date,
+      "dateModified": post.date,
+      "author": { "@id": `${SITE_URL}/#person` },
+      "publisher": { "@id": `${SITE_URL}/#organization` }
+    };
+
+    const routeHtml = buildRouteHtml(template, {
+      route,
+      title,
+      description,
+      image,
+      articleHtml,
+      extraJsonLdNodes: [postNode, breadcrumbNode]
+    });
+
+    const outDir = path.join(distDir, 'blog', post.slug);
     fs.mkdirSync(outDir, { recursive: true });
     fs.writeFileSync(path.join(outDir, 'index.html'), routeHtml, 'utf-8');
     generatedCount++;
@@ -1122,6 +1314,22 @@ ${featuresHtml}
         ${liveDemoLink}
         ${githubLink}
         ${techStackDesc}
+      ]]></description>
+      <pubDate>${pubDate}</pubDate>
+      <author>${CONTACT_EMAIL} (${escapeHtml(AUTHOR.name)})</author>
+${categories}
+    </item>`;
+    }),
+    ...blogPosts.map((b) => {
+      const pubDate = new Date(`${b.date}T00:00:00Z`).toUTCString();
+      const categories = b.tags.map((t) => `      <category>${escapeHtml(t)}</category>`).join('\n');
+      return `    <item>
+      <title>${escapeHtml(b.title)}</title>
+      <link>${SITE_URL}/blog/${b.slug}</link>
+      <guid isPermaLink="true">${SITE_URL}/blog/${b.slug}</guid>
+      <description><![CDATA[
+        <p>${escapeHtml(b.excerpt)}</p>
+        <p><strong>Category:</strong> ${escapeHtml(b.category)} | <strong>Reading Time:</strong> ${b.readingTime}</p>
       ]]></description>
       <pubDate>${pubDate}</pubDate>
       <author>${CONTACT_EMAIL} (${escapeHtml(AUTHOR.name)})</author>

@@ -86,6 +86,10 @@ export default function Header() {
             Gallery
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-(--amethyst) transition-all duration-300 group-hover:w-full"></span>
           </Link>
+          <Link to="/blog" className="relative group text-gray-800 dark:text-gray-200 hover:text-(--amethyst) transition-colors duration-300">
+            Blog
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-(--amethyst) transition-all duration-300 group-hover:w-full"></span>
+          </Link>
           <Link to="/play" className="relative group flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold rounded-md bg-(--amethyst)/10 text-(--chrysler-blue) dark:text-purple-300 hover:bg-(--amethyst) hover:text-white transition-all duration-300 border border-(--amethyst)/30 shadow-[0_0_10px_var(--amethyst)]/20">
             <i className="fas fa-terminal"></i> Play
           </Link>
@@ -168,6 +172,20 @@ export default function Header() {
                     className="relative group hover:text-(--amethyst)"
                   >
                     <span className="block">Gallery</span>
+                  </Link>
+                </motion.div>
+
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.45 }}
+                >
+                  <Link 
+                    to="/blog" 
+                    onClick={() => setMenuOpen(false)}
+                    className="relative group hover:text-(--amethyst)"
+                  >
+                    <span className="block">Blog</span>
                   </Link>
                 </motion.div>
 

@@ -70,14 +70,20 @@ export default function Footer() {
                 <i className="fas fa-envelope mr-2"></i>
                 <span>{'aritrosaha2025'}@{'gmail.com'}</span>
               </a>
-              <div className="mt-2 flex items-center justify-center md:justify-start">
+              <div className="mt-2 flex flex-wrap items-center justify-center md:justify-start gap-3 text-xs text-gray-500 dark:text-gray-400">
+                <a href="/blog" className="hover:text-(--amethyst) transition-colors">Blog</a>
+                <span>•</span>
+                <a href="/play" className="hover:text-(--amethyst) transition-colors">The Arcade</a>
+                <span>•</span>
+                <a href="/feed.xml" className="hover:text-(--amethyst) transition-colors">RSS</a>
+                <span>•</span>
                 <a
                   href={typeof window !== 'undefined' && window.location.pathname && window.location.pathname !== '/' ? `${window.location.pathname.replace(/\/$/, '')}.md` : '/index.md'}
-                  className="text-xs text-gray-500 hover:text-(--amethyst) dark:text-gray-400 dark:hover:text-(--amethyst) inline-flex items-center gap-1.5 transition-colors duration-200"
+                  className="hover:text-(--amethyst) inline-flex items-center gap-1 transition-colors duration-200"
                   title="View this page in Markdown format for AI agents and LLMs"
                 >
                   <span className="font-mono text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">.md</span>
-                  <span>View as Markdown</span>
+                  <span>Markdown</span>
                 </a>
               </div>
             </div>

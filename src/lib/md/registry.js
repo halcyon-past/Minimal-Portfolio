@@ -2,6 +2,7 @@ import { formatMarkdownPage, bulletList, mdLink, table, absoluteUrl } from './fo
 import { buildMarkdownHeaders, build404Markdown } from './http.js';
 import { SITE_URL, AUTHOR, SOCIAL_PROFILES } from '../siteConfig.js';
 import { projects, experience, education, galleryImages, rawGames } from '../../data/portfolioData.js';
+import { blogPosts } from '../../data/blogData.js';
 
 const LAST_UPDATED = '2026-10-26';
 
@@ -379,6 +380,73 @@ export function renderProjectPage(projectId) {
 }
 
 /**
+ * 7. Blog Catalog Renderer (/blog)
+ */
+export function renderBlogCatalogPage() {
+  const content = [
+    '## Engineering Notes & Architecture',
+    'Technical deep-dives into high-throughput data engineering, native macOS systems, fault-tolerant Python architectures, and modern web performance by Aritro Saha.',
+    '',
+    '## Published Articles',
+    bulletList(
+      blogPosts.map((p) => `${mdLink(p.title, absoluteUrl(`/blog/${p.slug}`))} — ${p.excerpt} (${p.readingTime}, ${p.date})`)
+    )
+  ].join('\n');
+
+  return formatMarkdownPage({
+    title: 'Engineering Blog — Systems, Data & Architecture | Aritro Saha',
+    summary: 'Technical deep-dives, systems architecture, Apple Silicon OCR engineering, and Python fault-tolerance patterns by Aritro Saha.',
+    canonicalPath: '/blog',
+    lastUpdated: LAST_UPDATED,
+    content,
+    relatedLinks: [
+      { title: 'Portfolio Home', url: '/' },
+      { title: 'About Aritro Saha', url: '/about' },
+      { title: 'All Projects', url: '/#projects' }
+    ]
+  });
+}
+
+/**
+ * 8. Dynamic Blog Post Renderer (/blog/:slug)
+ */
+export function renderBlogPostPage(slug) {
+  const post = blogPosts.find((p) => p.slug === slug);
+  if (!post) return null;
+
+  const sectionsContent = post.sections
+    .map((s) => `## ${s.heading}\n\n${s.content}`)
+    .join('\n\n');
+
+  const content = [
+    `> Category: ${post.category} | Published: ${post.date} | Reading Time: ${post.readingTime}`,
+    '',
+    post.excerpt,
+    '',
+    sectionsContent,
+    '',
+    '## Tags & Topics',
+    post.tags.map((t) => `\`#${t}\``).join(' '),
+    '',
+    '## Author Profile',
+    `**${post.author.name}** — ${post.author.role}. Specialized in distributed systems, Apple Silicon engineering, and resilient batch pipelines.`
+  ].join('\n');
+
+  const otherPosts = blogPosts
+    .filter((p) => p.slug !== post.slug)
+    .map((p) => ({ title: p.title, url: `/blog/${p.slug}` }));
+
+  return formatMarkdownPage({
+    title: `${post.title} — by Aritro Saha`,
+    summary: post.excerpt,
+    canonicalPath: `/blog/${post.slug}`,
+    lastUpdated: post.date,
+    content,
+    relatedLinks: [{ title: 'Engineering Blog Catalog', url: '/blog' }, ...otherPosts]
+  });
+}
+
+/**
  * Maps static paths to renderers
  */
 const staticRoutes = {
@@ -389,6 +457,7 @@ const staticRoutes = {
   '/aritrosaha': renderAritroSahaDossier,
   '/aritro-saha': renderAritroSahaDossier,
   '/gallery': renderGalleryPage,
+  '/blog': renderBlogCatalogPage,
   '/play': renderArcadeCatalogPage,
   '/play/typing-test': () => renderGamePage('typing-test'),
   '/play/data-pipeline': () => renderGamePage('data-pipeline-puzzle'),
@@ -470,6 +539,24 @@ export function listMarkdownRoutes() {
       title: `${project.title}`,
       description: project.description,
       category: 'projects'
+    });
+  }
+
+  // Blog routes
+  routes.push({
+    path: '/blog',
+    mdPath: '/blog.md',
+    title: 'Engineering Blog — Systems, Data & Architecture',
+    description: 'Technical deep-dives and engineering architecture by Aritro Saha.',
+    category: 'blog'
+  });
+  for (const post of blogPosts) {
+    routes.push({
+      path: `/blog/${post.slug}`,
+      mdPath: `/blog/${post.slug}.md`,
+      title: post.title,
+      description: post.excerpt,
+      category: 'blog'
     });
   }
 
@@ -603,6 +690,25 @@ export function renderMarkdownRoute(rawPath = '/', isNegotiated = false) {
         headers: buildMarkdownHeaders({
           body,
           canonicalPath: `/play/${gameId}`,
+          isNegotiated
+        })
+      };
+    }
+  }
+
+  // 4. Check dynamic blog route: /blog/:slug
+  const blogMatch = cleanPath.match(/^\/blog\/([^/]+)$/);
+  if (blogMatch) {
+    const slug = blogMatch[1];
+    const body = renderBlogPostPage(slug);
+    if (body) {
+      return {
+        status: 200,
+        body,
+        canonicalPath: `/blog/${slug}`,
+        headers: buildMarkdownHeaders({
+          body,
+          canonicalPath: `/blog/${slug}`,
           isNegotiated
         })
       };

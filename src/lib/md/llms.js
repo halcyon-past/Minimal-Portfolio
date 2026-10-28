@@ -10,6 +10,7 @@ export function generateLlmsTxt() {
   const coreRoutes = routes.filter((r) => r.category === 'core');
   const projectRoutes = routes.filter((r) => r.category === 'projects');
   const arcadeRoutes = routes.filter((r) => r.category === 'arcade');
+  const blogRoutes = routes.filter((r) => r.category === 'blog');
 
   const lines = [
     `# ${SITE_NAME}`,
@@ -39,6 +40,9 @@ export function generateLlmsTxt() {
     '',
     '## Featured Projects & Open-Source Software',
     ...projectRoutes.map((r) => `- [${r.title}](${absoluteUrl(r.mdPath)}): ${r.description}`),
+    '',
+    '## Engineering Blog & Technical Architecture',
+    ...blogRoutes.map((r) => `- [${r.title}](${absoluteUrl(r.mdPath)}): ${r.description}`),
     '',
     '## Developer Arcade (Aritro Games)',
     ...arcadeRoutes.map((r) => `- [${r.title}](${absoluteUrl(r.mdPath)}): ${r.description}`),

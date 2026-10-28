@@ -1,5 +1,4 @@
 import { Helmet } from 'react-helmet-async';
-import profileImg from '../../assets/profile.webp';
 import { projects } from '../../data/data';
 import { SITE_URL, CONTACT_EMAIL, AUTHOR } from '../../lib/siteConfig';
 

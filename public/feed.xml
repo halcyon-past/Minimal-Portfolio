@@ -5,7 +5,7 @@
     <link>https://www.aritro.cloud/</link>
     <description>Official RSS feed of software products, native utilities, and developer projects engineered by Aritro Saha, Software Engineer 1 at Bristol Myers Squibb.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Oct 2026 20:57:13 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 21:37:44 GMT</lastBuildDate>
     <atom:link href="https://www.aritro.cloud/feed.xml" rel="self" type="application/rss+xml" />
     <managingEditor>aritrosaha2025@gmail.com (Aritro Saha)</managingEditor>
     <webMaster>aritrosaha2025@gmail.com (Aritro Saha)</webMaster>
@@ -173,6 +173,57 @@
       <category>Kinde Auth</category>
       <category>UploadThing</category>
       <category>Callchimp.AI</category>
+    </item>
+    <item>
+      <title>Building Sub-50ms Zero-Disk Screen OCR with Swift 6 &amp; Apple Vision Framework</title>
+      <link>https://www.aritro.cloud/blog/swift-vision-ocr-apple-neural-engine</link>
+      <guid isPermaLink="true">https://www.aritro.cloud/blog/swift-vision-ocr-apple-neural-engine</guid>
+      <description><![CDATA[
+        <p>How to architect an in-memory macOS screen OCR pipeline using Swift 6, NSPasteboard, and Apple Vision VNRecognizeTextRequest with zero temporary disk writes.</p>
+        <p><strong>Category:</strong> macOS Engineering | <strong>Reading Time:</strong> 6 min read</p>
+      ]]></description>
+      <pubDate>Tue, 20 Oct 2026 00:00:00 GMT</pubDate>
+      <author>aritrosaha2025@gmail.com (Aritro Saha)</author>
+      <category>Swift 6</category>
+      <category>macOS</category>
+      <category>Apple Vision</category>
+      <category>Neural Engine</category>
+      <category>OCR</category>
+      <category>Performance</category>
+    </item>
+    <item>
+      <title>Architecting Zero-Crash Batch Data Pipelines with Python Dead-Letter Queues (DLQ)</title>
+      <link>https://www.aritro.cloud/blog/python-dead-letter-queue-batch-pipelines</link>
+      <guid isPermaLink="true">https://www.aritro.cloud/blog/python-dead-letter-queue-batch-pipelines</guid>
+      <description><![CDATA[
+        <p>Eliminate pipeline crashes at record #5,247. A deep dive into implementing fault-tolerant Python loops, atomic error serialization, and surgical CLI replays.</p>
+        <p><strong>Category:</strong> Data Engineering | <strong>Reading Time:</strong> 8 min read</p>
+      ]]></description>
+      <pubDate>Sat, 24 Oct 2026 00:00:00 GMT</pubDate>
+      <author>aritrosaha2025@gmail.com (Aritro Saha)</author>
+      <category>Python</category>
+      <category>Data Engineering</category>
+      <category>Fault Tolerance</category>
+      <category>Dead-Letter Queue</category>
+      <category>Architecture</category>
+      <category>PyPI</category>
+    </item>
+    <item>
+      <title>Achieving 0ms Perceived Navigation in Vite &amp; React 19 with W3C Speculation Rules</title>
+      <link>https://www.aritro.cloud/blog/instant-navigation-speculation-rules-vite-ssg</link>
+      <guid isPermaLink="true">https://www.aritro.cloud/blog/instant-navigation-speculation-rules-vite-ssg</guid>
+      <description><![CDATA[
+        <p>How to upgrade traditional SPAs into instant-navigation platforms using modern W3C Speculation Rules, React 19 SSG prerendering, and Core Web Vitals optimization.</p>
+        <p><strong>Category:</strong> Web Architecture | <strong>Reading Time:</strong> 5 min read</p>
+      ]]></description>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
+      <author>aritrosaha2025@gmail.com (Aritro Saha)</author>
+      <category>React 19</category>
+      <category>Vite</category>
+      <category>Speculation Rules</category>
+      <category>Core Web Vitals</category>
+      <category>SSG</category>
+      <category>Performance</category>
     </item>
     <item>
       <title>SiliconSync — Real-Time AI Technology News Engine</title>

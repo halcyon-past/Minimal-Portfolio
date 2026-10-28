@@ -52,6 +52,7 @@ function testSitemap() {
   assert(changefreqCount === urlBlocks.length, 'Every URL entry declares valid <changefreq>');
   assert(content.includes('https://www.aritro.cloud/aritrosaha'), 'sitemap contains /aritrosaha');
   assert(content.includes('https://www.aritro.cloud/resume'), 'sitemap contains /resume');
+  assert(content.includes('https://www.aritro.cloud/blog'), 'sitemap contains /blog');
   assert(!content.includes('https://www.aritro.cloud/llms.txt'), 'sitemap does not contain plain text files (.txt)');
 }
 
@@ -201,9 +202,15 @@ function testPrerenderedDist() {
     assert(!!parsedJson, `${rel} JSON-LD is valid JSON`);
 
     // Verify BreadcrumbList on deep pages
-    if (rel.startsWith('projects/') || rel.startsWith('play/')) {
+    if (rel.startsWith('projects/') || rel.startsWith('play/') || rel.startsWith('blog/')) {
       const breadcrumbNode = parsedJson['@graph']?.find((n) => n['@type'] === 'BreadcrumbList');
       assert(!!breadcrumbNode, `${rel} includes BreadcrumbList schema`);
+    }
+
+    // Verify TechArticle schema on Blog Posts
+    if (rel.startsWith('blog/') && rel !== 'blog/index.html') {
+      const articleNode = parsedJson['@graph']?.find((n) => n['@type'] === 'TechArticle' || n['@type'] === 'BlogPosting');
+      assert(!!articleNode, `${rel} includes TechArticle schema`);
     }
 
     // Verify H3 heading depth on project detail pages
