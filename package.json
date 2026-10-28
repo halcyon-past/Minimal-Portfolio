@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && node scripts/prerender-routes.js",
+    "test": "node scripts/test-seo.js && node scripts/verify-markdown.js",
+    "test:seo": "node scripts/test-seo.js",
     "test:md": "node scripts/verify-markdown.js",
     "lint": "eslint .",
     "preview": "vite preview"

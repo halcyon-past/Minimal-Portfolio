@@ -74,6 +74,7 @@ export default function Seo({
           "https://orcid.org/0009-0007-0861-3978",
           "https://linkedin.com/in/aritro-saha",
           "https://github.com/halcyon-past",
+          "https://github.com/halcyon-past/aritrosaha",
           "https://news.ycombinator.com/user?id=halcyon-past",
           "https://dev.to/halcyonpast",
           "https://pypi.org/project/quarantine-py/",
@@ -103,6 +104,7 @@ export default function Seo({
         "logo": `${SITE_URL}/logo.webp`,
         "sameAs": [
           "https://github.com/halcyon-past",
+          "https://github.com/halcyon-past/aritrosaha",
           "https://linkedin.com/in/aritro-saha",
           "https://www.wikidata.org/wiki/Q141715213"
         ],
@@ -176,6 +178,7 @@ export default function Seo({
       <link rel="me" href="https://www.wikidata.org/wiki/Q141715213" />
       <link rel="me" href="https://orcid.org/0009-0007-0861-3978" />
       <link rel="me" href="https://github.com/halcyon-past" />
+      <link rel="me" href="https://github.com/halcyon-past/aritrosaha" />
       <link rel="me" href="https://news.ycombinator.com/user?id=halcyon-past" />
       <link rel="me" href="https://dev.to/halcyonpast" />
       <link rel="me" href="https://linkedin.com/in/aritro-saha" />

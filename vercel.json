@@ -1,4 +1,6 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/(.*)",
@@ -8,8 +10,8 @@
           "value": "^games\\.aritro\\.cloud$"
         }
       ],
-      "destination": "https://aritro.cloud/play",
-      "permanent": false
+      "destination": "https://www.aritro.cloud/play",
+      "permanent": true
     },
     {
       "source": "/(.*)",
@@ -19,7 +21,7 @@
           "value": "(?!www\\.)(?<subdomain>[^.]+)\\.aritro\\.cloud"
         }
       ],
-      "destination": "https://aritro.cloud/404",
+      "destination": "https://www.aritro.cloud/404",
       "permanent": false
     }
   ],
@@ -43,7 +45,10 @@
       ],
       "destination": "/api/md?path=$1"
     },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/((?!assets/|api/|\\.well-known/|.*\\.[a-zA-Z0-9]+$).*)",
+      "destination": "/index.html"
+    }
   ],
   "headers": [
     {
@@ -92,6 +97,18 @@
         {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
         },
         {
           "key": "Link",

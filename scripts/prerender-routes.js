@@ -52,6 +52,7 @@ const personGraphNode = {
     "https://orcid.org/0009-0007-0861-3978",
     "https://linkedin.com/in/aritro-saha",
     "https://github.com/halcyon-past",
+    "https://github.com/halcyon-past/aritrosaha",
     "https://news.ycombinator.com/user?id=halcyon-past",
     "https://dev.to/halcyonpast",
     "https://pypi.org/project/quarantine-py/",
@@ -62,6 +63,11 @@ const personGraphNode = {
     "https://openworld.aritro.cloud/",
     "https://byakugan-scan.aritro.cloud/",
     "https://sutrakey.aritro.cloud/",
+    "https://alternativeto.net/software/byakugan-scan/about/",
+    "https://alternativeto.net/software/sutrakey/about/",
+    "https://www.producthunt.com/@halcyon_past",
+    "https://www.producthunt.com/products/byakugan-scan",
+    "https://www.producthunt.com/products/sutrakey",
     "https://quarantine-py.aritro.cloud/",
     "https://structurify.aritro.cloud/",
     "https://onepiece.aritro.cloud/",
@@ -91,7 +97,7 @@ const STATIC_ROUTES = [
   {
     route: '/aritrosaha',
     title: 'Aritro Saha (aritrosaha) | Software Engineer & Creator',
-    description: 'Official verified portfolio & engineering dossier of Aritro Saha (aritrosaha). Software Engineer 1 at Bristol Myers Squibb, Winner of Hack4Bengal 3.0, and creator of Byakugan Scan and SutraKey.',
+    description: 'Verified portfolio of Aritro Saha (aritrosaha). Software Engineer 1 at Bristol Myers Squibb, Hack4Bengal 3.0 winner, and creator of Byakugan Scan & SutraKey.',
     image: `${SITE_URL}/banner-social.jpg`,
     articleHtml: `
       <header>
@@ -130,7 +136,7 @@ const STATIC_ROUTES = [
   {
     route: '/aritro-saha',
     title: 'Aritro Saha | Software Engineer & Creator',
-    description: 'Official portfolio & engineering dossier of Aritro Saha. Software Engineer 1 at Bristol Myers Squibb, Winner of Hack4Bengal 3.0, and creator of Byakugan Scan and SutraKey.',
+    description: 'Portfolio of Aritro Saha. Software Engineer 1 at Bristol Myers Squibb, Hack4Bengal 3.0 winner, and creator of native macOS tools Byakugan Scan and SutraKey.',
     image: `${SITE_URL}/banner-social.jpg`,
     articleHtml: `
       <header>
@@ -391,7 +397,8 @@ function run() {
   for (const project of projects) {
     const route = `/projects/${project.id}`;
     const title = `${project.title} | Projects by Aritro Saha`;
-    const description = project.details?.overview || project.description;
+    const rawDesc = project.description || project.details?.overview || '';
+    const description = rawDesc.length > 158 ? `${rawDesc.slice(0, 155).trim()}...` : rawDesc;
     const image = `${SITE_URL}${project.image}`;
 
     const featuresList = (project.details?.features || [])
@@ -467,7 +474,25 @@ function run() {
     generatedCount++;
   }
 
-  console.log(`✅ Pre-rendered ${generatedCount} static HTML routes for web scrapers & bots.`);
+  // Generate static dist/404.html for true HTTP 404 responses from Vercel
+  const notFoundPage = {
+    route: '/404',
+    title: '404 - Page Not Found | Aritro Saha',
+    description: 'The requested page could not be found. Explore Aritro Saha\'s portfolio, projects, resume, and interactive developer arcade.',
+    image: `${SITE_URL}/banner-social.jpg`,
+    articleHtml: `
+      <header><h1>404 — Page Not Found</h1></header>
+      <main><article><p>The page you requested could not be found. Return to the <a href="${SITE_URL}/">homepage</a>, view <a href="${SITE_URL}/aritrosaha">Aritro Saha's profile</a>, or explore <a href="${SITE_URL}/projects/byakugan-scan">projects</a>.</p></article></main>
+    `
+  };
+  let notFoundHtml = buildRouteHtml(template, notFoundPage);
+  notFoundHtml = notFoundHtml.replace(
+    /<meta name="robots"[^>]*\/>/,
+    '<meta name="robots" content="noindex, follow" />'
+  );
+  fs.writeFileSync(path.join(distDir, '404.html'), notFoundHtml, 'utf-8');
+
+  console.log(`✅ Pre-rendered ${generatedCount} static HTML routes + 404.html for web scrapers & bots.`);
 
   // 3. Pre-render all markdown (.md) documents to dist
   const markdownRoutes = listMarkdownRoutes();

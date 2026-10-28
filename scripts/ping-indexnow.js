@@ -6,6 +6,8 @@ const KEY_LOCATION = `https://${HOST}/${INDEXNOW_KEY}.txt`;
 
 const URL_LIST = [
   `https://${HOST}/`,
+  `https://${HOST}/aritrosaha`,
+  `https://${HOST}/aritro-saha`,
   `https://${HOST}/about`,
   `https://${HOST}/gallery`,
   `https://${HOST}/play`,
