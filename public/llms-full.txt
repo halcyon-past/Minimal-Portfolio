@@ -28,13 +28,13 @@ Currently serving as a Software Engineer 1 at **Bristol Myers Squibb** (July 202
 - **Open-Source Author**: Published `quarantine-py` fault-tolerance package on PyPI with atomic dead-letter queuing.
 
 ## Featured Projects
-- [Byakugan Scan](https://www.aritro.cloud/projects/byakugan-scan) — Instant, in-memory screen OCR, QR code, and barcode recognition utility for macOS (Swift 6.0, AppKit, SwiftUI, Apple Vision Framework)
+- [Byakugan Scan](https://www.aritro.cloud/projects/byakugan-scan) — Instant, in-memory screen OCR, QR code, and barcode scanner for macOS built with Swift 6.0 and Apple Vision Framework. Zero telemetry, sub-50ms hotkeys. (Swift 6.0, AppKit, SwiftUI, Apple Vision Framework)
 - [SutraKey](https://www.aritro.cloud/projects/sutrakey) — Instant Shift+Select radial pie menu for video, audio, and clean document actions on macOS (Swift 6.0, AppKit, SwiftUI, CGEventTap)
 - [OpenWorld Portfolio](https://www.aritro.cloud/projects/openworld-portfolio) — Interactive 2.5D retro Pokémon-inspired open-world developer portfolio set in Pallet Cloud (Next.js 16, React 19, TypeScript, Tailwind CSS)
-- [Quarantine](https://www.aritro.cloud/projects/quarantine) — Zero-dependency dead-letter queue and fault-tolerance library for Python loops (Python 3.9+, PyPI, AsyncIO, CLI)
+- [Quarantine](https://www.aritro.cloud/projects/quarantine) — Zero-dependency dead-letter queue and fault-tolerance library on PyPI. Wrap Python loops with @quarantine to isolate errors without crashing batch jobs. (Python 3.9+, PyPI, AsyncIO, CLI)
 - [Structurify](https://www.aritro.cloud/projects/structurify) — AI-powered SaaS that transforms messy spreadsheet data into a clean master schema (Next.js 14, React, TailwindCSS, Firebase)
 - [Luffy Laser Dodge](https://www.aritro.cloud/projects/luffy-laser-dodge) — Interactive 3D reflex game dodging laser beams using actual head movements via webcam (React, Vite, React Three Fiber, Three.js)
-- [GlideConnect](https://www.aritro.cloud/projects/glide-connect) — Virtual Mouse Control using Gesture Recognition and Voice Assistant (Python 3.9, MediaPipe, OpenCV, Google Gemini API)
+- [GlideConnect](https://www.aritro.cloud/projects/glide-connect) — Virtual mouse control platform using MediaPipe hand-gesture recognition and Google Gemini voice assistant. Published in peer-reviewed IJIRT research. (Python 3.9, MediaPipe, OpenCV, Google Gemini API)
 - [PAWsitive](https://www.aritro.cloud/projects/pawsitive) — Centralized pet healthcare platform connecting blood donors, vet clinics, and rescue centers (Winner of Hack4Bengal 3.0) (React, Next.js, TypeScript, MongoDB)
 
 ## The Developer Arcade (Aritro Games)
@@ -523,7 +523,7 @@ Access the live interactive playable game at https://www.aritro.cloud/play/ticta
 
 # Byakugan Scan — by Aritro Saha
 
-> Instant, in-memory screen OCR, QR code, and barcode recognition utility for macOS
+> Instant, in-memory screen OCR, QR code, and barcode scanner for macOS built with Swift 6.0 and Apple Vision Framework. Zero telemetry, sub-50ms hotkeys.
 
 Canonical: https://www.aritro.cloud/projects/byakugan-scan
 Last updated: 2026-10-26
@@ -646,7 +646,7 @@ OpenWorld Portfolio is an interactive, retro Pokémon-inspired 2.5D open-world d
 
 # Quarantine — by Aritro Saha
 
-> Zero-dependency dead-letter queue and fault-tolerance library for Python loops
+> Zero-dependency dead-letter queue and fault-tolerance library on PyPI. Wrap Python loops with @quarantine to isolate errors without crashing batch jobs.
 
 Canonical: https://www.aritro.cloud/projects/quarantine
 Last updated: 2026-10-26
@@ -770,7 +770,7 @@ Luffy Laser Dodge is an interactive, browser-based 3D reflex game where you use 
 
 # GlideConnect — by Aritro Saha
 
-> Virtual Mouse Control using Gesture Recognition and Voice Assistant
+> Virtual mouse control platform using MediaPipe hand-gesture recognition and Google Gemini voice assistant. Published in peer-reviewed IJIRT research.
 
 Canonical: https://www.aritro.cloud/projects/glide-connect
 Last updated: 2026-10-26

@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 'byakugan-scan',
     title: 'Byakugan Scan',
-    description: 'Instant, in-memory screen OCR, QR code, and barcode recognition utility for macOS',
+    description: 'Instant, in-memory screen OCR, QR code, and barcode scanner for macOS built with Swift 6.0 and Apple Vision Framework. Zero telemetry, sub-50ms hotkeys.',
     image: '/assets/Byakugan-Scan.webp',
     github: 'https://github.com/halcyon-past/byakugan-scan',
     alt: 'Byakugan Scan - Instant In-Memory OCR & QR Scanner for macOS',
@@ -73,7 +73,7 @@ export const projects = [
   {
     id: 'quarantine',
     title: 'Quarantine',
-    description: 'Zero-dependency dead-letter queue and fault-tolerance library for Python loops',
+    description: 'Zero-dependency dead-letter queue and fault-tolerance library on PyPI. Wrap Python loops with @quarantine to isolate errors without crashing batch jobs.',
     image: '/assets/Quarantine.webp',
     github: 'https://github.com/halcyon-past/quarantine',
     alt: 'Quarantine - Dead-letter queues for Python loops',
@@ -143,7 +143,7 @@ export const projects = [
   {
     id: 'glide-connect',
     title: 'GlideConnect',
-    description: 'Virtual Mouse Control using Gesture Recognition and Voice Assistant',
+    description: 'Virtual mouse control platform using MediaPipe hand-gesture recognition and Google Gemini voice assistant. Published in peer-reviewed IJIRT research.',
     image: '/assets/GlideConnect.webp',
     alt: 'GlideConnect platform interface',
     link: '/projects/glide-connect',

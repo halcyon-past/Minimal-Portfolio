@@ -140,6 +140,17 @@ const STATIC_ROUTES = [
     title: 'Aritro Saha (aritrosaha) | Software Engineer & Creator',
     description: 'Verified portfolio of Aritro Saha (aritrosaha). Software Engineer 1 at Bristol Myers Squibb, Hack4Bengal 3.0 winner, and creator of Byakugan Scan & SutraKey.',
     image: `${SITE_URL}/aritro-saha.webp`,
+    pageType: 'ProfilePage',
+    extraJsonLdNodes: [
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/aritrosaha#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "Verified Dossier", "item": `${SITE_URL}/aritrosaha` }
+        ]
+      }
+    ],
     articleHtml: `
       <header>
         <h1>Aritro Saha (aritrosaha) — Software Engineer & Open-Source Creator</h1>
@@ -186,6 +197,17 @@ const STATIC_ROUTES = [
     title: 'Resume | Aritro Saha — Software Engineer 1 at Bristol Myers Squibb',
     description: 'Official resume of Aritro Saha, Software Engineer 1 at Bristol Myers Squibb. Enterprise data pipelines, cloud architecture, native macOS utilities, and AI.',
     image: `${SITE_URL}/aritro-saha.webp`,
+    pageType: 'WebPage',
+    extraJsonLdNodes: [
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/resume#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "Resume", "item": `${SITE_URL}/resume` }
+        ]
+      }
+    ],
     articleHtml: `
       <header>
         <h1>Aritro Saha (Megh) — Software Engineer 1 Resume</h1>
@@ -223,14 +245,24 @@ const STATIC_ROUTES = [
           </ul>
         </article>
       </main>
-    `,
-    extraJsonLdNodes: []
+    `
   },
   {
     route: '/about',
     title: 'About Aritro Saha | Software Engineer 1 at Bristol Myers Squibb',
     description: 'Learn about Aritro Saha (Megh), a Software Engineer 1 at Bristol Myers Squibb, VIT Chennai graduate, and Winner of Hack4Bengal 3.0.',
     image: `${SITE_URL}/aritro-saha.webp`,
+    pageType: 'AboutPage',
+    extraJsonLdNodes: [
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/about#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "About", "item": `${SITE_URL}/about` }
+        ]
+      }
+    ],
     articleHtml: `
       <header>
         <h1>About Aritro Saha — Software Engineer 1 at Bristol Myers Squibb</h1>
@@ -264,6 +296,7 @@ const STATIC_ROUTES = [
     title: 'Gallery | Aritro Saha - Software Engineer Portfolio',
     description: 'Explore personal moments, hackathons, events, and projects associated with Aritro Saha.',
     image: `${SITE_URL}/banner-social.jpg`,
+    pageType: 'ImageGallery',
     articleHtml: `
       <header>
         <h1>Engineering & Hackathon Gallery — Aritro Saha</h1>
@@ -271,6 +304,7 @@ const STATIC_ROUTES = [
       </header>
       <main>
         <article>
+          <h2>Hackathon Champions & Engineering Moments</h2>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
             ${galleryImages.map((img) => `
               <figure style="margin: 0; background: rgba(0,0,0,0.03); border-radius: 0.75rem; overflow: hidden; padding: 0.5rem;">
@@ -290,6 +324,14 @@ const STATIC_ROUTES = [
         "description": "Visual highlights from Hack4Bengal 3.0, tech conferences, and software development milestones.",
         "author": { "@id": `${SITE_URL}/#person` },
         "image": galleryImages.map((img) => `${SITE_URL}${img.src}`)
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/gallery#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "Gallery", "item": `${SITE_URL}/gallery` }
+        ]
       }
     ]
   },
@@ -298,6 +340,7 @@ const STATIC_ROUTES = [
     title: 'The Arcade | Aritro Saha - Developer Games',
     description: 'A collection of minimalist, developer-themed games built directly into Aritro Saha\'s portfolio.',
     image: `${SITE_URL}/banner-social.jpg`,
+    pageType: 'CollectionPage',
     articleHtml: `
       <header>
         <h1>The Developer Arcade by Aritro Saha</h1>
@@ -332,6 +375,14 @@ const STATIC_ROUTES = [
           { "@type": "ListItem", "position": 5, "url": `${SITE_URL}/play/space-invaders`, "name": "Space Invaders" },
           { "@type": "ListItem", "position": 6, "url": `${SITE_URL}/play/flappy-bird`, "name": "Flappy Bird" },
           { "@type": "ListItem", "position": 7, "url": `${SITE_URL}/play/tictactoe`, "name": "Tic Tac Toe" }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/play#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "Arcade", "item": `${SITE_URL}/play` }
         ]
       }
     ]
@@ -372,6 +423,15 @@ const STATIC_ROUTES = [
         "operatingSystem": "Any modern web browser",
         "playMode": "SinglePlayer",
         "author": { "@id": `${SITE_URL}/#person` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/play/typing-test#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "Arcade", "item": `${SITE_URL}/play` },
+          { "@type": "ListItem", "position": 3, "name": "Developer Speed Test", "item": `${SITE_URL}/play/typing-test` }
+        ]
       }
     ]
   },
@@ -411,6 +471,15 @@ const STATIC_ROUTES = [
         "operatingSystem": "Any modern web browser",
         "playMode": "SinglePlayer",
         "author": { "@id": `${SITE_URL}/#person` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/play/data-pipeline#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "Arcade", "item": `${SITE_URL}/play` },
+          { "@type": "ListItem", "position": 3, "name": "Data Pipeline Puzzle", "item": `${SITE_URL}/play/data-pipeline` }
+        ]
       }
     ]
   },
@@ -449,13 +518,22 @@ const STATIC_ROUTES = [
         "operatingSystem": "Any modern web browser",
         "playMode": "SinglePlayer",
         "author": { "@id": `${SITE_URL}/#person` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/play/snake#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "Arcade", "item": `${SITE_URL}/play` },
+          { "@type": "ListItem", "position": 3, "name": "Minimalist Snake", "item": `${SITE_URL}/play/snake` }
+        ]
       }
     ]
   },
   {
     route: '/play/sudoku',
     title: 'Sudoku | Aritro Saha Arcade',
-    description: 'Play classic Sudoku right inside your browser at Aritro Saha\'s Developer Arcade.',
+    description: 'Play minimalist, ad-free Sudoku online in your browser. Features 3 difficulty levels, pencil notes, real-time error checking, and keyboard shortcuts.',
     image: `${SITE_URL}/banner-social.jpg`,
     articleHtml: `
       <header>
@@ -488,13 +566,22 @@ const STATIC_ROUTES = [
         "operatingSystem": "Any modern web browser",
         "playMode": "SinglePlayer",
         "author": { "@id": `${SITE_URL}/#person` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/play/sudoku#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "Arcade", "item": `${SITE_URL}/play` },
+          { "@type": "ListItem", "position": 3, "name": "Sudoku", "item": `${SITE_URL}/play/sudoku` }
+        ]
       }
     ]
   },
   {
     route: '/play/space-invaders',
     title: 'Space Invaders | Aritro Saha Arcade',
-    description: 'Defend your codebase from incoming bugs in this retro shooter by Aritro Saha.',
+    description: 'Defend production servers from descending bugs in this retro space shooter. Features 60fps HTML5 canvas rendering, shields, and mobile touch controls.',
     image: `${SITE_URL}/banner-social.jpg`,
     articleHtml: `
       <header>
@@ -526,13 +613,22 @@ const STATIC_ROUTES = [
         "operatingSystem": "Any modern web browser",
         "playMode": "SinglePlayer",
         "author": { "@id": `${SITE_URL}/#person` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/play/space-invaders#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "Arcade", "item": `${SITE_URL}/play` },
+          { "@type": "ListItem", "position": 3, "name": "Space Invaders", "item": `${SITE_URL}/play/space-invaders` }
+        ]
       }
     ]
   },
   {
     route: '/play/flappy-bird',
     title: 'Flappy Bird | Aritro Saha Arcade',
-    description: 'Navigate the bird through the pipes in Aritro Saha\'s Developer Arcade.',
+    description: 'Navigate the bird through narrow pipe obstacles in this retro arcade classic. Features realistic gravitational physics, mobile touch tap, and high scores.',
     image: `${SITE_URL}/banner-social.jpg`,
     articleHtml: `
       <header>
@@ -564,13 +660,22 @@ const STATIC_ROUTES = [
         "operatingSystem": "Any modern web browser",
         "playMode": "SinglePlayer",
         "author": { "@id": `${SITE_URL}/#person` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/play/flappy-bird#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "Arcade", "item": `${SITE_URL}/play` },
+          { "@type": "ListItem", "position": 3, "name": "Flappy Bird", "item": `${SITE_URL}/play/flappy-bird` }
+        ]
       }
     ]
   },
   {
     route: '/play/tictactoe',
     title: 'Tic Tac Toe | Aritro Saha Arcade',
-    description: 'Play against a Minimax AI in this minimalist classic by Aritro Saha.',
+    description: 'Challenge an unbeatable Minimax AI in classic 3x3 Tic Tac Toe. Features 3 difficulty levels, alpha-beta pruning, move analysis, and touch input.',
     image: `${SITE_URL}/banner-social.jpg`,
     articleHtml: `
       <header>
@@ -603,6 +708,15 @@ const STATIC_ROUTES = [
         "operatingSystem": "Any modern web browser",
         "playMode": "SinglePlayer",
         "author": { "@id": `${SITE_URL}/#person` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/play/tictactoe#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "Arcade", "item": `${SITE_URL}/play` },
+          { "@type": "ListItem", "position": 3, "name": "Tic Tac Toe", "item": `${SITE_URL}/play/tictactoe` }
+        ]
       }
     ]
   }
@@ -616,7 +730,7 @@ function escapeHtml(str) {
     .replace(/>/g, '&gt;');
 }
 
-function buildRouteHtml(template, { route, title, description, image, articleHtml, extraJsonLdNodes = [] }) {
+function buildRouteHtml(template, { route, title, description, image, articleHtml, extraJsonLdNodes = [], pageType = "WebPage" }) {
   const canonicalUrl = `${SITE_URL}${route}`;
   const markdownUrl = `${SITE_URL}${route === '/' ? '/index.md' : `${route}.md`}`;
   const escapedTitle = escapeHtml(title);
@@ -630,7 +744,7 @@ function buildRouteHtml(template, { route, title, description, image, articleHtm
       organizationGraphNode,
       authorImageGraphNode,
       {
-        "@type": "WebPage",
+        "@type": pageType,
         "@id": `${canonicalUrl}#webpage`,
         "url": canonicalUrl,
         "name": title,
@@ -714,10 +828,38 @@ function buildRouteHtml(template, { route, title, description, image, articleHtm
     `<script id="static-json-ld" type="application/ld+json">\n${JSON.stringify(jsonLd, null, 2)}\n    </script>`
   );
 
+  const isHome = route === '/' || route === '';
+  const is404 = route === '/404';
+
+  const navHeaderHtml = (isHome || is404) ? '' : `
+      <nav aria-label="Breadcrumb & Site Navigation" style="display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-bottom: 2rem; font-size: 0.9rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(156, 163, 175, 0.2);">
+        <a href="${SITE_URL}/" style="font-weight: 600; text-decoration: none;">← Aritro Saha</a>
+        <span style="opacity: 0.5;">/</span>
+        <a href="${SITE_URL}/about">About</a>
+        <a href="${SITE_URL}/resume">Resume</a>
+        <a href="${SITE_URL}/play">Arcade</a>
+        <a href="${SITE_URL}/gallery">Gallery</a>
+        <a href="${SITE_URL}/aritrosaha">Dossier</a>
+      </nav>`;
+
+  const footerHtml = (isHome || is404) ? '' : `
+      <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(156, 163, 175, 0.2); font-size: 0.85rem; color: #6b7280; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;">
+        <div>
+          <strong>Aritro Saha</strong> — Software Engineer 1 at Bristol Myers Squibb
+        </div>
+        <div style="display: flex; gap: 1rem;">
+          <a href="${SITE_URL}/">Home</a>
+          <a href="${SITE_URL}/sitemap.xml">Sitemap</a>
+          <a href="${SITE_URL}/llms.txt">llms.txt</a>
+          <a href="https://github.com/halcyon-past">GitHub</a>
+          <a href="https://linkedin.com/in/aritro-saha">LinkedIn</a>
+        </div>
+      </footer>`;
+
   // Replace inner static fallback inside #root
   html = html.replace(
     /(<div id="root">\s*<div[^>]*>)[\s\S]*?(<\/div>\s*<\/div>)/,
-    `$1\n${articleHtml}\n      $2`
+    `$1\n${navHeaderHtml}\n${articleHtml}\n${footerHtml}\n      $2`
   );
 
   return html;

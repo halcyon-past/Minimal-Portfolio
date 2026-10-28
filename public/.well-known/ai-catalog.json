@@ -1,0 +1,20 @@
+{
+  "name": "Aritro Saha Portfolio & Arcade Catalog",
+  "version": "1.0.0",
+  "description": "Machine-readable software engineering catalog, research papers, and developer tools of Aritro Saha.",
+  "author": {
+    "name": "Aritro Saha",
+    "url": "https://www.aritro.cloud",
+    "email": "aritrosaha2025@gmail.com"
+  },
+  "documentation": {
+    "llms_txt": "https://www.aritro.cloud/llms.txt",
+    "llms_full_txt": "https://www.aritro.cloud/llms-full.txt",
+    "ai_txt": "https://www.aritro.cloud/ai.txt",
+    "sitemap": "https://www.aritro.cloud/sitemap.xml",
+    "markdown_catalog": "https://www.aritro.cloud/api/md/_catalog"
+  },
+  "endpoints": {
+    "markdown_api": "https://www.aritro.cloud/api/md"
+  }
+}

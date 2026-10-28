@@ -28,13 +28,13 @@ Professional software engineer and open-source creator based in India with exper
 - [Engineering & Hackathon Gallery](https://www.aritro.cloud/gallery.md): Visual chronicles of hackathon wins and software demonstrations.
 
 ## Featured Projects & Open-Source Software
-- [Byakugan Scan](https://www.aritro.cloud/projects/byakugan-scan.md): Instant, in-memory screen OCR, QR code, and barcode recognition utility for macOS
+- [Byakugan Scan](https://www.aritro.cloud/projects/byakugan-scan.md): Instant, in-memory screen OCR, QR code, and barcode scanner for macOS built with Swift 6.0 and Apple Vision Framework. Zero telemetry, sub-50ms hotkeys.
 - [SutraKey](https://www.aritro.cloud/projects/sutrakey.md): Instant Shift+Select radial pie menu for video, audio, and clean document actions on macOS
 - [OpenWorld Portfolio](https://www.aritro.cloud/projects/openworld-portfolio.md): Interactive 2.5D retro Pokémon-inspired open-world developer portfolio set in Pallet Cloud
-- [Quarantine](https://www.aritro.cloud/projects/quarantine.md): Zero-dependency dead-letter queue and fault-tolerance library for Python loops
+- [Quarantine](https://www.aritro.cloud/projects/quarantine.md): Zero-dependency dead-letter queue and fault-tolerance library on PyPI. Wrap Python loops with @quarantine to isolate errors without crashing batch jobs.
 - [Structurify](https://www.aritro.cloud/projects/structurify.md): AI-powered SaaS that transforms messy spreadsheet data into a clean master schema
 - [Luffy Laser Dodge](https://www.aritro.cloud/projects/luffy-laser-dodge.md): Interactive 3D reflex game dodging laser beams using actual head movements via webcam
-- [GlideConnect](https://www.aritro.cloud/projects/glide-connect.md): Virtual Mouse Control using Gesture Recognition and Voice Assistant
+- [GlideConnect](https://www.aritro.cloud/projects/glide-connect.md): Virtual mouse control platform using MediaPipe hand-gesture recognition and Google Gemini voice assistant. Published in peer-reviewed IJIRT research.
 - [PAWsitive](https://www.aritro.cloud/projects/pawsitive.md): Centralized pet healthcare platform connecting blood donors, vet clinics, and rescue centers (Winner of Hack4Bengal 3.0)
 
 ## Developer Arcade (Aritro Games)

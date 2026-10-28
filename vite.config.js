@@ -26,7 +26,7 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,jpg,jpeg,json,mp3,wav,pdf}'],
         maximumFileSizeToCacheInBytes: 10000000, // 10MB to ensure large game assets are cached
-        navigateFallbackDenylist: [/^\/assets\/resume\//, /\.pdf$/, /\.txt$/, /\.xml$/]
+        navigateFallbackDenylist: [/^\/assets\/resume\//, /\.pdf$/, /\.txt$/, /\.xml$/, /\.md$/]
       },
       manifest: {
         name: 'The Arcade by Aritro',

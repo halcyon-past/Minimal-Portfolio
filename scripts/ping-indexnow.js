@@ -7,7 +7,7 @@ const KEY_LOCATION = `https://${HOST}/${INDEXNOW_KEY}.txt`;
 const URL_LIST = [
   `https://${HOST}/`,
   `https://${HOST}/aritrosaha`,
-  `https://${HOST}/aritro-saha`,
+  `https://${HOST}/resume`,
   `https://${HOST}/about`,
   `https://${HOST}/gallery`,
   `https://${HOST}/play`,
@@ -25,10 +25,7 @@ const URL_LIST = [
   `https://${HOST}/projects/structurify`,
   `https://${HOST}/projects/luffy-laser-dodge`,
   `https://${HOST}/projects/glide-connect`,
-  `https://${HOST}/projects/pawsitive`,
-  `https://${HOST}/llms.txt`,
-  `https://${HOST}/llms-full.txt`,
-  `https://${HOST}/ai.txt`
+  `https://${HOST}/projects/pawsitive`
 ];
 
 export async function pingIndexNow() {
