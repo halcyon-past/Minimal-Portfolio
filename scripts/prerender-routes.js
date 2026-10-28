@@ -1,6 +1,14 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-javascript.js';
+import 'prismjs/components/prism-swift.js';
+import 'prismjs/components/prism-python.js';
+import 'prismjs/components/prism-bash.js';
+import 'prismjs/components/prism-markup.js';
+import 'prismjs/components/prism-json.js';
+import 'prismjs/components/prism-yaml.js';
 import { projects, galleryImages } from '../src/data/portfolioData.js';
 import { blogPosts } from '../src/data/blogData.js';
 import { listMarkdownRoutes, renderMarkdownRoute, renderCatalogMarkdown } from '../src/lib/md/registry.js';
@@ -743,6 +751,97 @@ function escapeHtml(str) {
     .replace(/>/g, '&gt;');
 }
 
+function highlightStaticCode(code, language) {
+  const cleanLang = (language || 'text').toLowerCase();
+  const langMap = {
+    js: 'javascript',
+    py: 'python',
+    sh: 'bash',
+    shell: 'bash',
+    zsh: 'bash',
+    html: 'markup',
+    xml: 'markup',
+    svg: 'markup',
+    yml: 'yaml'
+  };
+  const targetLang = langMap[cleanLang] || cleanLang;
+  const grammar = Prism.languages[targetLang] || Prism.languages.markup || Prism.languages.text;
+  if (grammar) {
+    try {
+      return Prism.highlight(code.trim(), grammar, targetLang);
+    } catch {
+      // fallback
+    }
+  }
+  return escapeHtml(code.trim());
+}
+
+function formatInlineStaticText(text) {
+  if (!text) return '';
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\)|`[^`]+`|\*\*[^*]+\*\*)/g);
+  return parts.map((part) => {
+    if (!part) return '';
+    const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (linkMatch) {
+      const [, label, url] = linkMatch;
+      return `<a href="${escapeHtml(url)}" style="color: #8367c7; text-decoration: underline;">${escapeHtml(label)}</a>`;
+    }
+    if (part.startsWith('`') && part.endsWith('`') && part.length >= 2) {
+      const code = part.slice(1, -1);
+      return `<code style="padding: 0.15rem 0.4rem; border-radius: 0.25rem; background: rgba(131, 103, 199, 0.12); color: #8367c7; border: 1px solid rgba(131, 103, 199, 0.25); font-family: ui-monospace, monospace; font-size: 0.875em; font-weight: 500;">${escapeHtml(code)}</code>`;
+    }
+    if (part.startsWith('**') && part.endsWith('**') && part.length >= 4) {
+      const inner = part.slice(2, -2);
+      return `<strong>${formatInlineStaticText(inner)}</strong>`;
+    }
+    return escapeHtml(part);
+  }).join('');
+}
+
+function renderStaticMarkdownContent(content) {
+  if (!content) return '';
+  const parts = content.split(/(```[a-z0-9_-]*\n[\s\S]*?```)/gi);
+  return parts.map((part) => {
+    const trimmed = part.trim();
+    if (!trimmed) return '';
+    if (trimmed.startsWith('```') && trimmed.endsWith('```')) {
+      const match = trimmed.match(/^```([a-z0-9_-]*)\n([\s\S]*?)```$/i);
+      const lang = (match && match[1]) ? match[1].toLowerCase() : 'text';
+      const code = match ? match[2] : trimmed.slice(3, -3);
+      const highlighted = highlightStaticCode(code, lang);
+      return `
+            <div class="code-block" style="margin: 1.5rem 0; background: #0d1117; border: 1px solid #30363d; border-radius: 0.75rem; overflow: hidden; text-align: left;">
+              <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 1rem; background: #161b22; border-bottom: 1px solid #30363d; color: #8b949e; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 0.75rem; font-weight: 600; text-transform: uppercase;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #ff5f56;"></span>
+                  <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #ffbd2e;"></span>
+                  <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #27c93f;"></span>
+                  <span style="margin-left: 0.5rem; color: #c9d1d9;">${escapeHtml(lang === 'markup' ? 'html' : lang)}</span>
+                </div>
+                <button type="button" onclick="navigator.clipboard.writeText(this.closest('.code-block').querySelector('code').innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>{this.innerText='Copy'},2000)})" style="background: #21262d; color: #c9d1d9; border: 1px solid #363b42; border-radius: 4px; padding: 3px 10px; font-size: 11px; cursor: pointer; font-family: ui-monospace, monospace;">Copy</button>
+              </div>
+              <pre style="margin: 0; padding: 1.25rem; overflow-x: auto; background: #0d1117; color: #e6edf3; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 0.875rem; line-height: 1.6;"><code class="language-${escapeHtml(lang)}">${highlighted}</code></pre>
+            </div>`;
+    }
+
+    const paragraphs = part.split(/\n\n+/);
+    return paragraphs.map((p) => {
+      const pTrimmed = p.trim();
+      if (!pTrimmed) return '';
+      const lines = pTrimmed.split('\n');
+      const isNumberedList = lines.every((l) => /^\d+\.\s+/.test(l.trim()));
+      if (isNumberedList) {
+        return `            <ol style="padding-left: 1.5rem; margin: 1rem 0; line-height: 1.7;">\n${lines.map((l) => `              <li>${formatInlineStaticText(l.replace(/^\d+\.\s+/, ''))}</li>`).join('\n')}\n            </ol>`;
+      }
+      const isBulletList = lines.every((l) => /^[-*]\s+/.test(l.trim()));
+      if (isBulletList) {
+        return `            <ul style="padding-left: 1.5rem; margin: 1rem 0; line-height: 1.7;">\n${lines.map((l) => `              <li>${formatInlineStaticText(l.replace(/^[-*]\s+/, ''))}</li>`).join('\n')}\n            </ul>`;
+      }
+      return `            <p style="margin: 1rem 0; line-height: 1.7;">${formatInlineStaticText(pTrimmed)}</p>`;
+    }).filter(Boolean).join('\n');
+  }).filter(Boolean).join('\n');
+}
+
 function buildRouteHtml(template, { route, title, description, image, articleHtml, extraJsonLdNodes = [], pageType = "WebPage" }) {
   const canonicalUrl = `${SITE_URL}${route}`;
   const markdownUrl = `${SITE_URL}${route === '/' ? '/index.md' : `${route}.md`}`;
@@ -1145,7 +1244,7 @@ ${postsHtml}
     const sectionsHtml = post.sections.map((s) => `
             <section>
               <h3>${escapeHtml(s.heading)}</h3>
-              <p>${escapeHtml(s.content)}</p>
+              ${renderStaticMarkdownContent(s.content)}
             </section>`).join('\n');
 
     const articleHtml = `

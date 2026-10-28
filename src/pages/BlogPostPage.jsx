@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Calendar, Clock, ArrowLeft, Tag, Share2, User } from 'lucide-react';
 import Seo from '../components/common/Seo';
 import NotFoundPage from './NotFoundPage';
+import BlogContentRenderer from '../components/common/BlogContentRenderer';
 import { blogPosts } from '../data/blogData';
 
 export default function BlogPostPage() {
@@ -115,11 +116,7 @@ export default function BlogPostPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 tracking-tight pt-4">
                   {section.heading}
                 </h2>
-                <div 
-                  className="text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line"
-                >
-                  {section.content}
-                </div>
+                <BlogContentRenderer content={section.content} />
               </section>
             ))}
           </div>
