@@ -963,10 +963,10 @@ function buildRouteHtml(template, { route, title, description, image, articleHtm
           </a>
         </div>
         <div style="display: flex; gap: 1.5rem; align-items: center; background: rgba(243, 244, 246, 0.8); padding: 0.75rem 1.5rem; border-radius: 9999px; border: 1px solid rgba(229, 231, 235, 1);">
-          <a href="https://linkedin.com/in/aritro-saha" target="_blank" rel="noopener noreferrer" style="color: #8367c7; text-decoration: none; font-weight: 500;">LinkedIn</a>
-          <a href="https://instagram.com/halcyon-past" target="_blank" rel="noopener noreferrer" style="color: #81eaa7; text-decoration: none; font-weight: 500;">Instagram</a>
-          <a href="https://github.com/halcyon-past" target="_blank" rel="noopener noreferrer" style="color: #5603ad; text-decoration: none; font-weight: 500;">GitHub</a>
-          <a href="https://www.youtube.com/@veripyed" target="_blank" rel="noopener noreferrer" style="color: #28b33f; text-decoration: none; font-weight: 500;">YouTube</a>
+          <a href="https://linkedin.com/in/aritro-saha" target="_blank" rel="noopener noreferrer" style="color: #0a66c2; text-decoration: none; font-weight: 500;">LinkedIn</a>
+          <a href="https://instagram.com/halcyon-past" target="_blank" rel="noopener noreferrer" style="color: #e4405f; text-decoration: none; font-weight: 500;">Instagram</a>
+          <a href="https://github.com/halcyon-past" target="_blank" rel="noopener noreferrer" style="color: #24292e; text-decoration: none; font-weight: 500;">GitHub</a>
+          <a href="https://www.youtube.com/@veripyed" target="_blank" rel="noopener noreferrer" style="color: #ff0000; text-decoration: none; font-weight: 500;">YouTube</a>
         </div>
       </footer>`;
 

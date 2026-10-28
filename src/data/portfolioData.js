@@ -205,32 +205,32 @@ export const socialMedia = [
     platform: 'LinkedIn',
     url: 'https://linkedin.com/in/aritro-saha',
     icon: 'fab fa-linkedin',
-    color: 'text-(--amethyst)',
-    hoverColor: 'hover:text-(--chrysler-blue)',
+    color: 'text-[#0a66c2]',
+    hoverColor: 'hover:text-[#004182]',
     ariaLabel: 'LinkedIn'
   },
   {
     platform: 'Instagram',
     url: 'https://instagram.com/halcyon-past',
     icon: 'fab fa-instagram',
-    color: 'text-(--celadon)',
-    hoverColor: 'hover:text-(--amethyst)',
+    color: 'text-[#e4405f]',
+    hoverColor: 'hover:text-[#c13584]',
     ariaLabel: 'Instagram'
   },
   {
     platform: 'GitHub',
     url: 'https://github.com/halcyon-past',
     icon: 'fab fa-github',
-    color: 'text-(--chrysler-blue)',
-    hoverColor: 'hover:text-(--amethyst)',
+    color: 'text-gray-900 dark:text-gray-100',
+    hoverColor: 'hover:text-black dark:hover:text-white',
     ariaLabel: 'GitHub'
   },
   {
     platform: 'YouTube',
     url: 'https://www.youtube.com/@veripyed',
     icon: 'fab fa-youtube',
-    color: 'text-(--tea-green)',
-    hoverColor: 'hover:text-(--amethyst)',
+    color: 'text-[#ff0000]',
+    hoverColor: 'hover:text-[#cc0000]',
     ariaLabel: 'YouTube'
   }
 ];

@@ -19,19 +19,19 @@ export default function Footer() {
       name: 'Twitter',
       icon: 'fa-brands fa-x-twitter',
       url: `https://twitter.com/intent/tweet?url=${currentUrl}&text=${encodeURIComponent(shareMessage)}`,
-      color: 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700',
+      color: 'text-gray-900 dark:text-gray-100 hover:text-black dark:hover:text-white bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-750',
     },
     {
       name: 'LinkedIn',
       icon: 'fa-brands fa-linkedin-in',
       url: `https://www.linkedin.com/shareArticle?mini=true&url=${currentUrl}`,
-      color: 'text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 bg-gray-100 dark:bg-gray-800 hover:bg-blue-50 dark:hover:bg-blue-900/30',
+      color: 'text-[#0a66c2] dark:text-[#0a66c2] hover:text-[#004182] bg-blue-50 dark:bg-blue-950/40 hover:bg-blue-100 dark:hover:bg-blue-900/50',
     },
     {
       name: 'WhatsApp',
       icon: 'fa-brands fa-whatsapp',
       url: `https://api.whatsapp.com/send?text=${encodeURIComponent(shareMessage)}${currentUrl}`,
-      color: 'text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400 bg-gray-100 dark:bg-gray-800 hover:bg-green-50 dark:hover:bg-green-900/30',
+      color: 'text-[#25d366] dark:text-[#25d366] hover:text-[#128c7e] bg-green-50 dark:bg-green-950/40 hover:bg-green-100 dark:hover:bg-green-900/50',
     }
   ];
 
