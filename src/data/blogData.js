@@ -55,7 +55,9 @@ The result is true sub-50ms latency from hotkey press to text in clipboard.`
         heading: 'Key Engineering Takeaways for macOS Utilities',
         content: `1. **Avoid File I/O for Ephemeral Data**: Memory buffers through \`CGImage\` and \`NSPasteboard\` offer 10x lower latency than temporary files.
 2. **Target the Apple Neural Engine Explicitly**: Modern Apple Silicon provides dedicated ANE compute units that leave CPU cores free for UI responsiveness.
-3. **Embrace Swift 6 Strict Concurrency**: Protect shared state in background menu bar utilities by marking capture pipelines with \`@MainActor\` or isolated actors.`
+3. **Embrace Swift 6 Strict Concurrency**: Protect shared state in background menu bar utilities by marking capture pipelines with \`@MainActor\` or isolated actors.
+
+To explore the production implementation, Homebrew distribution, and architecture, visit the [Byakugan Scan Project Case Study](https://www.aritro.cloud/projects/byakugan-scan).`
       }
     ]
   },
@@ -119,7 +121,9 @@ quarantine retry --all
 quarantine debug <record_id>
 \`\`\`
 
-By decoupling error handling from core batch pipelines, developers achieve resilient, self-healing batch processing without external infrastructure dependencies.`
+By decoupling error handling from core batch pipelines, developers achieve resilient, self-healing batch processing without external infrastructure dependencies.
+
+For complete package documentation, installation guidelines, and source code, visit the [Quarantine Project Case Study](https://www.aritro.cloud/projects/quarantine) or inspect the package directly on [PyPI](https://pypi.org/project/quarantine-py/).`
       }
     ]
   },
@@ -180,7 +184,9 @@ With \`"eagerness": "moderate"\`, Chromium browsers detect when a user hovers or
         heading: 'Core Web Vitals Impact and Safety Rules',
         content: `1. **Guarding Analytics & Side-Effects**: Use \`document.prerendering\` checks in analytics scripts to avoid logging phantom pageviews before user activation.
 2. **Preserving BFCache**: Avoid \`unload\` and \`beforeunload\` event listeners, ensuring that both Forward-Back Cache (BFCache) and speculative prerendering operate at peak efficiency.
-3. **Granular Asset Exclusion**: Always exclude heavy asset downloads, audio streams, and API routes from speculation rules matching.`
+3. **Granular Asset Exclusion**: Always exclude heavy asset downloads, audio streams, and API routes from speculation rules matching.
+
+Experience this instant navigation architecture live in our [Developer Arcade](https://www.aritro.cloud/play) and explore our interactive 2.5D retro portfolio at the [OpenWorld Portfolio Project Page](https://www.aritro.cloud/projects/openworld-portfolio).`
       }
     ]
   }

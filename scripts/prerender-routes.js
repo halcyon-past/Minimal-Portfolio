@@ -320,15 +320,16 @@ const STATIC_ROUTES = [
     title: 'Gallery | Aritro Saha - Software Engineer Portfolio',
     description: 'Explore personal moments, hackathons, events, and projects associated with Aritro Saha.',
     image: `${SITE_URL}/banner-social.jpg`,
-    pageType: 'ImageGallery',
+    pageType: 'CollectionPage',
     articleHtml: `
       <header>
-        <h1>Engineering & Hackathon Gallery — Aritro Saha</h1>
+        <h1>Engineering &amp; Hackathon Gallery — Aritro Saha</h1>
         <p>Visual highlights from Hack4Bengal 3.0, VIT Chennai tech showcases, engineering workspaces, and developer conferences.</p>
       </header>
       <main>
         <article>
-          <h2>Hackathon Champions & Engineering Moments</h2>
+          <h2>Hackathon Champions &amp; Engineering Milestones</h2>
+          <p>Welcome to the visual engineering archive of Aritro Saha. This gallery chronicles major milestones across software engineering hackathons, collegiate tech showcases at Vellore Institute of Technology (VIT Chennai), and hands-on system building. Featured highlights include leading team PAWsitive to 1st Place Grand Champion victory at Hack4Bengal 3.0 (Eastern India's largest hackathon with over 3,000 applicants), tech conference demonstrations, collaborative development sessions, and production engineering milestones at Bristol Myers Squibb. Each visual artifact captures the collaborative grit, architectural problem-solving, and continuous learning that define modern software craftsmanship.</p>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
             ${galleryImages.map((img) => `
               <figure style="margin: 0; background: rgba(0,0,0,0.03); border-radius: 0.75rem; overflow: hidden; padding: 0.5rem;">
@@ -419,20 +420,34 @@ const STATIC_ROUTES = [
     articleHtml: `
       <header>
         <h1>Developer Speed Test — Aritro Saha Arcade</h1>
-        <p>A minimalist terminal-style typing speed test designed for software developers to test coding cadence, Words Per Minute (WPM), and key accuracy.</p>
+        <p>A minimalist terminal-style typing speed test designed for software developers to measure coding cadence, Words Per Minute (WPM), character accuracy, and keystroke latency.</p>
       </header>
       <main>
         <article>
-          <h2>Game Mechanics & Overview</h2>
+          <h2>Game Mechanics &amp; Overview</h2>
           <p>The Developer Speed Test evaluates real-time typing speed and accuracy using curated programming language keywords from Python, TypeScript, React, Go, and SQL rather than arbitrary prose. As you type, the engine evaluates keystroke accuracy, calculating raw WPM, net WPM, and accuracy percentage in real-time.</p>
-          <h2>Controls & Instructions</h2>
+          <h2>WPM Calculation &amp; Keystroke Latency Architecture</h2>
+          <p>Typing metrics are calculated using industry-standard formulas adapted for code syntax:</p>
+          <ul>
+            <li><strong>Gross WPM:</strong> Computed as <code>(Total Typed Characters / 5) / Elapsed Time (Minutes)</code>, where five characters represent the standardized typographical word length.</li>
+            <li><strong>Net WPM:</strong> <code>Gross WPM - (Uncorrected Errors / Elapsed Time)</code>, penalizing uncorrected syntax mistakes to reflect true production typing speed.</li>
+            <li><strong>Non-Blocking Event Loop:</strong> Keystroke listeners are bound with passive event handling and requestAnimationFrame delta timers, preventing garbage collection stutters and DOM reflows even at 140+ WPM bursts.</li>
+          </ul>
+          <h2>Controls &amp; Instructions</h2>
           <ul>
             <li><strong>Typing:</strong> Type the highlighted code keyword as it appears on the terminal screen.</li>
             <li><strong>Spacebar:</strong> Submit current word and advance to the next token.</li>
             <li><strong>Restart:</strong> Click Restart or hit <code>Tab + Enter</code> to initiate a fresh session.</li>
           </ul>
-          <h2>Technical Architecture</h2>
-          <p>Built with React state management, fine-grained keyboard event listeners, and accurate delta timing to measure true keystroke cadence without main-thread latency.</p>
+          <h2>Frequently Asked Questions</h2>
+          <section>
+            <h3>How is developer typing speed (WPM) calculated?</h3>
+            <p>Gross Words Per Minute (WPM) divides total keystrokes by 5 and normalizes by elapsed minutes. Net WPM deducts penalties for uncorrected syntax errors to measure realistic coding velocity.</p>
+          </section>
+          <section>
+            <h3>Which programming languages are featured?</h3>
+            <p>The test dynamically selects syntax tokens from Python, TypeScript, React, Go, and SQL to simulate authentic day-to-day software development workflows.</p>
+          </section>
         </article>
       </main>
     `,
@@ -447,6 +462,28 @@ const STATIC_ROUTES = [
         "operatingSystem": "Any modern web browser",
         "playMode": "SinglePlayer",
         "author": { "@id": `${SITE_URL}/#person` }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${SITE_URL}/play/typing-test#faq`,
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How is developer typing speed (WPM) calculated in this speed test?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Gross Words Per Minute (WPM) divides total keystrokes by 5 (standard word length) and normalizes by elapsed minutes. Net WPM deducts an error-penalty for uncorrected syntax mistakes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which programming languages and syntax tokens are tested?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The test dynamically samples keywords, syntax constructs, and API calls from Python, TypeScript, React, Go, and SQL to simulate authentic engineering typing."
+            }
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -471,16 +508,32 @@ const STATIC_ROUTES = [
       </header>
       <main>
         <article>
-          <h2>Game Mechanics & Rules</h2>
+          <h2>Game Mechanics &amp; Rules</h2>
           <p>Inspired by enterprise streaming architectures (Kafka, Pub/Sub, Databricks), players are presented with a matrix of pipe connectors. Rotate pipe segments to establish an unbroken stream connection from source nodes to output sinks before the stream buffer overflows.</p>
-          <h2>Features & Level Persistence</h2>
+          <h2>Graph Theory &amp; Topological Connectivity Logic</h2>
+          <p>Under the hood, the puzzle represents the pipe grid as a Directed Acyclic Graph (DAG) topology:</p>
           <ul>
-            <li><strong>Level Progression:</strong> Progressively challenging grid layouts with branching streams.</li>
-            <li><strong>URL Parameters:</strong> Direct level access supported via <code>?level=N</code> URL parameters.</li>
-            <li><strong>State Saving:</strong> Solved levels and progress are stored in localStorage.</li>
+            <li><strong>Adjacency Matrix Transformation:</strong> Each pipe segment has discrete port orientations (North, East, South, West). Rotating a tile performs a cyclic bit-shift on its connection ports.</li>
+            <li><strong>Depth-First Search (DFS) Path Verification:</strong> Upon every rotation, the verification engine traverses connected nodes from the source emitter using recursive Depth-First Search. A level is solved only when an uninterrupted directed path reaches all active sink receptors without open-ended pipeline leakage.</li>
+            <li><strong>Deadlock &amp; Cycle Detection:</strong> The traversal checks for circular loops and deadlock dead-ends, mirroring real-world streaming pipeline validation in Apache Spark and Kafka Streams.</li>
+          </ul>
+          <h2>Features &amp; Level Persistence</h2>
+          <ul>
+            <li><strong>Level Progression:</strong> Progressively challenging grid layouts with branching streams and multi-sink targets.</li>
+            <li><strong>URL Parameters:</strong> Direct level access supported via <code>?level=N</code> URL parameters for bookmarking and sharing.</li>
+            <li><strong>State Saving:</strong> Solved levels and progress are stored in localStorage with instant rehydration.</li>
           </ul>
           <h2>Controls</h2>
           <p>Click or tap any pipe tile to rotate it 90 degrees clockwise. Complete the circuit to trigger the data flow animation.</p>
+          <h2>Frequently Asked Questions</h2>
+          <section>
+            <h3>How does the data pipeline validation algorithm work?</h3>
+            <p>The puzzle models pipe tiles as an adjacency graph and executes Depth-First Search (DFS) to confirm an unbroken stream connection from sources to sinks.</p>
+          </section>
+          <section>
+            <h3>Can I share specific puzzle levels with friends?</h3>
+            <p>Yes, appending ?level=N to the URL directly loads any puzzle stage with full state persistence.</p>
+          </section>
         </article>
       </main>
     `,
@@ -495,6 +548,28 @@ const STATIC_ROUTES = [
         "operatingSystem": "Any modern web browser",
         "playMode": "SinglePlayer",
         "author": { "@id": `${SITE_URL}/#person` }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${SITE_URL}/play/data-pipeline#faq`,
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the data pipeline validation algorithm work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The puzzle models pipe tiles as an adjacency graph and executes Depth-First Search (DFS) to confirm an unbroken stream connection from sources to sinks."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I share specific puzzle levels with friends?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, appending ?level=N to the URL directly loads any puzzle stage with full state persistence."
+            }
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -519,15 +594,29 @@ const STATIC_ROUTES = [
       </header>
       <main>
         <article>
-          <h2>Game Rules & Mechanics</h2>
+          <h2>Game Rules &amp; Mechanics</h2>
           <p>Navigate the snake across an infinite grid collecting tech stack icons (Python, React, TypeScript). Each consumed icon increases length and score. Eating the bonus AI icon (<code>🤖</code>) grants multiplier points. Crashing into the arena boundary or your own tail ends the run.</p>
-          <h2>Controls & Mobile D-Pad</h2>
+          <h2>Canvas 2D Game Loop &amp; Discrete Grid Coordinates</h2>
+          <p>The game is architected around an optimized HTML5 Canvas 2D engine:</p>
+          <ul>
+            <li><strong>Decoupled Render &amp; Tick Loop:</strong> High-frequency 60fps rendering via <code>requestAnimationFrame</code> is decoupled from the fixed game tick interval, ensuring identical movement velocities across 60Hz and 120Hz ProMotion displays.</li>
+            <li><strong>FIFO Coordinate Queue:</strong> The snake body is represented as a First-In-First-Out (FIFO) queue of coordinate vectors. On each tick, the new head position is pushed onto the front of the queue, while the tail coordinate is popped off unless food was consumed.</li>
+            <li><strong>Input Direction Buffer:</strong> Rapid consecutive keystrokes are queued in an input buffer, preventing accidental 180-degree self-collisions when turning corners rapidly.</li>
+          </ul>
+          <h2>Controls &amp; Mobile D-Pad</h2>
           <ul>
             <li><strong>Desktop:</strong> Use Arrow Keys or <code>W, A, S, D</code> to steer the snake. Press <code>Space</code> to pause.</li>
-            <li><strong>Mobile:</strong> Features an integrated virtual touch D-Pad with directional haptic cues.</li>
+            <li><strong>Mobile:</strong> Features an integrated virtual touch D-Pad with tactile directional feedback.</li>
           </ul>
-          <h2>Technical Architecture</h2>
-          <p>Engineered using an HTML5 Canvas 2D render loop powered by <code>requestAnimationFrame</code> with discrete coordinate collision checks for zero input latency.</p>
+          <h2>Frequently Asked Questions</h2>
+          <section>
+            <h3>How are snake collisions and grid movements computed?</h3>
+            <p>The arena uses a 20x20 quantized coordinate matrix. On each game tick, head coordinates are checked against arena boundaries and the body queue for O(1) collision detection.</p>
+          </section>
+          <section>
+            <h3>Does the game support mobile touch gestures?</h3>
+            <p>Yes, on mobile devices a responsive virtual touch D-Pad appears automatically with tactile directional controls.</p>
+          </section>
         </article>
       </main>
     `,
@@ -542,6 +631,28 @@ const STATIC_ROUTES = [
         "operatingSystem": "Any modern web browser",
         "playMode": "SinglePlayer",
         "author": { "@id": `${SITE_URL}/#person` }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${SITE_URL}/play/snake#faq`,
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How are snake collisions and grid movements computed?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The arena uses a 20x20 quantized coordinate matrix. On each game tick, head coordinates are checked against arena boundaries and the body queue for O(1) collision detection."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the game support mobile touch gestures?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, on mobile devices a responsive virtual touch D-Pad appears automatically with tactile directional controls."
+            }
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -566,9 +677,16 @@ const STATIC_ROUTES = [
       </header>
       <main>
         <article>
-          <h2>Game Objective & Rules</h2>
+          <h2>Game Objective &amp; Rules</h2>
           <p>Fill the 9x9 grid so that every row, every column, and each of the nine 3x3 subgrids contains all digits from 1 to 9 without repetition. The game validates board state automatically and highlights conflicting cells.</p>
-          <h2>Features & Player Tools</h2>
+          <h2>Deterministic Recursive Backtracking Solver</h2>
+          <p>The board generation and verification system leverages mathematical constraint satisfaction:</p>
+          <ul>
+            <li><strong>Recursive Backtracking Algorithm:</strong> The internal solver scans unassigned grid cells, testing candidate digits 1 through 9 against bitwise row, column, and 3x3 subgrid masks. If a conflict arises down the search branch, the algorithm backtracks up the call stack to test alternate branches.</li>
+            <li><strong>Bitmask Candidate Computation:</strong> Fast bitwise operators (<code>1 &lt;&lt; (digit - 1)</code>) maintain constraint sets in constant time O(1), enabling real-time error highlighting without lag.</li>
+            <li><strong>Unique Solution Guarantee:</strong> Puzzles are validated to ensure only one deterministic solution exists for the given difficulty tier.</li>
+          </ul>
+          <h2>Features &amp; Player Tools</h2>
           <ul>
             <li><strong>Candidate Notes:</strong> Toggle pencil mode to record candidate digits in candidate cells.</li>
             <li><strong>Error Highlighting:</strong> Instantly detect duplicate digits in colliding rows, columns, or subgrids.</li>
@@ -576,6 +694,15 @@ const STATIC_ROUTES = [
           </ul>
           <h2>Controls</h2>
           <p>Click any cell and use the on-screen numeric keypad or physical keyboard numbers <code>1-9</code>. Use Backspace or Delete to clear a cell.</p>
+          <h2>Frequently Asked Questions</h2>
+          <section>
+            <h3>How does the Sudoku solver validate boards?</h3>
+            <p>The game uses a recursive backtracking algorithm with bitmask constraint checking across rows, columns, and 3x3 subgrids to guarantee puzzle validity.</p>
+          </section>
+          <section>
+            <h3>Are games saved if I close my browser?</h3>
+            <p>Yes, all cell values, pencil notes, and the game timer automatically synchronize to localStorage for seamless session resumption.</p>
+          </section>
         </article>
       </main>
     `,
@@ -590,6 +717,28 @@ const STATIC_ROUTES = [
         "operatingSystem": "Any modern web browser",
         "playMode": "SinglePlayer",
         "author": { "@id": `${SITE_URL}/#person` }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${SITE_URL}/play/sudoku#faq`,
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the Sudoku solver validate boards?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The game uses a recursive backtracking algorithm with bitmask constraint checking across rows, columns, and 3x3 subgrids to guarantee puzzle validity."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are games saved if I close my browser?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, all cell values, pencil notes, and the game timer automatically synchronize to localStorage for seamless session resumption."
+            }
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -614,15 +763,29 @@ const STATIC_ROUTES = [
       </header>
       <main>
         <article>
-          <h2>Gameplay & Rules</h2>
+          <h2>Gameplay &amp; Rules</h2>
           <p>Waves of bugs and merge conflicts descend toward your server cluster. Blast incoming bugs while dodging enemy projectiles and utilizing defensive server shields that absorb incoming fire. As waves clear, enemy march velocity increases.</p>
+          <h2>Entity-Component Architecture &amp; AABB Collision Physics</h2>
+          <p>The arcade engine is built on lightweight 2D game architecture principles:</p>
+          <ul>
+            <li><strong>Axis-Aligned Bounding Box (AABB) Intersection:</strong> Laser projectiles and alien sprites execute bounding-box overlap mathematics (<code>x1 &lt; x2 + w2 &amp;&amp; x1 + w1 &gt; x2 &amp;&amp; y1 &lt; y2 + h2 &amp;&amp; y1 + h1 &gt; y2</code>) on every frame, supporting dozens of concurrent particles with zero frame drops.</li>
+            <li><strong>March Acceleration Curves:</strong> As alien invaders are eliminated, the march interval between fleet steps decreases exponentially, faithfully reproducing the iconic mechanical tension of classic hardware clock throttling.</li>
+            <li><strong>Destructible Shield Degradation:</strong> Defense bunker shields track damage hitpoints, absorbing incoming laser strikes until structural integrity fails.</li>
+          </ul>
           <h2>Controls</h2>
           <ul>
             <li><strong>Desktop:</strong> Use <code>Left / Right Arrow</code> or <code>A / D</code> to navigate ship. Press <code>Spacebar</code> to fire laser cannon.</li>
             <li><strong>Mobile:</strong> Dedicated on-screen touch buttons for directional maneuvering and laser firing.</li>
           </ul>
-          <h2>Technical Architecture</h2>
-          <p>Sprite animation and projectile collision detection computed using a 60fps canvas loop with bounding box intersection algorithms.</p>
+          <h2>Frequently Asked Questions</h2>
+          <section>
+            <h3>How does collision detection work in Space Invaders?</h3>
+            <p>The game uses Axis-Aligned Bounding Box (AABB) intersection mathematics inside a 60fps HTML5 Canvas requestAnimationFrame loop for instant hit registration.</p>
+          </section>
+          <section>
+            <h3>Can I play Space Invaders on touch devices?</h3>
+            <p>Yes, a specialized mobile layout with on-screen virtual steering buttons and a dedicated fire button renders automatically on mobile screens.</p>
+          </section>
         </article>
       </main>
     `,
@@ -637,6 +800,28 @@ const STATIC_ROUTES = [
         "operatingSystem": "Any modern web browser",
         "playMode": "SinglePlayer",
         "author": { "@id": `${SITE_URL}/#person` }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${SITE_URL}/play/space-invaders#faq`,
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does collision detection work in Space Invaders?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The game uses Axis-Aligned Bounding Box (AABB) intersection mathematics inside a 60fps HTML5 Canvas requestAnimationFrame loop for instant hit registration."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I play Space Invaders on touch devices?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, a specialized mobile layout with on-screen virtual steering buttons and a dedicated fire button renders automatically on mobile screens."
+            }
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -663,13 +848,28 @@ const STATIC_ROUTES = [
         <article>
           <h2>Game Mechanics</h2>
           <p>Guide the bird through narrow pipe gaps by timing flap impulses. Gravity constantly pulls the bird downward, requiring precise rhythmic tapping to sustain altitude without colliding with pipes or the ground.</p>
+          <h2>Euler Numerical Integration &amp; Frame Independence</h2>
+          <p>The game implements classic 2D kinematic physics:</p>
+          <ul>
+            <li><strong>Gravitational Velocity Integration:</strong> On every animation tick, gravitational acceleration accumulates into vertical velocity (<code>v = v + gravity * dt</code>). Position is updated by <code>y = y + v * dt</code>.</li>
+            <li><strong>Instantaneous Impulse:</strong> Flapping instantaneously sets vertical velocity to a negative impulse threshold, simulating realistic aerodynamic wing lift.</li>
+            <li><strong>Delta-Time Normalization:</strong> Delta timing (<code>dt</code>) ensures that game physics behave identically regardless of whether the player is on a 60Hz laptop or a 120Hz/144Hz high-refresh mobile screen.</li>
+            <li><strong>Procedural Obstacle Pipes:</strong> Pipe heights are generated procedurally with uniform vertical apertures and constant horizontal spacing.</li>
+          </ul>
           <h2>Controls</h2>
           <ul>
             <li><strong>Desktop:</strong> Press <code>Spacebar</code> or click anywhere with mouse to flap wings.</li>
             <li><strong>Mobile:</strong> Tap anywhere on touch screen to execute upward flap impulse.</li>
           </ul>
-          <h2>Highscore Persistence</h2>
-          <p>Personal best scores are tracked in localStorage, allowing players to benchmark their reaction time and endurance over time.</p>
+          <h2>Frequently Asked Questions</h2>
+          <section>
+            <h3>How are bird physics and gravity simulated?</h3>
+            <p>The game uses Euler numerical integration with delta-time scaling so gravitational acceleration and flap impulses remain consistent across all display refresh rates.</p>
+          </section>
+          <section>
+            <h3>Are high scores saved between sessions?</h3>
+            <p>Yes, your personal best score is persisted in browser localStorage and displayed on the game over screen.</p>
+          </section>
         </article>
       </main>
     `,
@@ -684,6 +884,28 @@ const STATIC_ROUTES = [
         "operatingSystem": "Any modern web browser",
         "playMode": "SinglePlayer",
         "author": { "@id": `${SITE_URL}/#person` }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${SITE_URL}/play/flappy-bird#faq`,
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How are bird physics and gravity simulated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The game uses Euler numerical integration with delta-time scaling so gravitational acceleration and flap impulses remain consistent across all display refresh rates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are high scores saved between sessions?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, your personal best score is persisted in browser localStorage and displayed on the game over screen."
+            }
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -708,16 +930,27 @@ const STATIC_ROUTES = [
       </header>
       <main>
         <article>
-          <h2>Game Overview & AI Decision Engine</h2>
+          <h2>Game Overview &amp; AI Decision Engine</h2>
           <p>This implementation features a recursive Minimax search tree that evaluates all future board states to depth 9. At hard difficulty, the AI plays mathematically optimal moves with alpha-beta pruning, guaranteeing either an AI victory or a forced draw.</p>
-          <h2>Difficulty Settings</h2>
+          <h2>Minimax Game Tree &amp; Mathematical Unbeatability</h2>
+          <p>The core artificial intelligence is built on rigorous game theory:</p>
           <ul>
-            <li><strong>Easy:</strong> Random heuristic moves for relaxed play.</li>
-            <li><strong>Medium:</strong> Heuristic blocking with occasional exploratory moves.</li>
-            <li><strong>Hard (Unbeatable):</strong> Pure Minimax recursion evaluating all possible board branches.</li>
+            <li><strong>Zero-Sum Recursive Evaluation:</strong> The algorithm simulates every legal move recursively down to terminal game states. Wins for the AI return a positive heuristic score (+10), player wins return negative (-10), and draws return 0.</li>
+            <li><strong>Depth-Discounted Heuristics:</strong> Heuristic values are adjusted by search depth (e.g. <code>+10 - depth</code>), ensuring the AI prioritizes immediate victories over prolonged wins and delays losses as long as possible.</li>
+            <li><strong>Mathematical Guarantee:</strong> In game theory, Tic Tac Toe is a solved zero-sum game with perfect information. A complete Minimax traversal proves that an opponent playing against optimal moves can never achieve victory.</li>
+            <li><strong>Tiered Difficulty:</strong> Easy mode selects random legal positions, Medium introduces probabilistic mistakes, and Hard executes pure Minimax optimization.</li>
           </ul>
           <h2>Controls</h2>
           <p>Click or tap any available cell to place your X token. The AI responds within milliseconds.</p>
+          <h2>Frequently Asked Questions</h2>
+          <section>
+            <h3>Is the Hard AI in Tic Tac Toe truly unbeatable?</h3>
+            <p>Yes. Because 3x3 Tic Tac Toe is a mathematically solved zero-sum game, the Minimax algorithm guarantees that optimal play will always result in an AI victory or a draw.</p>
+          </section>
+          <section>
+            <h3>How does the Minimax algorithm make decisions?</h3>
+            <p>It recursively evaluates all legal moves down to terminal outcomes, assigning positive scores to AI wins and negative scores to player wins while depth-penalizing longer paths.</p>
+          </section>
         </article>
       </main>
     `,
@@ -732,6 +965,28 @@ const STATIC_ROUTES = [
         "operatingSystem": "Any modern web browser",
         "playMode": "SinglePlayer",
         "author": { "@id": `${SITE_URL}/#person` }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${SITE_URL}/play/tictactoe#faq`,
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is the Hard AI in Tic Tac Toe truly unbeatable?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Because 3x3 Tic Tac Toe is a mathematically solved zero-sum game, the Minimax algorithm guarantees that optimal play will always result in an AI victory or a draw."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the Minimax algorithm make decisions?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It recursively evaluates all legal moves down to terminal outcomes, assigning positive scores to AI wins and negative scores to player wins while depth-penalizing longer paths."
+            }
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -866,6 +1121,8 @@ function buildRouteHtml(template, { route, title, description, image, articleHtm
         "description": description,
         ...(pageType === 'ProfilePage' ? {
           "mainEntity": { "@id": `${SITE_URL}/#person` }
+        } : pageType === 'CollectionPage' && route === '/gallery' ? {
+          "mainEntity": { "@id": `${SITE_URL}/gallery#gallery` }
         } : {
           "author": { "@id": `${SITE_URL}/#person` }
         }),
@@ -1064,6 +1321,7 @@ function run() {
 
     const linksList = [
       project.details?.liveDemo ? `<li><strong>Dedicated Official Webpage:</strong> <a href="${project.details.liveDemo}">${project.details.liveDemo}</a></li>` : '',
+      project.details?.articleUrl ? `<li><strong>Architectural Engineering Deep-Dive:</strong> <a href="${project.details.articleUrl}">${project.details.articleUrl}</a></li>` : '',
       project.github ? `<li><strong>Source Code Repository:</strong> <a href="${project.github}">${project.github}</a></li>` : '',
       project.details?.docs ? `<li><strong>Technical Documentation:</strong> <a href="${project.details.docs}">${project.details.docs}</a></li>` : '',
       project.details?.doi ? `<li><strong>Digital Object Identifier (DOI):</strong> <a href="https://doi.org/${project.details.doi}">https://doi.org/${project.details.doi}</a></li>` : '',
@@ -1370,6 +1628,10 @@ ${sectionsHtml}
       "image": image,
       "datePublished": post.date,
       "dateModified": post.date,
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}${route}`
+      },
       "author": { "@id": `${SITE_URL}/#person` },
       "publisher": { "@id": `${SITE_URL}/#organization` }
     };

@@ -20,7 +20,8 @@ export const projects = [
       ],
       techStack: ['Swift 6.0', 'AppKit', 'SwiftUI', 'Apple Vision Framework', 'Neural Engine', 'macOS 14+', 'Homebrew Cask'],
       liveDemo: 'https://byakugan-scan.aritro.cloud',
-      docs: 'https://byakugan-scan.aritro.cloud/support'
+      docs: 'https://byakugan-scan.aritro.cloud/support',
+      articleUrl: 'https://www.aritro.cloud/blog/swift-vision-ocr-apple-neural-engine'
     }
   },
   {
@@ -67,7 +68,8 @@ export const projects = [
         'Executive Recruiter Dossier Mode: Instant one-click toggle between the 2.5D game world and an executive portfolio dossier view, featuring direct resume access, enterprise highlights, and URL hash navigation.'
       ],
       techStack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS', 'HTML5 Canvas 2D', 'Web Audio API', 'Web Speech API'],
-      liveDemo: 'https://openworld.aritro.cloud/'
+      liveDemo: 'https://openworld.aritro.cloud/',
+      articleUrl: 'https://www.aritro.cloud/blog/instant-navigation-speculation-rules-vite-ssg'
     }
   },
   {
@@ -92,7 +94,8 @@ export const projects = [
       techStack: ['Python 3.9+', 'PyPI', 'AsyncIO', 'CLI', 'Dead-Letter Queue', 'Fault Tolerance', 'Pytest'],
       pypi: 'https://pypi.org/project/quarantine-py/',
       liveDemo: 'https://pypi.org/project/quarantine-py/',
-      docs: 'https://quarantine-py.aritro.cloud'
+      docs: 'https://quarantine-py.aritro.cloud',
+      articleUrl: 'https://www.aritro.cloud/blog/python-dead-letter-queue-batch-pipelines'
     }
   },
   {
