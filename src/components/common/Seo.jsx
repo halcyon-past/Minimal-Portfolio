@@ -180,6 +180,7 @@ export default function Seo({
           "https://structurify.aritro.cloud/",
           "https://onepiece.aritro.cloud/",
           "https://doi.org/10.64643/IJIRT180711",
+          "https://www.wikidata.org/wiki/Q141911674",
           "https://ijirt.org/article?manuscript=180711"
         ]
       },
@@ -278,6 +279,7 @@ export default function Seo({
       <link rel="me" href="https://www.wikidata.org/wiki/Q141715213" />
       <link rel="me" href="https://orcid.org/0009-0007-0861-3978" />
       <link rel="me" href="https://doi.org/10.64643/IJIRT180711" />
+      <link rel="me" href="https://www.wikidata.org/wiki/Q141911674" />
       <link rel="me" href="https://github.com/halcyon-past" />
       <link rel="me" href="https://github.com/halcyon-past/aritrosaha" />
       <link rel="me" href="https://news.ycombinator.com/user?id=halcyon-past" />

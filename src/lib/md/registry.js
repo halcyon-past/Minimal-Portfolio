@@ -350,6 +350,7 @@ export function renderProjectPage(projectId) {
   if (details.pypi) externalLinks.push(`- **PyPI Package**: ${mdLink(details.pypi, details.pypi)}`);
   if (details.researchPaper) externalLinks.push(`- **Published Research Paper**: ${mdLink(details.researchPaper, details.researchPaper)}`);
   if (details.doi) externalLinks.push(`- **DOI (Digital Object Identifier)**: [${details.doi}](https://doi.org/${details.doi})`);
+  if (details.wikidata) externalLinks.push(`- **Wikidata Entity**: [${details.wikidata.split('/').pop()}](${details.wikidata})`);
 
   const content = [
     '## Project Overview',
