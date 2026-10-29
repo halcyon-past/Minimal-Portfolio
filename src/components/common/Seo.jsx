@@ -322,6 +322,7 @@ export default function Seo({
           <meta name="citation_issn" content="2349-6002" />
           <meta name="citation_doi" content="10.64643/IJIRT180711" />
           <meta name="citation_abstract_html_url" content="https://ijirt.org/article?manuscript=180711" />
+          <meta name="citation_pdf_url" content="https://ijirt.org/master/publishedpaper/IJIRT180711_PAPER.pdf" />
           <meta name="dc.identifier" content="10.64643/IJIRT180711" />
         </>
       )}
