@@ -51,6 +51,7 @@ An interactive suite of developer-themed browser mini-games engineered in React:
 - [Google Scholar](https://scholar.google.com/citations?user=oMN6u4UAAAAJ)
 - [Research Paper DOI](https://doi.org/10.64643/IJIRT180711)
 - [Research Paper Wikidata](https://www.wikidata.org/wiki/Q141911674)
+- [Zenodo Open Research Archive](https://zenodo.org/records/23758525)
 - [GitHub](https://github.com/halcyon-past)
 - [GitHub Profile Repo](https://github.com/halcyon-past/aritrosaha)
 - [LinkedIn](https://linkedin.com/in/aritro-saha)
@@ -218,6 +219,7 @@ Aritro Saha (commonly known online as **aritrosaha** and **halcyon-past**) is an
 - [Google Scholar](https://scholar.google.com/citations?user=oMN6u4UAAAAJ)
 - [Research Paper DOI](https://doi.org/10.64643/IJIRT180711)
 - [Research Paper Wikidata](https://www.wikidata.org/wiki/Q141911674)
+- [Zenodo Open Research Archive](https://zenodo.org/records/23758525)
 - [GitHub](https://github.com/halcyon-past)
 - [GitHub Profile Repo](https://github.com/halcyon-past/aritrosaha)
 - [LinkedIn](https://linkedin.com/in/aritro-saha)
@@ -802,6 +804,7 @@ A Final Year Project for VIT, this project demonstrates a novel way to control a
 - **Published Research Paper**: [https://doi.org/10.64643/IJIRT180711](https://doi.org/10.64643/IJIRT180711)
 - **DOI (Digital Object Identifier)**: [10.64643/IJIRT180711](https://doi.org/10.64643/IJIRT180711)
 - **Wikidata Entity**: [Q141911674](https://www.wikidata.org/wiki/Q141911674)
+- **CERN Zenodo Archive**: [https://zenodo.org/records/23758525](https://zenodo.org/records/23758525)
 
 ## Related
 - [All Featured Projects](https://www.aritro.cloud/#projects)

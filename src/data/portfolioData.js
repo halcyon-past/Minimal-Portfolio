@@ -164,6 +164,7 @@ export const projects = [
       researchPaper: 'https://doi.org/10.64643/IJIRT180711',
       doi: '10.64643/IJIRT180711',
       wikidata: 'https://www.wikidata.org/wiki/Q141911674',
+      zenodo: 'https://zenodo.org/records/23758525',
       paperTitle: 'KrishnaVision: A Multimodal Virtual Interface Combining MediaPipe-Hands Optimization and Gemini AI for Context-Aware HCI'
     }
   },

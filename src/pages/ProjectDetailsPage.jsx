@@ -147,6 +147,18 @@ const ProjectDetailsPage = () => {
                   {project.details.wikidata.split('/').pop()}
                 </a>
               )}
+              {project.details?.zenodo && (
+                <a 
+                  href={project.details.zenodo} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-4 py-3 rounded-full bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-mono text-sm"
+                  title="CERN Zenodo Open Research Archive"
+                >
+                  <span className="font-semibold text-xs px-2 py-0.5 rounded bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20 mr-2">Zenodo</span>
+                  {project.details.zenodo.split('/').pop()}
+                </a>
+              )}
             </motion.div>
           </div>
 

@@ -118,6 +118,7 @@ const personGraphNode = {
     "https://onepiece.aritro.cloud/",
     "https://doi.org/10.64643/IJIRT180711",
     "https://www.wikidata.org/wiki/Q141911674",
+    "https://zenodo.org/records/23758525",
     "https://ijirt.org/article?manuscript=180711"
   ]
 };
@@ -1063,6 +1064,7 @@ function run() {
       project.details?.docs ? `<li><strong>Technical Documentation:</strong> <a href="${project.details.docs}">${project.details.docs}</a></li>` : '',
       project.details?.doi ? `<li><strong>Digital Object Identifier (DOI):</strong> <a href="https://doi.org/${project.details.doi}">https://doi.org/${project.details.doi}</a></li>` : '',
       project.details?.wikidata ? `<li><strong>Wikidata Knowledge Graph Entity:</strong> <a href="${project.details.wikidata}">${project.details.wikidata.split('/').pop()}</a></li>` : '',
+      project.details?.zenodo ? `<li><strong>CERN Zenodo Open Research Archive:</strong> <a href="${project.details.zenodo}">${project.details.zenodo}</a></li>` : '',
       project.details?.researchPaper ? `<li><strong>Published Research Paper:</strong> <a href="${project.details.researchPaper}">${project.details.researchPaper}</a></li>` : ''
     ].filter(Boolean).join('\n            ');
 
@@ -1214,6 +1216,7 @@ ${featuresHtml}
         ],
         "sameAs": [
           "https://doi.org/10.64643/IJIRT180711",
+          "https://zenodo.org/records/23758525",
           "https://www.wikidata.org/wiki/Q141911674",
           "https://ijirt.org/article?manuscript=180711"
         ],

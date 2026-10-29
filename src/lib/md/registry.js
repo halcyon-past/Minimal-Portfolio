@@ -351,6 +351,7 @@ export function renderProjectPage(projectId) {
   if (details.researchPaper) externalLinks.push(`- **Published Research Paper**: ${mdLink(details.researchPaper, details.researchPaper)}`);
   if (details.doi) externalLinks.push(`- **DOI (Digital Object Identifier)**: [${details.doi}](https://doi.org/${details.doi})`);
   if (details.wikidata) externalLinks.push(`- **Wikidata Entity**: [${details.wikidata.split('/').pop()}](${details.wikidata})`);
+  if (details.zenodo) externalLinks.push(`- **CERN Zenodo Archive**: [${details.zenodo}](${details.zenodo})`);
 
   const content = [
     '## Project Overview',

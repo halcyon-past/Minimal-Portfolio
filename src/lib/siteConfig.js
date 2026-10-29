@@ -34,6 +34,7 @@ export const SOCIAL_PROFILES = [
   { name: 'Google Scholar', url: 'https://scholar.google.com/citations?user=oMN6u4UAAAAJ' },
   { name: 'Research Paper DOI', url: 'https://doi.org/10.64643/IJIRT180711' },
   { name: 'Research Paper Wikidata', url: 'https://www.wikidata.org/wiki/Q141911674' },
+  { name: 'Zenodo Open Research Archive', url: 'https://zenodo.org/records/23758525' },
   { name: 'GitHub', url: 'https://github.com/halcyon-past' },
   { name: 'GitHub Profile Repo', url: 'https://github.com/halcyon-past/aritrosaha' },
   { name: 'LinkedIn', url: 'https://linkedin.com/in/aritro-saha' },
