@@ -161,7 +161,9 @@ export const projects = [
       ],
       techStack: ['Python 3.9', 'MediaPipe', 'OpenCV', 'Google Gemini API', 'PyAutoGUI', 'PyCAW'],
       liveDemo: '',
-      researchPaper: 'https://ijirt.org/article?manuscript=180711'
+      researchPaper: 'https://doi.org/10.64643/IJIRT180711',
+      doi: '10.64643/IJIRT180711',
+      paperTitle: 'KrishnaVision: A Multimodal Virtual Interface Combining MediaPipe-Hands Optimization and Gemini AI for Context-Aware HCI'
     }
   },
   {

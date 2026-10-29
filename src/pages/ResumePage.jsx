@@ -30,7 +30,7 @@ export default function ResumePage() {
   const highlights = [
     { title: 'Hack4Bengal 3.0 Grand Champion', desc: 'Team Lead & 1st Place Winner out of 5,000+ applicants for PAWsitive animal healthcare triage system.' },
     { title: 'LeetCode Knight', desc: 'Peak contest rating 1868 (Top 6% globally) with 630+ algorithmic solutions solved.' },
-    { title: 'Published First Author (IJIRT)', desc: 'Research on low-latency multimodal computer vision interfaces (Paper ID: 180711).' },
+    { title: 'Published First Author (IJIRT)', desc: 'Research on low-latency multimodal computer vision interfaces (DOI: 10.64643/IJIRT180711, Paper ID: 180711).' },
     { title: 'Upstream Core Contributor', desc: 'Contributed DuckDB capture engine enhancements to Kestra (kestra-io/plugin-jdbc v2.2.0).' }
   ];
 

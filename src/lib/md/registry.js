@@ -135,7 +135,7 @@ export function renderResumePage() {
     '## Key Accolades & Leadership',
     `- **Hack4Bengal 3.0 Grand Champion**: Team Lead & 1st Place Winner out of 5,000+ applicants (PAWsitive animal healthcare triage).`,
     `- **LeetCode Knight**: Peak rating 1868 (Top 6% globally), 630+ algorithmic solutions solved.`,
-    `- **Published First Author**: Research on low-latency multimodal computer vision interfaces (IJIRT Paper ID: 180711).`,
+    `- **Published First Author**: Research on low-latency multimodal computer vision interfaces (IJIRT Paper ID: 180711, [DOI: 10.64643/IJIRT180711](https://doi.org/10.64643/IJIRT180711)).`,
     `- **Upstream Core Contributor**: Contributed DuckDB capture engine enhancements to Kestra (kestra-io/plugin-jdbc v2.2.0).`,
     '',
     '## Core Competencies & Technical Skills',
@@ -179,7 +179,7 @@ export function renderAritroSahaDossier() {
     '',
     '## Key Achievements & Accolades',
     "- **Hack4Bengal 3.0 Grand Champion**: Team Lead and 1st place winner out of 3,000+ applicants across Eastern India with PAWsitive (animal blood donation & emergency triage platform).",
-    '- **Published First Author**: IEEE/IJIRT research on real-time multimodal hand-gesture computer control (Paper ID: 180711).',
+    '- **Published First Author**: Research on low-latency multimodal computer vision interfaces (IJIRT Paper ID: 180711, [DOI: 10.64643/IJIRT180711](https://doi.org/10.64643/IJIRT180711)).',
     '- **LeetCode Knight**: Peak algorithmic rating of 1868 (Top 6% globally), solving 630+ computational challenges.',
     '- **Upstream Open-Source Contributor**: Kestra core JDBC plugin (`kestra-io/plugin-jdbc` v2.2.0 DuckDB file capture engine).',
     '',
@@ -349,6 +349,7 @@ export function renderProjectPage(projectId) {
   if (details.docs) externalLinks.push(`- **Documentation**: ${mdLink(details.docs, details.docs)}`);
   if (details.pypi) externalLinks.push(`- **PyPI Package**: ${mdLink(details.pypi, details.pypi)}`);
   if (details.researchPaper) externalLinks.push(`- **Published Research Paper**: ${mdLink(details.researchPaper, details.researchPaper)}`);
+  if (details.doi) externalLinks.push(`- **DOI (Digital Object Identifier)**: [${details.doi}](https://doi.org/${details.doi})`);
 
   const content = [
     '## Project Overview',

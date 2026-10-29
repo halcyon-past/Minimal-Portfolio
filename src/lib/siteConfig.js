@@ -24,6 +24,7 @@ export const AUTHOR = {
   wikidata: 'https://www.wikidata.org/wiki/Q141715213',
   orcid: 'https://orcid.org/0009-0007-0861-3978',
   scholar: 'https://scholar.google.com/citations?user=oMN6u4UAAAAJ',
+  doi: 'https://doi.org/10.64643/IJIRT180711',
   github: 'https://github.com/halcyon-past',
   linkedin: 'https://linkedin.com/in/aritro-saha',
   resumeUrl: `${SITE_URL}/assets/resume/Aritro-Saha-Software-Engineer-Resume.pdf`
@@ -31,6 +32,7 @@ export const AUTHOR = {
 
 export const SOCIAL_PROFILES = [
   { name: 'Google Scholar', url: 'https://scholar.google.com/citations?user=oMN6u4UAAAAJ' },
+  { name: 'Research Paper DOI', url: 'https://doi.org/10.64643/IJIRT180711' },
   { name: 'GitHub', url: 'https://github.com/halcyon-past' },
   { name: 'GitHub Profile Repo', url: 'https://github.com/halcyon-past/aritrosaha' },
   { name: 'LinkedIn', url: 'https://linkedin.com/in/aritro-saha' },

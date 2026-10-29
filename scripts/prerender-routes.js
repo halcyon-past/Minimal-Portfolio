@@ -116,6 +116,7 @@ const personGraphNode = {
     "https://quarantine-py.aritro.cloud/",
     "https://structurify.aritro.cloud/",
     "https://onepiece.aritro.cloud/",
+    "https://doi.org/10.64643/IJIRT180711",
     "https://ijirt.org/article?manuscript=180711"
   ]
 };
@@ -188,7 +189,7 @@ const STATIC_ROUTES = [
           <ul>
             <li><strong>Hack4Bengal 3.0 Grand Champion</strong> — Team Lead & 1st Place Winner out of 3,000+ applicants (PAWsitive animal healthcare triage).</li>
             <li><strong>LeetCode Knight</strong> — Peak rating 1868 (Top 6% globally), 630+ algorithmic solutions.</li>
-            <li><strong>Published First Author</strong> — IJIRT research on low-latency multimodal computer vision interfaces (Paper ID: 180711).</li>
+            <li><strong>Published First Author</strong> — IJIRT research on low-latency multimodal computer vision interfaces (<a href="https://doi.org/10.64643/IJIRT180711">DOI: 10.64643/IJIRT180711</a>, Paper ID: 180711).</li>
             <li><strong>Upstream Core Contributor</strong> — Kestra (kestra-io/plugin-jdbc v2.2.0, DuckDB file capture engine).</li>
           </ul>
           <h2>Featured Works</h2>
@@ -251,7 +252,7 @@ const STATIC_ROUTES = [
           <ul>
             <li><strong>Hack4Bengal 3.0 Grand Champion</strong> — Team Lead & 1st Place Winner out of 5,000+ applicants (PAWsitive animal healthcare triage).</li>
             <li><strong>LeetCode Knight</strong> — Peak rating 1868 (Top 6% globally), 630+ algorithmic solutions solved.</li>
-            <li><strong>Published First Author</strong> — IJIRT research on low-latency multimodal computer vision interfaces (Paper ID: 180711).</li>
+            <li><strong>Published First Author</strong> — IJIRT research on low-latency multimodal computer vision interfaces (<a href="https://doi.org/10.64643/IJIRT180711">DOI: 10.64643/IJIRT180711</a>, Paper ID: 180711).</li>
             <li><strong>Upstream Core Contributor</strong> — Kestra (kestra-io/plugin-jdbc v2.2.0, DuckDB file capture engine).</li>
           </ul>
           <h2>Core Technical Competencies</h2>
@@ -842,7 +843,7 @@ function renderStaticMarkdownContent(content) {
   }).filter(Boolean).join('\n');
 }
 
-function buildRouteHtml(template, { route, title, description, image, articleHtml, extraJsonLdNodes = [], pageType = "WebPage" }) {
+function buildRouteHtml(template, { route, title, description, image, articleHtml, extraJsonLdNodes = [], pageType = "WebPage", extraMetaHtml = "" }) {
   const canonicalUrl = `${SITE_URL}${route}`;
   const markdownUrl = `${SITE_URL}${route === '/' ? '/index.md' : `${route}.md`}`;
   const escapedTitle = escapeHtml(title);
@@ -963,6 +964,10 @@ function buildRouteHtml(template, { route, title, description, image, articleHtm
     `<script id="static-json-ld" type="application/ld+json">\n${JSON.stringify(jsonLd, null, 2)}\n    </script>`
   );
 
+  if (extraMetaHtml) {
+    html = html.replace('</head>', `  ${extraMetaHtml}\n  </head>`);
+  }
+
   const isHome = route === '/' || route === '';
   const is404 = route === '/404';
 
@@ -1055,6 +1060,7 @@ function run() {
       project.details?.liveDemo ? `<li><strong>Dedicated Official Webpage:</strong> <a href="${project.details.liveDemo}">${project.details.liveDemo}</a></li>` : '',
       project.github ? `<li><strong>Source Code Repository:</strong> <a href="${project.github}">${project.github}</a></li>` : '',
       project.details?.docs ? `<li><strong>Technical Documentation:</strong> <a href="${project.details.docs}">${project.details.docs}</a></li>` : '',
+      project.details?.doi ? `<li><strong>Digital Object Identifier (DOI):</strong> <a href="https://doi.org/${project.details.doi}">https://doi.org/${project.details.doi}</a></li>` : '',
       project.details?.researchPaper ? `<li><strong>Published Research Paper:</strong> <a href="${project.details.researchPaper}">${project.details.researchPaper}</a></li>` : ''
     ].filter(Boolean).join('\n            ');
 
@@ -1156,10 +1162,25 @@ ${featuresHtml}
     };
 
     const extraNodes = [softwareNode, imageNode, breadcrumbNode];
+    let extraMetaHtml = '';
     if (project.id === 'glide-connect') {
+      extraMetaHtml = [
+        '<meta name="citation_title" content="KrishnaVision: A Multimodal Virtual Interface Combining MediaPipe-Hands Optimization and Gemini AI for Context-Aware HCI" />',
+        '<meta name="citation_author" content="Saha, Aritro" />',
+        '<meta name="citation_author" content="De, Rupkatha" />',
+        '<meta name="citation_publication_date" content="2025/06" />',
+        '<meta name="citation_journal_title" content="International Journal of Innovative Research in Technology" />',
+        '<meta name="citation_volume" content="12" />',
+        '<meta name="citation_issue" content="1" />',
+        '<meta name="citation_issn" content="2349-6002" />',
+        '<meta name="citation_doi" content="10.64643/IJIRT180711" />',
+        '<meta name="citation_abstract_html_url" content="https://ijirt.org/article?manuscript=180711" />',
+        '<meta name="dc.identifier" content="10.64643/IJIRT180711" />'
+      ].join('\n  ');
+
       extraNodes.push({
         "@type": "ScholarlyArticle",
-        "@id": `${SITE_URL}${route}#research-paper`,
+        "@id": "https://doi.org/10.64643/IJIRT180711",
         "headline": "KrishnaVision: A Multimodal Virtual Interface Combining MediaPipe-Hands Optimization and Gemini AI for Context-Aware HCI",
         "name": "KrishnaVision: A Multimodal Virtual Interface Combining MediaPipe-Hands Optimization and Gemini AI for Context-Aware HCI",
         "author": [
@@ -1181,7 +1202,18 @@ ${featuresHtml}
           "@type": "Organization",
           "name": "International Journal of Innovative Research in Technology (IJIRT)"
         },
-        "sameAs": "https://ijirt.org/article?manuscript=180711"
+        "identifier": [
+          {
+            "@type": "PropertyValue",
+            "propertyID": "doi",
+            "value": "10.64643/IJIRT180711"
+          }
+        ],
+        "sameAs": [
+          "https://doi.org/10.64643/IJIRT180711",
+          "https://ijirt.org/article?manuscript=180711"
+        ],
+        "url": "https://doi.org/10.64643/IJIRT180711"
       });
     }
 
@@ -1191,7 +1223,8 @@ ${featuresHtml}
       description,
       image,
       articleHtml,
-      extraJsonLdNodes: extraNodes
+      extraJsonLdNodes: extraNodes,
+      extraMetaHtml
     });
 
     const outDir = path.join(distDir, 'projects', project.id);

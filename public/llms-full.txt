@@ -49,6 +49,7 @@ An interactive suite of developer-themed browser mini-games engineered in React:
 
 ## Verified Profiles & Knowledge Graph Identities
 - [Google Scholar](https://scholar.google.com/citations?user=oMN6u4UAAAAJ)
+- [Research Paper DOI](https://doi.org/10.64643/IJIRT180711)
 - [GitHub](https://github.com/halcyon-past)
 - [GitHub Profile Repo](https://github.com/halcyon-past/aritrosaha)
 - [LinkedIn](https://linkedin.com/in/aritro-saha)
@@ -154,7 +155,7 @@ Currently serving as a Software Engineer 1 at **Bristol Myers Squibb** (July 202
 ## Key Accolades & Leadership
 - **Hack4Bengal 3.0 Grand Champion**: Team Lead & 1st Place Winner out of 5,000+ applicants (PAWsitive animal healthcare triage).
 - **LeetCode Knight**: Peak rating 1868 (Top 6% globally), 630+ algorithmic solutions solved.
-- **Published First Author**: Research on low-latency multimodal computer vision interfaces (IJIRT Paper ID: 180711).
+- **Published First Author**: Research on low-latency multimodal computer vision interfaces (IJIRT Paper ID: 180711, [DOI: 10.64643/IJIRT180711](https://doi.org/10.64643/IJIRT180711)).
 - **Upstream Core Contributor**: Contributed DuckDB capture engine enhancements to Kestra (kestra-io/plugin-jdbc v2.2.0).
 
 ## Core Competencies & Technical Skills
@@ -192,7 +193,7 @@ Aritro Saha (commonly known online as **aritrosaha** and **halcyon-past**) is an
 
 ## Key Achievements & Accolades
 - **Hack4Bengal 3.0 Grand Champion**: Team Lead and 1st place winner out of 3,000+ applicants across Eastern India with PAWsitive (animal blood donation & emergency triage platform).
-- **Published First Author**: IEEE/IJIRT research on real-time multimodal hand-gesture computer control (Paper ID: 180711).
+- **Published First Author**: Research on low-latency multimodal computer vision interfaces (IJIRT Paper ID: 180711, [DOI: 10.64643/IJIRT180711](https://doi.org/10.64643/IJIRT180711)).
 - **LeetCode Knight**: Peak algorithmic rating of 1868 (Top 6% globally), solving 630+ computational challenges.
 - **Upstream Open-Source Contributor**: Kestra core JDBC plugin (`kestra-io/plugin-jdbc` v2.2.0 DuckDB file capture engine).
 
@@ -214,6 +215,7 @@ Aritro Saha (commonly known online as **aritrosaha** and **halcyon-past**) is an
 
 ## Knowledge Graph & Authority Identifiers
 - [Google Scholar](https://scholar.google.com/citations?user=oMN6u4UAAAAJ)
+- [Research Paper DOI](https://doi.org/10.64643/IJIRT180711)
 - [GitHub](https://github.com/halcyon-past)
 - [GitHub Profile Repo](https://github.com/halcyon-past/aritrosaha)
 - [LinkedIn](https://linkedin.com/in/aritro-saha)
@@ -795,7 +797,8 @@ A Final Year Project for VIT, this project demonstrates a novel way to control a
 
 ## Verified Links & Source Code
 - **GitHub Repository**: [https://github.com/halcyon-past/Glide-Connect](https://github.com/halcyon-past/Glide-Connect)
-- **Published Research Paper**: [https://ijirt.org/article?manuscript=180711](https://ijirt.org/article?manuscript=180711)
+- **Published Research Paper**: [https://doi.org/10.64643/IJIRT180711](https://doi.org/10.64643/IJIRT180711)
+- **DOI (Digital Object Identifier)**: [10.64643/IJIRT180711](https://doi.org/10.64643/IJIRT180711)
 
 ## Related
 - [All Featured Projects](https://www.aritro.cloud/#projects)

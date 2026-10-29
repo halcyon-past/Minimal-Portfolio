@@ -179,6 +179,7 @@ export default function Seo({
           "https://quarantine-py.aritro.cloud/",
           "https://structurify.aritro.cloud/",
           "https://onepiece.aritro.cloud/",
+          "https://doi.org/10.64643/IJIRT180711",
           "https://ijirt.org/article?manuscript=180711"
         ]
       },
@@ -276,6 +277,7 @@ export default function Seo({
       <link rel="me" href="https://scholar.google.com/citations?user=oMN6u4UAAAAJ" />
       <link rel="me" href="https://www.wikidata.org/wiki/Q141715213" />
       <link rel="me" href="https://orcid.org/0009-0007-0861-3978" />
+      <link rel="me" href="https://doi.org/10.64643/IJIRT180711" />
       <link rel="me" href="https://github.com/halcyon-past" />
       <link rel="me" href="https://github.com/halcyon-past/aritrosaha" />
       <link rel="me" href="https://news.ycombinator.com/user?id=halcyon-past" />
@@ -304,6 +306,23 @@ export default function Seo({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={finalDescription} />
       <meta name="twitter:image" content={fullImage} />
+
+      {/* Google Scholar & Academic Indexing (Highwire Press Tags) */}
+      {normalizedPath === '/projects/glide-connect' && (
+        <>
+          <meta name="citation_title" content="KrishnaVision: A Multimodal Virtual Interface Combining MediaPipe-Hands Optimization and Gemini AI for Context-Aware HCI" />
+          <meta name="citation_author" content="Saha, Aritro" />
+          <meta name="citation_author" content="De, Rupkatha" />
+          <meta name="citation_publication_date" content="2025/06" />
+          <meta name="citation_journal_title" content="International Journal of Innovative Research in Technology" />
+          <meta name="citation_volume" content="12" />
+          <meta name="citation_issue" content="1" />
+          <meta name="citation_issn" content="2349-6002" />
+          <meta name="citation_doi" content="10.64643/IJIRT180711" />
+          <meta name="citation_abstract_html_url" content="https://ijirt.org/article?manuscript=180711" />
+          <meta name="dc.identifier" content="10.64643/IJIRT180711" />
+        </>
+      )}
 
       {/* Structured Data */}
       <script type="application/ld+json">

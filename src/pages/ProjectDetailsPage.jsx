@@ -123,6 +123,18 @@ const ProjectDetailsPage = () => {
                   Research Paper
                 </a>
               )}
+              {project.details?.doi && (
+                <a 
+                  href={`https://doi.org/${project.details.doi}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-4 py-3 rounded-full bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-mono text-sm"
+                  title="Permanent Digital Object Identifier"
+                >
+                  <span className="font-semibold text-xs px-2 py-0.5 rounded bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 mr-2">DOI</span>
+                  {project.details.doi}
+                </a>
+              )}
             </motion.div>
           </div>
 
