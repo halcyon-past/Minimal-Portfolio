@@ -864,7 +864,11 @@ function buildRouteHtml(template, { route, title, description, image, articleHtm
         "url": canonicalUrl,
         "name": title,
         "description": description,
-        "author": { "@id": `${SITE_URL}/#person` },
+        ...(pageType === 'ProfilePage' ? {
+          "mainEntity": { "@id": `${SITE_URL}/#person` }
+        } : {
+          "author": { "@id": `${SITE_URL}/#person` }
+        }),
         "primaryImageOfPage": { "@id": `${SITE_URL}/#author-image` }
       },
       ...extraJsonLdNodes
