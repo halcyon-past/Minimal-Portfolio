@@ -30,8 +30,22 @@ export default function ResumePage() {
   const highlights = [
     { title: 'Hack4Bengal 3.0 Grand Champion', desc: 'Team Lead & 1st Place Winner out of 5,000+ applicants for PAWsitive animal healthcare triage system.' },
     { title: 'LeetCode Knight', desc: 'Peak contest rating 1868 (Top 6% globally) with 630+ algorithmic solutions solved.' },
-    { title: 'Published First Author (IJIRT)', desc: 'Research on low-latency multimodal computer vision interfaces (DOI: 10.64643/IJIRT180711, Paper ID: 180711).' },
-    { title: 'Upstream Core Contributor', desc: 'Contributed DuckDB capture engine enhancements to Kestra (kestra-io/plugin-jdbc v2.2.0).' }
+    {
+      title: 'Published First Author (IJIRT)',
+      desc: (
+        <span>
+          Research on low-latency multimodal computer vision interfaces (<a href="https://doi.org/10.64643/IJIRT180711" target="_blank" rel="noopener noreferrer" className="text-(--amethyst) hover:underline font-medium">DOI: 10.64643/IJIRT180711</a>, Paper ID: 180711).
+        </span>
+      )
+    },
+    {
+      title: 'Upstream Open-Source Contributor',
+      desc: (
+        <span>
+          Contributed to <a href="https://github.com/astral-sh/ruff/releases/tag/0.17.4" target="_blank" rel="noopener noreferrer" className="text-(--amethyst) hover:underline font-medium">Astral Ruff</a> (<a href="https://github.com/astral-sh/ruff/pull/29843" target="_blank" rel="noopener noreferrer" className="text-(--amethyst) hover:underline">PR #29843</a>) and <a href="https://github.com/kestra-io/plugin-jdbc/releases/tag/v2.2.0" target="_blank" rel="noopener noreferrer" className="text-(--amethyst) hover:underline font-medium">Kestra</a> (<a href="https://github.com/kestra-io/plugin-jdbc/pull/1044" target="_blank" rel="noopener noreferrer" className="text-(--amethyst) hover:underline">PR #1044</a>).
+        </span>
+      )
+    }
   ];
 
   return (

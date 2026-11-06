@@ -54,7 +54,7 @@ export default function About() {
               I am a <span className="font-medium text-gray-900 dark:text-gray-100">Software Engineer 1</span> at <span className="font-medium text-gray-900 dark:text-gray-100">Bristol Myers Squibb</span> with a focus on data science engineering and full-stack development. I build scalable backend services and user interfaces driven by reliable data pipelines.
             </motion.p>
             <motion.p variants={itemVariants} className="mb-6 text-lg md:text-xl leading-relaxed">
-              I won <span className="font-medium text-gray-900 dark:text-gray-100">Hack4Bengal 3.0</span>—Eastern India's largest hackathon—leading development under tight constraints. Whether architecting event-driven systems or building interactive web games, I focus on shipping software that is resilient, accessible, and fast.
+              I won <span className="font-medium text-gray-900 dark:text-gray-100">Hack4Bengal 3.0</span>—Eastern India's largest hackathon—leading development under tight constraints. I also actively contribute to high-performance open-source developer tooling including <span className="font-medium text-gray-900 dark:text-gray-100">Astral Ruff</span> and <span className="font-medium text-gray-900 dark:text-gray-100">Kestra</span>. Whether architecting event-driven systems or building interactive web games, I focus on shipping software that is resilient, accessible, and fast.
             </motion.p>
             <motion.p variants={itemVariants} className="mb-6 text-lg md:text-xl leading-relaxed">
               When I'm not coding, you'll find me beatboxing, playing football, or exploring creative digital audio experiments.

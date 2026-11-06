@@ -10,7 +10,7 @@ role: Software Engineer 1
 organization: Bristol Myers Squibb
 url: https://www.aritro.cloud/
 description: Software Engineer 1 at Bristol Myers Squibb building high-throughput data pipelines, cloud infrastructure, native macOS utilities, and interactive web applications.
-notable-works: Byakugan Scan, SutraKey, Quarantine (PyPI), Hack4Bengal 3.0 Champion
+notable-works: Byakugan Scan, SutraKey, Quarantine (PyPI), Hack4Bengal 3.0 Champion, Astral Ruff & Kestra Contributor
 contact: aritrosaha2025@gmail.com
 wikidata: https://www.wikidata.org/wiki/Q141715213
 orcid: https://orcid.org/0009-0007-0861-3978
@@ -18,6 +18,9 @@ scholar: https://scholar.google.com/citations?user=oMN6u4UAAAAJ
 doi: https://doi.org/10.64643/IJIRT180711
 research-paper: https://doi.org/10.64643/IJIRT180711
 research-paper-wikidata: https://www.wikidata.org/wiki/Q141911674
+zenodo: https://zenodo.org/records/23758525
+ruff-contribution: https://github.com/astral-sh/ruff/pull/29843
+kestra-contribution: https://github.com/kestra-io/plugin-jdbc/pull/1044
 
 [permissions]
 allowed: summarise, quote with attribution, cite, index for search and answer engines, technical reference, biographical-summary, public-profile-citation

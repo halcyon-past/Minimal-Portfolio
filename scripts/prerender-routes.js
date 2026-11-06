@@ -119,6 +119,10 @@ const personGraphNode = {
     "https://doi.org/10.64643/IJIRT180711",
     "https://www.wikidata.org/wiki/Q141911674",
     "https://zenodo.org/records/23758525",
+    "https://github.com/astral-sh/ruff/pull/29843",
+    "https://github.com/astral-sh/ruff/releases/tag/0.17.4",
+    "https://github.com/kestra-io/plugin-jdbc/pull/1044",
+    "https://github.com/kestra-io/plugin-jdbc/releases/tag/v2.2.0",
     "https://ijirt.org/article?manuscript=180711"
   ]
 };
@@ -192,7 +196,7 @@ const STATIC_ROUTES = [
             <li><strong>Hack4Bengal 3.0 Grand Champion</strong> — Team Lead & 1st Place Winner out of 3,000+ applicants (PAWsitive animal healthcare triage).</li>
             <li><strong>LeetCode Knight</strong> — Peak rating 1868 (Top 6% globally), 630+ algorithmic solutions.</li>
             <li><strong>Published First Author</strong> — IJIRT research on low-latency multimodal computer vision interfaces (<a href="https://doi.org/10.64643/IJIRT180711">DOI: 10.64643/IJIRT180711</a>, Paper ID: 180711).</li>
-            <li><strong>Upstream Core Contributor</strong> — Kestra (kestra-io/plugin-jdbc v2.2.0, DuckDB file capture engine).</li>
+            <li><strong>Upstream Core Contributor</strong> — Astral Ruff (<a href="https://github.com/astral-sh/ruff/releases/tag/0.17.4">astral-sh/ruff v0.17.4</a>, isort documentation &amp; rule architecture, <a href="https://github.com/astral-sh/ruff/pull/29843">PR #29843</a>) and Kestra (<a href="https://github.com/kestra-io/plugin-jdbc/releases/tag/v2.2.0">kestra-io/plugin-jdbc v2.2.0</a>, DuckDB file capture engine, <a href="https://github.com/kestra-io/plugin-jdbc/pull/1044">PR #1044</a>).</li>
           </ul>
           <h2>Featured Works</h2>
           <ul>
@@ -255,7 +259,7 @@ const STATIC_ROUTES = [
             <li><strong>Hack4Bengal 3.0 Grand Champion</strong> — Team Lead & 1st Place Winner out of 5,000+ applicants (PAWsitive animal healthcare triage).</li>
             <li><strong>LeetCode Knight</strong> — Peak rating 1868 (Top 6% globally), 630+ algorithmic solutions solved.</li>
             <li><strong>Published First Author</strong> — IJIRT research on low-latency multimodal computer vision interfaces (<a href="https://doi.org/10.64643/IJIRT180711">DOI: 10.64643/IJIRT180711</a>, Paper ID: 180711).</li>
-            <li><strong>Upstream Core Contributor</strong> — Kestra (kestra-io/plugin-jdbc v2.2.0, DuckDB file capture engine).</li>
+            <li><strong>Upstream Core Contributor</strong> — Astral Ruff (<a href="https://github.com/astral-sh/ruff/releases/tag/0.17.4">astral-sh/ruff v0.17.4</a>, isort documentation &amp; rule architecture, <a href="https://github.com/astral-sh/ruff/pull/29843">PR #29843</a>) and Kestra (<a href="https://github.com/kestra-io/plugin-jdbc/releases/tag/v2.2.0">kestra-io/plugin-jdbc v2.2.0</a>, DuckDB file capture engine, <a href="https://github.com/kestra-io/plugin-jdbc/pull/1044">PR #1044</a>).</li>
           </ul>
           <h2>Core Technical Competencies</h2>
           <ul>
